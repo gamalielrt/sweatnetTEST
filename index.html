@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165006280-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-165006280-1');
+    </script>
+
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv=“Pragma” content=”no-cache”>
+    <meta http-equiv=“Expires” content=”-1″>
+    <meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+    <title>sweatnet.net TEST</title>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+    <div id="overlay">
+        <label id="introtext"> </label><label id = "underscore">_</label><br>
+        <label id="introtext2"> </label><label id = "underscore2"></label>
+        <input id="pbox" hidden>
+        <label id="underflashbox"></label>
+
+        <label hidden id="buttonHide">
+            <button  id="startButton" >[Submit]</button>
+
+        </label>
+    </div>
+    <div id="loadingtext">
+        <p> <label id="line1" hidden >./Running diagnostics.............</label><label class = completed id=resline1 hidden></label></p>
+        <p> <label id="line2" hidden >./Running VR test.................</label><label class = completed id=resline2 hidden></label></p>
+        <p> <label id="line3" hidden >./Creating VR map.................</label><label class = completed id=resline3 hidden></label></p>
+        <p> <label id="line4" hidden >./Check user ID...................</label><label class = completed id=resline4 hidden></label></p>
+        <p> <label id="line5" hidden >./Obtaining user IP address.......</label><label class = completed id=resline5 hidden></label></p>
+        <p> <label id="line6" hidden >./Check IP is within legal zone/s.</label><label class = completed id=resline6 hidden></label></p>
+        <p> <label id="line7" hidden >./Obtaining visual permissions....</label><label class = completed id=resline7 hidden></label></p>
+        <p> <label id="line8" hidden >./Scanning retinas................</label><label class = completed id=resline8 hidden></label></p>
+        <p> <label id="line9" hidden >./Running thumbprint test.........</label><label class = completed id=resline9 hidden></label></p>
+        <p> <label id="line10" hidden >./Establishing pulse rate.........</label><label class = completed id=resline10 hidden></label></p>
+        <p> <label id="line11" hidden >./Bot check ......................</label><label class = completed id=resline11 hidden></label></p>
+        <p> <label id="line12" hidden >./Creating user profile ID........</label><label class = completed id=resline12 hidden></label></p>
+        <p> <label id="line13" hidden >./Store user data.................</label><label class = completed id=resline13 hidden></label></p>
+        <p> <label id="line14" hidden >./Checking for barred individuals.</label><label class = completed id=resline14 hidden></label></p>
+        <p> <label id="line15" hidden >./Cross-referencing database......</label><label class = completed id=resline15 hidden></label></p>
+        <p> <label id="line16" hidden >./POSSIBLE MATCHES!~OVERRIDE?(Y/N)</label><label class = overriden id=resline16 hidden></label></p>
+        <p> <label id="line17" hidden >./Powering up lights..............</label><label class = overriden id=resline17 hidden></label></p>
+        <p> <label id="line18" hidden >./.........STROBE WARNING.........</label><label class = overriden id=resline18 hidden></label></p>
+        <p> <label id="line19" hidden >./Illicit substances check........</label><label class = overriden id=resline19 hidden></label></p>
+        <p> <label id="line20" hidden >./Checking for guestlist..........</label><label class = overriden id=resline20 hidden></label></p>
+        <p> <label id="line21" hidden >./Checking VIP status.............</label><label class = overriden id=resline21 hidden></label></p>
+        <p> <label id="line22" hidden >./Dresscode requirements check....</label><label class = overriden id=resline22 hidden></label></p>
+        <p> <label id="line23" hidden >----> ACCESS GRANTED..............</label><label class = overriden id=resline23 hidden></label></p>
+        <p> <label id = "underscore3" ></label></p>
+        <!--<p id="line24" hidden >Paragraph 24</p>-->
+        <!--<p id="line25" hidden >Paragraph 25</p>-->
+        <!--<p id="line26" hidden >Paragraph 26</p>-->
+    </div>
+
+
+
+
+    <!--<iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:1MhltDUGKPSasS3MwMSdpE&size=basic&theme=light&show-count=0" width="200" 
+        height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>-->
+    <body style="background-color:#000000;">
+    <script src="js/three.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>-->
+    <script src="js/MTLLoader.js"></script>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <!--<script src="js/VideoFrame.js"></script>-->
+    <!--<script src="js/TweenMax.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+    <!--<video id="videoalpha"  crossOrigin="anonymous" playsinline style="display:none">
+        <source src="assets/draft13alpha.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    </video>-->
+
+    <video id="video"  crossOrigin="anonymous" playsinline style="display:none">
+        <!--<source src="assets/drinkdrive.webm" type='video/webm; codecs="vp8, vorbis"'>-->
+        <source src="assets/draft17.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    </video>
+
+    <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
+        <!--<source src="assets/drinkdrive.webm" type='video/webm; codecs="vp8, vorbis"'>-->
+        <source src="assets/screen10.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    </video>
+
+    <div id="container">
+        <div id="socials" hidden>
+            <div id="leftsocials" >
+                <iframe id="spotify" src="https://open.spotify.com/follow/1/?uri=spotify:artist:1MhltDUGKPSasS3MwMSdpE&size=basic&theme=light&show-count=0" width="200" height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+            </div>
+            <div id="rightsocials" >
+            <a href="http://www.bandcamp.com" target="_blank"><img src="assets/clubbandcamp.png" style="width:61.87px;height:18px;"></a>
+            <a href="http://www.facebook.com/sweatnet" target="_blank"><img src="assets/clubfacebook.png" style="width:18px;height:18px;"></a>
+            <a href="http://www.instagram.com/sweat_net" target="_blank"><img src="assets/clubinstagram.png" style="width:18px;height:18px;"></a>
+            <a href="http://www.twitter.com/sweat_net" target="_blank"><img src="assets/clubtwitter.png" style="width:18px;height:18px;"></a>
+            <a href="http://www.youtube.com/sweatnet" target="_blank"><img src="assets/clubyoutube.png" style="width:18px;height:18px;"></a>
+            <img id = "mailicon" src="assets/clubmailinglist.png" style="width:18px;height:18px;" onclick="callMailOverlay()">
+            <!--<img id = "shareicon"src="assets/clubshare.png" style="width:18px;height:18px;" onclick="clickShareOverlay()">-->
+        </div>
+    </div>
+    <div id = "gestures" hidden>
+        <!--<div id = "drag"><img src = "assets/icondrag.png"></div>
+        <div id = "pinch"><img src = "assets/iconpinch.png"></div>-->
+        <div id = "pinchdrag"><img src = "assets/iconpinchdrag.png"></div>
+
+        <!--<canvas id="canvas"></canvas>-->
+
+    </div>
+
+    <div id = "counter" hidden>
+
+    </div>
+
+
+    
+
+    <div id="chatroom" hidden>
+    <!--<div class="frame">  
+  <span id="currentFrame"></span>
+  </div>-->
+        <table style="width:100%" id="table">
+            <tr>
+                <th></th id="chatcell"><div id="chat-area"></div>
+                </th>
+            </tr>
+            <tr>
+                <td id = "typeboxcellcell">
+                    <label id="typebox">
+                        <form id="inputform" autocomplete=off target="_self" action="#" onsubmit="submitButton();return false"><input placeholder= "&lt Enter User Name &gt" id="typeboxinput" ></form> 
+                    </label>
+                </td>
+                <td id = "commentbuttoncell">
+
+                <!--<label id="commentbutton">  -->     
+                    <button  id="commentbuttonhit" >Submit</button>
+                <!--</label>-->
+            </td>
+
+        </tr>
+        </table>
+    </div>
+
+    <div id="mailoverlay" hidden onclick="hideMailOverlay()">
+    </div>
+    <table id="mailtable" hidden>
+            <tr><th><div id="mailtext"> Sign up to the mailing list for upcoming events and drinks deals:</div><br></th></tr>
+            <tr><td><form id="mailinputform" autocomplete=off target="_self" action="#" onsubmit="submitmailButton();return false"><input id="mailinput" placeholder= "&lt Enter Email &gt" ></form><br></td></tr> 
+            <tr><td><button  id="submitmailbuttonhit" onclick="submitEmail()">Submit</button></td></tr>
+    </table>
+
+
+
+
+
+
+
+
+
+    <script>
+
+        // Counter
+
+        /*function updateCounter() {  
+     
+            $.ajax({
+                type: "POST",
+                url: "counter.php",
+                data: {  
+                    'count': 'count',
+                        },
+                dataType: "json",
+                success: function(visitdata){
+                    //console.log(visitdata[0].visitors);
+
+                    document.getElementById("counter").innerHTML = visitdata[0].visitors;
+                },
+                });
+        }
+
+        updateCounter()
+
+        */
+
+            var i = 0;
+            var ii = 0;
+            var iii = 0;
+            var iiii = 0;
+
+            var introTxt = 'Console: Secure Connection Established /// <[STROBE WARNING]>';
+            var introTxt2 =  'Please enter password :'; 
+            var lineonedone = false;
+
+            var introTypeSpeed = 40; /* The speed/duration of the effect in milliseconds */
+            var flashSpeed = 10;
+            var upperFlashSpeed = 20;
+
+
+            function typeWriterIntro() {
+                if (i < introTxt.length) {
+                    document.getElementById("introtext").innerHTML += introTxt.charAt(i);
+                    i++;
+                    setTimeout(typeWriterIntro, introTypeSpeed);
+                    if ( i == introTxt.length) {
+                        //var buttonHide = document.getElementById( 'buttonHide' );
+                        //buttonHide.style.display = "block";
+                        //typeWriterIntro2();
+                        typeWriterIntro2();   
+                        document.getElementById("underscore").innerHTML = "";
+                        document.getElementById("underscore2").innerHTML = "_";
+
+
+
+
+
+
+
+                    }
+                }
+            }
+            function underFlash() {
+                document.getElementById("underscore2").innerHTML = "";
+                document.getElementById("pbox").style.display = "block";
+
+
+                /*if (iii <= flashSpeed){
+                            document.getElementById("underscore2").innerHTML = "_";
+                            iii++;
+                            //console.log(iii)
+                            setTimeout(underFlash, introTypeSpeed);
+
+
+                        } else if (iii >= flashSpeed){
+                            document.getElementById("underscore2").innerHTML = "";
+                            iii++;
+                            //console.log(iii)
+                            setTimeout(underFlash, introTypeSpeed);
+
+                        } if (iii >= upperFlashSpeed){
+                            iii = 0;
+                        }*/
+                        
+
+            }
+
+            function underFlash2() {
+                if (iiii <= flashSpeed){
+                    
+                    //var underscore2 = document.getElementById( 'underscore2' );
+                    //underscore2.style.display = "block";
+
+                    document.getElementById("underscore3").innerHTML = "_";
+                    iiii++;
+                    //console.log(iii)
+                    setTimeout(underFlash, introTypeSpeed)
+                } else if (iiii >= flashSpeed){
+                    document.getElementById("underscore3").innerHTML = "";
+                    iiii++;
+                    //console.log(iii)
+                    setTimeout(underFlash, introTypeSpeed)
+                } if (iiii >= upperFlashSpeed){
+                    //console.log("upper hit")
+                    iiii = 0;
+                }
+            }
+
+            function typeWriterIntro2() {
+                if (ii < introTxt2.length) {
+                    document.getElementById("introtext2").innerHTML += introTxt2.charAt(ii);
+                    ii++;
+                    setTimeout(typeWriterIntro2, introTypeSpeed);
+                    if ( ii == introTxt2.length) {
+                        var buttonHide = document.getElementById( 'buttonHide' );
+                        buttonHide.style.display = "block";
+                        underFlash();
+
+
+                    }
+                }
+            }
+            /*var ctime = 0;
+            var copacityset = 0;
+
+            function canvasOpacity() {
+                console.log("opacity started")
+                if (ctime <= 10) {
+                    copacityset += 0.01                
+                    var canvas = document.getElementById( 'canvas' );
+                    canvas.style.opacity = copacityset;
+                    ctime ++;
+                    //console.log(socials.style.opacity, stime, opacityset)
+                    setTimeout(canvasOpacity, 1000);
+                }
+
+            }*/
+
+            var gtime = 10;
+            var gopacityset = 0.3;
+
+            function gesturesOpacity() {
+                console.log("gestures opacity started")
+                if (gtime < 100) {
+                    gopacityset -= 0.01                
+                    var gestures = document.getElementById( 'gestures' );
+                    gestures.style.opacity = gopacityset;
+                    gtime ++;
+                    console.log(gtime)
+                    setTimeout(gesturesOpacity, 50);
+                } if (gtime == 60){
+                    clearTimeout(gtime);
+                    console.log("gestures opacity done")
+                    gestures.remove();
+
+
+
+                }
+
+            }
+
+
+            typeWriterIntro(); 
+            var stime = 0;
+            var opacityset = 0;
+            function socialsOpacity1() {
+                //console.log("opacity started")
+                if (stime <= 30) {
+                    opacityset += 0.01                
+                    var socials = document.getElementById( 'socials' );
+                    socials.style.opacity = opacityset;
+                    stime ++;
+                    //console.log(socials.style.opacity, stime, opacityset)
+                    setTimeout(socialsOpacity1, 3000);
+                }
+
+            }
+            /*function socialsOpacity2() {
+                var socials = document.getElementById( 'socials' );
+                socials.style.opacity = 0.15;
+
+            }
+
+            function socialsOpacity3() {
+                var socials = document.getElementById( 'socials' );
+                socials.style.opacity = 0.3;
+
+            }*/
+
+
+            //socialsOpacity1();
+  
+
+        //USER_IS_TOUCHING == false;
+
+
+        /*const onFirstTouch = () => {
+            
+            //add a variable to the window object so we can use this globally in our script
+            window.USER_IS_TOUCHING = true;
+            
+            //adds a class to the body so you can define different styles in the css for touchscreens
+            document.body.classList.add('touchscreen');
+            
+            //Once the user has touched the screen once we know it's a touchscreen so we don't have to trigger the function again!
+            window.removeEventListener('touchstart',onFirstTouch);
+            
+        }
+
+        window.addEventListener('touchstart',onFirstTouch); */
+
+
+        //window.addEventListener('touchstart',onFirstTouch);
+
+
+
+
+
+        var scene, camera, renderer, mesh, 
+        objLoader, mtlLoader, GLTFLoader, keyLight, 
+        fillLight, backLight, testLight, testLight1, testLight2, testLight3,
+         testLight4, testLight5, testLight6, testLight7, testLight8,
+        light1, sphereGeometry, sphereMaterial, 
+        sphere, planeGeometry, planeMaterial, plane, textureloader, loader, 
+        stageSpot, stageSpot1, stageSpot2, stageSpot3,stagesurfacemtl,
+        pivot, fancase1mtl, fancase1mesh, fan1mtl, fan1mesh, fan1, loadingtextmesh;
+        
+
+        var meshFloor;
+        var onHandset = true;
+        var keyboard = {};
+        var player = { height:450, speed:5, turnSpeed:Math.PI*0.01 };
+        var USE_WIREFRAME = false;
+        var lightColour = 0xD98400; //D98400
+        var lightDistance = 10//10; //3
+        var lightDecay = 700; //280
+        var StageLightColour = 0x3333ff;
+        var StageLightDistance = 9; //18
+        var StageLightDecay = 450; //350
+        var spotLightintensity = 2;
+        var spotLightangle = 0.3;
+        var spotLightpenumbra = 0.5;
+        var spotLightdistance = 0;
+        var spotLightdecay = 0;
+        var count1 = {var:0};
+        var wd = "Bigscene";
+        var startfan = false;
+        var fan1parent = new THREE.Group();
+        var fan1parent1 = new THREE.Group();
+        var fan2parent = new THREE.Group();
+        var fan2parent1 = new THREE.Group();
+        var LOADING_MANAGER = null;
+        var RESOURCES_LOADED = false;
+        var startSpin = Boolean;
+        var playvid = Boolean;
+        var vidnotplaying = true;
+        var textloader = new THREE.OBJLoader();
+
+
+        
+
+
+        
+
+        var loadingScreen = {
+            scene: new THREE.Scene(),
+            camera: new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1,10000),
+            box: new THREE.Mesh(
+                new THREE.BoxGeometry(0.2,0.2,0.2),
+                new THREE.MeshBasicMaterial({ color: 0x4444ff, transparent: true, opacity: 0})
+            ),
+            wiremtl: new THREE.MeshBasicMaterial({ color: 0xff9900, wireframe: true}),
+
+            wirebox: new THREE.Mesh(
+                new THREE.BoxGeometry(3,3,5), new THREE.MeshBasicMaterial({ color: 0xff9900, wireframe: false})),
+
+            textloader : new THREE.OBJLoader(),
+
+            loadingtext: new THREE.Object3D()
+
+
+        };
+
+
+        ///////CHATROOM
+
+
+        /*function updateChat() {
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", "data.php", true);
+
+            ajax.send();
+
+            ajax.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    //console.log(this.responseText);
+                    var data = JSON.parse(this.responseText);
+                    //console.log(data);
+                    document.getElementById( 'chat-area' ).innerHTML = "";
+                    for(var a = 0; a < data.length; a++) {
+                        document.getElementById( 'chat-area' ).innerHTML += data[a].username + " : " + data[a].message + '<br>';
+                    }
+                    document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+                }
+            };
+            console.log("chatupdated");
+        }*/
+
+        /*
+
+        var chatLength = 0;
+
+        function updateChat() {  
+            //console.log("chatLength =", chatLength);
+     
+            $.ajax({
+                type: "POST",
+                url: "data.php",
+                data: {  
+                    'function': 'update',
+                        },
+                dataType: "json",
+                success: function(data){
+                    //var data = JSON.parse(this.responseText);
+                    //chatLength = data.length;
+                    //console.log("data.length =", data.length);
+
+                    document.getElementById( 'chat-area' ).innerHTML = "";
+                    //for(var a = 0; a < data.length; a++) {
+                    //    document.getElementById( 'chat-area' ).innerHTML += data[a].username + " : " + data[a].message + '<br>';
+                    //}
+                    if (data.length > chatLength) {
+                        for(var a = 0; a < data.length; a++) {
+                            document.getElementById( 'chat-area' ).innerHTML += data[a].username + ": " + data[a].message + '<br>';
+                        }
+                        chatLength = data.length;
+
+                        if (chatLength == 0) {
+                            chatLength = data.length;
+                        }
+                        scrollChatArea();
+                    } else if (data.length == chatLength){
+                        for(var a = 0; a < data.length; a++) {
+                            document.getElementById( 'chat-area' ).innerHTML += data[a].username + ": " + data[a].message + '<br>';
+                        }
+                        chatLength = data.length;
+
+
+                    }
+                },
+                });
+        }
+
+
+
+
+
+        //window.setInterval(updateChat, 3000);
+
+        var userName = "User"
+        var typeboxinput = "";
+        var userNamechosen = false;
+        //document.getElementById( 'inputform' ).elements[0].value = "<Enter User Name>";
+
+        function chooseUser() {
+            userName = document.getElementById( 'inputform' ).elements[0].value;
+            userNamechosen = true;
+            console.log('userchosen : ' + userName);
+            document.getElementById( 'inputform' ).elements[0].value = "";
+            document.getElementById( 'inputform' ).elements[0].placeholder = "<Enter Message>";
+            var chatarea = document.getElementById("chat-area");
+            chatarea.scrollTop = chatarea.scrollHeight;
+            //document.getElementById('inputform')placeholder= "&lt Enter User Name &gt"
+
+
+
+        }
+
+        //function getChat() {
+        //    var intext = document.getElementById( 'inputform' ).elements[0].value;
+        //    typeboxinput += intext;
+            //document.getElementById( 'chat-area' ).innerHTML += '<br>' + userName + ": " + typeboxinput;
+            ////console.log(intext);
+            //var chatarea = document.getElementById("chat-area");
+            //chatarea.scrollTop = chatarea.scrollHeight;
+            //typeboxinput = "";
+            //document.getElementById( 'inputform' ).elements[0].value = "";
+        //}
+
+        //send the message
+        function sendChat(message, userName) {  
+            //console.log("sendchat");
+     
+            //updateChat();
+            $.ajax({
+                type: "POST",
+                url: "data.php",
+                data: {  
+                        'function' : 'send',
+                        'message': message,
+                        'username': userName,
+                        },
+                dataType: "json",
+                success: function(){
+                    updateChat();
+                    setTimeout(scrollChatArea,1000);
+                    document.getElementById( 'inputform' ).elements[0].value = "";
+                    //document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+
+
+                },
+                });
+        }
+
+        function addEmail(emailinput) {  
+            //console.log("sendchat");
+     
+            //updateChat();
+            $.ajax({
+                type: "POST",
+                url: "data.php",
+                data: {  
+                        'function' : 'addEmail',
+                        'useremail': emailinput,
+                        },
+                dataType: "json",
+                success: function(){
+                    document.getElementById( 'mailtext' ).innerHTML = "Thankyou, you have been added.";
+                    document.getElementById( 'submitmailbuttonhit' ).style.display = "none";
+                    document.getElementById( 'mailinputform' ).style.display = "none";
+
+
+                    //document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+
+
+                },
+                });
+        }
+
+        function submitEmail() {
+            addEmail(document.getElementById( 'mailinputform' ).elements[0].value);
+        }
+
+
+        function scrollChatArea () {
+            var chatarea = document.getElementById('chat-area');
+            chatarea.scrollTop = chatarea.scrollHeight;
+        }
+
+
+        function submitButton() {
+            if (userNamechosen == false) {
+                chooseUser();
+                window.scrollTo(0, 0); 
+
+            } else {
+                //getChat();
+                sendChat(document.getElementById( 'inputform' ).elements[0].value, userName);
+                window.scrollTo(0, 0); 
+
+                //document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+
+            }
+        }
+
+        var commentButton = document.getElementById( 'commentbuttonhit' );
+        commentButton.addEventListener( 'click', submitButton);
+
+        function callMailOverlay() {
+            document.getElementById("mailoverlay").style.display = "block";
+            document.getElementById("mailtable").style.display = "block";
+
+        }
+
+        function hideMailOverlay() {
+            document.getElementById("mailoverlay").style.display = "none";
+            document.getElementById("mailtable").style.display = "none";
+            window.scrollTo(0, 0); 
+
+
+        }
+        var sharevisible = false;
+
+        function showShareOverlay() {
+            document.getElementById("shareoverlay").style.display = "block";
+            sharevisible = true;
+            console.log('showshare');
+        }
+
+        function hideShareOverlay() {
+            document.getElementById("shareoverlay").style.display = "none";
+            sharevisible = false;
+            console.log('hideshare');
+
+        }
+
+        function clickShareOverlay() {
+            if ( sharevisible == true) {
+                hideShareOverlay()
+            } else {
+                showShareOverlay()
+            }
+        }
+
+        */
+
+
+        
+
+
+
+        
+
+        
+
+
+        function addLights() {            
+            
+            
+            //////////////// left light 1
+
+            testLight = new THREE.PointLight(lightColour, lightDistance, lightDecay);//1, 750
+            testLight.position.set(351,602,471);
+            //testLight.castShadow = true;
+            testLight.shadow.camera.near = 100;
+            testLight.shadow.camera.far = 1000;
+
+            scene.add(testLight);
+            var sphereSize = 9;
+            var pointLightHelper = new THREE.PointLightHelper( testLight, sphereSize );
+            //scene.add( pointLightHelper );
+
+
+
+            //////////////// left light 2
+
+            testLight1 = new THREE.PointLight(lightColour, lightDistance, lightDecay);//750
+            testLight1.position.set(9,626,834);
+            //testLight1.castShadow = true;
+            testLight1.shadow.camera.near = 100;
+            testLight1.shadow.camera.far = 1000;
+
+            scene.add(testLight1);
+
+
+
+            //////////////// left light 3
+
+            testLight3 = new THREE.PointLight(lightColour, lightDistance, lightDecay);//750
+            testLight3.position.set(-414,618,884);
+            //testLight3.castShadow = true;
+            testLight3.shadow.camera.near = 100;
+            testLight3.shadow.camera.far = 1000;
+
+            scene.add(testLight3);
+            var sphereSize = 40;
+            var pointLightHelper = new THREE.PointLightHelper( testLight3, sphereSize );
+            //scene.add( pointLightHelper );
+
+
+
+            //////////////// left light 4
+
+            testLight4 = new THREE.PointLight(lightColour, lightDistance, lightDecay);//750
+            testLight4.position.set(-821,625,601);
+            //testLight4.castShadow = true;
+            testLight4.shadow.camera.near = 100;
+            testLight4.shadow.camera.far = 1000;
+
+            scene.add(testLight4);
+            var sphereSize = 40;
+            var pointLightHelper = new THREE.PointLightHelper( testLight4, sphereSize );
+            //scene.add( pointLightHelper );
+
+
+
+            //////////////// right light 1
+
+            testLight5 = new THREE.PointLight(lightColour, lightDistance, lightDecay);//750
+            testLight5.position.set(127,522,-297);
+            //testLight5.castShadow = true;
+            testLight5.shadow.camera.near = 100;
+            testLight5.shadow.camera.far = 1000;
+
+            scene.add(testLight5);
+            var sphereSize = 40;
+            var pointLightHelper = new THREE.PointLightHelper( testLight5, sphereSize );
+            //scene.add( pointLightHelper );
+
+
+            ////////////////// bar light
+
+            testLight2 = new THREE.PointLight(lightColour,3, lightDecay);//750
+            testLight2.position.set(-747,531,-211);
+            //testLight5.castShadow = true;
+            testLight2.shadow.camera.near = 100;
+            testLight2.shadow.camera.far = 1000;
+
+            scene.add(testLight2);
+            var sphereSize = 300;
+            var pointLightHelper = new THREE.PointLightHelper( testLight2, sphereSize );
+            //scene.add( pointLightHelper );
+
+
+
+
+            //////////////// stage light 1
+
+            testLight6 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightDistance, StageLightDecay);//750
+            testLight6.position.set(-116,737,202);
+            //testLight6.castShadow = true;
+            //testLight6.shadow.camera.near = 100;
+            //testLight6.shadow.camera.far = 1000;
+
+            scene.add(testLight6);
+            //var sphereSize = 40;
+            //var pointLightHelper = new THREE.PointLightHelper( testLight6, sphereSize );
+            //scene.add( pointLightHelper );
+
+
+
+            //////////////// stage light 2
+
+            testLight7 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightDistance, StageLightDecay);//750
+            testLight7.position.set(-378,737,138);
+            //testLight6.castShadow = true;
+            //testLight7.shadow.camera.near = 100;
+            //testLight7.shadow.camera.far = 1000;
+
+            scene.add(testLight7);
+            //var sphereSize = 40;
+            //var pointLightHelper = new THREE.PointLightHelper( testLight7, sphereSize );
+            //scene.add( pointLightHelper );
+
+
+
+            //////////////// stage light 3
+
+            testLight8 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightDistance, StageLightDecay);//750
+            testLight8.position.set(-227,737,367);
+            //testLight6.castShadow = true;
+            //testLight8.shadow.camera.near = 100;
+            //testLight8.shadow.camera.far = 1000;
+
+            scene.add(testLight8);
+
+
+
+            ////////////////// stage spot 1
+
+            stageSpot = new THREE.SpotLight(0xffffff,0);
+            stageSpot.intensity = 0;
+            stageSpot.angle = 0.5;
+            stageSpot.penumbra = 1;
+            stageSpot.distance = 1;
+            stageSpot.decay = 0;
+            stageSpot.position.set(-86,529,10);
+            stageSpot.target.position.set(-704, 300, 682)//-704, 300, 682);
+            //spotlight.target.position.set(200,-130,400);
+            scene.add(stageSpot);
+            scene.add(stageSpot.target);
+            //lightHelper = new THREE.SpotLightHelper( stageSpot );
+			//scene.add( lightHelper );
+
+            ////////////////// stage spot 2
+
+            stageSpot1 = new THREE.SpotLight(0xffffff,0);
+            stageSpot1.intensity = 0;
+            stageSpot1.angle = 0.5;
+            stageSpot1.penumbra = 1;
+            stageSpot1.distance = 1;
+            stageSpot1.decay = 0;
+            stageSpot1.position.set(-452,527,-1);
+            stageSpot1.target.position.set(130, 300, 748);
+            //spotlight.target.position.set(200,-130,400);
+            scene.add(stageSpot1);
+            scene.add(stageSpot1.target);
+            //lightHelper = new THREE.SpotLightHelper( stageSpot );
+			//scene.add( lightHelper );
+
+
+            ////////////////// stage spot 3
+
+            stageSpot2 = new THREE.SpotLight(0xffffff,0);
+            //stageSpot2.intensity = 0;
+            stageSpot2.angle = 0.5;
+            stageSpot2.penumbra = 1;
+            stageSpot2.distance = 1;
+            stageSpot2.decay = 0;
+            stageSpot2.position.set(-326,527,501);
+            stageSpot2.target.position.set(148, 300, -286);
+            //spotlight.target.position.set(200,-130,400);
+            scene.add(stageSpot2);
+            scene.add(stageSpot2.target);
+            //lightHelper = new THREE.SpotLightHelper( stageSpot );
+			//scene.add( lightHelper );
+
+            
+            ////////////////// stage spot 4
+
+            stageSpot3 = new THREE.SpotLight(0xffffff,0);
+            //stageSpot3.intensity = 0;
+            stageSpot3.angle = 0.5;
+            stageSpot3.penumbra = 1;
+            stageSpot3.distance = 1;
+            stageSpot3.decay = 0;
+            stageSpot3.position.set(-49,528,388);
+            stageSpot3.target.position.set(-766, 300, -409);
+            //spotlight.target.position.set(200,-130,400);
+            scene.add(stageSpot3);
+            scene.add(stageSpot3.target);
+            //lightHelper = new THREE.SpotLightHelper( stageSpot );
+			//scene.add( lightHelper );
+
+
+        }
+        
+
+        function playVideo() {
+            video.play();
+            videoscreen.play();
+
+        }
+
+        /*var currentFrame = document.getElementById('currentFrame');
+        var holovideo = VideoFrame({
+            id : 'video',
+            frameRate: 24,
+            callback : function(frame) {
+                console.log('callback response: ' + response);
+            }
+        });*/
+
+        //console.log(holovideo.get());
+
+        /*document.getElementById('play-pause').addEventListener('click', function(e){
+            if(video.video.paused){
+                video.video.play();
+                video.listen('frame');
+                e.target.innerHTML = 'Pause';
+            }else{
+                video.video.pause();
+                video.stopListen();
+                e.target.innerHTML = 'Play';
+            }
+        });*/
+
+
+
+
+        /////////////////////Init
+
+
+
+
+
+        function init(){
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            
+            //renderer.shadowMap.enabled = true;
+            //renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            //renderer.setSize( window.innerWidth, window.innerHeight );
+
+            renderer.setPixelRatio( window.devicePixelRatio* 0.5 );
+			renderer.setSize( window.innerWidth, window.innerHeight );
+            
+            document.body.appendChild(renderer.domElement);
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.1, 3000 );
+
+
+
+            controls = new THREE.OrbitControls( camera, renderer.domElement );
+            
+
+            controls.autoRotate = true;
+	        controls.autoRotateSpeed = 0.5; // 30 seconds per round when fps is 60
+
+            controls.target = new THREE.Vector3(-260,550,260);
+            camera.position.set(900, 498, -20);
+
+            controls.minDistance = 100;
+            controls.maxDistance = 1200;
+
+            controls.maxPolarAngle = 1.7;
+            controls.minPolarAngle = -2;
+
+            controls.keyPanSpeed = 50;
+            controls.PanSpeed = 50;
+
+            controls.enableDamping = true;
+            controls.dampingFactor = 1;
+
+            controls.update();            
+            
+
+            loadingScreen.box.position.set(0,0,5);
+            loadingScreen.camera.position.set(-1000,0,5);
+
+            
+            //loadingScreen.camera.lookAt(loadingScreen.box.position);
+            
+            loadingScreen.scene.add(loadingScreen.box);
+
+            textloader.load( 'assets/loadingtext3.obj', function (loadingtextmesh) {
+                loadingtextmesh.traverse( function ( node ) {                
+                    if ( node.isMesh ) node.material = new THREE.MeshBasicMaterial({ color: 0xff9900, wireframe: false});
+                })
+                //loadingtext.position.set(0,0,5);
+
+                //loadingScreen.scene.add(loadingtextmesh);
+                loadingtextmesh.rotation.y =  -90 * Math.PI / 180
+                loadingtextmesh.position.set(0,0,-30);
+                //loadingtextmesh.scale.set(0.2,0.2,0.2);
+
+
+                loadingtext = loadingtextmesh;
+                //loadingScreen.scene.add(loadingtext);
+
+
+
+            });
+            //loadingScreen.loadingtext.scale.set(0.1,0.1,0.1);
+
+
+            loadingScreen.camera.lookAt(loadingScreen.loadingtext.position);
+
+
+            loadingManager = new THREE.LoadingManager();
+            var count = 2;
+            var textcount = 1
+            var overrideint = 16
+            //loadingScreen.scene.add(loadingScreen.wirebox);
+            loadingScreen.wirebox.position.set(0,-40,-50);
+
+            addLine = function(lineint, linenumber, prevlinenumber) {
+                window[linenumber].style.display = "block";
+                window[prevlinenumber].style.display = "block";
+
+                if (lineint <= overrideint) {
+                    window[prevlinenumber].textContent = window[prevlinenumber].textContent + "[COMPLETE]"
+
+                } else {
+                    window[prevlinenumber].textContent = window[prevlinenumber].textContent + "[OVERRIDDEN]"
+                }
+                console.log(linenumber, prevlinenumber, lineint)
+
+            }
+
+            //var i = 0;
+            //var txt = 'Lorem ipsum typing effect!'; /* The text */
+            //var typeSpeed = 100; /* The speed/duration of the effect in milliseconds */
+            
+            //function typeWriter(paranumber) {
+            //    if (i < window[paranumber].length) {
+            //        document.getElementById("introtext").innerHTML += window[paranumber].charAt(i);
+            //        i++;
+            //        setTimeout(typeWriter, typeSpeed);
+            //    }
+            //}
+            //typeWriter();
+
+
+
+            loadingManager.onProgress = function(item,loaded,total){
+                console.log(item,loaded,total);
+                //loadingScreen.scene.add(loadingScreen.wirebox);
+                //loadingScreen.wirebox.position.set(0,-30,0);
+
+                loadingScreen.wirebox.scale.z = count;
+                loadingScreen.wirebox.position.z += 2*count;
+
+
+
+                count += 2.5;
+                textcount += 1;
+                addLine(loaded, "line" + loaded,"resline" + (loaded-1) )
+                //typeWriter("para" + loaded)
+
+
+            };
+
+            loadingManager.onLoad = function() {
+                console.log("loaded all resources");
+                RESOURCES_LOADED = true;
+                //var count1 = { var : 0};
+
+                addLights();
+                startTimeline();
+                //playVideo();
+                var loadingtext = document.getElementById( 'loadingtext' );
+                loadingtext.style.display = "none";
+                var overlay = document.getElementById( 'overlay' );
+                overlay.remove();
+                var socials = document.getElementById( 'socials' );
+                socials.style.display = "block";
+                var gestures = document.getElementById( 'gestures' );
+                gestures.style.display = "block";
+                var chatroom = document.getElementById( 'chatroom' );
+
+                // Show chatroom + Counter
+
+
+                //chatroom.style.display = "block";
+                //document.getElementById( 'counter' ).style.display = "block";
+
+                //setTimeout(scrollChatArea,100);
+                //window.setInterval(updateChat, 3000);
+
+
+
+
+
+                window.scrollTo(0, 0); 
+
+
+            }
+
+
+            var spotLight = new THREE.SpotLight(0x3333ff);
+            spotLight.intensity = 1;
+            spotLight.angle = 0.3;
+            spotLight.penumbra = 0.5;
+            spotLight.distance = 1;
+            spotLight.decay = 0;
+            spotLight.position.set(0,700,0);
+            spotLight.target.position.set(-900, 0, 900);
+            //spotlight.target.position.set(200,-130,400);
+            //scene.add(spotLight);
+            scene.add(spotLight.target);
+            lightHelper = new THREE.SpotLightHelper( spotLight );
+			//scene.add( lightHelper );
+
+
+            mtlLoader = new THREE.MTLLoader(loadingManager);
+
+            textureLoader = new THREE.TextureLoader(loadingManager);
+            //var floortex = textureLoader.load('assets/floor_tex.jpg');
+            //var floordis = textureLoader.load('assets/floor_dis2.jpg');
+
+            
+            //var walltex = textureLoader.load('assets/wall_tex2.jpg');
+            var ceilingtex = textureLoader.load('assets/ceilingtex1.jpg');
+
+            var walltex = textureLoader.load('assets/ceilingtex1.jpg');
+
+            var floortex = textureLoader.load('assets/ceilingtex1.jpg');
+
+
+
+            var centertex = textureLoader.load('assets/ceilingtex1.jpg');
+            //var centernormaltex = textureLoader.load('assets/ceilingnormaltex.jpg');
+
+
+
+            var ceilingnormaltex = textureLoader.load('assets/ceilingnormaltex.jpg');
+
+            var curtaintex = textureLoader.load('assets/noisetex.jpg');
+            var curtainnormaltex = textureLoader.load('assets/leathernormaltex.jpg');
+            //var stagetex = textureLoader.load('assets/noisenormaltex.jpg');
+            
+
+            //var stagetex = textureLoader.load('assets/stagetex.jpg');
+            var video;
+
+            walltex.wrapS = THREE.RepeatWrapping;
+            walltex.wrapT = THREE.RepeatWrapping;
+            walltex.repeat.set(40,40);
+
+            curtaintex.wrapS = THREE.RepeatWrapping;
+            curtaintex.wrapT = THREE.RepeatWrapping;
+            curtaintex.repeat.set(3,7.5);
+
+            curtainnormaltex.wrapS = THREE.RepeatWrapping;
+            curtainnormaltex.wrapT = THREE.RepeatWrapping;
+            curtainnormaltex.repeat.set(3,7.5);
+
+            ceilingtex.wrapS = THREE.RepeatWrapping;
+            ceilingtex.wrapT = THREE.RepeatWrapping;
+            ceilingtex.repeat.set(20,20);
+
+            ceilingnormaltex.wrapS = THREE.RepeatWrapping;
+            ceilingnormaltex.wrapT = THREE.RepeatWrapping;
+            ceilingnormaltex.repeat.set(10,10);
+
+            centertex.wrapS = THREE.RepeatWrapping;
+            centertex.wrapT = THREE.RepeatWrapping;
+            centertex.repeat.set(2,20);
+
+            //centernormaltex.wrapS = THREE.RepeatWrapping;
+            //centernormaltex.wrapT = THREE.RepeatWrapping;
+            //centernormaltex.repeat.set(1,1);
+
+            walltex.wrapS = THREE.RepeatWrapping;
+            walltex.wrapT = THREE.RepeatWrapping;
+            walltex.repeat.set(5,20);
+
+            floortex.wrapS = THREE.RepeatWrapping;
+            floortex.wrapT = THREE.RepeatWrapping;
+            floortex.repeat.set(5,5);
+
+
+
+
+            
+
+            //var plane = new THREE.PlaneGeometry(1200,1200,10,10);
+            //var floormtl = new THREE.MeshStandardMaterial();
+            //floormtl.map = floortex;
+            //floormtl.colour = 0x000000;
+            //floormtl.displacementMap = floordis;
+            //floormtl.displacementScale = 3;
+            //floormtl.displacementBias = 1;
+            //floormtl.metalness = 0.3;
+            //floormtl.roughness = 1;
+            //var floorplane = new THREE.Mesh(plane, floormtl);
+            //floorplane.position.y = 300;  
+            //floorplane.rotation.x = -Math.PI/2; 
+            //floorplane.receiveShadow = true;
+            //scene.add(floorplane);    
+
+            
+            
+            ////////////// hologram
+            
+            video = document.getElementById( 'video' );
+            video.load();
+            
+            
+            var vidplane = new THREE.PlaneGeometry(193,193,10,10);
+            var vidtexture = new THREE.VideoTexture( video );
+
+            //vidtexture.wrapS = THREE.RepeatWrapping;
+            //vidtexture.wrapT = THREE.RepeatWrapping;
+            //vidtexture.repeat.set(0.5,0.5)
+            //vidtexture.offset.set(0,0.49);
+
+
+
+            /*
+            videoalpha = document.getElementById( 'video' );
+            videoalpha.load();
+			
+            var vidalphatexture = new THREE.VideoTexture( videoalpha );
+
+            vidalphatexture.wrapS = THREE.RepeatWrapping;
+            vidalphatexture.wrapT = THREE.RepeatWrapping;
+            vidalphatexture.repeat.set(0.5,0.5)
+            vidalphatexture.offset.set(0,-0.01);
+            */
+
+
+
+            
+            var vidplanemtl = new THREE.MeshPhongMaterial(loadingManager);
+            vidplanemtl.map = vidtexture;
+            vidplanemtl.alphaTest = 0.1;
+            vidplanemtl.alphaMap = vidtexture;
+            vidplanemtl.transparent = true;
+            vidplanemtl.opacity = 1;
+
+
+
+            var vidplanemesh = new THREE.Mesh(vidplane, vidplanemtl);
+            vidplanemesh.position.set(-260, 535, 220);
+            vidplanemesh.rotation.y = 2.3;
+            scene.add(vidplanemesh); 
+
+            var vidplanemesh1 = new THREE.Mesh(vidplane, vidplanemtl);
+            vidplanemesh1.position.set(-260, 535, 220);
+            vidplanemesh1.rotation.y = 5.44;
+            scene.add(vidplanemesh1); 
+
+            //playVideo();
+
+            
+            
+            /////////////////// tv screens
+            
+
+            videoscreen = document.getElementById( 'videoscreen' );
+            videoscreen.load();
+            var vidscreenplane = new THREE.PlaneGeometry(60,60,10,10);
+            var vidscreentexture = new THREE.VideoTexture( videoscreen );
+            
+            var vidscreenplanemtl = new THREE.MeshStandardMaterial();
+            vidscreenplanemtl.map = vidscreentexture;
+            vidscreenplanemtl.alphaTest = 0;
+            vidscreenplanemtl.transparent = true;
+            vidscreenplanemtl.opacity = 0.3;
+            //vidscreenplanemtl.emissive = 0x3333ff;
+            //vidscreenplanemtl.map = ceilingtex;
+            //vidscreenplanemtl.emissiveIntensity = 4;
+
+
+
+
+            //var vidscreenplanemesh = new THREE.Mesh(vidscreenplane, vidscreenplanemtl);
+            //vidscreenplanemesh.position.set(-100,500,0); //(-829, 413, 899);
+            //vidscreenplanemesh.rotation.set(0.3,2.5,-1.7)//(-0.663, 3.333, -1.57);
+            //scene.add(vidscreenplanemesh);  
+
+            
+            //var sphere = new THREE.SphereBufferGeometry();
+            //var box = new THREE.BoxHelper( vidscreenplanemesh, 0xffff00 );
+            //scene.add( box );
+
+            
+
+            ////////////////////   floor
+            
+            var floormtl = new THREE.MeshLambertMaterial({
+                map : floortex,
+                color: 0x0d0d0d
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newfloor.obj', function ( floormesh ) {
+                            
+
+                floormesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = floormtl;             
+                    node.castShadow = true;                       
+                    node.receiveShadow = true;
+                } );
+
+                floormesh.position.y = 300;
+                scene.add( floormesh );
+            });
+
+            
+
+            ////////////////////   walls
+            
+            
+            var wallscentremtl = new THREE.MeshLambertMaterial({
+                map : walltex,
+                //shininess : 0,
+                color: 0x191919,
+                //normalMap: curtainnormaltex,
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newwalls1.obj', function ( wallscentremesh ) {
+                            
+
+                wallscentremesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = wallscentremtl;             
+                    node.castShadow = true;
+                } );
+
+                wallscentremesh.position.y = 300;
+                scene.add( wallscentremesh );
+            });
+
+            
+
+            ////////////////////   centre
+            
+
+            var centremtl = new THREE.MeshLambertMaterial({
+                map : centertex,
+                //shininess : 1,
+                color: 0x191919,
+                //normalMap: centernormaltex,
+                //normalScale: new THREE.Vector2( 0, 1 )
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newcenter.obj', function ( centremesh ) {
+                            
+
+                centremesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = centremtl;             
+                    node.castShadow = true;
+                } );
+
+                centremesh.position.y = 300;
+                scene.add( centremesh );
+            });
+
+            
+
+            
+
+
+
+            ////////////////////   stools + tables
+            
+
+            var stoolstablesmtl = new THREE.MeshStandardMaterial({
+                //map : ceilingtex,
+                metalness : 0.8,
+                roughness : 0.2,
+                color: 0x1c1c1c,
+                //emissiveIntensity: 100
+                
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newstoolstables1.obj', function ( stoolstablesmesh ) {
+                            
+
+                stoolstablesmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = stoolstablesmtl;             
+
+                } );
+
+                stoolstablesmesh.position.y = 300;
+                scene.add( stoolstablesmesh );
+            });
+            
+            ////////////////////   chair tops
+
+            var chairtopmtl = new THREE.MeshStandardMaterial({
+                map : curtaintex,
+                metalness : 0.5,
+                roughness : 0.5,
+                color: 0x000000,
+                emissive: 0x800080,
+                //emissiveIntensity: 100
+                emissiveMap: curtainnormaltex,
+                emissiveIntensity : 0.1,
+                normalMap: curtainnormaltex,
+                normalScale: new THREE.Vector2( 0, 0.5 )
+
+            });
+
+
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newchairtops.obj', function ( chairtopmesh ) {
+                            
+
+                chairtopmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = chairtopmtl;             
+
+                } );
+
+                chairtopmesh.position.y = 300;
+                scene.add( chairtopmesh );
+            });
+
+            ////////////////////   bar
+
+            var barmtl = new THREE.MeshStandardMaterial({
+                //map : ceilingtex,
+                metalness : 0.95,
+                roughness : 0,
+                color: 0x8c8c8c,
+                normalMap: ceilingnormaltex,
+                normalScale: new THREE.Vector2( 0, 0.4 )
+
+
+                //emissiveIntensity: 100
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newbar1.obj', function ( barmesh ) {
+                            
+
+                barmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = barmtl;             
+
+                } );
+
+                barmesh.position.y = 300;
+                scene.add( barmesh );
+            }); 
+
+            ////////////////////   metal
+
+                var metalmtl = new THREE.MeshPhongMaterial({
+                map : floortex,
+                shininess : 30,
+                color: 0x404040,
+                //emissiveIntensity: 100
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newmetal11.obj', function ( metalmesh ) {
+                            
+
+                metalmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = metalmtl;             
+
+                } );
+
+                metalmesh.position.y = 300;
+                scene.add( metalmesh );
+            }); 
+
+            ////////////////////   speakers    
+            
+            var speakersmtl = new THREE.MeshPhongMaterial({
+                //map : ceilingtex,
+                shininess : 15,
+                color: 0x000000,
+                //emissiveIntensity: 100
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newspeakers.obj', function ( speakersmesh ) {
+                            
+
+                speakersmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = speakersmtl;             
+                    node.castShadow = true;
+                    node.receiveShadow = true;
+                } );
+
+                speakersmesh.position.y = 300;
+                scene.add( speakersmesh );
+            });
+            
+
+            ////////////////////   tv + light metal
+
+            var tvlightsmtl = new THREE.MeshStandardMaterial({
+                map : floortex,
+                metalness : 0.5,
+                color: 0x595959,
+                //emissiveIntensity: 100
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newtvlightmetal4.obj', function ( tvlightsmesh ) {
+                            
+
+                tvlightsmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = tvlightsmtl;             
+
+                } );
+
+                tvlightsmesh.position.y = 300;
+                scene.add( tvlightsmesh );
+            });  
+            
+
+            ////////////////////   light tops
+
+            var lighttopsmtl = new THREE.MeshStandardMaterial({
+                //map : ceilingtex,
+                transparent : true,
+                opacity : 0.68,
+                metalness : 0.6,
+                roughness : 0.2,
+                color: 0xff6600,
+                //emissiveIntensity: 100
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newlighttops1.obj', function ( lighttopsmesh ) {
+                            
+
+                lighttopsmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = lighttopsmtl;
+                                 
+                    node.castShadow = true;
+                    node.receiveShadow = true;             
+
+                } );
+
+                lighttopsmesh.position.y = 300;
+                scene.add( lighttopsmesh );
+            });  
+
+            ////////////////////   tv screens
+
+            var tvscreensmtl = new THREE.MeshPhongMaterial({
+                shininess : 30,
+
+                //roughness : 0,
+                color: 0x000000,
+                //specular: 0x000000
+                //emissiveIntensity: 100
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newtvscreens.obj', function ( tvscreensmesh ) {
+                            
+
+                tvscreensmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = tvscreensmtl;             
+
+                } );
+
+                // Add the model to the scene.
+                tvscreensmesh.position.y = 300;
+                scene.add( tvscreensmesh );
+            });  
+
+            ////////////////////   cables
+            
+
+            var cablesmtl = new THREE.MeshPhongMaterial({
+                //map : ceilingtex,
+                //envMap : ceilingtex,
+                //roughness : 0.5,
+                //metalness : 1,
+                color: 0x000000,
+                shininess : 10, 
+                //ambient: 0x030303, 
+                //specular: 0x009900,
+                //refractionRatio : 0.5,
+                //emissiveIntensity: 100
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newcables2.obj', function ( cablesmesh ) {
+                            
+
+                cablesmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = cablesmtl;             
+
+                } );
+
+                cablesmesh.position.y = 300;
+                scene.add( cablesmesh );
+            });  
+            
+
+            ////////////////////   stage surface
+            
+            stagesurfacemtl = new THREE.MeshStandardMaterial({
+                //map : curtaintex,
+                metalness: 0,
+                roughness : 1,
+                color: 0x000000,
+                emissiveMap: vidscreentexture,
+                emissiveIntensity: 1,
+                emissive: 'rgb(26%,26%,255%)'//0x1a1aff,
+
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newstagesurface.obj', function ( stagesurfacemesh ) {
+                            
+
+                stagesurfacemesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = stagesurfacemtl;             
+
+                } );
+
+                stagesurfacemesh.position.y = 300;
+                scene.add( stagesurfacemesh );
+            }); 
+
+
+            
+            ////////////////////// FANS
+
+            scene.add(fan1parent);
+            fan1parent.add(fan1parent1);
+            
+            scene.add(fan2parent);
+            fan2parent.add(fan2parent1);
+
+
+            startfan = true;
+            fan1parent.position.set(-62,503,-1);
+            fan1parent.rotation.set(2.059,0.174,-0.418)//(0.174,2.059,0.418);
+
+            fan2parent.position.set(-322,585,516);
+            fan2parent.rotation.set(116 * Math.PI / 180, 92 * Math.PI / 180, -223 * Math.PI / 180)//(0.174,2.059,0.418);
+
+
+
+            var fan1boxgeo = new THREE.BoxGeometry(5,10,5);
+            var fan1boxmtl = new THREE.MeshLambertMaterial();
+
+            fan1box = new THREE.Mesh(fan1boxgeo, fan1boxmtl);
+
+
+            //fan2parent1.add(fan1box);
+
+            ////////////////////   fan case 1
+
+            var fancase1mtl = new THREE.MeshPhongMaterial({
+                map : walltex,
+                shininess : 20,
+                color: 0xbfbfbf,
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newfancase1.obj', function ( fancase1mesh ) {
+                            
+
+                fancase1mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = fancase1mtl;             
+
+                } );
+
+                fancase1mesh.position.set(-62,503,-1);
+                fancase1mesh.rotation.set(2.059,0.174,-0.418)//(0.174,2.059,0.418);
+
+                fancase1 = fancase1mesh;
+                scene.add( fancase1 );
+            }); 
+
+            ////////////////////  fan 1
+
+
+            var fan1mtl = new THREE.MeshPhongMaterial({
+                map : walltex,
+                shininess : 20,
+                color: 0xbfbfbf,
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newfanblades2.obj', function ( fan1mesh ) {
+                            
+
+                fan1mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = fan1mtl;             
+
+                } );
+
+
+                fan1mesh.position.set(0,3,0)
+
+                fan1parent1.add( fan1mesh );
+            });
+
+
+            ////////////////////   fan case 2
+
+            var fancase2mtl = new THREE.MeshPhongMaterial({
+                map : walltex,
+                shininess : 20,
+                color: 0xbfbfbf,
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newfancase1.obj', function ( fancase2mesh ) {
+                            
+
+                fancase2mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = fancase2mtl;             
+
+                } );
+
+                fancase2mesh.position.set(-322,585,516);
+                fancase2mesh.rotation.set(116 * Math.PI / 180, 92 * Math.PI / 180, -223 * Math.PI / 180);
+
+                scene.add( fancase2mesh );
+            }); 
+
+            ////////////////////   fan 2
+
+            var fan2mtl = new THREE.MeshPhongMaterial({
+                map : walltex,
+                shininess : 20,
+                color: 0xbfbfbf
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/newfanblades1.obj', function ( fan2mesh ) {
+                            
+
+                fan2mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = fan2mtl;             
+
+                } );
+
+                fan2mesh.position.set(0,3,0);
+
+
+                fan2parent1.add(fan2mesh);
+                
+
+            });
+            
+            
+          
+            
+            //camera.position.set(400, player.height, -500);
+            //camera.lookAt(new THREE.Vector3(0,player.height,0));
+            
+
+            //var controls = new OrbitControls( camera, renderer.domElement );
+
+            //if (window.DeviceOrientationEvent) {
+                //onHandset = true //change
+            //}
+            /*
+            if (window.USER_IS_TOUCHING == true) {
+                //touchscreen-specific code
+                console.log("touchscreen");
+
+                var controls = new THREE.OrbitControls( camera, renderer.domElement );
+
+                controls.target = new THREE.Vector3(-260,550,260);
+                camera.position.set(900, 498, -20);
+
+                controls.minDistance = 0;
+                controls.maxDistance = 1200;
+
+                controls.maxPolarAngle = 1.7;
+                controls.minPolarAngle = -2;
+
+                controls.keyPanSpeed = 50;
+                controls.PanSpeed = 50;
+
+                controls.enableDamping = false;
+                controls.dampingFactor = 0.1;
+
+                controls.update();
+            
+            } else if ( window.USER_IS_TOUCHING == false){
+
+                console.log("computer");
+
+
+                var controls = new THREE.OrbitControls( camera, renderer.domElement );
+
+
+                controls.target = new THREE.Vector3(700,498,50);
+                camera.position.set(900, 498, -20);
+
+                controls.minDistance = 0;
+                controls.maxDistance = 3000;
+
+                controls.maxPolarAngle = 2;
+                controls.minPolarAngle = -2;
+
+                controls.keyPanSpeed = 50;
+                controls.PanSpeed = 50;
+
+                controls.keyPanSpeed = 50;
+                controls.PanSpeed = 50;
+
+                controls.enableDamping = false;
+                controls.dampingFactor = 0.1;
+                //controls.zoomSpeed = 50;
+
+                //controls.target = new THREE.Vector3(-260,550,260);
+                //camera.position.set(900, 498, -20);
+                //controls.minDistance = 0;
+                //controls.maxDistance = 1200;
+
+                //camera.lookAt(new THREE.Vector3(-269, 343, 228));
+
+                //controls.update() must be called after any manual changes to the camera's transform
+                //camera.position.set( 0, 20, 100 );
+                controls.update();
+
+            }
+            */
+            
+
+            //console.log(onHandset);
+            animate();
+
+            window.addEventListener( 'resize', onWindowResize, false );
+        };
+        function onWindowResize() {
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize( window.innerWidth, window.innerHeight );
+
+        }
+
+        function animate(){
+
+            //console.log(holovideo.get());
+
+            //if (vidnotplaying == true & videoalpha.currentTime >= 1 & RESOURCES_LOADED == true){
+            //    playvid = true;
+            //}
+
+            //if (playvid == true){
+                //video.play();
+                //videoscreen.play();
+
+                //videoalpha.currentTime = video.currentTime;
+                //video.currentTime = 1;
+                //startTimeline();
+
+
+
+            //    console.log(vidnotplaying);
+
+            //    vidnotplaying = false;
+            //}
+        
+
+
+
+            if (RESOURCES_LOADED == false){
+                requestAnimationFrame(animate);
+                
+                //loadingScreen.wirebox.rotation.x -= 0.04;
+                //loadingScreen.box.rotation.y -= 0.04;
+                //loadingScreen.box.position.y = Math.sin(loadingScreen.box.position.x);
+                //if (loadingScreen.box.position.x < -10 ) loadingScreen.box.position.x = 10;
+
+                //controls.update();
+
+
+                renderer.render(loadingScreen.scene, loadingScreen.camera);
+                
+                return;
+
+
+            }
+
+            if (RESOURCES_LOADED == true) {
+                fan1parent1.rotation.y += 0.01;
+                fan2parent1.rotation.y += 0.02;
+            }
+
+
+            requestAnimationFrame(animate);
+
+
+            //fan1.rotation.y += 0.01;
+            //fan2.rotation.y += 0.015;
+
+
+            //var gyroPresent = false;
+            //window.addEventListener("devicemotion", function(event){
+            //    if(event.rotationRate.alpha || event.rotationRate.beta || event.rotationRate.gamma) {
+            //        gyroPresent = true
+            //    } 
+            //    else {gyroPresent = false};
+            //}
+            //);
+
+            //if (window.DeviceOrientationEvent) {
+            //    gyroPresent = true
+            //}
+
+            //var ua = new UAParser();
+            //var result = ua.getResult();
+            //console.log(result);
+//
+//
+            //console.log(result.browser);
+            //console.log(result.device);
+            //console.log(result.os);
+            /*
+            if ( onHandset == false ) {
+                
+                // Keyboard movement inputs
+                if(keyboard[87]){ // W key
+                    camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
+                    camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+                }
+                if(keyboard[83]){ // S key
+                    camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+                    camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+                }
+                if(keyboard[65]){ // A key
+                    // Redirect motion by 90 degrees
+                    camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
+                    camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
+                }
+                if(keyboard[68]){ // D key
+                    camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
+                    camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
+                }
+                
+                // Keyboard turn inputs
+                if(keyboard[37]){ // left arrow key
+                    camera.rotation.y -= player.turnSpeed;
+                }
+                if(keyboard[39]){ // right arrow key
+                    camera.rotation.y += player.turnSpeed;
+                }
+            } else if ( onHandset == true) {
+                //controls.update();
+
+            }*/
+
+            controls.update();
+            
+            renderer.render(scene, camera);
+
+            //console.log(video.currentTime, videoalpha.currentTime)
+        }
+        /*if(keyboard[87]){ //W
+            makeChat();
+            }
+        
+        function keyDown(event){
+            keyboard[event.keyCode] = true;
+        }
+        function keyUp(event){
+            keyboard[event.keyCode] = false;
+        }
+        window.addEventListener('keydown', keyDown);
+        window.addEventListener('keyup', keyUp);*/
+        
+        //window.onload = init;
+        
+    var startButton = document.getElementById( 'startButton' );
+        //startButton.style.display = "none";
+		startButton.addEventListener( 'click', function () {
+                var intext = document.getElementById("pbox").value;
+                if (intext == wd) {
+                    var loadingtext = document.getElementById( 'loadingtext' );
+                    loadingtext.style.display = "block";
+                    document.getElementById("underscore2").innerHTML = "";
+
+                    var underscore2 = document.getElementById( 'underscore2' );
+                    underscore2.style.display = "none";
+
+
+                    document.getElementById("underscore3").innerHTML = "_";
+
+
+
+
+                    init();
+                    
+		            //animate();
+
+                };
+    	}, false );
+            //window.onload = init;
+
+        
+
+    </script>
+    </div>
+</body>
+</html>
