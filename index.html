@@ -59,10 +59,30 @@
         <p> <label id="line21" hidden >./Checking VIP status.............</label><label class = overriden id=resline21 hidden></label></p>
         <p> <label id="line22" hidden >./Dresscode requirements check....</label><label class = overriden id=resline22 hidden></label></p>
         <p> <label id="line23" hidden >----> ACCESS GRANTED..............</label><label class = overriden id=resline23 hidden></label></p>
+        <p> <label id="line24" hidden >line24</label><label class = overriden id=resline24 hidden></label></p>
+        <p> <label id="line25" hidden >line25</label><label class = overriden id=resline25 hidden></label></p>
+        <p> <label id="line26" hidden >line26</label><label class = overriden id=resline26 hidden></label></p>
+        <p> <label id="line27" hidden >line27</label><label class = overriden id=resline27 hidden></label></p>
+        <p> <label id="line28" hidden >line28</label><label class = overriden id=resline28 hidden></label></p>
+        <p> <label id="line29" hidden >line29</label><label class = overriden id=resline29 hidden></label></p>
+        <p> <label id="line30" hidden >line30</label><label class = overriden id=resline30 hidden></label></p>
+        <p> <label id="line31" hidden >line31</label><label class = overriden id=resline31 hidden></label></p>
+        <p> <label id="line32" hidden >line32</label><label class = overriden id=resline32 hidden></label></p>
+        <p> <label id="line33" hidden >line33</label><label class = overriden id=resline33 hidden></label></p>
+        <p> <label id="line34" hidden >line34</label><label class = overriden id=resline34 hidden></label></p>
+        <p> <label id="line35" hidden >line35</label><label class = overriden id=resline35 hidden></label></p>
+        <p> <label id="line36" hidden >line36</label><label class = overriden id=resline36 hidden></label></p>
+        <p> <label id="line37" hidden >line37</label><label class = overriden id=resline37 hidden></label></p>
+        <p> <label id="line38" hidden >line38</label><label class = overriden id=resline38 hidden></label></p>
+        <p> <label id="line39" hidden >line37</label><label class = overriden id=resline39 hidden></label></p>
+        <p> <label id="line40" hidden >line38</label><label class = overriden id=resline40 hidden></label></p>
+
+
+
         <p> <label id = "underscore3" ></label></p>
-        <!--<p id="line24" hidden >Paragraph 24</p>-->
-        <!--<p id="line25" hidden >Paragraph 25</p>-->
-        <!--<p id="line26" hidden >Paragraph 26</p>-->
+
+
+
     </div>
 
 
@@ -102,7 +122,7 @@
                 <iframe id="spotify" src="https://open.spotify.com/follow/1/?uri=spotify:artist:1MhltDUGKPSasS3MwMSdpE&size=basic&theme=light&show-count=0" width="200" height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
             </div>
             <div id="rightsocials" >
-            <a href="http://www.bandcamp.com" target="_blank"><img src="assets/clubbandcamp.png" style="width:61.87px;height:18px;"></a>
+            <!--<a href="http://www.bandcamp.com" target="_blank">--><a><img src="assets/clubbandcamp.png" style="width:61.87px;height:18px;" onclick="gotoMerch()"></a>
             <a href="http://www.facebook.com/sweatnet" target="_blank"><img src="assets/clubfacebook.png" style="width:18px;height:18px;"></a>
             <a href="http://www.instagram.com/sweat_net" target="_blank"><img src="assets/clubinstagram.png" style="width:18px;height:18px;"></a>
             <a href="http://www.twitter.com/sweat_net" target="_blank"><img src="assets/clubtwitter.png" style="width:18px;height:18px;"></a>
@@ -114,13 +134,13 @@
     <div id = "gestures" hidden>
         <!--<div id = "drag"><img src = "assets/icondrag.png"></div>
         <div id = "pinch"><img src = "assets/iconpinch.png"></div>-->
-        <div id = "pinchdrag"><img src = "assets/iconpinchdrag.png"></div>
+        <div id = "pinchdrag" ><img src = "assets/iconpinchdrag.png"></div>
 
         <!--<canvas id="canvas"></canvas>-->
 
     </div>
 
-    <div id = "counter" hidden>
+        <div id = "counter" hidden>
 
     </div>
 
@@ -203,7 +223,7 @@
             var introTxt2 =  'Please enter password :'; 
             var lineonedone = false;
 
-            var introTypeSpeed = 40; /* The speed/duration of the effect in milliseconds */
+            var introTypeSpeed = 1; /* The speed/duration of the effect in milliseconds */
             var flashSpeed = 10;
             var upperFlashSpeed = 20;
 
@@ -290,37 +310,22 @@
                     }
                 }
             }
-            /*var ctime = 0;
-            var copacityset = 0;
-
-            function canvasOpacity() {
-                console.log("opacity started")
-                if (ctime <= 10) {
-                    copacityset += 0.01                
-                    var canvas = document.getElementById( 'canvas' );
-                    canvas.style.opacity = copacityset;
-                    ctime ++;
-                    //console.log(socials.style.opacity, stime, opacityset)
-                    setTimeout(canvasOpacity, 1000);
-                }
-
-            }*/
 
             var gtime = 10;
             var gopacityset = 0.3;
 
             function gesturesOpacity() {
-                console.log("gestures opacity started")
+                //console.log("gestures opacity started")
                 if (gtime < 100) {
                     gopacityset -= 0.01                
                     var gestures = document.getElementById( 'gestures' );
                     gestures.style.opacity = gopacityset;
                     gtime ++;
-                    console.log(gtime)
+                    //console.log(gtime)
                     setTimeout(gesturesOpacity, 50);
                 } if (gtime == 60){
                     clearTimeout(gtime);
-                    console.log("gestures opacity done")
+                    //console.log("gestures opacity done")
                     gestures.remove();
 
 
@@ -345,45 +350,6 @@
                 }
 
             }
-            /*function socialsOpacity2() {
-                var socials = document.getElementById( 'socials' );
-                socials.style.opacity = 0.15;
-
-            }
-
-            function socialsOpacity3() {
-                var socials = document.getElementById( 'socials' );
-                socials.style.opacity = 0.3;
-
-            }*/
-
-
-            //socialsOpacity1();
-  
-
-        //USER_IS_TOUCHING == false;
-
-
-        /*const onFirstTouch = () => {
-            
-            //add a variable to the window object so we can use this globally in our script
-            window.USER_IS_TOUCHING = true;
-            
-            //adds a class to the body so you can define different styles in the css for touchscreens
-            document.body.classList.add('touchscreen');
-            
-            //Once the user has touched the screen once we know it's a touchscreen so we don't have to trigger the function again!
-            window.removeEventListener('touchstart',onFirstTouch);
-            
-        }
-
-        window.addEventListener('touchstart',onFirstTouch); */
-
-
-        //window.addEventListener('touchstart',onFirstTouch);
-
-
-
 
 
         var scene, camera, renderer, mesh, 
@@ -393,7 +359,7 @@
         light1, sphereGeometry, sphereMaterial, 
         sphere, planeGeometry, planeMaterial, plane, textureloader, loader, 
         stageSpot, stageSpot1, stageSpot2, stageSpot3,stagesurfacemtl,
-        pivot, fancase1mtl, fancase1mesh, fan1mtl, fan1mesh, fan1, loadingtextmesh;
+        pivot, fancase1mtl, fancase1mesh, fan1mtl, fan1mesh, fan1, loadingtextmesh, logo1mesh, logo1mtl;
         
 
         var meshFloor;
@@ -413,7 +379,7 @@
         var spotLightdistance = 0;
         var spotLightdecay = 0;
         var count1 = {var:0};
-        var wd = "Bigscene";
+        var wd = "";
         var startfan = false;
         var fan1parent = new THREE.Group();
         var fan1parent1 = new THREE.Group();
@@ -673,6 +639,352 @@
         }
 
         */
+        ///////////////////////// MERCH
+
+        var camTarget = new THREE.Vector3(-260,550,260);
+        var camPosition = new THREE.Vector3(900, 498, -20);
+        var updateCamPosx;
+        var updateCamPosy;
+        var updateCamPosz;
+        var transitionPositionxcomplete = false;
+        var transitionPositionycomplete = false;
+        var transitionPositionzcomplete = false;
+        var transitionPositionbackxcomplete = false;
+        var transitionPositionbackycomplete = false;
+        var transitionPositionbackzcomplete = false;
+
+        var merchLightIntense = 0;
+
+
+
+        //console.log(camPosition);
+        var atMerch = false;
+        function gotoMerch() {
+            camPosition.x = camera.position.x;
+            camPosition.y = camera.position.y;
+            camPosition.z = camera.position.z;
+            controls.autoRotate = false;
+                controls.update();
+
+
+            
+            if (atMerch == false){
+                controls.autoRotate = false;
+                controls.update();
+
+                atMerch = true;
+                console.log('at merch = ', atMerch);
+
+                function transitionTargetx() {
+                    if (camTarget.x > -200) {
+                        camTarget.x -= 1;
+                        updateTargetPosx = setTimeout(transitionTargetx, 2);
+                    } else if (camTarget.x < -200) {
+                        camTarget.x += 1;
+                        updateTargetPosx = setTimeout(transitionTargetx, 2);
+
+                    }
+                }
+                function transitionTargety() {
+                    if (camTarget.y > 414) {
+                        camTarget.y -= 1;
+                        updateTargetPosy = setTimeout(transitionTargety, 2);
+                    } else if (camTarget.y < 414) {
+                        camTarget.y += 1;
+                        updateTargetPosy = setTimeout(transitionTargety, 2);
+
+                    }
+                }
+                function transitionTargetz() {
+                    if (camTarget.z > 964) {
+                        camTarget.z -= 1;
+                        updateTargetPosz = setTimeout(transitionTargetz, 2);
+                    } else if (camTarget.z < 964) {
+                        camTarget.z += 1;
+                        updateTargetPosz = setTimeout(transitionTargetz, 2);
+
+                    }
+                }
+
+                transitionTargetx();
+                transitionTargety();
+                transitionTargetz();
+
+                function transitionPositionx() {
+                    if (camPosition.x > -214) {
+                        camPosition.x -= 1;
+                            updateCamPosx = setTimeout(transitionPositionx, 0.5);
+                        camera.position.x = camPosition.x;
+                        //console.log(camPosition.x);
+
+
+                    } else if (camPosition.x < -216) {
+                        camPosition.x += 1;
+                            updateCamPosx = setTimeout(transitionPositionx, 0.5);
+                        camera.position.x = camPosition.x;
+                        //console.log(camPosition.x);
+
+                    } else if (camPosition.x >= -215.9 && camPosition.x <= -214) {
+                        transitionPositionxcomplete = true;
+                        clearTimeout(updateCamPosx);
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
+                        if ( transitionPositionzcomplete == true & transitionPositionycomplete == true & transitionPositionxcomplete == true ) {
+                            transToMerchDone();
+                        }
+
+                    }
+                }
+                function transitionPositiony() {
+                    if (camPosition.y > 584) {
+                        camPosition.y -= 1;
+                            updateCamPosy = setTimeout(transitionPositiony, 0.5);
+                        camera.position.y = camPosition.y;
+                        //console.log(camPosition.y);
+
+
+                    } else if (camPosition.y < 583) {
+                        camPosition.y += 1;
+                            updateCamPosy = setTimeout(transitionPositiony, 0.5);
+                        camera.position.y = camPosition.y;
+                        //console.log(camPosition.y);
+
+                    } else if (camPosition.y >= 583 && camPosition.y <= 584) {
+                        transitionPositionycomplete = true;
+                        clearTimeout(updateCamPosy);
+
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
+                        if ( transitionPositionzcomplete == true & transitionPositionycomplete == true & transitionPositionxcomplete == true ) {
+                            transToMerchDone();
+                        }
+
+                    }
+                }
+                function transitionPositionz() {
+                    if (camPosition.z > 624) {
+                        camPosition.z -= 1;
+                            updateCamPosz = setTimeout(transitionPositionz, 0.5);
+                        camera.position.z = camPosition.z;
+                        //console.log(camPosition.z);
+
+                    } else if (camPosition.z < 622) {
+                        camPosition.z += 1;
+                        if (atMerch == true) {
+                            updateCamPosz = setTimeout(transitionPositionz, 0.5);
+                        } else {
+                            clearTimeout(updateCamPosz)
+                        }
+                        camera.position.z = camPosition.z;
+                        //console.log(camPosition.z);
+                    } else if (camPosition.z >= 622 && camPosition.z <= 623.9) {
+                        transitionPositionzcomplete = true;
+                        clearTimeout(updateCamPosz);
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
+                        if ( transitionPositionzcomplete == true & transitionPositionycomplete == true & transitionPositionxcomplete == true ) {
+                            transToMerchDone();
+                        }
+                    }
+                }
+
+                transitionPositionx();
+                transitionPositiony();
+                transitionPositionz();
+
+
+                
+
+
+                function transToMerchDone() {
+
+                    controls.minAzimuthAngle = 3.2; // radians
+                    controls.maxAzimuthAngle = 3.2; // radians
+                    controls.minPolarAngle = 0.4; // radians
+                    controls.maxPolarAngle = 1.7; // radians
+                    controls.minDistance = 100;
+                    controls.maxDistance = 600;
+                    controls.autoRotate = false;
+                    controls.update();
+                    transitionPositionxcomplete = false;
+                    transitionPositionycomplete = false;
+                    transitionPositionzcomplete = false;
+
+
+                    function merchLightOn() {
+                        if (merchLight.intensity <2 ) {
+                            merchLight.intensity += 0.1
+                            setTimeout(merchLightOn,30);
+                        }
+                    }
+                    merchLightOn();
+
+
+                }
+
+
+
+                controls.update();
+
+
+            } else if (atMerch == true) {
+
+                transitionPositionxcomplete = false;
+                transitionPositionycomplete = false;
+                transitionPositionzcomplete = false;
+                merchLight.intensity = 0
+                
+
+                atMerch = false;
+                console.log('at merch =', atMerch);
+
+                clearTimeout(updateCamPosx);
+                clearTimeout(updateCamPosy);
+                clearTimeout(updateCamPosz);
+                clearTimeout(updateTargetPosx);
+                clearTimeout(updateTargetPosy);
+                clearTimeout(updateTargetPosz);
+
+
+                
+
+                function transitionTargetbackx() {
+                    if (camTarget.x > -260) {
+                        camTarget.x -= 1;
+                        setTimeout(transitionTargetbackx, 2);
+                    } else if (camTarget.x < -260) {
+                        camTarget.x += 1;
+                        setTimeout(transitionTargetbackx, 2);
+
+                    }
+                }
+                function transitionTargetbacky() {
+                    if (camTarget.y > 550) {
+                        camTarget.y -= 1;
+                        setTimeout(transitionTargetbacky, 2);
+                    } else if (camTarget.y < 550) {
+                        camTarget.y += 1;
+                        setTimeout(transitionTargetbacky, 2);
+
+                    }
+                }
+                function transitionTargetbackz() {
+                    if (camTarget.z > 260) {
+                        camTarget.z -= 1;
+                        setTimeout(transitionTargetbackz, 2);
+                    } else if (camTarget.z < 260) {
+                        camTarget.z += 1;
+                        setTimeout(transitionTargetbackz, 2);
+
+                    }
+                }
+
+                transitionTargetbackx();
+                transitionTargetbacky();
+                transitionTargetbackz();
+
+                
+                function transitionPositionbackx() {
+                    if (camPosition.x > 900) {
+                        camPosition.x -= 1;
+                        updateCamPosbackx = setTimeout(transitionPositionbackx, 0.5);
+                        camera.position.x = camPosition.x;
+                        console.log(camPosition.x);
+
+
+                    } else if (camPosition.x < 900) {
+                        camPosition.x += 1;
+                        updateCamPosbackx = setTimeout(transitionPositionbackx, 0.5);
+                        camera.position.x = camPosition.x;
+                        console.log(camPosition.x);
+
+                    } else if (camPosition.x >= 899 && camPosition.x <= 901) {
+                        transitionPositionbackxcomplete = true;
+                        clearTimeout(updateCamPosbackx);
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xbackcomplete = ", transitionPositionbackxcomplete,"ybackcomplete = ", transitionPositionbackycomplete,"zbackcomplete = ", transitionPositionbackzcomplete)
+                        if ( transitionPositionbackzcomplete == true & transitionPositionbackycomplete == true & transitionPositionbackxcomplete == true ) {
+                            transBackDone();
+                        }
+
+                    }
+                }
+                function transitionPositionbacky() {
+                    if (camPosition.y > 498) {
+                        camPosition.y -= 1;
+                        updateCamPosbacky = setTimeout(transitionPositionbacky, 0.5);
+                        camera.position.y = camPosition.y;
+                        console.log(camPosition.y);
+
+
+                    } else if (camPosition.y < 498) {
+                        camPosition.y += 1;
+                        updateCamPosbacky = setTimeout(transitionPositionbacky, 0.5);
+                        camera.position.y = camPosition.y;
+                        console.log(camPosition.y);
+
+                    } else if (camPosition.y >= 497 && camPosition.y <= 499) {
+                        transitionPositionbackycomplete = true;
+                        clearTimeout(updateCamPosbacky);
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xbackcomplete = ", transitionPositionbackxcomplete,"ybackcomplete = ", transitionPositionbackycomplete,"zbackcomplete = ", transitionPositionbackzcomplete)
+                        if ( transitionPositionbackzcomplete == true & transitionPositionbackycomplete == true & transitionPositionbackxcomplete == true ) {
+                            transBackDone();
+                        }
+
+                    }
+                }
+                function transitionPositionbackz() {
+                    if (camPosition.z > -20) {
+                        camPosition.z -= 1;
+                        updateCamPosbackz = setTimeout(transitionPositionbackz, 0.5);
+                        camera.position.z = camPosition.z;
+                        console.log(camPosition.z);
+
+                    } else if (camPosition.z < -20) {
+                        camPosition.z += 1;
+                        updateCamPosbackz = setTimeout(transitionPositionbackz, 0.5);
+                        camera.position.z = camPosition.z;
+                        console.log(camPosition.z);
+                    } else if (camPosition.z >= -21 && camPosition.z <= -19) {
+                        transitionPositionbackzcomplete = true;
+                        clearTimeout(updateCamPosbackz);
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xbackcomplete = ", transitionPositionbackxcomplete,"ybackcomplete = ", transitionPositionbackycomplete,"zbackcomplete = ", transitionPositionbackzcomplete)
+                        if ( transitionPositionbackzcomplete == true & transitionPositionbackycomplete == true & transitionPositionbackxcomplete == true ) {
+                            transBackDone();
+                        }
+                    }
+                }
+
+                transitionPositionbackx();
+                transitionPositionbacky();
+                transitionPositionbackz();
+                
+                
+
+
+                camTarget.x = -260;
+                camTarget.y = 550;
+                camTarget.z = 260;
+                camPosition.x = 900;
+                camPosition.y = 498;
+                camPosition.z = -20;
+                camera.position.set(camPosition.x, camPosition.y, camPosition.z);
+
+
+                //function transBackDone() {
+                    controls.minAzimuthAngle = - Infinity; // radians
+                    controls.maxAzimuthAngle = Infinity; // radians
+                    controls.minPolarAngle = 0; // radians
+                    controls.maxPolarAngle = Math.PI; // radians
+                    controls.minDistance = 100;
+                    controls.maxDistance = 1200;
+                    controls.update();
+
+                    controls.autoRotate = true;
+                    controls.update();
+                //}
+
+
+
+
+            }
+        }
 
 
         
@@ -684,7 +996,19 @@
         
 
 
-        function addLights() {            
+        function addLights() {        
+
+            //////////////// merch
+
+            merchLight = new THREE.PointLight(0xffffff, 0, 600);//1, 750
+            merchLight.position.set(-205,450,900);
+            //merchLight.castShadow = true;
+
+            scene.add(merchLight);
+            var sphereSize = 9;
+            var pointLightHelper = new THREE.PointLightHelper( merchLight, sphereSize );
+            //scene.add( pointLightHelper );
+    
             
             
             //////////////// left light 1
@@ -948,8 +1272,8 @@
             controls.autoRotate = true;
 	        controls.autoRotateSpeed = 0.5; // 30 seconds per round when fps is 60
 
-            controls.target = new THREE.Vector3(-260,550,260);
-            camera.position.set(900, 498, -20);
+            controls.target = camTarget;
+            camera.position.set(camPosition.x, camPosition.y, camPosition.z);
 
             controls.minDistance = 100;
             controls.maxDistance = 1200;
@@ -962,6 +1286,8 @@
 
             controls.enableDamping = true;
             controls.dampingFactor = 1;
+
+
 
             controls.update();            
             
@@ -1107,32 +1433,26 @@
             mtlLoader = new THREE.MTLLoader(loadingManager);
 
             textureLoader = new THREE.TextureLoader(loadingManager);
-            //var floortex = textureLoader.load('assets/floor_tex.jpg');
-            //var floordis = textureLoader.load('assets/floor_dis2.jpg');
 
-            
-            //var walltex = textureLoader.load('assets/wall_tex2.jpg');
             var ceilingtex = textureLoader.load('assets/ceilingtex1.jpg');
-
             var walltex = textureLoader.load('assets/ceilingtex1.jpg');
-
             var floortex = textureLoader.load('assets/ceilingtex1.jpg');
-
-
-
             var centertex = textureLoader.load('assets/ceilingtex1.jpg');
-            //var centernormaltex = textureLoader.load('assets/ceilingnormaltex.jpg');
-
-
-
             var ceilingnormaltex = textureLoader.load('assets/ceilingnormaltex.jpg');
-
             var curtaintex = textureLoader.load('assets/noisetex.jpg');
             var curtainnormaltex = textureLoader.load('assets/leathernormaltex.jpg');
-            //var stagetex = textureLoader.load('assets/noisenormaltex.jpg');
-            
 
-            //var stagetex = textureLoader.load('assets/stagetex.jpg');
+            var logo1tex = textureLoader.load('assets/sweatlogo.jpg');
+            var logo2tex = textureLoader.load('assets/sweatnetlogo.jpg');
+
+            var LP1tex = textureLoader.load('assets/becompleteshot.jpg');
+            var LP2tex = textureLoader.load('assets/WMWshot.jpg');
+            var LP3tex = textureLoader.load('assets/vrclubshot.jpg');
+
+
+
+
+
             var video;
 
             walltex.wrapS = THREE.RepeatWrapping;
@@ -1170,6 +1490,30 @@
             floortex.wrapS = THREE.RepeatWrapping;
             floortex.wrapT = THREE.RepeatWrapping;
             floortex.repeat.set(5,5);
+
+            logo1tex.wrapS = THREE.RepeatWrapping;
+            logo1tex.wrapT = THREE.RepeatWrapping;
+            logo1tex.repeat.set(1,1);
+
+            logo2tex.wrapS = THREE.RepeatWrapping;
+            logo2tex.wrapT = THREE.RepeatWrapping;
+            logo2tex.repeat.set(1,1);
+
+
+            LP1tex.wrapS = THREE.RepeatWrapping;
+            LP1tex.wrapT = THREE.RepeatWrapping;
+            LP1tex.repeat.set(1,1);
+
+            LP2tex.wrapS = THREE.RepeatWrapping;
+            LP2tex.wrapT = THREE.RepeatWrapping;
+            LP2tex.repeat.set(1,1);
+
+            LP3tex.wrapS = THREE.RepeatWrapping;
+            LP3tex.wrapT = THREE.RepeatWrapping;
+            LP3tex.repeat.set(1,1);
+
+
+
 
 
 
@@ -1612,6 +1956,307 @@
                 cablesmesh.position.y = 300;
                 scene.add( cablesmesh );
             });  
+
+            ////////////////////   hangers
+            
+
+            var hangersmtl = new THREE.MeshPhongMaterial({
+                color: 0xFFFFFF,
+                shininess : 100, 
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/hangers.obj', function ( hangersmesh ) {
+                            
+
+                hangersmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = hangersmtl;             
+
+                } );
+
+                hangersmesh.position.y = 300;
+                scene.add( hangersmesh );
+            });  
+
+                ////////////////////   tshirt1
+            
+
+            var tshirt1mtl = new THREE.MeshLambertMaterial({
+                color: 0x000000,
+                shininess : 100, 
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/tshirt1.obj', function ( tshirt1mesh ) {
+                            
+
+                tshirt1mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = tshirt1mtl;             
+
+                } );
+
+                tshirt1mesh.position.y = 300;
+                scene.add( tshirt1mesh );
+            });  
+
+                ////////////////////   tshirt2
+            
+
+            var tshirt2mtl = new THREE.MeshLambertMaterial({
+                color: 0xFF0000,
+                shininess : 100, 
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/tshirt2.obj', function ( tshirt2mesh ) {
+                            
+
+                tshirt2mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = tshirt2mtl;             
+
+                } );
+
+                tshirt2mesh.position.y = 300;
+                scene.add( tshirt2mesh );
+            });  
+
+            ////////////////////   tshirt3
+            
+
+            var tshirt3mtl = new THREE.MeshLambertMaterial({
+                color: 0x000000,
+                shininess : 100, 
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/tshirt3.obj', function ( tshirt3mesh ) {
+                            
+
+                tshirt3mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = tshirt3mtl;             
+
+                } );
+
+                tshirt3mesh.position.y = 300;
+                scene.add( tshirt3mesh );
+            });  
+
+            ////////////////////   logo1
+            
+
+            var logo1mtl = new THREE.MeshLambertMaterial({
+                //color: 0x000000,
+                //shininess : 100,
+                map: logo1tex,
+                alphaMap: logo1tex,
+                alphaTest : 0.1,
+                opacity : 1,
+
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/logo1.obj', function ( logo1mesh ) {
+                            
+
+                logo1mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = logo1mtl;             
+
+                } );
+
+                logo1mesh.position.y = 300;
+                scene.add( logo1mesh );
+            });  
+
+            ////////////////////   logo2
+            
+
+            var logo2mtl = new THREE.MeshPhongMaterial({
+                //color: 0xFF0000,
+                //shininess : 100,
+                map: logo1tex,
+                alphaMap: logo1tex,
+                alphaTest : 0.1,
+                opacity : 1,
+
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/logo2.obj', function ( logo2mesh ) {
+                            
+
+                logo2mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = logo2mtl;             
+
+                } );
+
+                logo2mesh.position.y = 300;
+                scene.add( logo2mesh );
+            });  
+
+            ////////////////////   logo3
+            
+
+            var logo3mtl = new THREE.MeshPhongMaterial({
+                //color: 0x000000,
+                //shininess : 100,
+                map: logo2tex,
+                alphaMap: logo2tex,
+                alphaTest : 0.1,
+                opacity : 1,
+
+
+
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/logo3.obj', function ( logo3mesh ) {
+                            
+
+                logo3mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = logo3mtl;             
+
+                } );
+
+                logo3mesh.position.y = 300;
+                scene.add( logo3mesh );
+            });  
+
+
+            ////////////////////   LP1
+            var LP1mesh;
+
+            var LP1mtl = new THREE.MeshLambertMaterial({
+                map : LP1tex,
+
+                //color: 0x000000,
+                //shininess : 100,
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/LP1.obj', function ( LP1mesh ) {
+                            
+
+                LP1mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = LP1mtl;             
+
+                } );
+
+                LP1mesh.position.y = 300;
+                scene.add( LP1mesh );
+            });  
+
+            ////////////////////   LP2
+            
+
+            var LP2mtl = new THREE.MeshLambertMaterial({
+                map: LP2tex,
+
+                //color: 0xFF0000,
+                //shininess : 100, 
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/LP2.obj', function ( LP2mesh ) {
+                            
+
+                LP2mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = LP2mtl;             
+
+                } );
+
+                LP2mesh.position.y = 300;
+                scene.add( LP2mesh );
+            });  
+
+            ////////////////////   LP3
+            
+
+            var LP3mtl = new THREE.MeshLambertMaterial({
+                map: LP3tex,
+
+                //color: 0x000000,
+                //shininess : 100, 
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/LP3.obj', function ( LP3mesh ) {
+                            
+
+                LP3mesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = LP3mtl;             
+
+                } );
+
+                LP3mesh.position.y = 300;
+                scene.add( LP3mesh );
+            });  
+            ////////////////////   tote
+            
+
+            var totemtl = new THREE.MeshStandardMaterial({
+
+                metalness : 1,
+                roughness : 0.5,
+                color: 0x1c1c1c,
+
+                //shininess : 100, 
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/totebag1.obj', function ( totemesh ) {
+                            
+
+                totemesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = totemtl;             
+
+                } );
+
+                totemesh.position.y = 300;
+                scene.add( totemesh );
+            });  
+
+            ////////////////////   toteLogo
+            
+
+            var totelogomtl = new THREE.MeshLambertMaterial({
+                map: logo1tex,
+                alphaMap: logo1tex,
+                alphaTest : 0.1,
+                opacity : 1,
+
+                //color: 0x000000,
+                //shininess : 100, 
+            });
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/totelogo.obj', function ( totelogomesh ) {
+                            
+
+                totelogomesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = totelogomtl;             
+
+                } );
+
+                totelogomesh.position.y = 300;
+                scene.add( totelogomesh );
+            });  
+
+
+
             
 
             ////////////////////   stage surface
@@ -1980,10 +2625,11 @@
             }*/
 
             controls.update();
+            //console.log(camera.position.x,camera.position.y,camera.position.z);
             
             renderer.render(scene, camera);
 
-            //console.log(video.currentTime, videoalpha.currentTime)
+            //console.log(controls.spherical.theta)
         }
         /*if(keyboard[87]){ //W
             makeChat();
