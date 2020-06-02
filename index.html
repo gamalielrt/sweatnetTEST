@@ -77,6 +77,8 @@
         <p> <label id="line38" hidden >line38</label><label class = overriden id=resline38 hidden></label></p>
         <p> <label id="line39" hidden >line37</label><label class = overriden id=resline39 hidden></label></p>
         <p> <label id="line40" hidden >line38</label><label class = overriden id=resline40 hidden></label></p>
+        <p> <label id="line41" hidden >line38</label><label class = overriden id=resline41 hidden></label></p>
+
 
 
 
@@ -642,6 +644,9 @@
         */
         ///////////////////////// MERCH
 
+        var merchURL1 = "https://www.bandcamp.com/sweatnet";
+        var atMerchDesk = false;
+
         var camTarget = new THREE.Vector3(-260,550,260);
         var camPosition = new THREE.Vector3(900, 498, -20);
         var updateCamPosx;
@@ -657,6 +662,9 @@
         var raycaster = new THREE.Raycaster();
         var mouse = new THREE.Vector2();
 
+        window.addEventListener( 'click', onMouseMove, false );
+
+
         function onMouseMove( event ) {
 
             // calculate mouse position in normalized device coordinates
@@ -665,11 +673,61 @@
             mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
             mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
+            // update the picking ray with the camera and mouse position
+            raycaster.setFromCamera( mouse, camera );
+
+            // calculate objects intersecting the picking ray
+            var intersects = raycaster.intersectObjects( scene.children, true );
+
+            for ( var i = 0; i < intersects.length; i++ ) {
+
+                if (atMerchDesk == true) {
+
+                    if (intersects[ i ].object.name == "tshirt1") {
+                        window.open(merchURL1);
+                        console.log("click")
+
+                    }
+                    if (intersects[ i ].object.name == "tshirt2") {
+                        window.open(merchURL1);
+                        console.log("click")
+
+                    }
+                    if (intersects[ i ].object.name == "tshirt3") {
+                        window.open(merchURL1);
+                        console.log("click")
+
+
+                    }
+                    if (intersects[ i ].object.name == "LP1") {
+                        window.open(merchURL1);
+                        console.log("click")
+
+                    }
+
+                    if (intersects[ i ].object.name == "LP2") {
+                        window.open(merchURL1);
+                        console.log("click")
+
+                    }
+
+                    if (intersects[ i ].object.name == "LP3") {
+                        window.open(merchURL1);
+                        console.log("click")
+
+                    }
+                    if (intersects[ i ].object.name == "totebag") {
+                        window.open(merchURL1);
+                        console.log("click")
+
+                    }
+                }
+            }
+
         }
 
 
 
-        //console.log(camPosition);
         var atMerch = false;
         function gotoMerch() {
             camPosition.x = camera.position.x;
@@ -814,12 +872,9 @@
                 transitionPositiony();
                 transitionPositionz();
 
-
-                
-
-
                 function transToMerchDone() {
                     controls.enabled = true;
+                    atMerchDesk = true;
 
                     controls.minAzimuthAngle = 3.2; // radians
                     controls.maxAzimuthAngle = 3.2; // radians
@@ -842,11 +897,7 @@
                     }
                     merchLightOn();
                     window.scrollTo(0, 0);  
-
-
-
                 }
-
 
 
                 controls.update();
@@ -860,6 +911,8 @@
                 merchLight.intensity = 0
                 controls.enabled = true;
                 atMerch = false;
+                atMerchDesk = false;
+
                 console.log('at merch =', atMerch);
 
                 clearTimeout(updateCamPosx);
@@ -869,121 +922,6 @@
                 clearTimeout(updateTargetPosy);
                 clearTimeout(updateTargetPosz);
 
-                /*
-                
-
-                function transitionTargetbackx() {
-                    if (camTarget.x > -260) {
-                        camTarget.x -= 1;
-                        setTimeout(transitionTargetbackx, 2);
-                    } else if (camTarget.x < -260) {
-                        camTarget.x += 1;
-                        setTimeout(transitionTargetbackx, 2);
-
-                    }
-                }
-                function transitionTargetbacky() {
-                    if (camTarget.y > 550) {
-                        camTarget.y -= 1;
-                        setTimeout(transitionTargetbacky, 2);
-                    } else if (camTarget.y < 550) {
-                        camTarget.y += 1;
-                        setTimeout(transitionTargetbacky, 2);
-
-                    }
-                }
-                function transitionTargetbackz() {
-                    if (camTarget.z > 260) {
-                        camTarget.z -= 1;
-                        setTimeout(transitionTargetbackz, 2);
-                    } else if (camTarget.z < 260) {
-                        camTarget.z += 1;
-                        setTimeout(transitionTargetbackz, 2);
-
-                    }
-                }
-
-                transitionTargetbackx();
-                transitionTargetbacky();
-                transitionTargetbackz();
-
-                
-                function transitionPositionbackx() {
-                    if (camPosition.x > 900) {
-                        camPosition.x -= 1;
-                        updateCamPosbackx = setTimeout(transitionPositionbackx, 0.5);
-                        camera.position.x = camPosition.x;
-                        console.log(camPosition.x);
-
-
-                    } else if (camPosition.x < 900) {
-                        camPosition.x += 1;
-                        updateCamPosbackx = setTimeout(transitionPositionbackx, 0.5);
-                        camera.position.x = camPosition.x;
-                        console.log(camPosition.x);
-
-                    } else if (camPosition.x >= 899 && camPosition.x <= 901) {
-                        transitionPositionbackxcomplete = true;
-                        clearTimeout(updateCamPosbackx);
-                        console.log(camPosition.x,camPosition.y,camPosition.z, "xbackcomplete = ", transitionPositionbackxcomplete,"ybackcomplete = ", transitionPositionbackycomplete,"zbackcomplete = ", transitionPositionbackzcomplete)
-                        if ( transitionPositionbackzcomplete == true & transitionPositionbackycomplete == true & transitionPositionbackxcomplete == true ) {
-                            transBackDone();
-                        }
-
-                    }
-                }
-                function transitionPositionbacky() {
-                    if (camPosition.y > 498) {
-                        camPosition.y -= 1;
-                        updateCamPosbacky = setTimeout(transitionPositionbacky, 0.5);
-                        camera.position.y = camPosition.y;
-                        console.log(camPosition.y);
-
-
-                    } else if (camPosition.y < 498) {
-                        camPosition.y += 1;
-                        updateCamPosbacky = setTimeout(transitionPositionbacky, 0.5);
-                        camera.position.y = camPosition.y;
-                        console.log(camPosition.y);
-
-                    } else if (camPosition.y >= 497 && camPosition.y <= 499) {
-                        transitionPositionbackycomplete = true;
-                        clearTimeout(updateCamPosbacky);
-                        console.log(camPosition.x,camPosition.y,camPosition.z, "xbackcomplete = ", transitionPositionbackxcomplete,"ybackcomplete = ", transitionPositionbackycomplete,"zbackcomplete = ", transitionPositionbackzcomplete)
-                        if ( transitionPositionbackzcomplete == true & transitionPositionbackycomplete == true & transitionPositionbackxcomplete == true ) {
-                            transBackDone();
-                        }
-
-                    }
-                }
-                function transitionPositionbackz() {
-                    if (camPosition.z > -20) {
-                        camPosition.z -= 1;
-                        updateCamPosbackz = setTimeout(transitionPositionbackz, 0.5);
-                        camera.position.z = camPosition.z;
-                        console.log(camPosition.z);
-
-                    } else if (camPosition.z < -20) {
-                        camPosition.z += 1;
-                        updateCamPosbackz = setTimeout(transitionPositionbackz, 0.5);
-                        camera.position.z = camPosition.z;
-                        console.log(camPosition.z);
-                    } else if (camPosition.z >= -21 && camPosition.z <= -19) {
-                        transitionPositionbackzcomplete = true;
-                        clearTimeout(updateCamPosbackz);
-                        console.log(camPosition.x,camPosition.y,camPosition.z, "xbackcomplete = ", transitionPositionbackxcomplete,"ybackcomplete = ", transitionPositionbackycomplete,"zbackcomplete = ", transitionPositionbackzcomplete)
-                        if ( transitionPositionbackzcomplete == true & transitionPositionbackycomplete == true & transitionPositionbackxcomplete == true ) {
-                            transBackDone();
-                        }
-                    }
-                }
-
-                transitionPositionbackx();
-                transitionPositionbacky();
-                transitionPositionbackz();
-                
-
-                */
 
                 camTarget.x = -260;
                 camTarget.y = 550;
@@ -994,18 +932,15 @@
                 camera.position.set(camPosition.x, camPosition.y, camPosition.z);
 
 
-                //function transBackDone() {
-                    controls.minAzimuthAngle = - Infinity; // radians
-                    controls.maxAzimuthAngle = Infinity; // radians
-                    controls.maxPolarAngle = 1.7;
-                    controls.minPolarAngle = -2;
-                    controls.minDistance = 100;
-                    controls.maxDistance = 1200;
-                    controls.update();
-
-                    controls.autoRotate = true;
-                    controls.update();
-                //}
+                controls.minAzimuthAngle = - Infinity; // radians
+                controls.maxAzimuthAngle = Infinity; // radians
+                controls.maxPolarAngle = 1.7;
+                controls.minPolarAngle = -2;
+                controls.minDistance = 100;
+                controls.maxDistance = 1200;
+                controls.update();
+                controls.autoRotate = true;
+                controls.update();
 
 
 
@@ -2024,6 +1959,7 @@
 
                 tshirt1mesh.position.y = 300;
                 scene.add( tshirt1mesh );
+                tshirt1mesh.userData.myVariable = "tshirt1";
             });  
 
                 ////////////////////   tshirt2
@@ -2240,7 +2176,7 @@
             });
 
             loader = new THREE.OBJLoader(loadingManager);
-            loader.load( 'assets/totebag1.obj', function ( totemesh ) {
+            loader.load( 'assets/totebag.obj', function ( totemesh ) {
                             
 
                 totemesh.traverse( function ( node ) {
@@ -2542,17 +2478,71 @@
         }
 
         function animate(){
-
+            /*
             // update the picking ray with the camera and mouse position
             raycaster.setFromCamera( mouse, camera );
 
             // calculate objects intersecting the picking ray
-            var intersects = raycaster.intersectObjects( scene.children );
+            var intersects = raycaster.intersectObjects( scene.children, true );
             
             for ( var i = 0; i < intersects.length; i++ ) {
-                //intersects[ i ].object.material.color.set( 0xff0000 );
 
-            }
+                if (atMerchDesk == true) {
+
+                    if (intersects[ i ].object.name == "tshirt1") {
+                        //window.open(merchURL1);
+                        console.log("click")
+                        break;
+                        intersects.length = 0;
+
+                    }
+                    if (intersects[ i ].object.name == "tshirt2") {
+                        //window.open(merchURL1);
+                        console.log("click")
+                        break;
+                        intersects.length = 0;
+
+                    }
+                    if (intersects[ i ].object.name == "tshirt3") {
+                        //window.open(merchURL1);
+                        console.log("click")
+                        break;
+                        intersects.length = 0;
+
+
+                    }
+                    if (intersects[ i ].object.name == "LP1") {
+                        //window.open(merchURL1);
+                        console.log("click")
+                        break;
+                        intersects.length = 0;
+
+                    }
+
+                    if (intersects[ i ].object.name == "LP2") {
+                        //window.open(merchURL1);
+                        console.log("click")
+                        break;
+                        intersects.length = 0;
+
+                    }
+
+                    if (intersects[ i ].object.name == "LP3") {
+                        //window.open(merchURL1);
+                        console.log("click")
+                        break;
+                        intersects.length = 0;
+
+                    }
+                    if (intersects[ i ].object.name == "totebag") {
+                        //window.open(merchURL1);
+                        console.log("click")
+                        break;
+                        intersects.length = 0;
+
+                    }
+                }
+            }*/
 
             if (RESOURCES_LOADED == false){
                 requestAnimationFrame(animate);
@@ -2573,8 +2563,6 @@
             renderer.render(scene, camera);
 
         }
-
-        window.addEventListener( 'mousemove', onMouseMove, false );
         
     var startButton = document.getElementById( 'startButton' );
         //startButton.style.display = "none";
