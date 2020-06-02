@@ -653,7 +653,18 @@
         var transitionPositionbackycomplete = false;
         var transitionPositionbackzcomplete = false;
 
-        var merchLightIntense = 0;
+        var raycaster = new THREE.Raycaster();
+        var mouse = new THREE.Vector2();
+
+        function onMouseMove( event ) {
+
+            // calculate mouse position in normalized device coordinates
+            // (-1 to +1) for both components
+
+            mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+            mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+        }
 
 
 
@@ -664,7 +675,8 @@
             camPosition.y = camera.position.y;
             camPosition.z = camera.position.z;
             controls.autoRotate = false;
-                controls.update();
+            controls.enabled = false;
+            controls.update();
 
 
             
@@ -794,6 +806,7 @@
 
 
                 function transToMerchDone() {
+                    controls.enabled = true;
 
                     controls.minAzimuthAngle = 3.2; // radians
                     controls.maxAzimuthAngle = 3.2; // radians
@@ -830,8 +843,7 @@
                 transitionPositionycomplete = false;
                 transitionPositionzcomplete = false;
                 merchLight.intensity = 0
-                
-
+                controls.enabled = true;
                 atMerch = false;
                 console.log('at merch =', atMerch);
 
@@ -842,7 +854,7 @@
                 clearTimeout(updateTargetPosy);
                 clearTimeout(updateTargetPosz);
 
-
+                /*
                 
 
                 function transitionTargetbackx() {
@@ -955,8 +967,8 @@
                 transitionPositionbacky();
                 transitionPositionbackz();
                 
-                
 
+                */
 
                 camTarget.x = -260;
                 camTarget.y = 550;
@@ -970,8 +982,8 @@
                 //function transBackDone() {
                     controls.minAzimuthAngle = - Infinity; // radians
                     controls.maxAzimuthAngle = Infinity; // radians
-                    controls.minPolarAngle = 0; // radians
-                    controls.maxPolarAngle = Math.PI; // radians
+                    controls.maxPolarAngle = 1.7;
+                    controls.minPolarAngle = -2;
                     controls.minDistance = 100;
                     controls.maxDistance = 1200;
                     controls.update();
@@ -998,7 +1010,7 @@
 
         function addLights() {        
 
-            //////////////// merch
+            //////////////// MERCH LIGHT
 
             merchLight = new THREE.PointLight(0xffffff, 0, 600);//1, 750
             merchLight.position.set(-205,450,900);
@@ -1442,6 +1454,9 @@
             var curtaintex = textureLoader.load('assets/noisetex.jpg');
             var curtainnormaltex = textureLoader.load('assets/leathernormaltex.jpg');
 
+            /////////////////// MERCH TEXTURES
+            
+            
             var logo1tex = textureLoader.load('assets/sweatlogo.jpg');
             var logo2tex = textureLoader.load('assets/sweatnetlogo.jpg');
 
@@ -1449,11 +1464,26 @@
             var LP2tex = textureLoader.load('assets/WMWshot.jpg');
             var LP3tex = textureLoader.load('assets/vrclubshot.jpg');
 
+            logo1tex.wrapS = THREE.RepeatWrapping;
+            logo1tex.wrapT = THREE.RepeatWrapping;
+            logo1tex.repeat.set(1,1);
+
+            logo2tex.wrapS = THREE.RepeatWrapping;
+            logo2tex.wrapT = THREE.RepeatWrapping;
+            logo2tex.repeat.set(1,1);
 
 
+            LP1tex.wrapS = THREE.RepeatWrapping;
+            LP1tex.wrapT = THREE.RepeatWrapping;
+            LP1tex.repeat.set(1,1);
 
+            LP2tex.wrapS = THREE.RepeatWrapping;
+            LP2tex.wrapT = THREE.RepeatWrapping;
+            LP2tex.repeat.set(1,1);
 
-            var video;
+            LP3tex.wrapS = THREE.RepeatWrapping;
+            LP3tex.wrapT = THREE.RepeatWrapping;
+            LP3tex.repeat.set(1,1);
 
             walltex.wrapS = THREE.RepeatWrapping;
             walltex.wrapT = THREE.RepeatWrapping;
@@ -1491,26 +1521,6 @@
             floortex.wrapT = THREE.RepeatWrapping;
             floortex.repeat.set(5,5);
 
-            logo1tex.wrapS = THREE.RepeatWrapping;
-            logo1tex.wrapT = THREE.RepeatWrapping;
-            logo1tex.repeat.set(1,1);
-
-            logo2tex.wrapS = THREE.RepeatWrapping;
-            logo2tex.wrapT = THREE.RepeatWrapping;
-            logo2tex.repeat.set(1,1);
-
-
-            LP1tex.wrapS = THREE.RepeatWrapping;
-            LP1tex.wrapT = THREE.RepeatWrapping;
-            LP1tex.repeat.set(1,1);
-
-            LP2tex.wrapS = THREE.RepeatWrapping;
-            LP2tex.wrapT = THREE.RepeatWrapping;
-            LP2tex.repeat.set(1,1);
-
-            LP3tex.wrapS = THREE.RepeatWrapping;
-            LP3tex.wrapT = THREE.RepeatWrapping;
-            LP3tex.repeat.set(1,1);
 
 
 
@@ -1538,7 +1548,7 @@
             
             
             ////////////// hologram
-            
+            var video;
             video = document.getElementById( 'video' );
             video.load();
             
@@ -2514,46 +2524,21 @@
 
         function animate(){
 
-            //console.log(holovideo.get());
+            // update the picking ray with the camera and mouse position
+            raycaster.setFromCamera( mouse, camera );
 
-            //if (vidnotplaying == true & videoalpha.currentTime >= 1 & RESOURCES_LOADED == true){
-            //    playvid = true;
-            //}
+            // calculate objects intersecting the picking ray
+            var intersects = raycaster.intersectObjects( scene.children );
+            
+            for ( var i = 0; i < intersects.length; i++ ) {
+                //intersects[ i ].object.material.color.set( 0xff0000 );
 
-            //if (playvid == true){
-                //video.play();
-                //videoscreen.play();
-
-                //videoalpha.currentTime = video.currentTime;
-                //video.currentTime = 1;
-                //startTimeline();
-
-
-
-            //    console.log(vidnotplaying);
-
-            //    vidnotplaying = false;
-            //}
-        
-
-
+            }
 
             if (RESOURCES_LOADED == false){
                 requestAnimationFrame(animate);
-                
-                //loadingScreen.wirebox.rotation.x -= 0.04;
-                //loadingScreen.box.rotation.y -= 0.04;
-                //loadingScreen.box.position.y = Math.sin(loadingScreen.box.position.x);
-                //if (loadingScreen.box.position.x < -10 ) loadingScreen.box.position.x = 10;
-
-                //controls.update();
-
-
                 renderer.render(loadingScreen.scene, loadingScreen.camera);
-                
                 return;
-
-
             }
 
             if (RESOURCES_LOADED == true) {
@@ -2564,87 +2549,13 @@
 
             requestAnimationFrame(animate);
 
-
-            //fan1.rotation.y += 0.01;
-            //fan2.rotation.y += 0.015;
-
-
-            //var gyroPresent = false;
-            //window.addEventListener("devicemotion", function(event){
-            //    if(event.rotationRate.alpha || event.rotationRate.beta || event.rotationRate.gamma) {
-            //        gyroPresent = true
-            //    } 
-            //    else {gyroPresent = false};
-            //}
-            //);
-
-            //if (window.DeviceOrientationEvent) {
-            //    gyroPresent = true
-            //}
-
-            //var ua = new UAParser();
-            //var result = ua.getResult();
-            //console.log(result);
-//
-//
-            //console.log(result.browser);
-            //console.log(result.device);
-            //console.log(result.os);
-            /*
-            if ( onHandset == false ) {
-                
-                // Keyboard movement inputs
-                if(keyboard[87]){ // W key
-                    camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
-                    camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
-                }
-                if(keyboard[83]){ // S key
-                    camera.position.x += Math.sin(camera.rotation.y) * player.speed;
-                    camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
-                }
-                if(keyboard[65]){ // A key
-                    // Redirect motion by 90 degrees
-                    camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
-                    camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
-                }
-                if(keyboard[68]){ // D key
-                    camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
-                    camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
-                }
-                
-                // Keyboard turn inputs
-                if(keyboard[37]){ // left arrow key
-                    camera.rotation.y -= player.turnSpeed;
-                }
-                if(keyboard[39]){ // right arrow key
-                    camera.rotation.y += player.turnSpeed;
-                }
-            } else if ( onHandset == true) {
-                //controls.update();
-
-            }*/
-
             controls.update();
-            //console.log(camera.position.x,camera.position.y,camera.position.z);
             
             renderer.render(scene, camera);
 
-            //console.log(controls.spherical.theta)
         }
-        /*if(keyboard[87]){ //W
-            makeChat();
-            }
-        
-        function keyDown(event){
-            keyboard[event.keyCode] = true;
-        }
-        function keyUp(event){
-            keyboard[event.keyCode] = false;
-        }
-        window.addEventListener('keydown', keyDown);
-        window.addEventListener('keyup', keyUp);*/
-        
-        //window.onload = init;
+
+        window.addEventListener( 'mousemove', onMouseMove, false );
         
     var startButton = document.getElementById( 'startButton' );
         //startButton.style.display = "none";
