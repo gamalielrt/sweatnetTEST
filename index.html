@@ -724,6 +724,8 @@
                 transitionTargetz();
 
                 function transitionPositionx() {
+                    window.scrollTo(0, 0);  
+
                     if (camPosition.x > -214) {
                         camPosition.x -= 1;
                             updateCamPosx = setTimeout(transitionPositionx, 0.5);
@@ -732,6 +734,8 @@
 
 
                     } else if (camPosition.x < -216) {
+                        window.scrollTo(0, 0);  
+
                         camPosition.x += 1;
                             updateCamPosx = setTimeout(transitionPositionx, 0.5);
                         camera.position.x = camPosition.x;
@@ -748,6 +752,8 @@
                     }
                 }
                 function transitionPositiony() {
+                    window.scrollTo(0, 0);  
+
                     if (camPosition.y > 584) {
                         camPosition.y -= 1;
                             updateCamPosy = setTimeout(transitionPositiony, 0.5);
@@ -756,6 +762,8 @@
 
 
                     } else if (camPosition.y < 583) {
+                        window.scrollTo(0, 0);  
+
                         camPosition.y += 1;
                             updateCamPosy = setTimeout(transitionPositiony, 0.5);
                         camera.position.y = camPosition.y;
@@ -773,6 +781,8 @@
                     }
                 }
                 function transitionPositionz() {
+                    window.scrollTo(0, 0);  
+
                     if (camPosition.z > 624) {
                         camPosition.z -= 1;
                             updateCamPosz = setTimeout(transitionPositionz, 0.5);
@@ -780,6 +790,8 @@
                         //console.log(camPosition.z);
 
                     } else if (camPosition.z < 622) {
+                        window.scrollTo(0, 0);  
+
                         camPosition.z += 1;
                         if (atMerch == true) {
                             updateCamPosz = setTimeout(transitionPositionz, 0.5);
