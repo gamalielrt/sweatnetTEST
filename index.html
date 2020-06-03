@@ -658,20 +658,61 @@
         var transitionPositionbackxcomplete = false;
         var transitionPositionbackycomplete = false;
         var transitionPositionbackzcomplete = false;
+        var lon, lat;
 
         var raycaster = new THREE.Raycaster();
         var mouse = new THREE.Vector2();
 
-        window.addEventListener( 'mousedown', onMouseMove, false );
+        window.addEventListener( 'click', onMouseMove, false );
+        window.addEventListener( 'touchstart', onDocumentTouchStart, false );
+        window.addEventListener( 'touchmove', onDocumentTouchMove, false );
+        window.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+
+
+
+        function onDocumentTouchStart( event ) {
+            console.log("TouchStart")
+
+            event.preventDefault();
+
+            event.clientX = event.touches[0].pageX;
+            event.clientY = event.touches[0].pageY;
+
+            onMouseMove( event );
+        }
+
+        function onDocumentTouchMove( event ) {
+            console.log("TouchMove")
+
+            if ( event.touches.length == 1 ) {
+            event.preventDefault();
+            lon = ( onPointerDownPointerX - event.touches[0].pageX ) * 0.1 + onPointerDownLon;
+            lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+            }
+        }
+
+        function onDocumentMouseMove( event ) {
+
+            if ( isUserInteracting === true ) {
+            lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
+            lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+            }
+        }
 
 
         function onMouseMove( event ) {
+
+            event.preventDefault();
 
             // calculate mouse position in normalized device coordinates
             // (-1 to +1) for both components
 
             //mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
             //mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+            if (atMerchDesk == true) {
+
 
             var canvasBounds = renderer.domElement.getBoundingClientRect();
 
@@ -686,7 +727,6 @@
 
             for ( var i = 0; i < intersects.length; i++ ) {
 
-                if (atMerchDesk == true) {
 
                     if (intersects[ i ].object.name == "tshirt1") {
                         window.open(merchURL1);
@@ -729,6 +769,14 @@
                     }
                 }
             }
+
+            isUserInteracting = true
+
+            onPointerDownPointerX = event.clientX;
+            onPointerDownPointerY = event.clientY;
+
+            onPointerDownLon = lon;
+            onPointerDownLat = lat;
 
         }
 
