@@ -16,8 +16,6 @@ canvas {
     position: absolute;
 
 
-
-
 }
 
 #canvas {
@@ -318,9 +316,10 @@ canvas {
 #counter{
     color:  #FFA500;
     font-family : monospace;
-    opacity: 0.5;
+    opacity: 0.2;
     z-index : 2;
     position:fixed;
+    top: 25px;
     width: 100%;
     text-align: center;
     user-select: none; /* supported by Chrome and Opera */
