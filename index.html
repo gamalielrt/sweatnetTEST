@@ -118,7 +118,7 @@
                 <iframe id="spotify" src="https://open.spotify.com/follow/1/?uri=spotify:artist:1MhltDUGKPSasS3MwMSdpE&size=basic&theme=light&show-count=0" width="200" height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
             </div>
             <div id="rightsocials" >
-            <!--<a href="http://www.bandcamp.com" target="_blank">--><a><img src="assets/clubbandcamp.png" style="width:61.87px;height:18px;" onclick="gotoMerch()"></a>
+            <a href="http://www.crowdfunder.co.uk/save-our-venues-national-campaign" target="_blank"><a><img src="assets/saveourvenues.png" style="width:115px;height:18px;" ></a>
             <a href="http://www.facebook.com/sweatnet" target="_blank"><img src="assets/clubfacebook.png" style="width:18px;height:18px;"></a>
             <a href="http://www.instagram.com/sweat_net" target="_blank"><img src="assets/clubinstagram.png" style="width:18px;height:18px;"></a>
             <a href="http://www.twitter.com/sweat_net" target="_blank"><img src="assets/clubtwitter.png" style="width:18px;height:18px;"></a>
@@ -176,6 +176,12 @@
             <tr><td><form id="mailinputform" autocomplete=off target="_self" action="#" onsubmit="submitmailButton();return false"><input id="mailinput" placeholder= "&lt Enter Email &gt" ></form><br></td></tr> 
             <tr><td><button  id="submitmailbuttonhit" onclick="submitEmail()">Submit</button></td></tr>
     </table>
+
+    <div id="gotomerchbutton" hidden>
+        <!--<a><img src="assets/saveourvenues.png" style="width:115px;height:18px;" onclick="gotoMerch()"></a>-->
+        <a id="gotomerchtext" onclick="gotoMerch()">&#8595 Go to merch table &#8595 </a>
+
+    </div>
 
     <div id="merchoverlay" hidden onclick="hideMerchOverlay()">
     </div>
@@ -747,9 +753,6 @@
 
                 event.preventDefault();
 
-
-
-
                 var canvasBounds = renderer.domElement.getBoundingClientRect();
 
                 mouse.x = ( ( event.clientX - canvasBounds.left ) / ( canvasBounds.right - canvasBounds.left ) ) * 2 - 1;
@@ -824,6 +827,9 @@
 
         var atMerch = false;
         function gotoMerch() {
+
+            document.getElementById("gotomerchtext").innerHTML = "&#8593 Back &#8593"
+            //document.getElementById("gotomerchtext").style.opacity = 0.25;
 
 
             camPosition.x = Math.round(camera.position.x);
@@ -1005,6 +1011,9 @@
 
 
             } else if (atMerch == true) {
+
+                document.getElementById("gotomerchtext").innerHTML = "&#8595 Go to merch table &#8595"
+
 
 
 
@@ -1375,12 +1384,10 @@
 
 
                 loadingtext = loadingtextmesh;
-                //loadingScreen.scene.add(loadingtext);
 
 
 
             });
-            //loadingScreen.loadingtext.scale.set(0.1,0.1,0.1);
 
 
             loadingScreen.camera.lookAt(loadingScreen.loadingtext.position);
@@ -1449,6 +1456,8 @@
 
                 chatroom.style.display = "block";
                 document.getElementById( 'counter' ).style.display = "block";
+                document.getElementById( 'gotomerchbutton' ).style.display = "block";
+
 
                 //setTimeout(scrollChatArea,100);
                 //window.setInterval(updateChat, 3000);

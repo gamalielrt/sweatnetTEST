@@ -319,7 +319,7 @@ canvas {
     opacity: 0.2;
     z-index : 2;
     position:fixed;
-    top: 25px;
+    top: 27px;
     width: 100%;
     text-align: center;
     user-select: none; /* supported by Chrome and Opera */
@@ -426,6 +426,33 @@ canvas {
 #merchcancel:hover {
     background-color: #FFA500; 
     color: rgb(0, 0, 0);
+
+}
+
+#gotomerchbutton{
+    position: fixed;
+    z-index: 2;
+    left: 3px;
+}
+
+#gotomerchtext{
+
+    position: fixed;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    
+    font-size: 12px;
+    color:  #ffffff;
+    font-family: monospace;
+    opacity: 0.25;
+
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+#gotomerchtext:hover {
+    opacity: 0.5;
 
 }
 
