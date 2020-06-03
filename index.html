@@ -667,10 +667,6 @@
         var raycaster = new THREE.Raycaster();
         var mouse = new THREE.Vector2();
 
-        window.addEventListener( 'click', onMouseMove, false );
-        window.addEventListener( 'touchstart', onDocumentTouchStart, false );
-        window.addEventListener( 'touchmove', onDocumentTouchMove, false );
-        window.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 
 
@@ -718,18 +714,19 @@
             if (atMerchDesk == true) {
 
 
-            var canvasBounds = renderer.domElement.getBoundingClientRect();
 
-            mouse.x = ( ( event.clientX - canvasBounds.left ) / ( canvasBounds.right - canvasBounds.left ) ) * 2 - 1;
-            mouse.y = - ( ( event.clientY - canvasBounds.top ) / ( canvasBounds.bottom - canvasBounds.top) ) * 2 + 1;
+                var canvasBounds = renderer.domElement.getBoundingClientRect();
 
-            // update the picking ray with the camera and mouse position
-            raycaster.setFromCamera( mouse, camera );
+                mouse.x = ( ( event.clientX - canvasBounds.left ) / ( canvasBounds.right - canvasBounds.left ) ) * 2 - 1;
+                mouse.y = - ( ( event.clientY - canvasBounds.top ) / ( canvasBounds.bottom - canvasBounds.top) ) * 2 + 1;
 
-            // calculate objects intersecting the picking ray
-            var intersects = raycaster.intersectObjects( scene.children, true );
+                // update the picking ray with the camera and mouse position
+                raycaster.setFromCamera( mouse, camera );
 
-            for ( var i = 0; i < intersects.length; i++ ) {
+                // calculate objects intersecting the picking ray
+                var intersects = raycaster.intersectObjects( scene.children, true );
+
+                for ( var i = 0; i < intersects.length; i++ ) {
 
 
                     if (intersects[ i ].object.name == "tshirt1") {
@@ -787,6 +784,8 @@
 
         var atMerch = false;
         function gotoMerch() {
+
+
             camPosition.x = Math.round(camera.position.x);
             camPosition.y = Math.round(camera.position.y);
             camPosition.z = Math.round(camera.position.z);
@@ -932,6 +931,11 @@
                 function transToMerchDone() {
                     controls.enabled = true;
                     atMerchDesk = true;
+                    window.addEventListener( 'click', onMouseMove, false );
+                    window.addEventListener( 'touchstart', onDocumentTouchStart, false );
+                    window.addEventListener( 'touchmove', onDocumentTouchMove, false );
+                    window.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
 
                     controls.minAzimuthAngle = 3.2; // radians
                     controls.maxAzimuthAngle = 3.2; // radians
@@ -962,6 +966,8 @@
 
             } else if (atMerch == true) {
 
+
+
                 transitionPositionxcomplete = false;
                 transitionPositionycomplete = false;
                 transitionPositionzcomplete = false;
@@ -969,6 +975,12 @@
                 controls.enabled = true;
                 atMerch = false;
                 atMerchDesk = false;
+
+                window.removeEventListener( 'click', onMouseMove, false );
+                window.removeEventListener( 'touchstart', onDocumentTouchStart, false );
+                window.removeEventListener( 'touchmove', onDocumentTouchMove, false );
+                window.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+
 
                 console.log('at merch =', atMerch);
 
