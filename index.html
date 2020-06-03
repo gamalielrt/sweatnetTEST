@@ -645,6 +645,9 @@
         ///////////////////////// MERCH
 
         var merchURL1 = "https://www.bandcamp.com/sweatnet";
+        var merchURL2 = "https://www.bandcamp.com/sweatnet";
+        var merchURL3 = "https://www.bandcamp.com/sweatnet";
+
         var atMerchDesk = false;
 
         var camTarget = new THREE.Vector3(-260,550,260);
@@ -659,6 +662,7 @@
         var transitionPositionbackycomplete = false;
         var transitionPositionbackzcomplete = false;
         var lon, lat;
+        var isUserInteracting = false;
 
         var raycaster = new THREE.Raycaster();
         var mouse = new THREE.Vector2();
@@ -735,12 +739,12 @@
 
                     }
                     if (intersects[ i ].object.name == "tshirt2") {
-                        window.open(merchURL1);
+                        window.open(merchURL2);
                         console.log("click")
 
                     }
                     if (intersects[ i ].object.name == "tshirt3") {
-                        window.open(merchURL1);
+                        window.open(merchURL3);
                         console.log("click")
 
 
@@ -752,13 +756,13 @@
                     }
 
                     if (intersects[ i ].object.name == "LP2") {
-                        window.open(merchURL1);
+                        window.open(merchURL2);
                         console.log("click")
 
                     }
 
                     if (intersects[ i ].object.name == "LP3") {
-                        window.open(merchURL1);
+                        window.open(merchURL3);
                         console.log("click")
 
                     }
@@ -784,9 +788,9 @@
 
         var atMerch = false;
         function gotoMerch() {
-            camPosition.x = camera.position.x;
-            camPosition.y = camera.position.y;
-            camPosition.z = camera.position.z;
+            camPosition.x = Math.round(camera.position.x);
+            camPosition.y = Math.round(camera.position.y);
+            camPosition.z = Math.round(camera.position.z);
             controls.autoRotate = false;
             controls.enabled = false;
             controls.update();
@@ -838,7 +842,7 @@
                 function transitionPositionx() {
                     window.scrollTo(0, 0);  
 
-                    if (camPosition.x > -214) {
+                    if (camPosition.x > -215) {
                         camPosition.x -= 1;
                             updateCamPosx = setTimeout(transitionPositionx, 0.5);
                         camera.position.x = camPosition.x;
@@ -853,7 +857,7 @@
                         camera.position.x = camPosition.x;
                         //console.log(camPosition.x);
 
-                    } else if (camPosition.x >= -215.9 && camPosition.x <= -214) {
+                    } else if (camPosition.x >= -216 && camPosition.x <= -214) {
                         transitionPositionxcomplete = true;
                         clearTimeout(updateCamPosx);
                         console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
@@ -912,7 +916,7 @@
                         }
                         camera.position.z = camPosition.z;
                         //console.log(camPosition.z);
-                    } else if (camPosition.z >= 622 && camPosition.z <= 623.9) {
+                    } else if (camPosition.z >= 622 && camPosition.z <= 625) {
                         transitionPositionzcomplete = true;
                         clearTimeout(updateCamPosz);
                         console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
@@ -1001,15 +1005,6 @@
 
             }
         }
-
-
-        
-
-
-
-        
-
-        
 
 
         function addLights() {        
@@ -1360,20 +1355,6 @@
                 console.log(linenumber, prevlinenumber, lineint)
 
             }
-
-            //var i = 0;
-            //var txt = 'Lorem ipsum typing effect!'; /* The text */
-            //var typeSpeed = 100; /* The speed/duration of the effect in milliseconds */
-            
-            //function typeWriter(paranumber) {
-            //    if (i < window[paranumber].length) {
-            //        document.getElementById("introtext").innerHTML += window[paranumber].charAt(i);
-            //        i++;
-            //        setTimeout(typeWriter, typeSpeed);
-            //    }
-            //}
-            //typeWriter();
-
 
 
             loadingManager.onProgress = function(item,loaded,total){
@@ -2437,83 +2418,6 @@
             
             
           
-            
-            //camera.position.set(400, player.height, -500);
-            //camera.lookAt(new THREE.Vector3(0,player.height,0));
-            
-
-            //var controls = new OrbitControls( camera, renderer.domElement );
-
-            //if (window.DeviceOrientationEvent) {
-                //onHandset = true //change
-            //}
-            /*
-            if (window.USER_IS_TOUCHING == true) {
-                //touchscreen-specific code
-                console.log("touchscreen");
-
-                var controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-                controls.target = new THREE.Vector3(-260,550,260);
-                camera.position.set(900, 498, -20);
-
-                controls.minDistance = 0;
-                controls.maxDistance = 1200;
-
-                controls.maxPolarAngle = 1.7;
-                controls.minPolarAngle = -2;
-
-                controls.keyPanSpeed = 50;
-                controls.PanSpeed = 50;
-
-                controls.enableDamping = false;
-                controls.dampingFactor = 0.1;
-
-                controls.update();
-            
-            } else if ( window.USER_IS_TOUCHING == false){
-
-                console.log("computer");
-
-
-                var controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-
-                controls.target = new THREE.Vector3(700,498,50);
-                camera.position.set(900, 498, -20);
-
-                controls.minDistance = 0;
-                controls.maxDistance = 3000;
-
-                controls.maxPolarAngle = 2;
-                controls.minPolarAngle = -2;
-
-                controls.keyPanSpeed = 50;
-                controls.PanSpeed = 50;
-
-                controls.keyPanSpeed = 50;
-                controls.PanSpeed = 50;
-
-                controls.enableDamping = false;
-                controls.dampingFactor = 0.1;
-                //controls.zoomSpeed = 50;
-
-                //controls.target = new THREE.Vector3(-260,550,260);
-                //camera.position.set(900, 498, -20);
-                //controls.minDistance = 0;
-                //controls.maxDistance = 1200;
-
-                //camera.lookAt(new THREE.Vector3(-269, 343, 228));
-
-                //controls.update() must be called after any manual changes to the camera's transform
-                //camera.position.set( 0, 20, 100 );
-                controls.update();
-
-            }
-            */
-            
-
-            //console.log(onHandset);
             animate();
 
             window.addEventListener( 'resize', onWindowResize, false );
@@ -2532,71 +2436,6 @@
         }
 
         function animate(){
-            /*
-            // update the picking ray with the camera and mouse position
-            raycaster.setFromCamera( mouse, camera );
-
-            // calculate objects intersecting the picking ray
-            var intersects = raycaster.intersectObjects( scene.children, true );
-            
-            for ( var i = 0; i < intersects.length; i++ ) {
-
-                if (atMerchDesk == true) {
-
-                    if (intersects[ i ].object.name == "tshirt1") {
-                        //window.open(merchURL1);
-                        console.log("click")
-                        break;
-                        intersects.length = 0;
-
-                    }
-                    if (intersects[ i ].object.name == "tshirt2") {
-                        //window.open(merchURL1);
-                        console.log("click")
-                        break;
-                        intersects.length = 0;
-
-                    }
-                    if (intersects[ i ].object.name == "tshirt3") {
-                        //window.open(merchURL1);
-                        console.log("click")
-                        break;
-                        intersects.length = 0;
-
-
-                    }
-                    if (intersects[ i ].object.name == "LP1") {
-                        //window.open(merchURL1);
-                        console.log("click")
-                        break;
-                        intersects.length = 0;
-
-                    }
-
-                    if (intersects[ i ].object.name == "LP2") {
-                        //window.open(merchURL1);
-                        console.log("click")
-                        break;
-                        intersects.length = 0;
-
-                    }
-
-                    if (intersects[ i ].object.name == "LP3") {
-                        //window.open(merchURL1);
-                        console.log("click")
-                        break;
-                        intersects.length = 0;
-
-                    }
-                    if (intersects[ i ].object.name == "totebag") {
-                        //window.open(merchURL1);
-                        console.log("click")
-                        break;
-                        intersects.length = 0;
-
-                    }
-                }
-            }*/
 
             if (RESOURCES_LOADED == false){
                 requestAnimationFrame(animate);
