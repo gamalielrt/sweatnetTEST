@@ -78,14 +78,7 @@
         <p> <label id="line39" hidden >line37</label><label class = overriden id=resline39 hidden></label></p>
         <p> <label id="line40" hidden >line38</label><label class = overriden id=resline40 hidden></label></p>
         <p> <label id="line41" hidden >line38</label><label class = overriden id=resline41 hidden></label></p>
-
-
-
-
         <p> <label id = "underscore3" ></label></p>
-
-
-
     </div>
 
 
@@ -183,6 +176,14 @@
             <tr><td><form id="mailinputform" autocomplete=off target="_self" action="#" onsubmit="submitmailButton();return false"><input id="mailinput" placeholder= "&lt Enter Email &gt" ></form><br></td></tr> 
             <tr><td><button  id="submitmailbuttonhit" onclick="submitEmail()">Submit</button></td></tr>
     </table>
+
+    <div id="merchoverlay" hidden onclick="hideMerchOverlay()">
+    </div>
+    <table id="merchtable" hidden>
+        <tr><th><div id="merchtext"> Proceed to merch store?</div><br></th></tr>
+        <tr><td><a  id="merchok" href="" target="_blank" >Ok</a><a> </a></a><button onclick="hideMerchOverlay()" id="merchcancel">Cancel</button></td></tr>
+    </table>
+
 
 
 
@@ -645,8 +646,8 @@
         ///////////////////////// MERCH
 
         var merchURL1 = "https://www.bandcamp.com/sweatnet";
-        var merchURL2 = "https://www.bandcamp.com/sweatnet";
-        var merchURL3 = "https://www.bandcamp.com/sweatnet";
+        var merchURL2 = "https://www.facebook.com";
+        var merchURL3 = "https://www.theguardian.com";
 
         var atMerchDesk = false;
 
@@ -667,6 +668,33 @@
         var raycaster = new THREE.Raycaster();
         var mouse = new THREE.Vector2();
 
+
+        function callMerchOverlay() {
+            document.getElementById("merchoverlay").style.display = "block";
+            document.getElementById("merchtable").style.display = "block";
+            atMerchDesk = false;
+            window.removeEventListener( 'click', onMouseMove, false );
+            window.removeEventListener( 'touchstart', onDocumentTouchStart, false );
+            window.removeEventListener( 'touchmove', onDocumentTouchMove, false );
+            window.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+
+
+
+
+        }
+
+        function hideMerchOverlay() {
+            document.getElementById("merchoverlay").style.display = "none";
+            document.getElementById("merchtable").style.display = "none";
+            window.scrollTo(0, 0); 
+            atMerchDesk = true;
+            window.addEventListener( 'click', onMouseMove, false );
+            window.addEventListener( 'touchstart', onDocumentTouchStart, false );
+            window.addEventListener( 'touchmove', onDocumentTouchMove, false );
+            window.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+
+        }
 
 
 
@@ -712,6 +740,9 @@
             //mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
             if (atMerchDesk == true) {
+
+                event.preventDefault();
+
 
 
 
@@ -775,9 +806,17 @@
         }
 
         function goToURL(url) {
-            if (confirm("Proceed to merch store?")){
-                window.open(url);
-            } else {}
+            callMerchOverlay();
+            document.getElementById("merchok").href = url;
+            window.removeEventListener( 'click', onMouseMove, false );
+            window.removeEventListener( 'touchstart', onDocumentTouchStart, false );
+            window.removeEventListener( 'touchmove', onDocumentTouchMove, false );
+            window.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+
+
+            //atMerchDesk = false;
+
+            //getElementById("merchok").h
         }
 
 
