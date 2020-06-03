@@ -733,42 +733,35 @@
 
 
                     if (intersects[ i ].object.name == "tshirt1") {
-                        window.open(merchURL1);
-                        console.log("click")
+                        goToURL(merchURL1);
                         
 
                     }
                     if (intersects[ i ].object.name == "tshirt2") {
-                        window.open(merchURL2);
-                        console.log("click")
+                        goToURL(merchURL2);
 
                     }
                     if (intersects[ i ].object.name == "tshirt3") {
-                        window.open(merchURL3);
-                        console.log("click")
+                        goToURL(merchURL3);
 
 
                     }
                     if (intersects[ i ].object.name == "LP1") {
-                        window.open(merchURL1);
-                        console.log("click")
+                        goToURL(merchURL1);
 
                     }
 
                     if (intersects[ i ].object.name == "LP2") {
-                        window.open(merchURL2);
-                        console.log("click")
+                        goToURL(merchURL2);
 
                     }
 
                     if (intersects[ i ].object.name == "LP3") {
-                        window.open(merchURL3);
-                        console.log("click")
+                        goToURL(merchURL3);
 
                     }
                     if (intersects[ i ].object.name == "totebag") {
-                        window.open(merchURL1);
-                        console.log("click")
+                        goToURL(merchURL1);
 
                     }
                 }
@@ -782,6 +775,12 @@
             onPointerDownLon = lon;
             onPointerDownLat = lat;
 
+        }
+
+        function goToURL(url) {
+            if (confirm("Proceed to merch store?")){
+                window.open(url);
+            } else {}
         }
 
 
@@ -857,7 +856,7 @@
                         camera.position.x = camPosition.x;
                         //console.log(camPosition.x);
 
-                    } else if (camPosition.x >= -216 && camPosition.x <= -214) {
+                    } else if (camPosition.x >= -217 && camPosition.x <= -213) {
                         transitionPositionxcomplete = true;
                         clearTimeout(updateCamPosx);
                         console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
@@ -885,7 +884,7 @@
                         camera.position.y = camPosition.y;
                         //console.log(camPosition.y);
 
-                    } else if (camPosition.y >= 583 && camPosition.y <= 584) {
+                    } else if (camPosition.y >= 582 && camPosition.y <= 585) {
                         transitionPositionycomplete = true;
                         clearTimeout(updateCamPosy);
 
@@ -916,7 +915,7 @@
                         }
                         camera.position.z = camPosition.z;
                         //console.log(camPosition.z);
-                    } else if (camPosition.z >= 622 && camPosition.z <= 625) {
+                    } else if (camPosition.z >= 621 && camPosition.z <= 626) {
                         transitionPositionzcomplete = true;
                         clearTimeout(updateCamPosz);
                         console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
