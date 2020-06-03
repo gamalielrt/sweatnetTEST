@@ -662,7 +662,7 @@
         var raycaster = new THREE.Raycaster();
         var mouse = new THREE.Vector2();
 
-        window.addEventListener( 'click', onMouseMove, false );
+        window.addEventListener( 'mousedown', onMouseMove, false );
 
 
         function onMouseMove( event ) {
@@ -670,8 +670,13 @@
             // calculate mouse position in normalized device coordinates
             // (-1 to +1) for both components
 
-            mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-            mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+            //mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+            //mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+            var canvasBounds = renderer.domElement.getBoundingClientRect();
+
+            mouse.x = ( ( event.clientX - canvasBounds.left ) / ( canvasBounds.right - canvasBounds.left ) ) * 2 - 1;
+            mouse.y = - ( ( event.clientY - canvasBounds.top ) / ( canvasBounds.bottom - canvasBounds.top) ) * 2 + 1;
 
             // update the picking ray with the camera and mouse position
             raycaster.setFromCamera( mouse, camera );
@@ -686,6 +691,7 @@
                     if (intersects[ i ].object.name == "tshirt1") {
                         window.open(merchURL1);
                         console.log("click")
+                        
 
                     }
                     if (intersects[ i ].object.name == "tshirt2") {
