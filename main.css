@@ -86,7 +86,7 @@ canvas {
 #socials {
     z-index: 2;
     /*float : right;*/
-    opacity: 0;
+    opacity: 0.7;
     position: absolute;
     top: 0px;
     /*right: 8px;*/

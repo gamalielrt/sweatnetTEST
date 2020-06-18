@@ -78,37 +78,30 @@
         <p> <label id="line39" hidden >line37</label><label class = overriden id=resline39 hidden></label></p>
         <p> <label id="line40" hidden >line38</label><label class = overriden id=resline40 hidden></label></p>
         <p> <label id="line41" hidden >line38</label><label class = overriden id=resline41 hidden></label></p>
+        
         <p> <label id = "underscore3" ></label></p>
     </div>
 
 
 
 
-    <!--<iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:1MhltDUGKPSasS3MwMSdpE&size=basic&theme=light&show-count=0" width="200" 
-        height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>-->
     <body style="background-color:#000000;">
     <script src="js/three.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>-->
     <script src="js/MTLLoader.js"></script>
     <script src="js/OBJLoader.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script src="js/timeline.js"></script>
+    <script src="js/timelineTS1.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
-    <!--<script src="js/VideoFrame.js"></script>-->
-    <!--<script src="js/TweenMax.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
-    <!--<video id="videoalpha"  crossOrigin="anonymous" playsinline style="display:none">
-        <source src="assets/draft13alpha.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-    </video>-->
 
     <video id="video"  crossOrigin="anonymous" playsinline style="display:none">
-        <!--<source src="assets/drinkdrive.webm" type='video/webm; codecs="vp8, vorbis"'>-->
-        <source src="assets/draft17x404kbps.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="assets/sweatnettest.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
-        <!--<source src="assets/drinkdrive.webm" type='video/webm; codecs="vp8, vorbis"'>-->
         <source src="assets/screen10.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
@@ -118,22 +111,16 @@
                 <iframe id="spotify" src="https://open.spotify.com/follow/1/?uri=spotify:artist:1MhltDUGKPSasS3MwMSdpE&size=basic&theme=light&show-count=0" width="200" height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
             </div>
             <div id="rightsocials" >
-                <a href="https://www.crowdfunder.co.uk/save-our-venues-national-campaign" target="_blank"><img src="assets/saveourvenues.png" style="width:100px;height:16px;"></a>
-                <a href="http://www.facebook.com/sweatnet" target="_blank"><img src="assets/clubfacebook.png" style="width:18px;height:18px;"></a>
-            <a href="http://www.instagram.com/sweat_net" target="_blank"><img src="assets/clubinstagram.png" style="width:18px;height:18px;"></a>
-            <a href="http://www.twitter.com/sweat_net" target="_blank"><img src="assets/clubtwitter.png" style="width:18px;height:18px;"></a>
-            <a href="http://www.youtube.com/sweatnet" target="_blank"><img src="assets/clubyoutube.png" style="width:18px;height:18px;"></a>
-            <img id = "mailicon" src="assets/clubmailinglist.png" style="width:18px;height:18px;" onclick="callMailOverlay()">
-            <!--<img id = "shareicon"src="assets/clubshare.png" style="width:18px;height:18px;" onclick="clickShareOverlay()">-->
+            <a id ="saveourvenuesbutton" href="https://www.crowdfunder.co.uk/save-our-venues-national-campaign" target="_blank"><img src="assets/saveourvenues.png" style="width:100px;height:16px;"></a>
+            <a id = "facebookbutton" href="http://www.facebook.com/sweatnet" target="_blank"><img src="assets/clubfacebook.png" style="width:18px;height:18px;"></a>
+            <a id = "instagrambutton" onclick="slowSpin()" target="_blank"><img src="assets/clubinstagram.png" style="width:18px;height:18px;"></a>
+            <a id = "twitterbutton" onclick="swoopIn()" target="_blank"><img src="assets/clubtwitter.png" style="width:18px;height:18px;"></a>
+            <a id = "youtubebutton" onclick="zoomIn()" target="_blank"><img src="assets/clubyoutube.png" style="width:18px;height:18px;"></a>
+            <img id = "mailicon" src="assets/clubmailinglist.png" style="width:18px;height:18px;" onclick="zoomOut()">
         </div>
     </div>
     <div id = "gestures" hidden>
-        <!--<div id = "drag"><img src = "assets/icondrag.png"></div>
-        <div id = "pinch"><img src = "assets/iconpinch.png"></div>-->
-        <div id = "pinchdrag" ><img src = "assets/iconpinchdrag.png"></div>
-
-        <!--<canvas id="canvas"></canvas>-->
-
+        <div id = "pinchdrag" hidden><img src = "assets/iconpinchdrag.png"></div>
     </div>
 
         <div id = "counter" hidden>
@@ -144,9 +131,6 @@
     
 
     <div id="chatroom" hidden>
-    <!--<div class="frame">  
-  <span id="currentFrame"></span>
-  </div>-->
         <table style="width:100%" id="table">
             <tr>
                 <th></th id="chatcell"><div id="chat-area"></div>
@@ -160,9 +144,7 @@
                 </td>
                 <td id = "commentbuttoncell">
 
-                <!--<label id="commentbutton">  -->     
                     <button  id="commentbuttonhit" >Submit</button>
-                <!--</label>-->
             </td>
 
         </tr>
@@ -178,8 +160,7 @@
     </table>
 
     <div id="gotomerchbutton" hidden>
-        <!--<a><img src="assets/saveourvenues.png" style="width:115px;height:18px;" onclick="gotoMerch()"></a>-->
-        <a id="gotomerchtext" onclick="gotoMerch()">&#8595 Go to merch table &#8595 </a>
+        <a id="gotomerchtext"  onclick="gotoMerch()">&#8595 Go to merch table &#8595 </a>
 
     </div>
 
@@ -225,7 +206,7 @@
         updateCounter()
 
         */
-        document.getElementById("counter").innerHTML = 124829;
+        //document.getElementById("counter").innerHTML = 124829;
 
 
             var i = 0;
@@ -385,7 +366,7 @@
         var lightDistance = 10//10; //3
         var lightDecay = 700; //280
         var StageLightColour = 0x3333ff;
-        var StageLightDistance = 9; //18
+        var StageLightIntensity = 9//9; //18
         var StageLightDecay = 450; //350
         var spotLightintensity = 2;
         var spotLightangle = 0.3;
@@ -405,6 +386,8 @@
         var playvid = Boolean;
         var vidnotplaying = true;
         var textloader = new THREE.OBJLoader();
+        var videoTime = 0;
+        var currentDate = new Date();
 
 
         
@@ -724,24 +707,24 @@
             console.log("TouchMove")
 
             if ( event.touches.length == 1 ) {
-            event.preventDefault();
-            lon = ( onPointerDownPointerX - event.touches[0].pageX ) * 0.1 + onPointerDownLon;
-            lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+                event.preventDefault();
+                lon = ( onPointerDownPointerX - event.touches[0].pageX ) * 0.1 + onPointerDownLon;
+                lat = ( event.touches[0].pageY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
             }
         }
 
         function onDocumentMouseMove( event ) {
 
             if ( isUserInteracting === true ) {
-            lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
-            lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+                lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
+                lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
             }
         }
 
 
         function onMouseMove( event ) {
 
-            event.preventDefault();
+            //event.preventDefault();
 
             // calculate mouse position in normalized device coordinates
             // (-1 to +1) for both components
@@ -764,42 +747,50 @@
                 // calculate objects intersecting the picking ray
                 var intersects = raycaster.intersectObjects( scene.children, true );
 
-                for ( var i = 0; i < intersects.length; i++ ) {
+                    for ( var i = 0; i < intersects.length; i++ ) {
 
 
-                    if (intersects[ i ].object.name == "tshirt1") {
-                        goToURL(merchURL1);
-                        
+                        if (intersects[ i ].object.name == "tshirt1") {
+                            goToURL(merchURL1);
+                            
 
+                        }
+                        if (intersects[ i ].object.name == "tshirt2") {
+                            goToURL(merchURL2);
+
+                        }
+                        if (intersects[ i ].object.name == "tshirt3") {
+                            goToURL(merchURL3);
+
+
+                        }
+                        if (intersects[ i ].object.name == "LP1") {
+                            goToURL(merchURL1);
+
+                        }
+
+                        if (intersects[ i ].object.name == "LP2") {
+                            goToURL(merchURL2);
+
+                        }
+
+                        if (intersects[ i ].object.name == "LP3") {
+                            goToURL(merchURL3);
+
+                        }
+                        if (intersects[ i ].object.name == "totebag") {
+                            goToURL(merchURL1);
+
+                        } //else {
+                            //console.log("notclicking merch")
+                            //window.saveourvenuesbutton.addEventListener( 'click', gotoSocialURL('saveourvenues'), false );
+                            //window.facebookbutton.addEventListener( 'click', gotoSocialURL('facebook'), false );
+                            //window.instagrambutton.addEventListener( 'click', gotoSocialURL('instagram'), false );
+                            //window.twitterbutton.addEventListener( 'click', gotoSocialURL('twitter'), false );
+                            //window.youtubebutton.addEventListener( 'click', gotoSocialURL('youtube'), false );
+
+                        //}
                     }
-                    if (intersects[ i ].object.name == "tshirt2") {
-                        goToURL(merchURL2);
-
-                    }
-                    if (intersects[ i ].object.name == "tshirt3") {
-                        goToURL(merchURL3);
-
-
-                    }
-                    if (intersects[ i ].object.name == "LP1") {
-                        goToURL(merchURL1);
-
-                    }
-
-                    if (intersects[ i ].object.name == "LP2") {
-                        goToURL(merchURL2);
-
-                    }
-
-                    if (intersects[ i ].object.name == "LP3") {
-                        goToURL(merchURL3);
-
-                    }
-                    if (intersects[ i ].object.name == "totebag") {
-                        goToURL(merchURL1);
-
-                    }
-                }
             }
 
             isUserInteracting = true
@@ -823,8 +814,38 @@
 
         }
 
+        function gotoSocialURL(whichsocial) {
+
+            switch(whichsocial) {
+                case 'saveourvenues':
+                document.getElementById('saveourvenuesbutton').click();
+                //console.log("save")
+                    break;
+
+                case 'facebook':
+                document.getElementById('facebookbutton').click();
+                    break;
+
+                case 'instagram':
+                document.getElementById('instagrambutton').click();
+                    break;
+
+                case 'twitter':
+                document.getElementById('twitterbutton').click();
+                    break;
+
+                case 'youtube':
+                document.getElementById('youtubebutton').click();
+                    break;
 
 
+
+                default:
+            }
+        }
+
+
+        /*
         var atMerch = false;
         function gotoMerch() {
 
@@ -977,10 +998,28 @@
                 function transToMerchDone() {
                     controls.enabled = true;
                     atMerchDesk = true;
-                    window.addEventListener( 'click', onMouseMove, false );
-                    window.addEventListener( 'touchstart', onDocumentTouchStart, false );
-                    window.addEventListener( 'touchmove', onDocumentTouchMove, false );
-                    window.addEventListener( 'mousemove', onDocumentMouseMove, false );
+                    //if (mouse.y<0.9) {
+
+                        window.addEventListener( 'click', onMouseMove, false );
+                        window.addEventListener( 'touchstart', onDocumentTouchStart, false );
+                        window.addEventListener( 'touchmove', onDocumentTouchMove, false );
+                        window.addEventListener( 'mousemove', onDocumentMouseMove, false );
+                    //} else {
+                        //window.removeEventListener( 'click', onMouseMove, false );
+                        //window.removeEventListener( 'touchstart', onDocumentTouchStart, false );
+                        //window.removeEventListener( 'touchmove', onDocumentTouchMove, false );
+                        //window.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+
+                    //}
+
+                    //window.saveourvenuesbutton.addEventListener( 'click', gotoSocialURL('saveourvenues'), false );
+                    //window.facebookbutton.addEventListener( 'click', gotoSocialURL('facebook'), false );
+                    //window.instagrambutton.addEventListener( 'click', gotoSocialURL('instagram'), false );
+                    //window.twitterbutton.addEventListener( 'click', gotoSocialURL('twitter'), false );
+                    //window.youtubebutton.addEventListener( 'click', gotoSocialURL('youtube'), false );
+
+
+
 
 
                     controls.minAzimuthAngle = 3.2; // radians
@@ -1065,6 +1104,339 @@
 
             }
         }
+
+        */
+
+
+        /////////////////////     Cinematic Swoops            *---------------------------*
+        var zoomouti = 0;
+        var zoomini = 0;
+        
+        function zoomOut() {
+            zoomouti = 0;
+            //clearTimeout(startZoomin);
+
+            startZoomout();
+            function startZoomout() {
+                if (zoomouti < 600) {
+                    zoomouti++;
+                    controls.minDistance += 1;
+                    controls.maxDistance += 1;
+
+                    console.log(controls.minDistance);
+                    controls.update;
+                    setTimeout(startZoomout,10)
+                }
+            }
+        }
+        function zoomIn() {
+            zoomini = 0;
+            
+            //clearTimeout(startZoomout);
+            startZoomin();
+            function startZoomin() {
+                if (zoomini < 600) {
+                    zoomini++;
+                    controls.maxDistance -= 1;
+                    controls.minDistance -= 1;
+
+                    console.log(controls.maxDistance);
+                    controls.update;
+                    setTimeout(startZoomin,10)
+                }
+            }
+        }
+
+        function slowSpin() {
+            controls.autoRotateSpeed -= 0.25;
+            controls.autoRotate = true;
+            controls.update;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        var atMerch = false;
+        function swoopIn() {
+
+            document.getElementById("gotomerchtext").innerHTML = "&#8593 Back &#8593"
+            //document.getElementById("gotomerchtext").style.opacity = 0.25;
+
+
+            camPosition.x = Math.round(camera.position.x);
+            camPosition.y = Math.round(camera.position.y);
+            camPosition.z = Math.round(camera.position.z);
+            controls.autoRotate = false;
+            controls.enabled = false;
+            controls.update();
+
+            xrandTarget = Math.floor(Math.random() * 100);
+            yrandTarget = Math.floor(Math.random() * 100)
+            zrandTarget = Math.floor(Math.random() * 100)
+
+            console.log(xrandTarget, yrandTarget, zrandTarget)
+
+
+
+            
+            if (atMerch == false){
+                controls.autoRotate = false;
+                controls.update();
+
+                atMerch = true;
+                console.log('at merch = ', atMerch);
+
+                function transitionTargetx() {
+                    if (camTarget.x > -200) {  // -200
+                        camTarget.x -= 1;
+                        updateTargetPosx = setTimeout(transitionTargetx, 2);
+                    } else if (camTarget.x < -200) {
+                        camTarget.x += 1;
+                        updateTargetPosx = setTimeout(transitionTargetx, 2);
+
+                    }
+                }
+                function transitionTargety() {
+                    if (camTarget.y > 414) { // 414
+                        camTarget.y -= 1;
+                        updateTargetPosy = setTimeout(transitionTargety, 2);
+                    } else if (camTarget.y < 414) {
+                        camTarget.y += 1;
+                        updateTargetPosy = setTimeout(transitionTargety, 2);
+
+                    }
+                }
+                function transitionTargetz() {
+                    if (camTarget.z > 964) {  //964
+                        camTarget.z -= 1;
+                        updateTargetPosz = setTimeout(transitionTargetz, 2);
+                    } else if (camTarget.z < 964) {
+                        camTarget.z += 1;
+                        updateTargetPosz = setTimeout(transitionTargetz, 2);
+
+                    }
+                }
+
+                //transitionTargetx();
+                //transitionTargety();
+                //transitionTargetz();
+
+                function transitionPositionx() {
+                    window.scrollTo(0, 0);  
+
+                    if (camPosition.x > -215) {
+                        camPosition.x -= 1;
+                            updateCamPosx = setTimeout(transitionPositionx, 0.5);
+                        camera.position.x = camPosition.x;
+                        //console.log(camPosition.x);
+
+
+                    } else if (camPosition.x < -216) {
+                        window.scrollTo(0, 0);  
+
+                        camPosition.x += 1;
+                            updateCamPosx = setTimeout(transitionPositionx, 0.5);
+                        camera.position.x = camPosition.x;
+                        //console.log(camPosition.x);
+
+                    } else if (camPosition.x >= -217 && camPosition.x <= -213) {
+                        transitionPositionxcomplete = true;
+                        clearTimeout(updateCamPosx);
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
+                        if ( transitionPositionzcomplete == true & transitionPositionycomplete == true & transitionPositionxcomplete == true ) {
+                            transToMerchDone();
+                        }
+
+                    }
+                }
+                function transitionPositiony() {
+                    window.scrollTo(0, 0);  
+
+                    if (camPosition.y > 584) {
+                        camPosition.y -= 1;
+                            updateCamPosy = setTimeout(transitionPositiony, 0.5);
+                        camera.position.y = camPosition.y;
+                        //console.log(camPosition.y);
+
+
+                    } else if (camPosition.y < 583) {
+                        window.scrollTo(0, 0);  
+
+                        camPosition.y += 1;
+                            updateCamPosy = setTimeout(transitionPositiony, 0.5);
+                        camera.position.y = camPosition.y;
+                        //console.log(camPosition.y);
+
+                    } else if (camPosition.y >= 582 && camPosition.y <= 585) {
+                        transitionPositionycomplete = true;
+                        clearTimeout(updateCamPosy);
+
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
+                        if ( transitionPositionzcomplete == true & transitionPositionycomplete == true & transitionPositionxcomplete == true ) {
+                            transToMerchDone();
+                        }
+
+                    }
+                }
+                function transitionPositionz() {
+                    window.scrollTo(0, 0);  
+
+                    if (camPosition.z > 624) {
+                        camPosition.z -= 1;
+                            updateCamPosz = setTimeout(transitionPositionz, 0.5);
+                        camera.position.z = camPosition.z;
+                        //console.log(camPosition.z);
+
+                    } else if (camPosition.z < 622) {
+                        window.scrollTo(0, 0);  
+
+                        camPosition.z += 1;
+                        if (atMerch == true) {
+                            updateCamPosz = setTimeout(transitionPositionz, 0.5);
+                        } else {
+                            clearTimeout(updateCamPosz)
+                        }
+                        camera.position.z = camPosition.z;
+                        //console.log(camPosition.z);
+                    } else if (camPosition.z >= 621 && camPosition.z <= 626) {
+                        transitionPositionzcomplete = true;
+                        clearTimeout(updateCamPosz);
+                        console.log(camPosition.x,camPosition.y,camPosition.z, "xcomplete = ", transitionPositionxcomplete,"ycomplete = ", transitionPositionycomplete,"zcomplete = ", transitionPositionzcomplete)
+                        if ( transitionPositionzcomplete == true & transitionPositionycomplete == true & transitionPositionxcomplete == true ) {
+                            transToMerchDone();
+                        }
+                    }
+                }
+
+                transitionPositionx();
+                transitionPositiony();
+                transitionPositionz();
+
+                function transToMerchDone() {
+                    controls.enabled = true;
+                    atMerchDesk = true;
+                    //if (mouse.y<0.9) {
+
+                        window.addEventListener( 'click', onMouseMove, false );
+                        window.addEventListener( 'touchstart', onDocumentTouchStart, false );
+                        window.addEventListener( 'touchmove', onDocumentTouchMove, false );
+                        window.addEventListener( 'mousemove', onDocumentMouseMove, false );
+                    //} else {
+                        //window.removeEventListener( 'click', onMouseMove, false );
+                        //window.removeEventListener( 'touchstart', onDocumentTouchStart, false );
+                        //window.removeEventListener( 'touchmove', onDocumentTouchMove, false );
+                        //window.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+
+                    //}
+
+                    //window.saveourvenuesbutton.addEventListener( 'click', gotoSocialURL('saveourvenues'), false );
+                    //window.facebookbutton.addEventListener( 'click', gotoSocialURL('facebook'), false );
+                    //window.instagrambutton.addEventListener( 'click', gotoSocialURL('instagram'), false );
+                    //window.twitterbutton.addEventListener( 'click', gotoSocialURL('twitter'), false );
+                    //window.youtubebutton.addEventListener( 'click', gotoSocialURL('youtube'), false );
+
+
+
+
+
+                    //controls.minAzimuthAngle = 3.2; // radians
+                    //controls.maxAzimuthAngle = 3.2; // radians
+                    //controls.minPolarAngle = 0.4; // radians
+                    //controls.maxPolarAngle = 1.7; // radians
+                    //controls.minDistance = 100;
+                    //controls.maxDistance = 600;
+                    controls.autoRotateSpeed = 4;
+                    controls.autoRotate = true;
+                    controls.update();
+                    transitionPositionxcomplete = false;
+                    transitionPositionycomplete = false;
+                    transitionPositionzcomplete = false;
+
+
+                    function merchLightOn() {
+                        if (merchLight.intensity <2 ) {
+                            merchLight.intensity += 0.1
+                            setTimeout(merchLightOn,30);
+                        }
+                    }
+                    //merchLightOn();
+                    window.scrollTo(0, 0);  
+                }
+
+
+                controls.update();
+
+
+            } else if (atMerch == true) {
+
+                document.getElementById("gotomerchtext").innerHTML = "&#8595 Go to merch table &#8595"
+
+
+
+
+                transitionPositionxcomplete = false;
+                transitionPositionycomplete = false;
+                transitionPositionzcomplete = false;
+                merchLight.intensity = 0
+                controls.enabled = true;
+                controls.autoRotateSpeed = 4;
+                    controls.autoRotate = true;
+
+                atMerch = false;
+                atMerchDesk = false;
+
+                window.removeEventListener( 'click', onMouseMove, false );
+                window.removeEventListener( 'touchstart', onDocumentTouchStart, false );
+                window.removeEventListener( 'touchmove', onDocumentTouchMove, false );
+                window.removeEventListener( 'mousemove', onDocumentMouseMove, false );
+
+
+                console.log('at merch =', atMerch);
+
+                clearTimeout(updateCamPosx);
+                clearTimeout(updateCamPosy);
+                clearTimeout(updateCamPosz);
+                clearTimeout(updateTargetPosx);
+                clearTimeout(updateTargetPosy);
+                clearTimeout(updateTargetPosz);
+
+
+                camTarget.x = -260;
+                camTarget.y = 550;
+                camTarget.z = 260;
+                camPosition.x = 900;
+                camPosition.y = 498;
+                camPosition.z = -20;
+                camera.position.set(camPosition.x, camPosition.y, camPosition.z);
+
+
+                controls.minAzimuthAngle = - Infinity; // radians
+                controls.maxAzimuthAngle = Infinity; // radians
+                controls.maxPolarAngle = 1.7;
+                controls.minPolarAngle = -2;
+                controls.minDistance = 100;
+                controls.maxDistance = 1200;
+                controls.update();
+                controls.autoRotate = true;
+                controls.update();
+
+
+
+
+            }
+        }
+
+
+
+        //////////////////////////////*-----------------------------*
+
 
 
         function addLights() {        
@@ -1171,7 +1543,7 @@
 
             //////////////// stage light 1
 
-            testLight6 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightDistance, StageLightDecay);//750
+            testLight6 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightIntensity, StageLightDecay);//750
             testLight6.position.set(-116,737,202);
             //testLight6.castShadow = true;
             //testLight6.shadow.camera.near = 100;
@@ -1186,7 +1558,7 @@
 
             //////////////// stage light 2
 
-            testLight7 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightDistance, StageLightDecay);//750
+            testLight7 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightIntensity, StageLightDecay);//750
             testLight7.position.set(-378,737,138);
             //testLight6.castShadow = true;
             //testLight7.shadow.camera.near = 100;
@@ -1201,7 +1573,7 @@
 
             //////////////// stage light 3
 
-            testLight8 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightDistance, StageLightDecay);//750
+            testLight8 = new THREE.PointLight("rgb(26%, 26%, 225%)", StageLightIntensity, StageLightDecay);//750
             testLight8.position.set(-227,737,367);
             //testLight6.castShadow = true;
             //testLight8.shadow.camera.near = 100;
@@ -1213,12 +1585,12 @@
 
             ////////////////// stage spot 1
 
-            stageSpot = new THREE.SpotLight(0xffffff,0);
+            stageSpot = new THREE.SpotLight("rgb(255%, 255%, 255%)",0);
             stageSpot.intensity = 0;
             stageSpot.angle = 0.5;
             stageSpot.penumbra = 1;
             stageSpot.distance = 1;
-            stageSpot.decay = 0;
+            stageSpot.decay = 1
             stageSpot.position.set(-86,529,10);
             stageSpot.target.position.set(-704, 300, 682)//-704, 300, 682);
             //spotlight.target.position.set(200,-130,400);
@@ -1229,12 +1601,12 @@
 
             ////////////////// stage spot 2
 
-            stageSpot1 = new THREE.SpotLight(0xffffff,0);
+            stageSpot1 = new THREE.SpotLight("rgb(255%, 255%, 255%)",0);
             stageSpot1.intensity = 0;
             stageSpot1.angle = 0.5;
             stageSpot1.penumbra = 1;
             stageSpot1.distance = 1;
-            stageSpot1.decay = 0;
+            stageSpot1.decay = 1;
             stageSpot1.position.set(-452,527,-1);
             stageSpot1.target.position.set(130, 300, 748);
             //spotlight.target.position.set(200,-130,400);
@@ -1246,12 +1618,12 @@
 
             ////////////////// stage spot 3
 
-            stageSpot2 = new THREE.SpotLight(0xffffff,0);
-            //stageSpot2.intensity = 0;
+            stageSpot2 = new THREE.SpotLight("rgb(255%, 255%, 255%)",0);
+            stageSpot2.intensity = 0;
             stageSpot2.angle = 0.5;
             stageSpot2.penumbra = 1;
             stageSpot2.distance = 1;
-            stageSpot2.decay = 0;
+            stageSpot2.decay = 1;
             stageSpot2.position.set(-326,527,501);
             stageSpot2.target.position.set(148, 300, -286);
             //spotlight.target.position.set(200,-130,400);
@@ -1263,12 +1635,12 @@
             
             ////////////////// stage spot 4
 
-            stageSpot3 = new THREE.SpotLight(0xffffff,0);
-            //stageSpot3.intensity = 0;
+            stageSpot3 = new THREE.SpotLight("rgb(255%, 255%, 255%)",0);
+            stageSpot3.intensity = 0;
             stageSpot3.angle = 0.5;
             stageSpot3.penumbra = 1;
             stageSpot3.distance = 1;
-            stageSpot3.decay = 0;
+            stageSpot3.decay = 1;
             stageSpot3.position.set(-49,528,388);
             stageSpot3.target.position.set(-766, 300, -409);
             //spotlight.target.position.set(200,-130,400);
@@ -1287,28 +1659,6 @@
 
         }
 
-        /*var currentFrame = document.getElementById('currentFrame');
-        var holovideo = VideoFrame({
-            id : 'video',
-            frameRate: 24,
-            callback : function(frame) {
-                console.log('callback response: ' + response);
-            }
-        });*/
-
-        //console.log(holovideo.get());
-
-        /*document.getElementById('play-pause').addEventListener('click', function(e){
-            if(video.video.paused){
-                video.video.play();
-                video.listen('frame');
-                e.target.innerHTML = 'Pause';
-            }else{
-                video.video.pause();
-                video.stopListen();
-                e.target.innerHTML = 'Play';
-            }
-        });*/
 
 
 
@@ -1318,15 +1668,10 @@
 
 
 
-
         function init(){
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
             
-            //renderer.shadowMap.enabled = true;
-            //renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-            //renderer.setSize( window.innerWidth, window.innerHeight );
-
             renderer.setPixelRatio( window.devicePixelRatio* 0.5 );
 			renderer.setSize( window.innerWidth, window.innerHeight );
             
@@ -1335,11 +1680,8 @@
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.1, 3000 );
 
-
-
             controls = new THREE.OrbitControls( camera, renderer.domElement );
             
-
             controls.autoRotate = true;
 	        controls.autoRotateSpeed = 0.5; // 30 seconds per round when fps is 60
 
@@ -1367,7 +1709,6 @@
             loadingScreen.camera.position.set(-1000,0,5);
 
             
-            //loadingScreen.camera.lookAt(loadingScreen.box.position);
             
             loadingScreen.scene.add(loadingScreen.box);
 
@@ -1375,12 +1716,9 @@
                 loadingtextmesh.traverse( function ( node ) {                
                     if ( node.isMesh ) node.material = new THREE.MeshBasicMaterial({ color: 0xff9900, wireframe: false});
                 })
-                //loadingtext.position.set(0,0,5);
 
-                //loadingScreen.scene.add(loadingtextmesh);
                 loadingtextmesh.rotation.y =  -90 * Math.PI / 180
                 loadingtextmesh.position.set(0,0,-30);
-                //loadingtextmesh.scale.set(0.2,0.2,0.2);
 
 
                 loadingtext = loadingtextmesh;
@@ -1439,8 +1777,107 @@
                 //var count1 = { var : 0};
 
                 addLights();
-                startTimeline();
+
+
+
+                /*video.addEventListener("loadedmetadata", function() {
+                    //console.log("chromee")
+                    console.log(" canplay: before = " + video.currentTime);
+                    video.currentTime = 0.1;
+                    console.log(" canplay: after = " + video.currentTime);
+
+                    if( video.currentTime < 1 ) {
+                        video.play();
+                        video.currentTime = 360//currentMinutes1*60+currentDate.getSeconds();
+                        updateStartLights();
+
+                        console.log("safari")
+       
+
+                    }
+                    else {
+                        video.load();
+                        video.pause();
+                        setTimeout(checkStarted, 500);
+                        console.log("chrome")
+
+                    }
+                }, false);
+
+                function checkStarted() { 
+                    console.log(" checkStarted called");
+                    video.play();
+                    video.currentTime = 360 //currentMinutes1*60+currentDate.getSeconds();
+                    updateStartLights();
+       
+
+                }*/
+
+
+
                 //playVideo();
+
+                                ///////////////   NEW LIGHTS
+
+                //video.currentTime = currentDate.getSeconds();
+                //videoscreen.currentTime = currentDate.getSeconds();
+
+                var currentSeconds = currentDate.getMinutes()* 60 + currentDate.getSeconds()
+
+
+                var currentMinutes = currentDate.getMinutes()
+                console.log(currentDate.getMinutes());
+                var currentMinutes1;
+
+                if (currentDate.getMinutes() >= 20 && currentDate.getMinutes()<= 39) {
+                    currentMinutes1 = currentDate.getMinutes() - 20;
+                    console.log(currentMinutes1)   
+
+
+                } else if (currentDate.getMinutes() >= 40 && currentDate.getMinutes()<= 59) {
+                    currentMinutes1 = currentDate.getMinutes() - 40;
+                    
+                    console.log(currentMinutes1)   
+
+                } else {
+                    currentMinutes1 = currentDate.getMinutes();
+                }
+
+                startTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+                console.log("video starting from", startTime);
+
+                video.play();
+                video.currentTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+                video.addEventListener("loadeddata", function() {
+                    video.currentTime = currentMinutes1*60+currentDate.getSeconds();       
+                    video.play();
+                    console.log("safari")
+                    updateStartLights();
+
+                }, false);
+
+
+
+                //videoscreen.currentTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+
+
+
+                updateStartLights();
+
+
+                setInterval(startLightingCues,500);
+                
+
+
+                
+                setTimeout(gesturesOpacity,3000);
+                //startTimeline();
                 var loadingtext = document.getElementById( 'loadingtext' );
                 loadingtext.style.display = "none";
                 var overlay = document.getElementById( 'overlay' );
@@ -1461,8 +1898,6 @@
 
                 //setTimeout(scrollChatArea,100);
                 //window.setInterval(updateChat, 3000);
-
-
 
 
 
@@ -1487,6 +1922,9 @@
 			//scene.add( lightHelper );
 
 
+            ///////////////////  TEXTURES
+
+            
             mtlLoader = new THREE.MTLLoader(loadingManager);
 
             textureLoader = new THREE.TextureLoader(loadingManager);
@@ -1506,7 +1944,7 @@
             var logo2tex = textureLoader.load('assets/sweatnetlogo.jpg');
 
             var LP1tex = textureLoader.load('assets/becompleteshot.jpg');
-            var LP2tex = textureLoader.load('assets/WMWshot.jpg');
+            var LP2tex = textureLoader.load('assets/wmwshot.jpg');
             var LP3tex = textureLoader.load('assets/vrclubshot.jpg');
 
             logo1tex.wrapS = THREE.RepeatWrapping;
@@ -1642,7 +2080,6 @@
             vidplanemesh1.rotation.y = 5.44;
             scene.add(vidplanemesh1); 
 
-            //playVideo();
 
             
             
@@ -1985,16 +2422,8 @@
             
 
             var cablesmtl = new THREE.MeshPhongMaterial({
-                //map : ceilingtex,
-                //envMap : ceilingtex,
-                //roughness : 0.5,
-                //metalness : 1,
                 color: 0x000000,
                 shininess : 10, 
-                //ambient: 0x030303, 
-                //specular: 0x009900,
-                //refractionRatio : 0.5,
-                //emissiveIntensity: 100
 
             });
 
@@ -2014,7 +2443,7 @@
 
             ////////////////////   hangers
             
-
+            /*
             var hangersmtl = new THREE.MeshPhongMaterial({
                 color: 0xFFFFFF,
                 shininess : 100, 
@@ -2313,7 +2742,7 @@
 
 
 
-            
+            */
 
             ////////////////////   stage surface
             
@@ -2487,8 +2916,6 @@
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
 
-
-
             renderer.setSize( window.innerWidth, window.innerHeight );
             window.scrollTo(0, 0);  
 
@@ -2515,6 +2942,10 @@
             
             renderer.render(scene, camera);
 
+            //videoTime = Math.round(video.currentTime);
+
+            //console.log(videoTime)
+
         }
         
     var startButton = document.getElementById( 'startButton' );
@@ -2537,11 +2968,9 @@
 
                     init();
                     
-		            //animate();
 
                 };
     	}, false );
-            //window.onload = init;
 
         
 
