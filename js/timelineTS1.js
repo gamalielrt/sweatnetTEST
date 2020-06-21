@@ -535,6 +535,8 @@ function startLightingCues() {
         floorColour(7,colourOff)
         houseLightsIntensity(10, 10);
 
+        console.log("waterbaby finished")
+
 
         
     }
