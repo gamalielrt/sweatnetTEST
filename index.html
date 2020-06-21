@@ -385,6 +385,8 @@
         var textloader = new THREE.OBJLoader();
         var videoTime = 0;
         var currentDate = new Date();
+        var vidfinished = false;
+
 
 
         
@@ -1857,7 +1859,6 @@
                 var vid1Playing = false;
                 var vid2Playing = false;
                 var vid3Playing = false;
-                var vidfinished = false;
 
                 if (Math.round(video.currentTime) == 917 && vidfinished == false) {
                     video.pause();

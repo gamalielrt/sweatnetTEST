@@ -664,7 +664,7 @@ function houseLightsUp(_speed) {
 }
 
 function floorColour (_speed, _colour) {
-    TweenMax.to(stagesurfacemtl.emissive, _speed, {r: _colour.r , g:_colour.g, b:_colour.b, ease: Expo.easeOut});
+    TweenMax.to(stagesurfacemtl.emissive, _speed, {r: _colour.r , g:_colour.g, b:_colour.b, ease: Expo.easeOut, overwrite: true});
 
 
 }
