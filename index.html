@@ -102,7 +102,7 @@
     </video>
 
     <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
-        <source src="assets/screen10.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="assets/screen12.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <div id="container">
@@ -120,7 +120,7 @@
         </div>
     </div>
     <div id = "gestures" hidden>
-        <div id = "pinchdrag" hidden><img src = "assets/iconpinchdrag.png"></div>
+        <div id = "pinchdrag" ><img src = "assets/iconpinchdrag.png"></div>
     </div>
 
         <div id = "counter" hidden>
@@ -310,20 +310,17 @@
             var gopacityset = 0.3;
 
             function gesturesOpacity() {
-                //console.log("gestures opacity started")
-                if (gtime < 100) {
+                var gestures = document.getElementById( 'gestures' );
+
+                if (gtime < 60) {
                     gopacityset -= 0.01                
-                    var gestures = document.getElementById( 'gestures' );
                     gestures.style.opacity = gopacityset;
                     gtime ++;
-                    //console.log(gtime)
                     setTimeout(gesturesOpacity, 50);
-                } if (gtime == 60){
+
+                } else if (gtime == 60){
                     clearTimeout(gtime);
-                    //console.log("gestures opacity done")
-                    gestures.remove();
-
-
+                    gestures.style.display = "none";
 
                 }
 
@@ -366,7 +363,7 @@
         var lightDistance = 10//10; //3
         var lightDecay = 700; //280
         var StageLightColour = 0x3333ff;
-        var StageLightIntensity = 9//9; //18
+        var StageLightIntensity = 0//9; //18
         var StageLightDecay = 450; //350
         var spotLightintensity = 2;
         var spotLightangle = 0.3;
@@ -845,7 +842,7 @@
         }
 
 
-        /*
+        
         var atMerch = false;
         function gotoMerch() {
 
@@ -1105,9 +1102,9 @@
             }
         }
 
-        */
+        
 
-
+        /*
         /////////////////////     Cinematic Swoops            *---------------------------*
         var zoomouti = 0;
         var zoomini = 0;
@@ -1431,7 +1428,7 @@
 
 
             }
-        }
+        }*/
 
 
 
@@ -1647,20 +1644,26 @@
             scene.add(stageSpot3);
             scene.add(stageSpot3.target);
             //lightHelper = new THREE.SpotLightHelper( stageSpot );
+            //scene.add( lightHelper );
+            
+            var spotLight = new THREE.SpotLight(0x3333ff);
+            spotLight.intensity = 1;
+            spotLight.angle = 0.3;
+            spotLight.penumbra = 0.5;
+            spotLight.distance = 1;
+            spotLight.decay = 0;
+            spotLight.position.set(0,700,0);
+            spotLight.target.position.set(-900, 0, 900);
+            //spotlight.target.position.set(200,-130,400);
+            //scene.add(spotLight);
+            scene.add(spotLight.target);
+            lightHelper = new THREE.SpotLightHelper( spotLight );
 			//scene.add( lightHelper );
+
 
 
         }
         
-
-        function playVideo() {
-            video.play();
-            videoscreen.play();
-
-        }
-
-
-
 
 
         /////////////////////Init
@@ -1701,9 +1704,7 @@
             controls.dampingFactor = 1;
 
 
-
             controls.update();            
-            
 
             loadingScreen.box.position.set(0,0,5);
             loadingScreen.camera.position.set(-1000,0,5);
@@ -1774,57 +1775,117 @@
             loadingManager.onLoad = function() {
                 console.log("loaded all resources");
                 RESOURCES_LOADED = true;
-                //var count1 = { var : 0};
 
                 addLights();
 
+                ///////////////   NEW TIMING
+
+                getVidTime();
+
+                videoscreen.play();
+
+                updateStartLights();
+
+                setInterval(startCountdown,1000);
+
+                setInterval(restartVid,500);
+
+                setInterval(startLightingCues,500);
+                
+                setTimeout(gesturesOpacity,3000);
 
 
-                /*video.addEventListener("loadedmetadata", function() {
-                    //console.log("chromee")
-                    console.log(" canplay: before = " + video.currentTime);
-                    video.currentTime = 0.1;
-                    console.log(" canplay: after = " + video.currentTime);
+                var loadingtext = document.getElementById( 'loadingtext' );
+                loadingtext.style.display = "none";
+                var overlay = document.getElementById( 'overlay' );
+                overlay.remove();
+                var socials = document.getElementById( 'socials' );
+                socials.style.display = "block";
+                var gestures = document.getElementById( 'gestures' );
+                gestures.style.display = "block";
+                var chatroom = document.getElementById( 'chatroom' );
 
-                    if( video.currentTime < 1 ) {
-                        video.play();
-                        video.currentTime = 360//currentMinutes1*60+currentDate.getSeconds();
-                        updateStartLights();
+                // Show chatroom + Counter
 
-                        console.log("safari")
-       
 
-                    }
-                    else {
-                        video.load();
-                        video.pause();
-                        setTimeout(checkStarted, 500);
-                        console.log("chrome")
+                chatroom.style.display = "block";
+                document.getElementById( 'counter' ).style.display = "block";
+                document.getElementById( 'gotomerchbutton' ).style.display = "block";
 
-                    }
-                }, false);
 
-                function checkStarted() { 
-                    console.log(" checkStarted called");
+                //setTimeout(scrollChatArea,100);
+                //window.setInterval(updateChat, 3000);
+
+
+
+                window.scrollTo(0, 0); 
+
+
+            }
+
+
+            /////////////////////   COUNTDOWN TIMER
+
+            function startCountdown () {
+
+                var countdownSecs = 60-Math.round(video.currentTime);
+
+
+                if (countdownSecs >= 0 && countdownSecs <= 60 ) {
+                    screenplanesmtl.map = countdownNums[countdownSecs];
+                    countdownNums[countdownSecs+1].dispose();
+
+                }
+
+
+            }
+
+            function restartVid () {
+
+                var restartDate = new Date();
+
+                var vid1Playing = false;
+                var vid2Playing = false;
+                var vid3Playing = false;
+
+
+                if (restartDate.getMinutes() == 0 && restartDate.getSeconds() == 0 && vid1Playing == false) {
+                    video.currentTime = 0
                     video.play();
-                    video.currentTime = 360 //currentMinutes1*60+currentDate.getSeconds();
-                    updateStartLights();
-       
-
-                }*/
-
+                    console.log('restart video1');
+                    vid1Playing = true;
+                    vid2Playing = false;
+                    vid3Playing = false;
 
 
-                //playVideo();
-
-                                ///////////////   NEW LIGHTS
-
-                //video.currentTime = currentDate.getSeconds();
-                //videoscreen.currentTime = currentDate.getSeconds();
-
-                var currentSeconds = currentDate.getMinutes()* 60 + currentDate.getSeconds()
 
 
+                }
+                if (restartDate.getMinutes() == 20 && restartDate.getSeconds() == 0 && vid2Playing == false) {
+                    video.currentTime = 0
+                    console.log('restart video2')
+                    vid1Playing = false;
+                    vid2Playing = true;
+                    vid3Playing = false;
+
+
+
+                }
+                if (restartDate.getMinutes() == 40 && restartDate.getSeconds() == 0 && vid3Playing == false) {
+                    video.currentTime = 0
+                    video.play();
+                    console.log('restart video3')
+                    vid1Playing = false;
+                    vid2Playing = false;
+                    vid3Playing = true;
+
+
+
+                }
+
+            }
+
+            function getVidTime () {
                 var currentMinutes = currentDate.getMinutes()
                 console.log(currentDate.getMinutes());
                 var currentMinutes1;
@@ -1860,66 +1921,10 @@
 
                 }, false);
 
-
-
-                //videoscreen.currentTime = currentMinutes1*60+currentDate.getSeconds();
-
-
-
-
-
-                updateStartLights();
-
-
-                setInterval(startLightingCues,500);
-                
-
-
-                
-                setTimeout(gesturesOpacity,3000);
-                //startTimeline();
-                var loadingtext = document.getElementById( 'loadingtext' );
-                loadingtext.style.display = "none";
-                var overlay = document.getElementById( 'overlay' );
-                overlay.remove();
-                var socials = document.getElementById( 'socials' );
-                socials.style.display = "block";
-                var gestures = document.getElementById( 'gestures' );
-                gestures.style.display = "block";
-                var chatroom = document.getElementById( 'chatroom' );
-
-                // Show chatroom + Counter
-
-
-                chatroom.style.display = "block";
-                document.getElementById( 'counter' ).style.display = "block";
-                document.getElementById( 'gotomerchbutton' ).style.display = "block";
-
-
-                //setTimeout(scrollChatArea,100);
-                //window.setInterval(updateChat, 3000);
-
-
-
-                window.scrollTo(0, 0); 
-
-
             }
 
 
-            var spotLight = new THREE.SpotLight(0x3333ff);
-            spotLight.intensity = 1;
-            spotLight.angle = 0.3;
-            spotLight.penumbra = 0.5;
-            spotLight.distance = 1;
-            spotLight.decay = 0;
-            spotLight.position.set(0,700,0);
-            spotLight.target.position.set(-900, 0, 900);
-            //spotlight.target.position.set(200,-130,400);
-            //scene.add(spotLight);
-            scene.add(spotLight.target);
-            lightHelper = new THREE.SpotLightHelper( spotLight );
-			//scene.add( lightHelper );
+
 
 
             ///////////////////  TEXTURES
@@ -1936,6 +1941,8 @@
             var ceilingnormaltex = textureLoader.load('assets/ceilingnormaltex.jpg');
             var curtaintex = textureLoader.load('assets/noisetex.jpg');
             var curtainnormaltex = textureLoader.load('assets/leathernormaltex.jpg');
+
+
 
             /////////////////// MERCH TEXTURES
             
@@ -2006,6 +2013,34 @@
 
 
 
+            var numberTexLoader = new THREE.TextureLoader();
+
+            var countdownNums = new Array(60).fill(0).map((_, index) => {
+            return numberTexLoader.load('assets/numbers/' + pad(index, 3) + '.png');
+            });
+
+            function pad (num, size) {
+            return ('000000000' + num).substr(-size);
+            }
+
+            var i;
+            for (i=0; i<countdownNums.length; i++) {
+                countdownNums[i].wrapS = THREE.RepeatWrapping;
+                countdownNums[i].wrapT = THREE.RepeatWrapping;
+                countdownNums[i].repeat.set(1,1);
+
+            }
+
+            
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2026,8 +2061,7 @@
             //floorplane.position.y = 300;  
             //floorplane.rotation.x = -Math.PI/2; 
             //floorplane.receiveShadow = true;
-            //scene.add(floorplane);    
-
+            //scene.add(floorplane);  
             
             
             ////////////// hologram
@@ -2441,9 +2475,36 @@
                 scene.add( cablesmesh );
             });  
 
+            ////////////////////   screenplanes
+            
+
+            var screenplanesmtl = new THREE.MeshBasicMaterial({
+                color: 0xffffff,
+                shininess : 10, 
+                map : countdownNums[ 0],
+
+
+            });
+
+
+            loader = new THREE.OBJLoader(loadingManager);
+            loader.load( 'assets/screens3.obj', function ( screenplanesmesh ) {
+                            
+
+                screenplanesmesh.traverse( function ( node ) {
+
+                    if ( node.isMesh ) node.material = screenplanesmtl;             
+
+                } );
+
+                screenplanesmesh.position.y = 300;
+                scene.add( screenplanesmesh );
+            });  
+
+
             ////////////////////   hangers
             
-            /*
+            
             var hangersmtl = new THREE.MeshPhongMaterial({
                 color: 0xFFFFFF,
                 shininess : 100, 
@@ -2490,7 +2551,7 @@
             
 
             var tshirt2mtl = new THREE.MeshLambertMaterial({
-                color: 0xFF0000,
+                color: 0x000000,
                 shininess : 100, 
             });
 
@@ -2742,7 +2803,7 @@
 
 
 
-            */
+            
 
             ////////////////////   stage surface
             

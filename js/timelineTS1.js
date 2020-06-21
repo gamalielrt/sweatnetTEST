@@ -10,7 +10,7 @@ var pink = {r: 0.82, g:0.37, b:0.93}
 var orange = {r: 1, g:0.55, b:0.1};
 var colourOff = {r: 0, g:0, b:0}
 
-
+var houseLightsInOp1 = false;
 var houseLightsInOp = false;
 var lightCue1 = false;
 var lightCue2 = false;
@@ -56,6 +56,30 @@ var lightCue40 = false;
 
 
 function updateStartLights () {
+
+    //////////// Countdown
+
+    if (video.currentTime >= 0 && video.currentTime <= 67) {
+        testLight.intensity = 3;
+        testLight1.intensity = 3;
+        testLight2.intensity = 3;
+        testLight3.intensity = 3;
+        testLight4.intensity = 3;
+        testLight5.intensity = 3;
+
+        testLight6.intensity = 0;
+        testLight7.intensity = 0;
+        testLight8.intensity = 0;
+
+        testLight6.color = blue;
+        testLight7.color = blue;
+        testLight8.color = blue;
+
+        stagesurfacemtl.emissive = colourOff
+
+
+    }
+
 
     ///////// ACT 1
 
@@ -150,13 +174,28 @@ function updateStartLights () {
 
 }
 
+//setInterval(startCountdown, 500);
+
+
 function startLightingCues() {
     videoTime = Math.round(video.currentTime);
     console.log(videoTime)
 
 
 
+
     /////////////////////  House Lights Down
+
+    if (videoTime == 1 & houseLightsInOp1 == false) {
+        houseLightsInOp1 = true;
+
+        houseLightsIntensity(10, 4);
+        //stageLightsIntensity(15, 0);
+
+
+        
+    }
+
 
 
     if (videoTime == 68 & houseLightsInOp == false) {
