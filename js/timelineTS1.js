@@ -212,6 +212,8 @@ function startLightingCues() {
         houseLightsInOp1 = true;
 
         houseLightsIntensity(10, 4);
+        lightFade(3, blue, blue, blue, "fade" )
+
         stageLightsIntensity(10, 0);
 
 
@@ -568,9 +570,9 @@ function lightFade(_speed, _colour1, _colour2, _colour3, _flash) {
             TweenMax.to(testLight8, 0.1, {intensity: 150, distance: 600, ease: Expo.easeOut},);
             
 
-            TweenMax.to(testLight6, 2, {intensity: StageLightIntensity, distance: StageLightDecay, delay: 0.5, ease: Expo.easeOut},0);
-            TweenMax.to(testLight7, 2, {intensity: StageLightIntensity, distance: StageLightDecay, delay: 1, ease: Expo.easeOut},0);
-            TweenMax.to(testLight8, 2, {intensity: StageLightIntensity, distance: StageLightDecay, delay: 1.5, ease: Expo.easeOut},0);
+            TweenMax.to(testLight6, 2, {intensity: 18, distance: 450, delay: 0.5, ease: Expo.easeOut},0);
+            TweenMax.to(testLight7, 2, {intensity: 18, distance: 450, delay: 1, ease: Expo.easeOut},0);
+            TweenMax.to(testLight8, 2, {intensity: 18, distance: 450, delay: 1.5, ease: Expo.easeOut},0);
 
             break;
         default:
