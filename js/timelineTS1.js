@@ -52,6 +52,28 @@ var lightCue37 = false;
 var lightCue38 = false;
 var lightCue39 = false;
 var lightCue40 = false;
+var lightCue41 = false;
+var lightCue42 = false;
+var lightCue43 = false;
+var lightCue44 = false;
+var lightCue45 = false;
+var lightCue46 = false;
+var lightCue47 = false;
+var lightCue48 = false;
+var lightCue49 = false;
+var lightCue50 = false;
+var lightCue51 = false;
+var lightCue52 = false;
+var lightCue53 = false;
+var lightCue54 = false;
+var lightCue55 = false;
+var lightCue56 = false;
+var lightCue57 = false;
+var lightCue58 = false;
+var lightCue59 = false;
+var lightCue60 = false;
+
+
 
 
 
@@ -190,7 +212,7 @@ function startLightingCues() {
         houseLightsInOp1 = true;
 
         houseLightsIntensity(10, 4);
-        //stageLightsIntensity(15, 0);
+        stageLightsIntensity(10, 0);
 
 
         
@@ -201,6 +223,8 @@ function startLightingCues() {
     if (videoTime == 68 & houseLightsInOp == false) {
         houseLightsInOp = true;
 
+
+        lightFade(3, blue, blue, blue, "fade" )
         houseLightsIntensity(5, 1);
         stageLightsIntensity(7, 18);
         floorColour(0,blue);
@@ -499,6 +523,18 @@ function startLightingCues() {
 
         stageLightsIntensity(1, 18)
         lightFade(1,red,red,red,"fade")
+
+        
+    }
+
+    if (videoTime == 911 & lightCue27 == false) {
+        lightCue27 = true;
+
+
+        stageLightsIntensity(7, 0)
+        floorColour(7,colourOff)
+        houseLightsIntensity(10, 10);
+
 
         
     }

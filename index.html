@@ -1786,7 +1786,7 @@
 
                 updateStartLights();
 
-                setInterval(startCountdown,1000);
+                //setInterval(startCountdown,1000);
 
                 setInterval(restartVid,500);
 
@@ -1842,11 +1842,27 @@
 
             function restartVid () {
 
+                var countdownSecs = 60-Math.round(video.currentTime);
+
+
+                if (countdownSecs >= 0 && countdownSecs <= 60 ) {
+                    screenplanesmtl.map = countdownNums[countdownSecs];
+                    countdownNums[countdownSecs+1].dispose();
+
+                }
+
+
                 var restartDate = new Date();
 
                 var vid1Playing = false;
                 var vid2Playing = false;
                 var vid3Playing = false;
+                var vidfinished = false;
+
+                if (Math.round(video.currentTime) == 917 && vidfinished == false) {
+                    video.pause();
+                    vidfinished = true;
+                }
 
 
                 if (restartDate.getMinutes() == 0 && restartDate.getSeconds() == 0 && vid1Playing == false) {
@@ -1856,6 +1872,7 @@
                     vid1Playing = true;
                     vid2Playing = false;
                     vid3Playing = false;
+                    vidfinished = false;
 
 
 
@@ -1867,6 +1884,7 @@
                     vid1Playing = false;
                     vid2Playing = true;
                     vid3Playing = false;
+                    vidfinished = false;
 
 
 
@@ -1878,6 +1896,7 @@
                     vid1Playing = false;
                     vid2Playing = false;
                     vid3Playing = true;
+                    vidfinished = false;
 
 
 
