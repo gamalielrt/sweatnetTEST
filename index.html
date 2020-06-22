@@ -1938,8 +1938,10 @@
 
 
                 video.addEventListener("loadeddata", function() {
-                    video.currentTime = currentMinutes1*60+currentDate.getSeconds();       
-                    video.play();
+                    video.currentTime = currentMinutes1*60+currentDate.getSeconds();  
+                    if (video.currentTime < 911) {    
+                        video.play();
+                    }
                     console.log("safari")
                     updateStartLights();
 
@@ -2035,8 +2037,6 @@
             floortex.wrapT = THREE.RepeatWrapping;
             floortex.repeat.set(5,5);
 
-
-
             var numberTexLoader = new THREE.TextureLoader();
 
             var countdownNums = new Array(60).fill(0).map((_, index) => {
@@ -2055,37 +2055,6 @@
 
             }
 
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-            //var plane = new THREE.PlaneGeometry(1200,1200,10,10);
-            //var floormtl = new THREE.MeshStandardMaterial();
-            //floormtl.map = floortex;
-            //floormtl.colour = 0x000000;
-            //floormtl.displacementMap = floordis;
-            //floormtl.displacementScale = 3;
-            //floormtl.displacementBias = 1;
-            //floormtl.metalness = 0.3;
-            //floormtl.roughness = 1;
-            //var floorplane = new THREE.Mesh(plane, floormtl);
-            //floorplane.position.y = 300;  
-            //floorplane.rotation.x = -Math.PI/2; 
-            //floorplane.receiveShadow = true;
-            //scene.add(floorplane);  
             
             
             ////////////// hologram
@@ -2379,7 +2348,7 @@
             });
 
             loader = new THREE.OBJLoader(loadingManager);
-            loader.load( 'assets/newspeakers.obj', function ( speakersmesh ) {
+            loader.load( 'assets/newspeakers1.obj', function ( speakersmesh ) {
                             
 
                 speakersmesh.traverse( function ( node ) {
@@ -2544,7 +2513,7 @@
 
                 } );
 
-                hangersmesh.position.y = 300;
+                hangersmesh.position.y = 297;
                 scene.add( hangersmesh );
             });  
 
@@ -3027,9 +2996,6 @@
             
             renderer.render(scene, camera);
 
-            //videoTime = Math.round(video.currentTime);
-
-            //console.log(videoTime)
 
         }
         
