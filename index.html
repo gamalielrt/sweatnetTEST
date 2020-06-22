@@ -2920,7 +2920,7 @@
             });
 
             loader = new THREE.OBJLoader(loadingManager);
-            loader.load( 'assets/newfanblades2.obj', function ( fan1mesh ) {
+            loader.load( 'assets/newbfanblades2.obj', function ( fan1mesh ) {
                             
 
                 fan1mesh.traverse( function ( node ) {
@@ -2971,7 +2971,7 @@
             });
 
             loader = new THREE.OBJLoader(loadingManager);
-            loader.load( 'assets/newfanblades1.obj', function ( fan2mesh ) {
+            loader.load( 'assets/newbfanblades1.obj', function ( fan2mesh ) {
                             
 
                 fan2mesh.traverse( function ( node ) {
@@ -3014,8 +3014,8 @@
             }
 
             if (RESOURCES_LOADED == true) {
-                fan1parent1.rotation.y += 0.01;
-                fan2parent1.rotation.y += 0.02;
+                fan1parent1.rotation.y -= 0.01;
+                fan2parent1.rotation.y -= 0.02;
             }
 
 
