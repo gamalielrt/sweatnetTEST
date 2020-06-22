@@ -212,9 +212,11 @@ function startLightingCues() {
         houseLightsInOp1 = true;
 
         houseLightsIntensity(10, 4);
-        lightFade(3, blue, blue, blue, "fade" )
+        //lightFade(3, blue, blue, blue, "fade" )
 
         stageLightsIntensity(10, 0);
+        floorColour(0,colourOff);
+
 
 
         
