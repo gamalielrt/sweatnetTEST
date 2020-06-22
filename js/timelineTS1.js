@@ -121,7 +121,7 @@ function updateStartLights () {
         testLight7.color = blue;
         testLight8.color = blue;
 
-        stagesurfacemtl.emissive = colourOff
+        stagesurfacemtl.emissive = blue;
 
 
     }
@@ -214,8 +214,11 @@ function startLightingCues() {
         houseLightsIntensity(10, 4);
         //lightFade(3, blue, blue, blue, "fade" )
 
-        stageLightsIntensity(10, 0);
-        floorColour(0,colourOff);
+        //stageLightsIntensity(10, 0);
+        //floorColour(0,colourOff);
+
+        stageBlackout(10);
+
 
 
 
