@@ -1842,6 +1842,11 @@
 
             }
 
+            var vid1Playing = false;
+            var vid2Playing = false;
+            var vid3Playing = false;
+
+
             function restartVid () {
 
                 var countdownSecs = 60-Math.round(video.currentTime);
@@ -1856,9 +1861,6 @@
 
                 var restartDate = new Date();
 
-                var vid1Playing = false;
-                var vid2Playing = false;
-                var vid3Playing = false;
 
                 if (Math.round(video.currentTime) == 917 && vidfinished == false) {
                     video.pause();

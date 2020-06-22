@@ -196,7 +196,6 @@ function updateStartLights () {
 
 }
 
-//setInterval(startCountdown, 500);
 
 
 function startLightingCues() {
