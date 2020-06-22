@@ -1,3 +1,4 @@
+var colourOff = {r: 0, g:0, b:0}
 var blue = {r: 0.26, g:0.26, b:1}
 var red = {r: 1, g:0.1, b:0.1}
 var green = {r: 0.1, g:1, b:0.1}
@@ -8,7 +9,9 @@ var white = {r:1, g:1, b:1}
 var yellow = {r: 1, g:1, b:0.1}
 var pink = {r: 0.82, g:0.37, b:0.93}
 var orange = {r: 1, g:0.55, b:0.1};
-var colourOff = {r: 0, g:0, b:0}
+var indianRed = {r: 93, g:39, b:39};
+var cerulean = {r: 2, g:72, b:80};
+var antiqueWhite = {r: 98, g:92, b:84};
 
 var houseLightsInOp1 = false;
 var houseLightsInOp = false;
