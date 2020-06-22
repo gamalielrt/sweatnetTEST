@@ -93,9 +93,9 @@ function updateStartLights () {
         testLight7.intensity = 0;
         testLight8.intensity = 0;
 
-        testLight6.color = blue;
-        testLight7.color = blue;
-        testLight8.color = blue;
+        //testLight6.color = blue;
+        //testLight7.color = blue;
+        //testLight8.color = blue;
 
         stagesurfacemtl.emissive = colourOff
 
@@ -117,9 +117,9 @@ function updateStartLights () {
         testLight7.intensity = 18;
         testLight8.intensity = 18;
 
-        testLight6.color = blue;
-        testLight7.color = blue;
-        testLight8.color = blue;
+        //testLight6.color = blue;
+        //testLight7.color = blue;
+        //testLight8.color = blue;
 
         stagesurfacemtl.emissive = blue;
 
