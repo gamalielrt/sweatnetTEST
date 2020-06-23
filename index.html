@@ -1850,9 +1850,9 @@
 
             }*/
 
-            var vid1Playing = false;
-            var vid2Playing = false;
-            var vid3Playing = false;
+            //var vid1Playing = false;
+            //var vid2Playing = false;
+            //var vid3Playing = false;
             var vidfinished = false;
 
 
@@ -1867,7 +1867,9 @@
                     console.log('startcountdown', countdownSecs);
 
                     screenplanesmtl.map = countdownNums[countdownSecs];
-                    countdownNums[countdownSecs+1].dispose();
+                    if (countdownSecs <= 58) {
+                        countdownNums[countdownSecs+1].dispose();
+                    }
 
                 }
 
