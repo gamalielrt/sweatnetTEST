@@ -1789,6 +1789,8 @@
                 updateStartLights();
 
                 setInterval(restartVid,500);
+                setInterval(startCountdown,1000);
+
 
                 ///////////////
 
@@ -1836,28 +1838,7 @@
 
             /////////////////////   COUNTDOWN TIMER
 
-            /*function startCountdown () {
-
-                var countdownSecs = 60-Math.round(video.currentTime);
-
-
-                if (countdownSecs >= 0 && countdownSecs <= 60 ) {
-                    screenplanesmtl.map = countdownNums[countdownSecs];
-                    countdownNums[countdownSecs+1].dispose();
-
-                }
-
-
-            }*/
-
-            //var vid1Playing = false;
-            //var vid2Playing = false;
-            //var vid3Playing = false;
-            var vidfinished = false;
-
-
-
-            function restartVid () {
+            function startCountdown () {
 
                 var countdownSecs = 60-Math.round(video.currentTime);
 
@@ -1876,7 +1857,16 @@
 
 
                 }
+            }
 
+            //var vid1Playing = false;
+            //var vid2Playing = false;
+            //var vid3Playing = false;
+            var vidfinished = false;
+
+
+
+            function restartVid () {
 
                 var restartDate = new Date();
 
@@ -1889,7 +1879,7 @@
                 }
 
 
-                if (restartDate.getMinutes() == 7 && restartDate.getSeconds() /*== 0 && vidfinished == true*/) {
+                if (restartDate.getMinutes() == 0 && restartDate.getSeconds() == 0 && vidfinished == true) {
                     video.currentTime = 0
                     video.play();
                     console.log('restart video1');
@@ -1962,46 +1952,6 @@
                         video.play();
                     }
                     //console.log("safari")
-                    updateStartLights();
-
-                }, false);
-
-            }
-
-            function getVidTime () {
-                var currentMinutes = currentDate.getMinutes()
-                console.log(currentDate.getMinutes());
-                var currentMinutes1;
-
-                if (currentDate.getMinutes() >= 20 && currentDate.getMinutes()<= 39) {
-                    currentMinutes1 = currentDate.getMinutes() - 20;
-                    console.log(currentMinutes1)   
-
-
-                } else if (currentDate.getMinutes() >= 40 && currentDate.getMinutes()<= 59) {
-                    currentMinutes1 = currentDate.getMinutes() - 40;
-                    
-                    console.log(currentMinutes1)   
-
-                } else {
-                    currentMinutes1 = currentDate.getMinutes();
-                }
-
-                startTime = currentMinutes1*60+currentDate.getSeconds();
-
-
-                console.log("video starting from", startTime);
-
-                video.play();
-                video.currentTime = currentMinutes1*60+currentDate.getSeconds();
-
-
-                video.addEventListener("loadeddata", function() {
-                    video.currentTime = currentMinutes1*60+currentDate.getSeconds();  
-                    if (video.currentTime < 911) {    
-                        video.play();
-                    }
-                    console.log("safari")
                     updateStartLights();
 
                 }, false);
