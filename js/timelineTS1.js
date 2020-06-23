@@ -478,16 +478,23 @@ function startLightingCues() {
         
     }
 
+    if (videoTime == 270 & lightCue23 == false) {
+        lightCue23 = true;
+
+        lightFade(2, blue, blue, blue, "fade" )
+        
+    }
+
+
 
     ///////////////////    Last Hit
 
 
 
-    if (videoTime == 274 & lightCue23 == false) {
-        lightCue23 = true;
+    if (videoTime == 274 & lightCue24 == false) {
+        lightCue24 = true;
         floorColour(0,blue)
 
-        lightFade(1, blue, blue, blue, "fade" )
         sideLightsColour(0,blue,blue,blue,blue);
 
 
@@ -504,8 +511,8 @@ function startLightingCues() {
     ////////////////////    ACT 2
 
 
-    if (videoTime == 330 & lightCue24 == false) {
-        lightCue24 = true;
+    if (videoTime == 330 & lightCue25 == false) {
+        lightCue25 = true;
 
         stageLightsIntensity(10, 10)
         lightFade(10,darkGreen,darkGreen,darkGreen,"fade")
@@ -513,8 +520,8 @@ function startLightingCues() {
         
     }
 
-    if (videoTime == 537 & lightCue25 == false) {
-        lightCue25 = true;
+    if (videoTime == 537 & lightCue26 == false) {
+        lightCue26 = true;
 
         stageLightsIntensity(7, 0)
         floorColour(7,colourOff)
@@ -527,8 +534,8 @@ function startLightingCues() {
 
     /////////////////////    ACT3
 
-    if (videoTime == 549 & lightCue26 == false) {
-        lightCue26 = true;
+    if (videoTime == 549 & lightCue27 == false) {
+        lightCue27 = true;
 
         stageLightsIntensity(1, 18)
         lightFade(1,red,red,red,"fade")
@@ -536,8 +543,8 @@ function startLightingCues() {
         
     }
 
-    if (videoTime == 911 & lightCue27 == false) {
-        lightCue27 = true;
+    if (videoTime == 911 & lightCue28 == false) {
+        lightCue28 = true;
 
 
         stageLightsIntensity(7, 0)

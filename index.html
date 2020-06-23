@@ -1859,17 +1859,21 @@
 
             function restartVid () {
 
-                var countdownSecs = 60-Math.round(video.currentTime);
+                var countdownSecs = 59-Math.round(video.currentTime);
 
 
-                if (countdownSecs >= 0 && countdownSecs <= 60 ) {
+                if (countdownSecs == 59) {
 
                     console.log('startcountdown', countdownSecs);
-
                     screenplanesmtl.map = countdownNums[countdownSecs];
-                    if (countdownSecs <= 58) {
-                        countdownNums[countdownSecs+1].dispose();
-                    }
+                    //countdownNums[countdownSecs+1].dispose();
+
+                } else if (countdownSecs <= 58 && countdownSecs >= 0) {
+
+                    console.log('startcountdown', countdownSecs);
+                    screenplanesmtl.map = countdownNums[countdownSecs];
+                    countdownNums[countdownSecs+1].dispose();
+
 
                 }
 
@@ -1885,7 +1889,7 @@
                 }
 
 
-                if (restartDate.getMinutes() == 4 && restartDate.getSeconds() == 0 && vidfinished == true) {
+                if (restartDate.getMinutes() == 0 && restartDate.getSeconds() == 0 && vidfinished == true) {
                     video.currentTime = 0
                     video.play();
                     console.log('restart video1');
