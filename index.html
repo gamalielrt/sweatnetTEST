@@ -362,7 +362,7 @@
         var lightColour = 0xD98400; //D98400
         var lightDistance = 10//10; //3
         var lightDecay = 700; //280
-        var StageLightColour = 0x3333ff;
+        //var StageLightColour = 0x3333ff;
         var StageLightIntensity = 0//9; //18
         var StageLightDecay = 450; //350
         var spotLightintensity = 2;
@@ -1775,7 +1775,7 @@
             };
 
             loadingManager.onLoad = function() {
-                console.log("loaded all resources");
+
                 RESOURCES_LOADED = true;
 
                 addLights();
@@ -1788,13 +1788,18 @@
 
                 updateStartLights();
 
-                //setInterval(startCountdown,1000);
-
                 setInterval(restartVid,500);
+
+                ///////////////
 
                 setInterval(startLightingCues,500);
                 
                 setTimeout(gesturesOpacity,3000);
+
+                //setTimeout(socialsOpacity1,8000)
+
+
+                ///////////////////
 
 
                 var loadingtext = document.getElementById( 'loadingtext' );
@@ -1848,6 +1853,8 @@
             var vid1Playing = false;
             var vid2Playing = false;
             var vid3Playing = false;
+            var vidfinished = false;
+
 
 
             function restartVid () {
@@ -1856,6 +1863,9 @@
 
 
                 if (countdownSecs >= 0 && countdownSecs <= 60 ) {
+
+                    console.log('startcountdown', countdownSecs);
+
                     screenplanesmtl.map = countdownNums[countdownSecs];
                     countdownNums[countdownSecs+1].dispose();
 
@@ -1868,47 +1878,87 @@
                 if (Math.round(video.currentTime) == 917 && vidfinished == false) {
                     video.pause();
                     vidfinished = true;
-                    console.log('video paused');
+                    console.log('video end');
 
                 }
 
 
-                if (restartDate.getMinutes() == 0 && restartDate.getSeconds() == 0 && vid1Playing == false) {
+                if (restartDate.getMinutes() == 0 && restartDate.getSeconds() == 0 && vidfinished == true) {
                     video.currentTime = 0
                     video.play();
                     console.log('restart video1');
-                    vid1Playing = true;
-                    vid2Playing = false;
-                    vid3Playing = false;
+                    //vid1Playing = true;
+                    //vid2Playing = false;
+                    //vid3Playing = false;
                     vidfinished = false;
 
 
 
 
                 }
-                if (restartDate.getMinutes() == 20 && restartDate.getSeconds() == 0 && vid2Playing == false) {
+                if (restartDate.getMinutes() == 20 && restartDate.getSeconds() == 0 && vvidfinished == true) {
                     video.currentTime = 0
                     console.log('restart video2')
-                    vid1Playing = false;
-                    vid2Playing = true;
-                    vid3Playing = false;
+                    //vid1Playing = false;
+                    //vid2Playing = true;
+                    //vid3Playing = false;
                     vidfinished = false;
 
 
 
                 }
-                if (restartDate.getMinutes() == 40 && restartDate.getSeconds() == 0 && vid3Playing == false) {
+                if (restartDate.getMinutes() == 40 && restartDate.getSeconds() == 0 && vidfinished == true) {
                     video.currentTime = 0
                     video.play();
                     console.log('restart video3')
-                    vid1Playing = false;
-                    vid2Playing = false;
-                    vid3Playing = true;
+                    //vid1Playing = false;
+                    //vid2Playing = false;
+                    //vid3Playing = true;
                     vidfinished = false;
 
 
 
                 }
+
+            }
+
+            function getVidTime () {
+                var currentMinutes = currentDate.getMinutes()
+                console.log(currentDate.getMinutes());
+                var currentMinutes1;
+
+                if (currentDate.getMinutes() >= 20 && currentDate.getMinutes()<= 39) {
+                    currentMinutes1 = currentDate.getMinutes() - 20;
+                    console.log(currentMinutes1)   
+
+
+                } else if (currentDate.getMinutes() >= 40 && currentDate.getMinutes()<= 59) {
+                    currentMinutes1 = currentDate.getMinutes() - 40;
+                    
+                    console.log(currentMinutes1)   
+
+                } else {
+                    currentMinutes1 = currentDate.getMinutes();
+                }
+
+                startTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+                console.log("video starting from", startTime);
+
+                video.play();
+                video.currentTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+                video.addEventListener("loadeddata", function() {
+                    video.currentTime = currentMinutes1*60+currentDate.getSeconds();  
+                    if (video.currentTime < 911) {    
+                        video.play();
+                    }
+                    //console.log("safari")
+                    updateStartLights();
+
+                }, false);
 
             }
 
