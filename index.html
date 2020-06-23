@@ -1859,7 +1859,7 @@
 
             function restartVid () {
 
-                var countdownSecs = 59-Math.round(video.currentTime);
+                var countdownSecs = 60-Math.round(video.currentTime);
 
 
                 if (countdownSecs == 59) {
@@ -1889,7 +1889,7 @@
                 }
 
 
-                if (restartDate.getMinutes() == 0 && restartDate.getSeconds() == 0 && vidfinished == true) {
+                if (restartDate.getMinutes() == 2 && restartDate.getSeconds() == 0 && vidfinished == true) {
                     video.currentTime = 0
                     video.play();
                     console.log('restart video1');
