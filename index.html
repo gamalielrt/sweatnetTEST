@@ -90,15 +90,14 @@
     <script src="js/MTLLoader.js"></script>
     <script src="js/OBJLoader.js"></script>
     <script src="js/OrbitControls.js"></script>
-    <script src="js/timeline.js"></script>
-    <script src="js/timelineTS1.js"></script>
+    <script src="js/timelineN1.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
 
     <video id="video"  crossOrigin="anonymous" playsinline style="display:none">
-        <source src="assets/sweatnettest.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="assets/sweatnetnight1test.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
@@ -362,7 +361,7 @@
         var lightColour = 0xD98400; //D98400
         var lightDistance = 10//10; //3
         var lightDecay = 700; //280
-        //var StageLightColour = 0x3333ff;
+        var StageLightColour = 0x3333ff;
         var StageLightIntensity = 0//9; //18
         var StageLightDecay = 450; //350
         var spotLightintensity = 2;
@@ -1526,7 +1525,7 @@
 
             ////////////////// bar light
 
-            testLight2 = new THREE.PointLight(lightColour,3, lightDecay);//750
+            testLight2 = new THREE.PointLight(lightColour,10, lightDecay);//750
             testLight2.position.set(-747,531,-211);
             //testLight5.castShadow = true;
             testLight2.shadow.camera.near = 100;
@@ -1659,7 +1658,7 @@
             //spotlight.target.position.set(200,-130,400);
             //scene.add(spotLight);
             scene.add(spotLight.target);
-            lightHelper = new THREE.SpotLightHelper( spotLight );
+            //lightHelper = new THREE.SpotLightHelper( spotLight );
 			//scene.add( lightHelper );
 
 
@@ -1780,8 +1779,40 @@
 
                 addLights();
 
-                ///////////////   NEW TIMING
+                //////////////////
 
+                
+                video.currentTime = 300 ;
+                video.play();
+                videoscreen.play();
+                setInterval(startCountdown,1000);
+                updateStartLights();
+
+                
+
+
+                //////////////////
+
+                
+                /*
+                playVideo();
+
+                if (video.currentTime >= 8) {
+                    testLight.intensity = 1;
+                    testLight1.intensity = 1;
+                    testLight2.intensity = 1;
+                    testLight3.intensity = 1;
+                    testLight4.intensity = 1;
+                    testLight5.intensity = 1;
+
+                    testLight6.intensity = 18;
+                    testLight7.intensity = 18;
+                    testLight8.intensity = 18;
+
+                }
+                */
+                /////////////////
+                /*
                 getVidTime();
 
                 videoscreen.play();
@@ -1789,8 +1820,9 @@
                 updateStartLights();
 
                 setInterval(restartVid,500);
-                setInterval(startCountdown,1000);
 
+                setInterval(startCountdown,1000);
+                */
 
                 ///////////////
 
@@ -1829,7 +1861,6 @@
 
                 window.scrollTo(0, 0); 
 
-                animate();
 
 
 
@@ -1859,19 +1890,16 @@
                 }
             }
 
-            //var vid1Playing = false;
-            //var vid2Playing = false;
-            //var vid3Playing = false;
             var vidfinished = false;
-
-
 
             function restartVid () {
 
                 var restartDate = new Date();
 
+                console.log(Math.round(video.duration),'vidfinished =' ,vidfinished, restartDate.getMinutes(), restartDate.getSeconds() )
 
-                if (Math.round(video.currentTime) == 917 && vidfinished == false) {
+
+                if (Math.round(video.currentTime) == 806 & vidfinished == false) { /////////////////  VIDEO DURATION
                     video.pause();
                     vidfinished = true;
                     console.log('video end', 'vidfinished =', vidfinished,restartDate.getMinutes(),restartDate.getSeconds());
@@ -1879,37 +1907,36 @@
                 }
 
 
-                if (restartDate.getMinutes() == 0 && restartDate.getSeconds() == 0 && vidfinished == true) {
+                if (restartDate.getMinutes() == 0 & restartDate.getSeconds() == 0 & vidfinished == true) {
                     video.currentTime = 0
                     video.play();
+
+                    
                     console.log('restart video1');
-                    //vid1Playing = true;
-                    //vid2Playing = false;
-                    //vid3Playing = false;
                     vidfinished = false;
 
 
 
 
                 }
-                if (restartDate.getMinutes() == 20 && restartDate.getSeconds() == 0 && vidfinished == true) {
-                    video.currentTime = 0
-                    console.log('restart video2')
-                    //vid1Playing = false;
-                    //vid2Playing = true;
-                    //vid3Playing = false;
-                    vidfinished = false;
-
-
-
-                }
-                if (restartDate.getMinutes() == 40 && restartDate.getSeconds() == 0 && vidfinished == true) {
+                if (restartDate.getMinutes() == 20 & restartDate.getSeconds() == 0 & vidfinished == true) {
                     video.currentTime = 0
                     video.play();
+
+
+
+                    console.log('restart video2')
+                    vidfinished = false;
+
+
+
+                }
+                if (restartDate.getMinutes() == 40 & restartDate.getSeconds() == 0 & vidfinished == true) {
+                    video.currentTime = 0
+                    video.play();
+
+
                     console.log('restart video3')
-                    //vid1Playing = false;
-                    //vid2Playing = false;
-                    //vid3Playing = true;
                     vidfinished = false;
 
 
@@ -1942,19 +1969,34 @@
 
                 console.log("video starting from", startTime);
 
-                video.play();
-                video.currentTime = currentMinutes1*60+currentDate.getSeconds();
+                updateStartLights();
 
 
-                video.addEventListener("loadeddata", function() {
-                    video.currentTime = currentMinutes1*60+currentDate.getSeconds();  
-                    if (video.currentTime < 911) {    
+
+                if (startTime <= 806){  //////////////////  VID DURATION
+
+                    video.play();
+                    video.currentTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+                    video.addEventListener("loadeddata", function() {
+                        video.currentTime = currentMinutes1*60+currentDate.getSeconds();  
                         video.play();
-                    }
-                    //console.log("safari")
+                        updateStartLights();
+
+                    }, false);
+
+                } else { 
+
+                    vidfinished = true;
+
+                    video.pause();
+                    video.load();
+
+                    console.log('arrived pre performance', 'vidfinished = ', vidfinished);
                     updateStartLights();
 
-                }, false);
+                }                    
 
             }
 
@@ -2045,6 +2087,10 @@
             floortex.wrapS = THREE.RepeatWrapping;
             floortex.wrapT = THREE.RepeatWrapping;
             floortex.repeat.set(5,5);
+
+            /////////////////////////////////////////  LONG VIDEO
+
+            
 
             var numberTexLoader = new THREE.TextureLoader();
 
@@ -2970,7 +3016,7 @@
             
             
           
-            //animate();
+            animate();
 
             window.addEventListener( 'resize', onWindowResize, false );
         };
