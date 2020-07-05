@@ -97,7 +97,7 @@
 
 
     <video id="video"  crossOrigin="anonymous" playsinline style="display:none">
-        <source src="assets/sweatnetnight1test.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="assets/sweatnetN1draft1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
@@ -1105,7 +1105,7 @@
 
         
 
-        /*
+        
         /////////////////////     Cinematic Swoops            *---------------------------*
         var zoomouti = 0;
         var zoomini = 0;
@@ -1429,7 +1429,7 @@
 
 
             }
-        }*/
+        }
 
 
 
@@ -1687,7 +1687,7 @@
             controls = new THREE.OrbitControls( camera, renderer.domElement );
             
             controls.autoRotate = true;
-	        controls.autoRotateSpeed = 0.5; // 30 seconds per round when fps is 60
+	        controls.autoRotateSpeed = 0.5//0.5; // 30 seconds per round when fps is 60
 
             controls.target = camTarget;
             camera.position.set(camPosition.x, camPosition.y, camPosition.z);
@@ -1780,16 +1780,16 @@
                 addLights();
 
                 //////////////////
-
                 
-                video.currentTime = 300 ;
+                /*
+                video.currentTime = 320;
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
                 updateStartLights();
 
                 
-
+                */
 
                 //////////////////
 
@@ -1812,7 +1812,7 @@
                 }
                 */
                 /////////////////
-                /*
+                
                 getVidTime();
 
                 videoscreen.play();
@@ -1822,8 +1822,8 @@
                 setInterval(restartVid,500);
 
                 setInterval(startCountdown,1000);
-                */
-
+                
+                
                 ///////////////
 
                 setInterval(startLightingCues,500);
@@ -1899,7 +1899,7 @@
                 console.log(Math.round(video.duration),'vidfinished =' ,vidfinished, restartDate.getMinutes(), restartDate.getSeconds() )
 
 
-                if (Math.round(video.currentTime) == 806 & vidfinished == false) { /////////////////  VIDEO DURATION
+                if (Math.round(video.currentTime) == 812 & vidfinished == false) { /////////////////  VIDEO DURATION
                     video.pause();
                     vidfinished = true;
                     console.log('video end', 'vidfinished =', vidfinished,restartDate.getMinutes(),restartDate.getSeconds());
@@ -1973,7 +1973,7 @@
 
 
 
-                if (startTime <= 806){  //////////////////  VID DURATION
+                if (startTime <= 812){  //////////////////  VID DURATION
 
                     video.play();
                     video.currentTime = currentMinutes1*60+currentDate.getSeconds();
@@ -2548,7 +2548,7 @@
                 screenplanesmesh.position.y = 300;
                 scene.add( screenplanesmesh );
             });  
-
+            
 
             ////////////////////   hangers
             
@@ -2572,7 +2572,8 @@
                 scene.add( hangersmesh );
             });  
 
-                ////////////////////   tshirt1
+            /*
+            ////////////////////   tshirt1
             
 
             var tshirt1mtl = new THREE.MeshLambertMaterial({
@@ -2616,7 +2617,7 @@
                 tshirt2mesh.position.y = 300;
                 scene.add( tshirt2mesh );
             });  
-
+            */
             ////////////////////   tshirt3
             
 
@@ -2640,7 +2641,7 @@
             });  
 
             ////////////////////   logo1
-            
+            /*
 
             var logo1mtl = new THREE.MeshLambertMaterial({
                 //color: 0x000000,
@@ -2694,7 +2695,7 @@
                 logo2mesh.position.y = 300;
                 scene.add( logo2mesh );
             });  
-
+            */
             ////////////////////   logo3
             
 
@@ -2850,7 +2851,7 @@
             });  
 
 
-
+            
             
 
             ////////////////////   stage surface
