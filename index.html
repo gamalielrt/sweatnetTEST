@@ -97,7 +97,7 @@
 
 
     <video id="video"  crossOrigin="anonymous" playsinline style="display:none">
-        <source src="assets/sweatnetN1draft1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="assets/sweatnetN1draft2.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
@@ -636,9 +636,9 @@
         */
         ///////////////////////// MERCH
 
-        var merchURL1 = "https://www.bandcamp.com/sweatnet";
-        var merchURL2 = "https://www.facebook.com";
-        var merchURL3 = "https://www.theguardian.com";
+        var merchURL1 = "https://haichberna.bandcamp.com";
+        var merchURL2 = "https://jessicawinter.bandcamp.com/releases";
+        var merchURL3 = "https://www.bandcamp.com/sweatnet";
 
         var atMerchDesk = false;
 
@@ -1780,16 +1780,16 @@
                 addLights();
 
                 //////////////////
-                
                 /*
-                video.currentTime = 320;
+                
+                video.currentTime = 554;
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
                 updateStartLights();
 
-                
                 */
+                
 
                 //////////////////
 
@@ -1899,7 +1899,7 @@
                 console.log(Math.round(video.duration),'vidfinished =' ,vidfinished, restartDate.getMinutes(), restartDate.getSeconds() )
 
 
-                if (Math.round(video.currentTime) == 812 & vidfinished == false) { /////////////////  VIDEO DURATION
+                if (Math.round(video.currentTime) == 822 & vidfinished == false) { /////////////////  VIDEO DURATION
                     video.pause();
                     vidfinished = true;
                     console.log('video end', 'vidfinished =', vidfinished,restartDate.getMinutes(),restartDate.getSeconds());
@@ -1973,7 +1973,7 @@
 
 
 
-                if (startTime <= 812){  //////////////////  VID DURATION
+                if (startTime <= 822){  //////////////////  VID DURATION
 
                     video.play();
                     video.currentTime = currentMinutes1*60+currentDate.getSeconds();

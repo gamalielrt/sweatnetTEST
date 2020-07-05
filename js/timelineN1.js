@@ -92,7 +92,7 @@ var introDuration = 40; //15
 var act1Duration = 223;
 var interval1Duration = 12;
 var act2Duration = 210;
-var interval2Duration = 11;
+var interval2Duration = 10;
 var act3Duration = 267;
 
 introTime = countdownDuration;
@@ -1318,13 +1318,11 @@ function startLightingCues() {
 
     //////////////// HOUSE LIGHTS UP
 
-    if (videoTime == act3Time + 266 & lightCue67 == false) { //797
+    if (videoTime == act3Time + 265 & lightCue67 == false) { //797
         lightCue67 = true;
 
         houseLightsIntensity(10, 18);
 
-        
-                
     }
 
     
