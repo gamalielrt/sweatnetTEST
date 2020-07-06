@@ -166,7 +166,7 @@
     <div id="merchoverlay" hidden onclick="hideMerchOverlay()">
     </div>
     <table id="merchtable" hidden>
-        <tr><th><div id="merchtext"> Proceed to merch store?</div><br></th></tr>
+        <tr><th><a id="merchtext"> Proceed to</a><a id="merchname"></a><a id="merchtext2"> merch store?</a><br></th></tr>
         <tr><td><a  id="merchok" href="" target="_blank" >Ok</a><a> </a></a><button onclick="hideMerchOverlay()" id="merchcancel">Cancel</button></td></tr>
     </table>
 
@@ -640,6 +640,11 @@
         var merchURL2 = "https://jessicawinter.bandcamp.com/releases";
         var merchURL3 = "https://www.bandcamp.com/sweatnet";
 
+        var artist1 = 'Haich Ber Na';
+        var artist2 = 'Jessica Winter';
+        var artist3 = 'Sweat';
+
+
         var atMerchDesk = false;
 
         var camTarget = new THREE.Vector3(-260,550,260);
@@ -750,34 +755,48 @@
 
                         if (intersects[ i ].object.name == "tshirt1") {
                             goToURL(merchURL1);
+                            document.getElementById("merchname").innerHTML = ' ' + artist1 + '&#39s';
+
                             
 
                         }
                         if (intersects[ i ].object.name == "tshirt2") {
                             goToURL(merchURL2);
+                            document.getElementById("merchname").innerHTML = ' ' + artist2 + '&#39s';
+
 
                         }
                         if (intersects[ i ].object.name == "tshirt3") {
                             goToURL(merchURL3);
+                            document.getElementById("merchname").innerHTML = ' ' + artist3 + '&#39s';
+
 
 
                         }
                         if (intersects[ i ].object.name == "LP1") {
                             goToURL(merchURL1);
+                            document.getElementById("merchname").innerHTML = ' ' + artist1 + '&#39s';
+
 
                         }
 
                         if (intersects[ i ].object.name == "LP2") {
                             goToURL(merchURL2);
+                            document.getElementById("merchname").innerHTML = ' ' + artist2 + '&#39s';
+
 
                         }
 
                         if (intersects[ i ].object.name == "LP3") {
                             goToURL(merchURL3);
+                            document.getElementById("merchname").innerHTML = ' ' + artist3 + '&#39s';
+
 
                         }
                         if (intersects[ i ].object.name == "totebag") {
                             goToURL(merchURL1);
+                            document.getElementById("merchname").innerHTML = ' ' + artist3 + '&#39s';
+
 
                         } //else {
                             //console.log("notclicking merch")
@@ -1034,7 +1053,7 @@
 
 
                     function merchLightOn() {
-                        if (merchLight.intensity <2 ) {
+                        if (merchLight.intensity <1.5 ) {
                             merchLight.intensity += 0.1
                             setTimeout(merchLightOn,30);
                         }
@@ -1780,16 +1799,27 @@
                 addLights();
 
                 //////////////////
+
                 /*
+
+                var countdownDuration = 60;
+                var introDuration = 40; //15
+                var act1Duration = 223;
+                var interval1Duration = 12;
+                var act2Duration = 210;
+                var interval2Duration = 10;
+                var act3Duration = 267;
+
                 
-                video.currentTime = 554;
+                
+                video.currentTime = act2Time + 215;
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
                 updateStartLights();
 
-                */
                 
+                */
 
                 //////////////////
 
@@ -2027,8 +2057,8 @@
             var logo1tex = textureLoader.load('assets/sweatlogo.jpg');
             var logo2tex = textureLoader.load('assets/sweatnetlogo.jpg');
 
-            var LP1tex = textureLoader.load('assets/becompleteshot.jpg');
-            var LP2tex = textureLoader.load('assets/wmwshot.jpg');
+            var LP1tex = textureLoader.load('assets/haichEP.png');
+            var LP2tex = textureLoader.load('assets/jessEP.png');
             var LP3tex = textureLoader.load('assets/vrclubshot.jpg');
 
             logo1tex.wrapS = THREE.RepeatWrapping;
@@ -2754,7 +2784,7 @@
             
 
             var LP2mtl = new THREE.MeshLambertMaterial({
-                map: LP1tex,
+                map: LP2tex,
 
                 //color: 0xFF0000,
                 //shininess : 100, 
