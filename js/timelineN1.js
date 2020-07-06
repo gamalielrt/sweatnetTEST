@@ -103,7 +103,7 @@ var introDuration = 40; //15
 var act1Duration = 223;
 var interval1Duration = 12;
 var act2Duration = 210;
-var interval2Duration = 10;
+var interval2Duration = 12;
 var act3Duration = 267;
 
 introTime = countdownDuration;
@@ -142,7 +142,7 @@ function updateStartLights () {
         testLight7.color = purple;
         testLight8.color = purple;
 
-        //stagesurfacemtl.emissive = colourOff
+        stagesurfacemtl.emissive = colourOff
 
 
 
@@ -406,6 +406,7 @@ function startLightingCues() {
         houseLightsInOp = true;
         stageLightsIntensity(3, 7);
         floorColour(3,blue);
+        lightFade(0,blue,blue,blue,blue,'fade');
 
 
     }
@@ -584,18 +585,20 @@ function startLightingCues() {
     }
     /////////////////  BRIDGE
 
-    if (videoTime == act1Time + 105 & lightCue10 == false) { //194
+    if (videoTime == act1Time + 104 & lightCue10 == false) { //194
         lightCue10 = true;
         spotsPanUp(0.594,1000,0,'once',1);
         stageLightsIntensity(0.5, 0);
+        sideLightsColour(0,cyan,cyan,cyan,cyan);
+        floorColour(0, lightOff);
     }
 
     /////////////////  BRIDGE 1
 
-        if (videoTime == act1Time + 107 & lightCue69 == false) { //194
-            lightCue69 = true;
+    if (videoTime == act1Time + 107 & lightCue69 == false) { //194
+        lightCue69 = true;
             spotsPanUp(20,0,600,'once',1);
-        }
+    }
     
 
 
@@ -615,7 +618,7 @@ function startLightingCues() {
         lightCue66 = true;
 
         stageBlackout(0);
-        lightFade(0,purple,purple,purple, 'fade');
+        //lightFade(0,purple,purple,purple, 'fade');
 
 
         
@@ -648,7 +651,7 @@ function startLightingCues() {
     if (videoTime == act1Time + 133 & lightCue13 == false) { //223
         lightCue13 = true;
 
-        stageLightStrobe(0.297, 30);
+        stageLightStrobe(0.297, 31);
 
   
 
@@ -1042,7 +1045,7 @@ function startLightingCues() {
             
     }
 
-    if (videoTime == act3Time + 28 & lightCue62 == false) { //567
+    if (videoTime == act3Time + 34 & lightCue62 == false) { //567
         lightCue62 = true;
     
         stageLightStrobe(0.05, 9)

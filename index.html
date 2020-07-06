@@ -119,7 +119,7 @@
         </div>
     </div>
     <div id = "gestures" hidden>
-        <div id = "pinchdrag" ><img src = "assets/iconpinchdrag.png"></div>
+        <div id = "pinchdrag" ><img src = "assets/iconpinchdrag1.png"></div>
     </div>
 
         <div id = "counter" hidden>
@@ -1800,7 +1800,7 @@
 
                 //////////////////
 
-                /*
+                
 
                 var countdownDuration = 60;
                 var introDuration = 40; //15
@@ -1812,14 +1812,14 @@
 
                 
                 
-                video.currentTime = act2Time + 215;
+                video.currentTime = act1Time + 75;
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
                 updateStartLights();
 
                 
-                */
+                
 
                 //////////////////
 
@@ -1842,7 +1842,7 @@
                 }
                 */
                 /////////////////
-                
+                /*
                 getVidTime();
 
                 videoscreen.play();
@@ -1853,12 +1853,12 @@
 
                 setInterval(startCountdown,1000);
                 
-                
+                */
                 ///////////////
 
                 setInterval(startLightingCues,500);
                 
-                setTimeout(gesturesOpacity,3000);
+                setTimeout(gesturesOpacity,5000);
 
                 //setTimeout(socialsOpacity1,8000)
 
@@ -2759,7 +2759,7 @@
             ////////////////////   LP1
             var LP1mesh;
 
-            var LP1mtl = new THREE.MeshLambertMaterial({
+            var LP1mtl = new THREE.MeshBasicMaterial({
                 map : LP1tex,
 
                 //color: 0x000000,
@@ -2783,7 +2783,7 @@
             ////////////////////   LP2
             
 
-            var LP2mtl = new THREE.MeshLambertMaterial({
+            var LP2mtl = new THREE.MeshBasicMaterial({
                 map: LP2tex,
 
                 //color: 0xFF0000,
@@ -2807,7 +2807,7 @@
             ////////////////////   LP3
             
 
-            var LP3mtl = new THREE.MeshLambertMaterial({
+            var LP3mtl = new THREE.MeshBasicMaterial({
                 map: LP3tex,
 
                 //color: 0x000000,
