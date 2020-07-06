@@ -337,7 +337,7 @@ function updateStartLights () {
 
 function startLightingCues() {
     videoTime = Math.round(video.currentTime);
-    console.log(videoTime, stageSpot.intensity,stageSpot.decay)
+    console.log(videoTime)
 
     if (videoTime > introTime & videoTime < act1Time) {
         console.log('countdown and intro', videoTime, videoTime);
