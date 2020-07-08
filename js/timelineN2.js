@@ -105,9 +105,9 @@ var lightCue72 = false;
 var countdownDuration = 60;
 var introDuration = 40; //15
 var act1Duration = 223;
-var interval1Duration = 5;
+var interval1Duration = 20;
 var act2Duration = 209;
-var interval2Duration = 3;
+var interval2Duration = 13;
 var act3Duration = 527;
 
 introTime = countdownDuration;
@@ -950,15 +950,28 @@ function startLightingCues() {
     if (videoTime == act3Time & lightCue36 == false) { //533
         lightCue36 = true;
 
-        stageLightFade(5,white, white,white, 'fade');   
-        stageLightsIntensity(5, 15)   ; 
+        stageLightFade(5,scarlett, scarlett,scarlett, 'fade');   
+        stageLightsIntensity(20, 8)   ; 
+        //sideLightsStrobe(1.64,18);
+        //sideLightsOn(0)
+        //sideLightsIntensity(0,0,15);
+        //sideLightsColour(0,red,red,red,red);
+        //sideLightColourChange(3,18,blue,blue,blue,blue,colourOff,colourOff,colourOff,colourOff,'fade');
+        //spotsPanUp(9,0,1000,'yoyo',99);
+
+        
     }
 
     /////////////////  
 
-    if (videoTime == act3Time + 11 & lightCue37 == false) { //546
+    if (videoTime == act3Time + 1 & lightCue37 == false) { //546
         lightCue37 = true;
-        stageLightFade(5,white, white,white, 'fade');   
+        sideLightsStrobe(1.64,18);
+        //sideLightsOn(0)
+        sideLightsIntensity(0,0,15);
+        sideLightsColour(0,red,red,red,red);
+        sideLightColourChange(3,18,blue,blue,blue,blue,colourOff,colourOff,colourOff,colourOff,'fade');
+        spotsPanUp(9,0,1000,'yoyo',99);
 
 
 
@@ -1286,8 +1299,6 @@ function stageLightColour(_speed, _length, _colour1, _colour2, _colour3, _colour
 
         case 'stagger' : 
             TweenMax.allTo([testLight8.color, testLight7.color, testLight6.color], _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
-            //TweenMax.to(testLight7.color, _speed, {startAt: {r: _colour2.r , g:_colour2.g, b:_colour2.b}, r: _colourto2.r , g:_colourto2.g, b:_colourto2.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
-            //TweenMax.to(testLight8.color, _speed, {startAt: {r: _colour3.r , g:_colour3.g, b:_colour3.b}, r: _colourto3.r , g:_colourto3.g, b:_colourto3.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
             TweenMax.to(stagesurfacemtl.emissive, _speed, {startAt: {r: _colourto1.r , g:_colourto1.g, b:_colourto1.b}, r: _colour1.r , g:_colour1.g, b:_colour1.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
 
         
@@ -1295,6 +1306,33 @@ function stageLightColour(_speed, _length, _colour1, _colour2, _colour3, _colour
     }
 
 }
+
+function sideLightColourChange(_speed, _length, _colour1, _colour2, _colour3, _colour4, _colourto1, _colourto2, _colourto3, _colourto4, _fade  ) {
+
+    switch (_fade) {
+        case 'fade' :
+            TweenMax.to(stageSpot.color, _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
+            TweenMax.to(stageSpot1.color, _speed, {startAt: {r: _colour2.r , g:_colour2.g, b:_colour2.b}, r: _colourto2.r , g:_colourto2.g, b:_colourto2.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
+            TweenMax.to(stageSpot2.color, _speed, {startAt: {r: _colour3.r , g:_colour3.g, b:_colour3.b}, r: _colourto3.r , g:_colourto3.g, b:_colourto3.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
+            TweenMax.to(stageSpot3.color, _speed, {startAt: {r: _colour4.r , g:_colour4.g, b:_colour4.b}, r: _colourto4.r , g:_colourto4.g, b:_colourto4.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
+
+
+
+            break;
+
+        case 'snap' :
+
+            break;
+
+        case 'stagger' : 
+            TweenMax.allTo([stageSpot.color, stageSpot1.color, stageSpot2.color, stageSpot3.color], _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
+
+        
+        default:
+    }
+
+}
+
 
 function houseLightsIntensity(_speed, _intensity) {
 
@@ -1334,10 +1372,10 @@ function sideLightsOn(_speed) {
     //TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 1,  ease: "none", overwrite: true});
 
 
-    TweenMax.to(stageSpot, _speed,  {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 1, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot1, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 2, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot2, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 3, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot3, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 4, ease:Linear.easeNone},);
+    TweenMax.to(stageSpot, _speed,  {startAt: {decay: 1},decay: 0, repeatDelay: _speed, yoyo: true, delay: _speed * 1, ease:Linear.easeNone},);
+    TweenMax.to(stageSpot1, _speed, {startAt: {decay: 1},decay: 0, repeatDelay: _speed, yoyo: true, delay: _speed * 2, ease:Linear.easeNone},);
+    TweenMax.to(stageSpot2, _speed, {startAt: {decay: 1},decay: 0, repeatDelay: _speed, yoyo: true, delay: _speed * 3, ease:Linear.easeNone},);
+    TweenMax.to(stageSpot3, _speed, {startAt: {decay: 1},decay: 0, repeatDelay: _speed, yoyo: true, delay: _speed * 4, ease:Linear.easeNone},);
     
     
 
