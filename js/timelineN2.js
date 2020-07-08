@@ -13,7 +13,10 @@ var indianRed = {r: 0.93, g:0.39, b:0.39};
 var cerulean = {r: 0.2, g:0.72, b:0.80};
 var antiqueWhite = {r: 0.98, g:0.92, b:0.84};
 var scarlett = {r: 0.55, g:0.09, b:0.09};
+var darkMagenta = {r: 0.55, g:0, b:0.55};
+var hotPink = {r: 0.55, g:0.23, b:0.38};
 var lightOff = '0%,0%,0%';
+
 
 var houseLightsInOp1 = false;
 var houseLightsInOp = false;
@@ -385,7 +388,7 @@ function startLightingCues() {
         houseLightsInOp1 = true;
 
         houseLightsIntensity(10, 4);
-        //lightFade(3, blue, blue, blue, "fade" )
+        //stageLightFade(3, blue, blue, blue, "fade" )
 
         //stageLightsIntensity(10, 0);
         //floorColour(0,colourOff);
@@ -407,7 +410,7 @@ function startLightingCues() {
         houseLightsInOp = true;
         stageLightsIntensity(3, 7);
         floorColour(3,blue);
-        lightFade(0,blue,blue,blue,blue,'fade');
+        stageLightFade(0,blue,blue,blue,blue,'fade');
 
 
     }
@@ -440,7 +443,7 @@ function startLightingCues() {
         lightCue1 = true;
 
 
-        lightFade(0,purple,purple,purple, 'fade');
+        stageLightFade(0,purple,purple,purple, 'fade');
         stageLightsIntensity(0, 5);
         //floorColour(0,purple);
 
@@ -510,7 +513,7 @@ function startLightingCues() {
 
         stageLightsIntensity(0, 18);
 
-        lightFade(0,purple,purple,purple, 'fade');
+        stageLightFade(0,purple,purple,purple, 'fade');
 
         stageLightStrobe(0.297, 56);
 
@@ -568,7 +571,7 @@ function startLightingCues() {
 
     if (videoTime == act1Time + 86 & lightCue9 == false) { //175
         lightCue9 = true;
-        lightFade(0,purple,purple,purple, 'fade');
+        stageLightFade(0,purple,purple,purple, 'fade');
         sideLightsColour(0,orange,orange,orange,orange);
 
         stageLightsIntensity(0, 10);
@@ -601,7 +604,7 @@ function startLightingCues() {
         lightCue11 = true;
 
         stageLightsPulse(0.594,12,cyan,cyan,cyan);
-        //lightFade(0,cyan,cyan,cyan, 'fade');
+        //stageLightFade(0,cyan,cyan,cyan, 'fade');
 
     }
 
@@ -611,7 +614,7 @@ function startLightingCues() {
         lightCue66 = true;
 
         stageBlackout(0);
-        //lightFade(0,purple,purple,purple, 'fade');
+        //stageLightFade(0,purple,purple,purple, 'fade');
 
 
         
@@ -656,7 +659,7 @@ function startLightingCues() {
         lightCue14 = true;
         sideLightsColour(0,purple,purple,purple,purple);
 
-        lightFade(0,orange,orange,orange, 'fade');
+        stageLightFade(0,orange,orange,orange, 'fade');
 
         floorColour(0,purple);
         stageLightStrobe(0.297, 33);
@@ -675,7 +678,7 @@ function startLightingCues() {
 
         //sideLightsColour(0,purple,purple,purple,purple);
 
-        //lightFade(0,orange,orange,orange, 'fade');
+        //stageLightFade(0,orange,orange,orange, 'fade');
 
         floorColour(0,purple);
         stageLightStrobe(0.297, 19);
@@ -707,7 +710,7 @@ function startLightingCues() {
     if (videoTime == act1Time + 161 & lightCue17 == false) { //251
         lightCue17 = true;
         
-        //lightFade(0,purple,purple,purple, 'fade');
+        //stageLightFade(0,purple,purple,purple, 'fade');
         stageLightsPulse(0.594,99,orange,orange,orange);
         //stageLightsIntensity(0, 18);
         //stageLightStrobe(1.118, 20);
@@ -741,9 +744,10 @@ function startLightingCues() {
     if (videoTime == act2Time & lightCue18 == false) { //304
         lightCue18 = true;
 
-        lightFade(0, darkGreen, darkGreen, darkGreen, 'fade');
+        stageLightFade(0, blue, blue, blue, 'fade');
 
-        stageLightsIntensity(5, 12);
+        stageLightsIntensity(5, 18);
+
 
 
 
@@ -754,8 +758,10 @@ function startLightingCues() {
 
     /////////////////  INTRO 1/2
 
-    if (videoTime == act2Time + 7 & lightCue19 == false) { //311
+    if (videoTime == act2Time + 5 & lightCue19 == false) { //311
         lightCue19 = true;
+
+        //stageLightColour(9,9 ,blue,blue,blue, darkMagenta ,darkMagenta ,darkMagenta, 'stagger');
 
 
     
@@ -765,6 +771,8 @@ function startLightingCues() {
 
     if (videoTime == act2Time + 30 & lightCue20 == false) { //334
         lightCue20 = true;
+
+        stageLightColour(9,9 ,blue,blue,blue, darkMagenta ,darkMagenta ,darkMagenta, 'stagger');
 
 
         
@@ -779,8 +787,9 @@ function startLightingCues() {
     }
     /////////////////  V2
 
-    if (videoTime == act2Time + 48 & lightCue22 == false) { //351
+    if (videoTime == act2Time + 60 & lightCue22 == false) { //351
         lightCue22 = true;
+        stageLightColour(9,9 ,blue,blue,blue, darkMagenta ,darkMagenta ,darkMagenta, 'stagger');
 
 
 
@@ -789,8 +798,10 @@ function startLightingCues() {
     }
     /////////////////  PRE
 
-    if (videoTime == act2Time + 60 & lightCue23 == false) { //364
+    if (videoTime == act2Time + 90 & lightCue23 == false) { //364
         lightCue23 = true;
+        stageLightColour(9,9 ,blue,blue,blue, darkMagenta ,darkMagenta ,darkMagenta, 'stagger');
+
 
 
 
@@ -798,8 +809,15 @@ function startLightingCues() {
     }
     /////////////////  DROP
 
-    if (videoTime == act2Time + 78 & lightCue24 == false) { //382
+    if (videoTime == act2Time + 123 & lightCue24 == false) { //382
         lightCue24 = true;
+
+        stageLightColour(9,9 ,blue,blue,blue, darkMagenta ,darkMagenta ,darkMagenta, 'stagger');
+        sideLightsColour(0,darkGreen,darkGreen,darkGreen,darkGreen)
+        sideLightsPulse(6,9,5);
+
+
+
 
 
 
@@ -809,8 +827,12 @@ function startLightingCues() {
     }
     /////////////////  BUILD
 
-    if (videoTime == act2Time + 88 & lightCue25 == false) { //392
+    if (videoTime == act2Time + 145 & lightCue25 == false) { //392
         lightCue25 = true;
+
+        spotsPanUp(20,300,1000,'once');
+
+        
 
         
     }
@@ -928,7 +950,7 @@ function startLightingCues() {
     if (videoTime == act3Time & lightCue36 == false) { //533
         lightCue36 = true;
 
-        lightFade(5,scarlett, scarlett,scarlett, 'flash');   
+        stageLightFade(5,scarlett, scarlett,scarlett, 'flash');   
         stageLightsIntensity(5, 15)   ; 
     }
 
@@ -1211,7 +1233,7 @@ function startLightingCues() {
 
 }
 
-function lightFade(_speed, _colour1, _colour2, _colour3, _flash) {
+function stageLightFade(_speed, _colour1, _colour2, _colour3, _flash) {
 
     switch (_flash) {
         case 'fade':
@@ -1239,6 +1261,34 @@ function lightFade(_speed, _colour1, _colour2, _colour3, _flash) {
             TweenMax.to(testLight8, 2, {intensity: 18, distance: 450, delay: 1.5, ease: Expo.easeOut},0);
 
             break;
+        default:
+    }
+
+}
+
+function stageLightColour(_speed, _length, _colour1, _colour2, _colour3, _colourto1, _colourto2, _colourto3, _fade  ) {
+
+    switch (_fade) {
+        case 'fade' :
+            TweenMax.to(testLight6.color, _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
+            TweenMax.to(testLight7.color, _speed, {startAt: {r: _colour2.r , g:_colour2.g, b:_colour2.b}, r: _colourto2.r , g:_colourto2.g, b:_colourto2.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
+            TweenMax.to(testLight8.color, _speed, {startAt: {r: _colour3.r , g:_colour3.g, b:_colour3.b}, r: _colourto3.r , g:_colourto3.g, b:_colourto3.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
+            TweenMax.to(stagesurfacemtl.emissive, _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
+
+
+            break;
+
+        case 'snap' :
+
+            break;
+
+        case 'stagger' : 
+            TweenMax.allTo([testLight8.color, testLight7.color, testLight6.color], _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
+            //TweenMax.to(testLight7.color, _speed, {startAt: {r: _colour2.r , g:_colour2.g, b:_colour2.b}, r: _colourto2.r , g:_colourto2.g, b:_colourto2.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
+            //TweenMax.to(testLight8.color, _speed, {startAt: {r: _colour3.r , g:_colour3.g, b:_colour3.b}, r: _colourto3.r , g:_colourto3.g, b:_colourto3.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
+            TweenMax.to(stagesurfacemtl.emissive, _speed, {startAt: {r: _colourto1.r , g:_colourto1.g, b:_colourto1.b}, r: _colour1.r , g:_colour1.g, b:_colour1.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
+
+        
         default:
     }
 
