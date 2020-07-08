@@ -969,7 +969,7 @@ function startLightingCues() {
         sideLightsStrobe(1.64,18);
         //sideLightsOn(0)
         sideLightsIntensity(0,0,15);
-        sideLightsColour(0,red,red,red,red);
+        //sideLightsColour(0,red,red,red,red);
         sideLightColourChange(3,18,blue,blue,blue,blue,colourOff,colourOff,colourOff,colourOff,'fade');
         spotsPanUp(9,0,1000,'yoyo',99);
 
