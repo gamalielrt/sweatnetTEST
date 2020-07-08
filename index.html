@@ -1809,7 +1809,7 @@
 
                 
                 
-                video.currentTime = act2Time - 3;
+                video.currentTime = act3Time - 3;
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
@@ -2172,7 +2172,7 @@
             
             var vidplanemtl = new THREE.MeshPhongMaterial(loadingManager);
             vidplanemtl.map = vidtexture;
-            vidplanemtl.alphaTest = 0.1;
+            vidplanemtl.alphaTest = 0.1//0.1;
             vidplanemtl.alphaMap = vidtexture;
             vidplanemtl.transparent = true;
             vidplanemtl.opacity = 1;

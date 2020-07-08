@@ -950,7 +950,7 @@ function startLightingCues() {
     if (videoTime == act3Time & lightCue36 == false) { //533
         lightCue36 = true;
 
-        stageLightFade(5,scarlett, scarlett,scarlett, 'flash');   
+        stageLightFade(5,white, white,white, 'flash');   
         stageLightsIntensity(5, 15)   ; 
     }
 
