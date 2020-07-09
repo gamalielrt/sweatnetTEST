@@ -341,7 +341,7 @@ function updateStartLights () {
 
 function startLightingCues() {
     videoTime = Math.round(video.currentTime);
-    console.log(videoTime)
+    console.log(videoTime, stageSpot.intensity)
 
     if (videoTime > introTime & videoTime < act1Time) {
         console.log('countdown and intro', videoTime, videoTime);
@@ -966,39 +966,73 @@ function startLightingCues() {
 
     if (videoTime == act3Time + 1 & lightCue37 == false) { //546
         lightCue37 = true;
-        sideLightsStrobe(1.64,18);
+        sideLightsStrobe(1.64,9);
         //sideLightsOn(0)
         sideLightsIntensity(0,0,15);
         //sideLightsColour(0,red,red,red,red);
         sideLightColourChange(3,18,blue,blue,blue,blue,colourOff,colourOff,colourOff,colourOff,'fade');
-        spotsPanUp(9,0,1000,'yoyo',99);
+        spotsPanUp(9,0,1000,'yoyo',9);
 
+    }
 
+        /////////////////  
 
+        if (videoTime == act3Time + 36 & lightCue40 == false) { //587
+            lightCue40 = true;
+
+            sideLightsStrobe(1.64,11);
+            //sideLightsOn(0)
+            sideLightsIntensity(0,0,15);
+            //sideLightsColour(0,red,red,red,red);
+            sideLightColourChange(3,18,blue,blue,blue,blue,red,red,red,red,'fade');
+            spotsPanUp(9,0,1000,'yoyo',9);
+    
+    
+    
     
             
-    }
-    /////////////////  
+        }
 
-    if (videoTime == act3Time + 20 & lightCue38 == false) { //553
+        /////////////////  
+
+        if (videoTime == act3Time + 77 & lightCue41 == false) { //587
+            lightCue41 = true;
+            sideLightsIntensity(0,15,0);
+            sideLightsOn(0)
+
+
+
+        }
+
+    
+    /////////////////  HEAVY
+
+    if (videoTime == act3Time + 79 & lightCue38 == false) { //553
         lightCue38 = true;
+        sideLightsColour(0,orange,orange,orange,orange);
 
-
+        sideLightsPulse(0.3, 9,20);
         
     }
 
-    /////////////////  
+    /////////////////  HEAVY
 
-    if (videoTime == act3Time + 27 & lightCue60 == false) { //560
+    if (videoTime == act3Time + 88 & lightCue60 == false) { //560
         lightCue60 = true;
+
+        setTimeout(function(){sideLightsPulse(0.3, 9,20)},600);
+
     
             
     }
 
-    if (videoTime == act3Time + 34 & lightCue62 == false) { //567
+    //////////////////  STICKY
+
+    if (videoTime == act3Time + 98 & lightCue62 == false) { //567
         lightCue62 = true;
     
-    
+        setTimeout(function(){sideLightsPulse(0.3, 9,20)},600);
+
     
             
     }
@@ -1006,9 +1040,18 @@ function startLightingCues() {
     
     /////////////////  
 
-    if (videoTime == act3Time + 41 & lightCue39 == false) { //574
+    if (videoTime == act3Time + 108 & lightCue39 == false) { //574
         lightCue39 = true;
 
+        setTimeout(function(){sideLightsPulse(0.3, 9,20)},600);
+        sideLightColourChange(3,1,orange,orange,orange,orange,darkGreen,darkGreen,darkGreen,darkGreen,'fade');
+
+
+        stageLightsIntensity(1,0);
+
+        floorColour(1, colourOff);
+
+
 
 
 
@@ -1019,30 +1062,22 @@ function startLightingCues() {
     }
     /////////////////  
 
-    if (videoTime == act3Time + 54 & lightCue40 == false) { //587
+    if (videoTime == act3Time + 112 & lightCue40 == false) { //587
         lightCue40 = true;
 
+        stageLightFade(0, darkGreen, darkGreen, darkGreen, 'flash');
+
+        sideLightsColour(0,blue,blue,blue,blue);
+
+        sideLightsStrobe(0.21,71);
+        sideLightsIntensity(1,10,10)
+
 
 
         
     }
     /////////////////  
 
-    if (videoTime == act3Time + 55 & lightCue41 == false) { //588
-        lightCue41 = true;
-
-
-
-
-
-        
-
-        
-
-
-        
-    }
-    /////////////////  
 
     if (videoTime == act3Time + 67 & lightCue42 == false) { //600
         lightCue42 = true;
@@ -1056,8 +1091,11 @@ function startLightingCues() {
     }
     /////////////////  
 
-    if (videoTime == act3Time + 83 & lightCue43 == false) { //616
+    if (videoTime == act3Time + 141 & lightCue43 == false) { //616
         lightCue43 = true;
+
+        stageLightFade(3, red, red, red, 'fade');
+
 
 
 
@@ -1075,7 +1113,7 @@ function startLightingCues() {
     
     /////////////////  
 
-    if (videoTime == act3Time + 96 & lightCue44 == false) { //629
+    if (videoTime == act3Time + 172 & lightCue44 == false) { //629
         lightCue44 = true;
 
 
