@@ -1062,8 +1062,8 @@ function startLightingCues() {
     }
     /////////////////  
 
-    if (videoTime == act3Time + 112 & lightCue40 == false) { //587
-        lightCue40 = true;
+    if (videoTime == act3Time + 112 & lightCue42 == false) { //587
+        lightCue42 = true;
 
         stageLightFade(0, darkGreen, darkGreen, darkGreen, 'flash');
 
@@ -1078,35 +1078,28 @@ function startLightingCues() {
     }
     /////////////////  
 
-
-    if (videoTime == act3Time + 67 & lightCue42 == false) { //600
-        lightCue42 = true;
-
-
-
-
-
-
-        
-    }
-    /////////////////  
-
     if (videoTime == act3Time + 141 & lightCue43 == false) { //616
         lightCue43 = true;
 
         stageLightFade(3, red, red, red, 'fade');
 
+        spotsPanUp(9,0,1000,'yoyo',9);
 
+        //sideLightColourChange(3,19,red,red,red,red,colourOff,colourOff,colourOff,colourOff,'fade');
 
+        sideLightsColour(0,red,red,red,red)
 
+        sideLightsPulse(3,9, 15);
 
-        
     }
 
     /////////////////  
 
-    if (videoTime == act3Time + 86 & lightCue61 == false) { //619
+    if (videoTime == act3Time + 205 & lightCue61 == false) { //619
         lightCue61 = true;
+
+        stageLightsIntensity(25,0);
+        floorColour(25,colourOff);
 
             
     }
