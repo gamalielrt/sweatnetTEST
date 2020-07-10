@@ -341,7 +341,7 @@ function updateStartLights () {
 
 function startLightingCues() {
     videoTime = Math.round(video.currentTime);
-    console.log(videoTime, stageSpot.intensity)
+    console.log(/*stageSpot.intensity, stageSpot.decay,stageSpot.color*/testLight8)
 
     if (videoTime > introTime & videoTime < act1Time) {
         console.log('countdown and intro', videoTime, videoTime);
@@ -388,7 +388,7 @@ function startLightingCues() {
         houseLightsInOp1 = true;
 
         houseLightsIntensity(10, 4);
-        //stageLightFade(3, blue, blue, blue, "fade" )
+        //stageLightsFade(3, blue, blue, blue, "fade" )
 
         //stageLightsIntensity(10, 0);
         //floorColour(0,colourOff);
@@ -410,7 +410,7 @@ function startLightingCues() {
         houseLightsInOp = true;
         stageLightsIntensity(3, 7);
         floorColour(3,blue);
-        stageLightFade(0,blue,blue,blue,blue,'fade');
+        stageLightsFade(0,blue,blue,blue,blue,'fade');
 
 
     }
@@ -443,7 +443,7 @@ function startLightingCues() {
         lightCue1 = true;
 
 
-        stageLightFade(0,purple,purple,purple, 'fade');
+        stageLightsFade(0,purple,purple,purple, 'fade');
         stageLightsIntensity(0, 5);
         //floorColour(0,purple);
 
@@ -513,7 +513,7 @@ function startLightingCues() {
 
         stageLightsIntensity(0, 18);
 
-        stageLightFade(0,purple,purple,purple, 'fade');
+        stageLightsFade(0,purple,purple,purple, 'fade');
 
         stageLightStrobe(0.297, 56);
 
@@ -571,7 +571,7 @@ function startLightingCues() {
 
     if (videoTime == act1Time + 86 & lightCue9 == false) { //175
         lightCue9 = true;
-        stageLightFade(0,purple,purple,purple, 'fade');
+        stageLightsFade(0,purple,purple,purple, 'fade');
         sideLightsColour(0,orange,orange,orange,orange);
 
         stageLightsIntensity(0, 10);
@@ -604,7 +604,7 @@ function startLightingCues() {
         lightCue11 = true;
 
         stageLightsPulse(0.594,12,cyan,cyan,cyan);
-        //stageLightFade(0,cyan,cyan,cyan, 'fade');
+        //stageLightsFade(0,cyan,cyan,cyan, 'fade');
 
     }
 
@@ -614,7 +614,7 @@ function startLightingCues() {
         lightCue66 = true;
 
         stageBlackout(0);
-        //stageLightFade(0,purple,purple,purple, 'fade');
+        //stageLightsFade(0,purple,purple,purple, 'fade');
 
 
         
@@ -659,7 +659,7 @@ function startLightingCues() {
         lightCue14 = true;
         sideLightsColour(0,purple,purple,purple,purple);
 
-        stageLightFade(0,orange,orange,orange, 'fade');
+        stageLightsFade(0,orange,orange,orange, 'fade');
 
         floorColour(0,purple);
         stageLightStrobe(0.297, 33);
@@ -678,7 +678,7 @@ function startLightingCues() {
 
         //sideLightsColour(0,purple,purple,purple,purple);
 
-        //stageLightFade(0,orange,orange,orange, 'fade');
+        //stageLightsFade(0,orange,orange,orange, 'fade');
 
         floorColour(0,purple);
         stageLightStrobe(0.297, 19);
@@ -710,7 +710,7 @@ function startLightingCues() {
     if (videoTime == act1Time + 161 & lightCue17 == false) { //251
         lightCue17 = true;
         
-        //stageLightFade(0,purple,purple,purple, 'fade');
+        //stageLightsFade(0,purple,purple,purple, 'fade');
         stageLightsPulse(0.594,99,orange,orange,orange);
         //stageLightsIntensity(0, 18);
         //stageLightStrobe(1.118, 20);
@@ -744,7 +744,7 @@ function startLightingCues() {
     if (videoTime == act2Time & lightCue18 == false) { //304
         lightCue18 = true;
 
-        stageLightFade(0, blue, blue, blue, 'fade');
+        stageLightsFade(0, blue, blue, blue, 'fade');
 
         stageLightsIntensity(5, 18);
 
@@ -919,16 +919,6 @@ function startLightingCues() {
 
         
     }
-    /////////////////  SAD
-
-    if (videoTime == act2Time + 198 & lightCue34 == false) { //503
-        lightCue34 = true;
-
-
-
-    
-            
-    }
 
     /////////////////  END
 
@@ -950,7 +940,7 @@ function startLightingCues() {
     if (videoTime == act3Time & lightCue36 == false) { //533
         lightCue36 = true;
 
-        stageLightFade(5,scarlett, scarlett,scarlett, 'fade');   
+        stageLightsFade(5,scarlett, scarlett,scarlett, 'fade');   
         stageLightsIntensity(20, 8)   ; 
         //sideLightsStrobe(1.64,18);
         //sideLightsOn(0)
@@ -975,41 +965,41 @@ function startLightingCues() {
 
     }
 
-        /////////////////  
+    /////////////////  
 
-        if (videoTime == act3Time + 36 & lightCue40 == false) { //587
-            lightCue40 = true;
+    if (videoTime == act3Time + 36 & lightCue40 == false) { //587
+        lightCue40 = true;
 
-            sideLightsStrobe(1.64,11);
-            //sideLightsOn(0)
-            sideLightsIntensity(0,0,15);
-            //sideLightsColour(0,red,red,red,red);
-            sideLightColourChange(3,18,blue,blue,blue,blue,red,red,red,red,'fade');
-            spotsPanUp(9,0,1000,'yoyo',9);
+        sideLightsStrobe(1.64,11);
+        //sideLightsOn(0)
+        sideLightsIntensity(0,0,15);
+        //sideLightsColour(0,red,red,red,red);
+        sideLightColourChange(3,18,blue,blue,blue,blue,red,red,red,red,'fade');
+        spotsPanUp(9,0,1000,'yoyo',9);
     
     
     
     
             
-        }
+    }
 
-        /////////////////  
+    /////////////////  
 
-        if (videoTime == act3Time + 77 & lightCue41 == false) { //587
-            lightCue41 = true;
-            sideLightsIntensity(0,15,0);
-            sideLightsOn(0)
+    if (videoTime == act3Time + 77 & lightCue41 == false) { //587
+        lightCue41 = true;
+        sideLightsIntensity(0,15,0);
+        sideLightsOn(0)
 
 
 
-        }
+    }
 
     
     /////////////////  HEAVY
 
     if (videoTime == act3Time + 79 & lightCue38 == false) { //553
         lightCue38 = true;
-        sideLightsColour(0,orange,orange,orange,orange);
+        sideLightsColour(0,blue,blue,blue,blue);
 
         sideLightsPulse(0.3, 9,20);
         
@@ -1044,7 +1034,7 @@ function startLightingCues() {
         lightCue39 = true;
 
         setTimeout(function(){sideLightsPulse(0.3, 9,20)},600);
-        sideLightColourChange(3,1,orange,orange,orange,orange,darkGreen,darkGreen,darkGreen,darkGreen,'fade');
+        sideLightColourChange(3,1,blue,blue,blue,blue,darkGreen,darkGreen,darkGreen,darkGreen,'fade');
 
 
         stageLightsIntensity(1,0);
@@ -1065,7 +1055,7 @@ function startLightingCues() {
     if (videoTime == act3Time + 112 & lightCue42 == false) { //587
         lightCue42 = true;
 
-        stageLightFade(0, darkGreen, darkGreen, darkGreen, 'flash');
+        stageLightsFade(0, darkGreen, darkGreen, darkGreen, 'flash');
 
         sideLightsColour(0,blue,blue,blue,blue);
 
@@ -1081,7 +1071,7 @@ function startLightingCues() {
     if (videoTime == act3Time + 141 & lightCue43 == false) { //616
         lightCue43 = true;
 
-        stageLightFade(3, red, red, red, 'fade');
+        stageLightsFade(3, red, red, red, 'fade');
 
         spotsPanUp(9,0,1000,'yoyo',9);
 
@@ -1089,95 +1079,164 @@ function startLightingCues() {
 
         sideLightsColour(0,red,red,red,red)
 
-        sideLightsPulse(3,9, 15);
+        sideLightsPulse(3, 9, 15);
 
     }
 
+    
     /////////////////  
 
-    if (videoTime == act3Time + 205 & lightCue61 == false) { //619
-        lightCue61 = true;
+    if (videoTime == act3Time + 171 & lightCue44 == false) { //629
+        lightCue44 = true;
+
+        stageLightStrobe(1.64,19)
+
+        spotsPanUp(0.5,1000,0,'once',9);
+        sideLightsStrobe(0.21,71);
+        sideLightsIntensity(0,10,10)
+        sideLightColourChange(3,19,red,red,red,red,blue,blue,blue,blue,'fade');
+
+        setTimeout(function(){spotsPanUp(18,0,1000,'yoyo',2)},600);
+
+
+        
+
+
+
+        
+    }
+    /////////////////  
+
+    if (videoTime == act3Time + 205 & lightCue47 == false) { //657
+        lightCue47 = true;
 
         stageLightsIntensity(25,0);
         floorColour(25,colourOff);
 
-            
+
+
     }
+
+
+
     
-    /////////////////  
+    
+    
+    /////////////////   SONG 2
 
-    if (videoTime == act3Time + 172 & lightCue44 == false) { //629
-        lightCue44 = true;
-
-
-
-        
-    }
-    /////////////////  
-
-    if (videoTime == act3Time + 111 & lightCue45 == false) { //636
+    if (videoTime == act3Time + 228 & lightCue45 == false) { //636
         lightCue45 = true;
 
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
 
 
-        
+        setTimeout(function(){sideLightsIntensity(0,20,15)},500);
+        setTimeout(function(){sideLightsOn(0)},500);
+        setTimeout(function(){spotsPanUp(0.5,2000,0,'once',1)},500);
+        setTimeout(function(){spotsPanUp(15,0,750,'yoyo',3)},1000);
+
+        sideLightsAngle(0,0.5,0.1,'once',1);
+
+        sideLightsColour(0, purple, purple,purple,purple);
+
+
+
+    
+    
+    
+            
     }
-    /////////////////  
-
-    if (videoTime == act3Time + 124 & lightCue46 == false) { //655
+    /////////////////  INTRO
+    
+    if (videoTime == act3Time + 238 & lightCue46 == false) { //655
         lightCue46 = true;
 
+        sideLightsAngle(9,0.1,0.4,'once',1);
 
-        
+    
+    
+            
     }
-    /////////////////  
+    
+    /////////////////  VOX
 
-    if (videoTime == act3Time + 125 & lightCue47 == false) { //657
-        lightCue47 = true;
-
-
-    }
-    /////////////////  
-
-    if (videoTime == act3Time + 137 & lightCue48 == false) { //670
+    if (videoTime == act3Time + 246 & lightCue48 == false) { //670
         lightCue48 = true;
 
+        sideLightsPulse(0.556, 59,0);
+        spotsPanUp(10,750,200,'yoyo',3)
+
 
 
         
     }
-    /////////////////  
+    /////////////////  V1 1/2
 
-    if (videoTime == act3Time + 147 & lightCue49 == false) { //680
+    if (videoTime == act3Time + 264 & lightCue49 == false) { //680
         lightCue49 = true;
 
+        stageLightsIntensity(15,10);
+        stageLightsFade(10,cyan,cyan,cyan,'fade');
+
+
         
     }
-    /////////////////  
 
-    if (videoTime == act3Time + 153 & lightCue50 == false) { //686
+    /////////////////  DROP
+
+    if (videoTime == act3Time + 280 & lightCue34 == false) { //503
+        lightCue34 = true;
+        //stageBlackout(0);
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+        //sideLightsIntensity(0,0,0);
+        sideLightsOff()
+        sideLightsColour(0,white,white,white,white);
+
+
+    }
+    
+
+
+    /////////////////  C1
+
+    if (videoTime == act3Time + 281 & lightCue50 == false) { //686
         lightCue50 = true;
 
+        sideLightsColour(0,white,white,white,white);
+        sideLightsIntensity(0,10,20);
+        sideLightsStrobe(0.05,169)
+        spotsPanUp(7,200,750,'yoyo',9)
+        //sideLightsOn(0);
 
-
-
-
-
-        
     }
-    /////////////////  
+    /////////////////  V2
 
-    if (videoTime == act3Time + 166 & lightCue51 == false) { //699
+    if (videoTime == act3Time + 298 & lightCue51 == false) { //699
         lightCue51 = true;
+
+        stageLightsIntensity(5,18);
+        stageLightColour(3,19,purple,purple,purple,cyan,cyan,cyan, 'stagger');
+        //stageLightsPulse(3,10);
+
+        sideLightsIntensity(0,2,2);
+        sideLightsColour(0,cyan,cyan,cyan,cyan);
+
+        setTimeout(function(){sideLightsPulse(2,19,10)},1000);
+
+        spotsPanUp(5,200,500,'yoyo',19)
+
 
 
         
     }
     
-    /////////////////  
+    /////////////////  V2 1/2
 
-    if (videoTime == act3Time + 181 & lightCue52 == false) { //713
+    if (videoTime == act3Time + 340 & lightCue52 == false) { //713
         lightCue52 = true;
+        stageLightStrobe(0.05,19)
 
 
 
@@ -1187,17 +1246,35 @@ function startLightingCues() {
             
     }
 
-    /////////////////  
+    /////////////////  BLACKOUT
 
-    if (videoTime == act3Time + 192 & lightCue53 == false) { //725
+    if (videoTime == act3Time + 341 & lightCue53 == false) { //725
         lightCue53 = true;
+
+        spotsPanUp(0.5,300,2000,'once',19)
+
+
+        //stageBlackout(0);
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+        //sideLightsIntensity(0,0,0);
+        sideLightsOff()
+        //sideLightsColour(0,white,white,white,white);
         
+
+
                 
     }
-    /////////////////  
+    /////////////////  C2
 
-    if (videoTime == act3Time + 193 & lightCue54 == false) { //726
+    if (videoTime == act3Time + 342 & lightCue54 == false) { //726
         lightCue54 = true;
+
+        sideLightsColour(0,white,white,white,white);
+        sideLightsIntensity(0,10,20);
+        sideLightsStrobe(0.05,169)
+        spotsPanUp(0.5,1400,0,'yoyo',49)
+
 
 
 
@@ -1205,10 +1282,22 @@ function startLightingCues() {
             
                     
     }
-    /////////////////  
+    /////////////////  V3
 
-    if (videoTime == act3Time + 199 & lightCue55 == false) { //732
+    if (videoTime == act3Time + 359 & lightCue55 == false) { //732
         lightCue55 = true;
+
+        stageLightsIntensity(5,18);
+        stageLightColour(3,19,purple,purple,purple,cyan,cyan,cyan, 'stagger');
+        //stageLightsPulse(3,10);
+
+        sideLightsIntensity(0,2,2);
+        sideLightsColour(0,cyan,cyan,cyan,cyan);
+
+        setTimeout(function(){sideLightsPulse(2,19,10)},1000);
+
+        spotsPanUp(5,200,500,'yoyo',19)
+
 
 
 
@@ -1219,40 +1308,110 @@ function startLightingCues() {
                 
     }
 
-    if (videoTime == act3Time + 209 & lightCue63 == false) { //742
+    ////////////////  V3 1/2
+
+    if (videoTime == act3Time + 377 & lightCue63 == false) { //742
         lightCue63 = true;
 
-    }
-    /////////////////  
+        stageLightStrobe(0.05,19)
 
-    if (videoTime == act3Time + 222 & lightCue56 == false) { //755
+
+    }
+
+    ////////////////  BLACKOUT
+
+    if (videoTime == act3Time + 393 & lightCue30 == false) { //460
+        lightCue30 = true;
+
+        spotsPanUp(0.5,300,2000,'once',19)
+
+
+        //stageBlackout(0);
+        setTimeout(function(){stageLightsIntensity(0,0)},300);
+        setTimeout(function(){floorColour(0,colourOff)},300);
+        //sideLightsIntensity(0,0,0);
+        setTimeout(function(){sideLightsOff()},300);
+        //sideLightsColour(0,white,white,white,white);
+
+        
+    }
+
+
+
+    /////////////////  C3
+
+    if (videoTime == act3Time + 394 & lightCue56 == false) { //755
         lightCue56 = true;
 
 
+        sideLightsColour(0,white,white,white,white);
+        sideLightsIntensity(0,10,20);
+        //sideLightsStrobe(0.05,169)
+
+        sideLightsStrobe(0.05,169)
+
+        spotsPanUp(0.5,1400,0,'stagger',103)
+
+
         
                 
     }
-    /////////////////  
+    /////////////////  BRIDGE
 
-    if (videoTime == act3Time + 237 & lightCue57 == false) { //770
+    if (videoTime == act3Time + 411 & lightCue57 == false) { //770
         lightCue57 = true;
+
+        sideLightsIntensity(10,20,6);
+        sideLightsOn(0);
+
+        setTimeout(function(){sideLightsAngle(0.8,0.5,0.1,'yoyo',43),500});
+        //setTimeout(function(){sideLightsStrobe(0.05,331),0});
+
+        sideLightsStrobe(0.05,353)
+
+
+        stageLightsIntensity(0,15);
+        stageLightsFade(11,purple,purple,purple,'fade');
+
+        setTimeout(function(){stageLightsPulse(1,33),1000});
+
+
+
         
                 
     }
-    /////////////////  
+    /////////////////  END TRACK
 
-    if (videoTime == act3Time + 251 & lightCue58 == false) { //784
+    if (videoTime == act3Time + 447 & lightCue58 == false) { //784
         lightCue58 = true;
+
+        stageLightsIntensity(1,0);
+
+        sideLightsAngle(0,0.5,0.1,'once',1)
+
+        floorColour(1,colourOff);
+
+        sideLightsIntensity(10,20,6);
+        sideLightsOn(0);
+
+        spotsPanUp(7,300,1600,'once',1)
+
+
+
+
+
         
                 
     }
-    /////////////////  END
+    /////////////////  END NOISE
 
-    if (videoTime == act3Time + 527 & lightCue59 == false) { //797
+    if (videoTime == act3Time + 453 & lightCue59 == false) { //797
         lightCue59 = true;
 
         stageBlackout(0);
-        floorColour(0,colourOff)
+        floorColour(0,colourOff);
+
+        sideLightsOff();
 
         
                 
@@ -1260,7 +1419,7 @@ function startLightingCues() {
 
     //////////////// HOUSE LIGHTS UP
 
-    if (videoTime == act3Time + 529 & lightCue67 == false) { //797
+    if (videoTime == act3Time + 457 & lightCue67 == false) { //797
         lightCue67 = true;
 
         houseLightsIntensity(10, 18);
@@ -1279,7 +1438,7 @@ function startLightingCues() {
 
 }
 
-function stageLightFade(_speed, _colour1, _colour2, _colour3, _flash) {
+function stageLightsFade(_speed, _colour1, _colour2, _colour3, _flash) {
 
     switch (_flash) {
         case 'fade':
@@ -1413,15 +1572,6 @@ function sideLightsOn(_speed) {
 }
 
 
-/*function sideLightsColourStrobe(_length, _speed, ) {
-
-    TweenMax.to(stageSpot.color, _speed,  {decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 1, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot1.color, _speed, {decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 2, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot2.color, _speed, {decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 3, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot3.color, _speed, {decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 4, ease:Linear.easeNone},);
-
-}*/
-
 
 function sideLightsIntensity(_speed, _fromintensity, _tointensity) {
 
@@ -1436,7 +1586,7 @@ function sideLightsIntensity(_speed, _fromintensity, _tointensity) {
 
 }
 
-function stageLightsPulse(_speed, _length, _colour1, _colour2, _colour3 ) {
+function stageLightsPulse(_speed, _length ) {
     TweenMax.allTo([testLight8, testLight7, testLight6], _speed, {startAt: {intensity: 18}, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, intensity: 0, ease: Expo.easeOut, overwrite: true});
 
 }
@@ -1504,7 +1654,7 @@ function spotsPanUp (_speed, _startheight,_endheight, _repeat, _length) {
             break;
 
         case 'yoyo' :
-            TweenMax.allTo([stageSpot.target.position, stageSpot1.target.position, stageSpot2.target.position, stageSpot3.target.position], _speed, { startAt: {y: _startheight},y: _endheight, repeat: _length, yoyo: true, ease: "expo.in"});
+            TweenMax.allTo([stageSpot.target.position, stageSpot1.target.position, stageSpot2.target.position, stageSpot3.target.position], _speed, { startAt: {y: _startheight},y: _endheight, repeat: _length, yoyo: true, ease: "none"});
             break;
         case 'stagger' :
             TweenMax.allTo([stageSpot.target.position, stageSpot1.target.position, stageSpot2.target.position, stageSpot3.target.position], _speed, { startAt: {y: _startheight},y: _endheight, stagger: _speed, repeat: _length, yoyo: true, ease: "expo.in"});
@@ -1513,4 +1663,23 @@ function spotsPanUp (_speed, _startheight,_endheight, _repeat, _length) {
         default:
     }
 
+}
+
+function sideLightsAngle (_speed, _startangle,_endangle, _repeat, _length) {
+    //stageSpot.target.position.set
+
+    switch (_repeat) {
+        case 'once' :
+            TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], _speed, { startAt: {angle: _startangle},angle: _endangle, ease: "expo.in"});
+            break;
+
+        case 'yoyo' :
+            TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], _speed, { startAt: {angle: _startangle},angle: _endangle, repeat: _length, yoyo: true, ease: "none"});
+            break;
+        case 'stagger' :
+            TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], _speed, { startAt: {angle: _startangle},angle: _endangle, stagger: _speed, repeat: _length, yoyo: true, ease: "expo.in"});
+            break;
+    
+        default:
+    }
 }

@@ -1708,6 +1708,8 @@
             camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.1, 3000 );
 
             controls = new THREE.OrbitControls( camera, renderer.domElement );
+
+            /*
             
             controls.autoRotate = true;
 	        controls.autoRotateSpeed = 0.5//0.5; // 30 seconds per round when fps is 60
@@ -1727,11 +1729,31 @@
             controls.enableDamping = true;
             controls.dampingFactor = 1;
 
+            
+            controls.update();
+            
+            */
 
-            controls.update();            
 
             loadingScreen.box.position.set(0,0,5);
             loadingScreen.camera.position.set(-1000,0,5);
+
+            
+
+            controls.target = new THREE.Vector3(-800,450,260); //
+            camera.position.set(0, 450, -20);
+
+            controls.minDistance = 0;
+            controls.maxDistance = 100;
+
+            controls.maxPolarAngle = 1.7;
+            controls.minPolarAngle = -3;
+
+            controls.keyPanSpeed = 70;
+            controls.PanSpeed = 70;
+
+            controls.update();
+
 
             
             
@@ -1809,7 +1831,7 @@
 
                 
                 
-                video.currentTime = act3Time - 3;
+                video.currentTime = act3Time + 220;
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
@@ -2172,7 +2194,7 @@
             
             var vidplanemtl = new THREE.MeshPhongMaterial(loadingManager);
             vidplanemtl.map = vidtexture;
-            vidplanemtl.alphaTest = 0.1//0.1;
+            vidplanemtl.alphaTest = 0//0.1;
             vidplanemtl.alphaMap = vidtexture;
             vidplanemtl.transparent = true;
             vidplanemtl.opacity = 1;
