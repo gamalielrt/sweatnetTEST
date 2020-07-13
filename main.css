@@ -313,10 +313,10 @@ canvas {
 
 
 
-#counter{
+#counterbox{
     color:  #FFA500;
     font-family : monospace;
-    opacity: 0.2;
+    /*opacity: 0.2;*/
     z-index : 2;
     position:fixed;
     top: 27px;
@@ -327,7 +327,23 @@ canvas {
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none;
+}
 
+#counter{
+    opacity: 0.2;
+
+}
+
+
+#explorebutton{
+    color:  #ffffff;
+    font-family : monospace;
+    opacity: 0.25;
+
+}
+
+#explorebutton:hover {
+    opacity: 0.5;
 
 }
 

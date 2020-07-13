@@ -101,7 +101,7 @@
 
 
     <video id="video"  crossOrigin="anonymous" playsinline style="display:none">
-        <source src="assets/sweatnetN2draft4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="assets/sweatnetN2draft6.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
@@ -123,10 +123,13 @@
         </div>
     </div>
     <div id = "gestures" hidden>
-        <div id = "pinchdrag" ><img src = "assets/iconpinchdrag1.png"></div>
+        <div id = "pinchdrag" ><img id = "pinchimage" src = "assets/iconpinchdrag1.png"></div>
     </div>
 
-        <div id = "counter" hidden>
+    <div id = "counterbox" hidden>
+        <div id = "counter" ></div>
+
+        <div id = "explorebutton" onclick="clickExplore()">&#8595 Explore the club (Computer Only beta) &#8595</div>
 
     </div>
 
@@ -308,25 +311,31 @@
                     }
                 }
             }
+            function startFade() {
 
-            var gtime = 10;
-            var gopacityset = 0.3;
-
-            function gesturesOpacity() {
+                var gtime = 10;
+                var gopacityset = 0.3;
                 var gestures = document.getElementById( 'gestures' );
+                //document.getElementById( 'gestures' ).style.opacity = 0.3;
 
-                if (gtime < 60) {
-                    gopacityset -= 0.01                
-                    gestures.style.opacity = gopacityset;
-                    gtime ++;
-                    setTimeout(gesturesOpacity, 50);
 
-                } else if (gtime == 60){
-                    clearTimeout(gtime);
-                    gestures.style.display = "none";
+                function gesturesOpacity() {
+
+                    if (gtime < 60) {
+                        gopacityset -= 0.01                
+                        gestures.style.opacity = gopacityset;
+                        gtime ++;
+                        setTimeout(gesturesOpacity, 50);
+
+                    } else if (gtime == 60){
+                        clearTimeout(gesturesOpacity);
+                        //gestures.style.display = "none";
+
+                    }
 
                 }
 
+                gesturesOpacity();
             }
 
 
@@ -871,6 +880,8 @@
         function gotoMerch() {
 
             document.getElementById("gotomerchtext").innerHTML = "&#8593 Back &#8593"
+            document.getElementById("explorebutton").style.display = "none";
+
             //document.getElementById("gotomerchtext").style.opacity = 0.25;
 
 
@@ -1074,6 +1085,9 @@
 
                 document.getElementById("gotomerchtext").innerHTML = "&#8595 Go to merch table &#8595"
 
+                document.getElementById("explorebutton").style.display = "block";
+
+
 
 
 
@@ -1188,6 +1202,7 @@
         function swoopIn() {
 
             document.getElementById("gotomerchtext").innerHTML = "&#8593 Back &#8593"
+            
             //document.getElementById("gotomerchtext").style.opacity = 0.25;
 
 
@@ -1687,6 +1702,87 @@
 
 
         }
+
+
+        /////////////////////  Explore
+
+        var atExplore = false;
+
+        function clickExplore () {
+
+            if (atExplore == false) {
+
+
+                document.getElementById( 'gestures' ).style.opacity = 0.3;
+
+                document.getElementById( 'pinchimage' ).src = 'assets/usearrows.png';
+
+
+
+
+                setTimeout(startFade,5000);
+
+                document.getElementById("explorebutton").innerHTML = "&#8593 Back &#8593"
+
+                document.getElementById("gotomerchtext").style.display = "none";
+
+
+                controls.autoRotate = false;
+
+                controls.target = new THREE.Vector3(370, 450, 10); //
+                camera.position.set(394, 450, 2);
+
+                controls.minDistance = 0;
+                controls.maxDistance = 100;
+
+                controls.maxPolarAngle = 1.7;
+                controls.minPolarAngle = -3;
+
+                controls.keyPanSpeed = 300;
+                controls.PanSpeed = 300;
+
+                controls.update();
+
+                atExplore = true;
+
+
+            } else 
+
+            if (atExplore == true) {
+
+                document.getElementById("explorebutton").innerHTML = "&#8595 Explore the club (Computer Only beta) &#8595";
+
+                document.getElementById("gotomerchtext").style.display = "block";
+
+
+                controls.autoRotate = true;
+                controls.autoRotateSpeed = 0.5//0.5; // 30 seconds per round when fps is 60
+
+                controls.target = camTarget;
+                camera.position.set(camPosition.x, camPosition.y, camPosition.z);
+
+                controls.minDistance = 100;
+                controls.maxDistance = 1200;
+
+                controls.maxPolarAngle = 1.7;
+                controls.minPolarAngle = -2;
+
+                controls.keyPanSpeed = 50;
+                controls.PanSpeed = 50;
+
+                controls.enableDamping = true;
+                controls.dampingFactor = 1;
+
+                controls.update();
+
+                atExplore = false;
+
+
+            }
+
+
+
+        }
         
 
 
@@ -1709,7 +1805,7 @@
 
             controls = new THREE.OrbitControls( camera, renderer.domElement );
 
-            /*
+            
             
             controls.autoRotate = true;
 	        controls.autoRotateSpeed = 0.5//0.5; // 30 seconds per round when fps is 60
@@ -1732,16 +1828,16 @@
             
             controls.update();
             
-            */
+            
 
 
             loadingScreen.box.position.set(0,0,5);
             loadingScreen.camera.position.set(-1000,0,5);
 
-            
+            /*
 
             controls.target = new THREE.Vector3(-800,450,260); //
-            camera.position.set(0, 450, -20);
+            camera.position.set(-800, 450, -20);
 
             controls.minDistance = 0;
             controls.maxDistance = 100;
@@ -1755,7 +1851,7 @@
             controls.update();
 
 
-            
+            */
             
             loadingScreen.scene.add(loadingScreen.box);
 
@@ -1828,10 +1924,10 @@
 
                 
 
-
                 
                 
-                video.currentTime = act3Time + 220;
+                
+                video.currentTime = 0//act1Time
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
@@ -1877,7 +1973,7 @@
 
                 setInterval(startLightingCues,500);
                 
-                setTimeout(gesturesOpacity,5000);
+                setTimeout(startFade,5000);
 
                 //setTimeout(socialsOpacity1,8000)
 
@@ -1899,7 +1995,7 @@
 
 
                 chatroom.style.display = "block";
-                document.getElementById( 'counter' ).style.display = "block";
+                document.getElementById( 'counterbox' ).style.display = "block";
                 document.getElementById( 'gotomerchbutton' ).style.display = "block";
 
 
@@ -1948,7 +2044,7 @@
                 console.log(Math.round(video.duration),'vidfinished =' ,vidfinished, restartDate.getMinutes(), restartDate.getSeconds() )
 
 
-                if (Math.round(video.currentTime) == 822 & vidfinished == false) { /////////////////  VIDEO DURATION
+                if (Math.round(video.currentTime) == 1123 & vidfinished == false) { /////////////////  VIDEO DURATION
                     video.pause();
                     vidfinished = true;
                     console.log('video end', 'vidfinished =', vidfinished,restartDate.getMinutes(),restartDate.getSeconds());
@@ -2022,7 +2118,7 @@
 
 
 
-                if (startTime <= 822){  //////////////////  VID DURATION
+                if (startTime <= 1123){  //////////////////  VID DURATION
 
                     video.play();
                     video.currentTime = currentMinutes1*60+currentDate.getSeconds();
@@ -2194,7 +2290,7 @@
             
             var vidplanemtl = new THREE.MeshPhongMaterial(loadingManager);
             vidplanemtl.map = vidtexture;
-            vidplanemtl.alphaTest = 0//0.1;
+            vidplanemtl.alphaTest = 0.1//0.1;
             vidplanemtl.alphaMap = vidtexture;
             vidplanemtl.transparent = true;
             vidplanemtl.opacity = 1;
@@ -3100,6 +3196,8 @@
             controls.update();
             
             renderer.render(scene, camera);
+
+            //console.log(camera.position.x,camera.position.z);
 
 
         }
