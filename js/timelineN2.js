@@ -99,6 +99,8 @@ var lightCue76 = false;
 var lightCue77 = false;
 var lightCue78 = false;
 var lightCue79 = false;
+var lightCue80 = false;
+
 
 
 
@@ -350,7 +352,7 @@ function updateStartLights () {
 
 function startLightingCues() {
     videoTime = Math.round(video.currentTime);
-    //console.log(/*stageSpot.intensity, stageSpot.decay,stageSpot.color*/testLight8)
+    console.log(stageSpot.intensity, stageSpot.decay)
 
     if (videoTime > introTime & videoTime < act1Time) {
         console.log('countdown and intro', videoTime, videoTime);
@@ -448,6 +450,9 @@ function startLightingCues() {
 
             stageLightsIntensity(3, 0);
 
+            sideLightsAngle(3,0.1,0.1,'once',8)
+
+
 
 
 
@@ -457,16 +462,17 @@ function startLightingCues() {
     
 
 
-        if (videoTime == act1Time + 8 & houseLightsInOp == false) {
-            houseLightsInOp = true;
+        if (videoTime == act1Time + 8 & lightCue80 == false) {
+            lightCue80 = true;
     
             houseLightsIntensity(5, 1);
-            stageLightsIntensity(7, 18);
-            floorColour(0,blue);
+            stageLightsIntensity(7, 2);
+            floorColour(0,red);
 
-            spotsPanUp(20,1000,100,'once',1);
+            spotsPanUp(20,1000,100,'yoyo',5);
+            //sideLightsAngle(3,0,0,'once',8)
             sideLightsPulse(3,10,15);
-            sideLightsColour()
+            sideLightsColour(0,red,red,red,red);
     
     
             
@@ -487,7 +493,10 @@ function startLightingCues() {
         if (videoTime == act1Time + 41 & lightCue2 == false) {
             lightCue2 = true;
     
-            stageLightsFade(3, blue, blue, blue, "fade" )
+            stageLightsFade(3, blue, blue, blue, "fade" );
+            stageLightsIntensity(7, 15);
+
+
             
         }
         if (videoTime == act1Time + 49 & lightCue3 == false) {
@@ -518,14 +527,16 @@ function startLightingCues() {
     
             stageBlackout(0);
             sideLightsIntensity(9, 0, 4)
-            sideLightsStrobe(0.05, 19)        
+            sideLightsOn(0);
+            sideLightsStrobe(0.05, 19);     
+            spotsPanUp(1,100,1000,'once',1)   
             
         }
     
         ////////////////////    Chorus
     
     
-        if (videoTime == act1Time + 72 & lightCue7 == false) {
+        if (videoTime == act1Time + 71 & lightCue7 == false) {
             lightCue7 = true;
     
             stageLightsFade(2, blue, blue, blue, "flash" )
@@ -534,6 +545,8 @@ function startLightingCues() {
             sideLightsStrobe(0.5, 13)        
     
             //stageLightsPulse(2, 400, pink, pink, pink )
+
+            sideLightsAngle(1,0.1,0.5,'once',1);
     
             
         }
@@ -541,7 +554,7 @@ function startLightingCues() {
     
         /////////////////////   Last Hit
     
-        if (videoTime == act1Time + 88 & lightCue8 == false) {
+        if (videoTime == act1Time + 87 & lightCue8 == false) {
             lightCue8 = true;
     
             //stageLightsFade(2, red, cyan, purple, "fade" )
@@ -553,7 +566,7 @@ function startLightingCues() {
     
         //////////////////////    Instrumental
     
-        if (videoTime == act1Time + 92 & lightCue9 == false) {
+        if (videoTime == act1Time + 91 & lightCue9 == false) {
             lightCue9 = true;
             stageLightsIntensity(1, 18);
             stageLightsFade(2, red, red, red, "fade" )
@@ -615,7 +628,7 @@ function startLightingCues() {
             sideLightsColour(0,red,red,red,red);
     
             sideLightsPulse (3, 1, 1.5);
-            spotsPanUp(5,1000,100,'once',1)        
+            spotsPanUp(5,100,1000,'once',1)        
         }
     
     
@@ -644,13 +657,13 @@ function startLightingCues() {
             stageLightsIntensity(0, 1)
             stageLightsFade(2, white, white, white, "fade" )
     
-            stageSpot.intensity = 0
-            stageSpot1.intensity = 0
-            stageSpot2.intensity = 0
-            stageSpot3.intensity = 0
+            //stageSpot.intensity = 0
+            //stageSpot1.intensity = 0
+            //stageSpot2.intensity = 0
+            //stageSpot3.intensity = 0
     
     
-            stageLightsPulse(2, 13 )
+            stageLightsPulse(2, 11 )
     
             
         }
@@ -660,10 +673,11 @@ function startLightingCues() {
     
     
     
-        if (videoTime == act1Time + 178 & lightCue18 == false) {
+        if (videoTime == act1Time + 170 & lightCue18 == false) {
             lightCue18 = true;
     
             sideLightsColour(0,white,white,white,white);
+
     
             //stageSpot.decay = 1
             //stageSpot1.decay = 1
@@ -671,12 +685,14 @@ function startLightingCues() {
             //stageSpot3.decay = 1
     
     
-            sideLightsIntensity(10, 0, 7)
-            sideLightsStrobe(0.05, 43);
+            sideLightsIntensity(25, 1, 17)
+            sideLightsStrobe(0.05, 105);
             
-            floorColour (5, colourOff);
 
-            spotsPanUp(5,100,2000,'once',1)        
+            stageLightsFade(2, colourOff, colourOff, colourOff, "fade" )
+
+            spotsPanUp(25,0,1500,'once',1);
+            sideLightsAngle(2,0.1,0.5,'yoyo',18);       
 
     
         }
@@ -685,26 +701,27 @@ function startLightingCues() {
         ////////////////////////  Chorus 2
     
     
-        if (videoTime == act1Time + 183 & lightCue19 == false) {
+        if (videoTime == act1Time + 181 & lightCue19 == false) {
             lightCue19 = true;
+            //stageLightsIntensity(0,18);
             stageLightsFade(2, red, yellow, blue, "flash" )        
         }
     
-        if (videoTime == act1Time + 190 & lightCue20 == false) {
+        if (videoTime == act1Time + 189 & lightCue20 == false) {
             lightCue20 = true;
     
             stageLightsFade(2, blue, cyan, purple, "flash" )
             
         }
     
-        if (videoTime == act1Time + 198 & lightCue21 == false) {
+        if (videoTime == act1Time + 197 & lightCue21 == false) {
             lightCue21 = true;
     
             stageLightsFade(2, pink, yellow, green, "flash" )
             
         }
     
-        if (videoTime == act1Time + 206 & lightCue22 == false) {
+        if (videoTime == act1Time + 205 & lightCue22 == false) {
             lightCue22 = true;
     
             stageLightsFade(2, orange, red, yellow, "flash" )
@@ -717,11 +734,11 @@ function startLightingCues() {
     
     
     
-        if (videoTime == act1Time + 214 & lightCue23 == false) {
+        if (videoTime == act1Time + 212 & lightCue23 == false) {
             lightCue23 = true;
             floorColour(0,blue)
     
-            stageLightsFade(1, blue, blue, blue, "fade" )
+            stageLightsFade(1, red, red, red, "fade" )
             sideLightsColour(0,blue,blue,blue,blue);
     
     
@@ -1855,7 +1872,7 @@ function stageLightsIntensity(_speed, _intensity) {
 
 function sideLightsStrobe(_speed, _length) {
 
-    TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 1,  ease: "none", overwrite: true});
+    TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 1,  ease: "none"});
 
 
     TweenMax.to(stageSpot, _speed,  {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 1, ease:Linear.easeNone},);
