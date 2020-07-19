@@ -92,7 +92,7 @@
     <script src="js/OrbitControls.js"></script>
 
 
-    <script src="js/timelineN2.js"></script>
+    <script src="js/timelineN3.js"></script>
 
     
 
@@ -101,7 +101,7 @@
 
 
     <video id="video"  crossOrigin="anonymous" playsinline style="display:none">
-        <source src="assets/sweatnetN2draft7.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="assets/sweatnetN3draft2.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
@@ -123,7 +123,7 @@
         </div>
     </div>
     <div id = "gestures" hidden>
-        <div id = "pinchdrag" ><img id = "pinchimage" src = "assets/iconpinchdrag1.png"></div>
+        <div id = "pinchdrag" ><img hidden id = "pinchimage" src = "assets/iconpinchdrag1.png"></div>
     </div>
 
     <div id = "counterbox" hidden>
@@ -1170,10 +1170,10 @@
             //clearTimeout(startZoomout);
             startZoomin();
             function startZoomin() {
-                if (zoomini < 600) {
+                if (zoomini < 1900) { //600
                     zoomini++;
-                    controls.maxDistance -= 1;
-                    controls.minDistance -= 1;
+                    controls.maxDistance -= 0.5;
+                    controls.minDistance -= 0.5;
 
                     console.log(controls.maxDistance);
                     controls.update;
@@ -1729,7 +1729,11 @@
 
                 controls.autoRotate = false;
 
-                controls.target = new THREE.Vector3(370, 450, 10); //
+                controls.target = new THREE.Vector3(370, 450, 10)
+
+                
+
+
                 camera.position.set(394, 450, 2);
 
                 controls.minDistance = 0;
@@ -1929,7 +1933,7 @@
                 
                 
                 
-                video.currentTime = 370
+                video.currentTime = act2Time-5 ;  //PVA 246
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
@@ -2178,8 +2182,8 @@
             var logo1tex = textureLoader.load('assets/sweatlogo.jpg');
             var logo2tex = textureLoader.load('assets/sweatnetlogo.jpg');
 
-            var LP1tex = textureLoader.load('assets/haichEP.png');
-            var LP2tex = textureLoader.load('assets/jessEP.png');
+            var LP1tex = textureLoader.load('assets/wmwshot.jpg');
+            var LP2tex = textureLoader.load('assets/becompleteshot.jpg');
             var LP3tex = textureLoader.load('assets/vrclubshot.jpg');
 
             logo1tex.wrapS = THREE.RepeatWrapping;
@@ -2723,7 +2727,7 @@
                 scene.add( hangersmesh );
             });  
 
-            /*
+            
             ////////////////////   tshirt1
             
 
@@ -2768,7 +2772,7 @@
                 tshirt2mesh.position.y = 300;
                 scene.add( tshirt2mesh );
             });  
-            */
+            
             ////////////////////   tshirt3
             
 
@@ -2792,7 +2796,7 @@
             });  
 
             ////////////////////   logo1
-            /*
+            
 
             var logo1mtl = new THREE.MeshLambertMaterial({
                 //color: 0x000000,
@@ -2846,7 +2850,7 @@
                 logo2mesh.position.y = 300;
                 scene.add( logo2mesh );
             });  
-            */
+            
             ////////////////////   logo3
             
 
