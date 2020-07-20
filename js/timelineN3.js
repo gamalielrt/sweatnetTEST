@@ -399,6 +399,8 @@ function startLightingCues() {
         houseLightsInOp1 = true;
 
         houseLightsIntensity(10, 4);
+
+
         //stageLightsFade(3, blue, blue, blue, "fade" )
 
         //stageLightsIntensity(10, 0);
@@ -419,9 +421,64 @@ function startLightingCues() {
 
     if (videoTime == introTime & houseLightsInOp == false) {
         houseLightsInOp = true;
-        stageLightsIntensity(3, 7);
-        floorColour(3,blue);
-        stageLightsFade(0,blue,blue,blue,blue,'fade');
+        //stageLightsIntensity(3, 7);
+
+        houseLightsIntensity(0,0);
+
+        sideLightsColour(0,antiqueWhite,antiqueWhite,antiqueWhite,antiqueWhite);
+        sideLightsAngle(0,0.25,0.25,'once',1);
+        spotsPanUp(0,500,500,'once',1);
+        sideLightsIntensity(0,5,5);
+
+        sideLightsOn(0);
+
+        sideLightsOff();
+
+        setTimeout(function(){
+            houseLightsIntensity(0,3);
+            sideLightsOff();
+
+
+
+        },100);
+
+        setTimeout(function(){
+            houseLightsIntensity(0,0);
+            sideLightsOn(0);
+
+        },200);
+
+        setTimeout(function(){
+            houseLightsIntensity(0,3);
+            sideLightsOff();
+
+            
+        },300);
+
+        setTimeout(function(){
+            houseLightsIntensity(0,0);
+            sideLightsOn(0);
+
+        },400);
+
+        setTimeout(function(){
+            houseLightsIntensity(0,4);
+            sideLightsOff();
+
+
+    
+        },500);
+
+        setTimeout(function(){
+            houseLightsIntensity(0,0);
+            sideLightsOn(0);
+
+
+    
+        },600);
+
+
+
 
 
     }
@@ -444,65 +501,121 @@ function startLightingCues() {
         if (videoTime == act1Time & lightCue70 == false) {
             lightCue70 = true;
 
+            sideLightsColour(5,blue,blue,blue,blue);
+
+            setTimeout(function(){
+
+                sideLightsAngle(25,0.25,0.5,'once',1);
+        
+            },5000);
+    
+
+
+
+
+
         }
     
 
-        if (videoTime == act1Time + 8 & lightCue80 == false) {
+        if (videoTime == act1Time + 51 & lightCue80 == false) {
             lightCue80 = true;
+
+            stageLightsIntensity(15,15);
+            stageLightsFade(15,purple,purple,purple,'fade');
     
     
         }
-        if (videoTime == act1Time + 23 & lightCue1 == false) {
+        if (videoTime == act1Time + 69 & lightCue1 == false) {
             lightCue1 = true;
+
+            spotsPanUp(3,500,1000,'once',1);
+
     
             
         }
     
-        if (videoTime == act1Time + 41 & lightCue2 == false) {
+        if (videoTime == act1Time + 73 & lightCue2 == false) {
             lightCue2 = true;
+
+            spotsPanUp(1,1000,500,'once',1);
+
+            sideLightsColour(3,cyan,cyan,cyan,cyan);
+
     
 
             
         }
-        if (videoTime == act1Time + 49 & lightCue3 == false) {
+        if (videoTime == act1Time + 87 & lightCue3 == false) {
             lightCue3 = true;
+
+            stageLightsIntensity(5,0)
     
             
         }
-        if (videoTime == act1Time + 66 & lightCue4 == false) {
+        if (videoTime == act1Time + 92 & lightCue4 == false) {
             lightCue4 = true;
+
+            sideLightsAngle(5,0.5,0.25,'once',1);
+
+            floorColour(5,lightOff);
     
             
         }
-        if (videoTime == act1Time + 64 & lightCue5 == false) {
+        if (videoTime == act1Time + 114 & lightCue5 == false) {
             lightCue5 = true;
+
+            sideLightsAngle(5,0.25,0.5,'once',1);
     
             
         }
     
     
-        if (videoTime == act1Time + 70 & lightCue6 == false) {
+        if (videoTime == act1Time + 135 & lightCue6 == false) {
             lightCue6 = true;
+
+            stageLightsFade(0,blue,blue,blue,'flash');
+
+            spotsPanUp(3,500,1000,'yoyo',5);
+
+
     
             
         }
     
     
-        if (videoTime == act1Time + 71 & lightCue7 == false) {
+        if (videoTime == act1Time + 149 & lightCue7 == false) {
             lightCue7 = true;
+
+            stageLightsIntensity(5,0);
     
     
             
         }
     
-        if (videoTime == act1Time + 87 & lightCue8 == false) {
+        if (videoTime == act1Time + 155 & lightCue8 == false) {
             lightCue8 = true;
+
+            sideLightsAngle(3,0.5,0.25,'once',1);
+
+            sideLightsColour(5,antiqueWhite,antiqueWhite,antiqueWhite,antiqueWhite);
+
+            floorColour(5,lightOff);
+
+
+
+
     
         }
     
     
-        if (videoTime == act1Time + 91 & lightCue9 == false) {
+        if (videoTime == act1Time + 165 & lightCue9 == false) {
             lightCue9 = true;
+
+            stageLightsIntensity(3,0);
+
+            sideLightsAngle(3,0.25,0,'once',1);
+
+
             
         }
     
@@ -510,8 +623,6 @@ function startLightingCues() {
         if (videoTime == act1Time + 163 & lightCue10 == false) {
             lightCue10 = true;
 
-            stageBlackout(5);
-            floorColour(5,colourOff);
     
             
         }
@@ -610,7 +721,7 @@ function startLightingCues() {
         
     }
 
-    if (videoTime == act2Time + 92 & lightCue72 == false) { 
+    if (videoTime == act2Time + 93 & lightCue72 == false) { 
         lightCue72 = true;
 
         stageLightStrobe(0.05,15);
@@ -643,12 +754,14 @@ function startLightingCues() {
     if (videoTime == act2Time + 104 & lightCue28 == false) { 
         lightCue28 = true;
 
-        stageLightsFade(0,red,red,red,'fade')
+        //stageLightsFade(0,red,red,red,'fade')
 
         stageLightsIntensity(0,5);
 
-        setTimeout(function(){stageLightsIntensity(5,0)},900);
-        setTimeout(function(){floorColour(5,colourOff)},900)
+        stageLightStrobe(0.05,9)
+
+        setTimeout(function(){stageLightsIntensity(5,0)},1300);
+        setTimeout(function(){floorColour(5,colourOff)},1300)
 
         sideLightsOff(0);
 
@@ -678,7 +791,7 @@ function startLightingCues() {
     if (videoTime == act2Time + 110 & lightCue27 == false) { 
         lightCue27 = true;
 
-        stageLightsPulse(1.36,7);
+        stageLightsPulse(1.36,5);
         sideLightsIntensity(0,10,10);
         stageLightsFade(0,blue,blue,blue,'fade');
 
@@ -702,7 +815,17 @@ function startLightingCues() {
 
         sideLightsAngle(3,0.3,0.1,'once',1);
 
-        stageLightsIntensity(0,5);
+        stageLightsIntensity(2,0);
+        floorColour(2,colourOff)
+
+        setTimeout(function(){
+            stageLightsIntensity(0,7);
+
+            floorColour(0,blue)
+
+
+
+        },3000);
 
 
 
@@ -713,7 +836,7 @@ function startLightingCues() {
         
     }
 
-    if (videoTime == act2Time + 143 & lightCue31 == false) { 
+    if (videoTime == act2Time + 145 & lightCue31 == false) { 
         lightCue31 = true;
 
         stageLightsFade(3,red,red,red,'fade');
@@ -728,35 +851,42 @@ function startLightingCues() {
 
     /////////////////  DROP
 
-    if (videoTime == act2Time + 162 & lightCue32 == false) { 
+    if (videoTime == act2Time + 161 & lightCue32 == false) { 
         lightCue32 = true;
+        setTimeout(function(){
 
-        stageBlackout(4);
+            stageBlackout(4);
 
-        sideLightsColour(0,red,red,red,red);
+            sideLightsColour(0,red,red,red,red);
 
 
-        sideLightsOn(0);
-        sideLightsIntensity(0,2,2);
+            sideLightsOn(0);
+            sideLightsIntensity(0,2,2);
 
-        spotsPanUp(3, 500,50,'once',1);
+            spotsPanUp(3, 500,50,'once',1);
 
-        sideLightsAngle(3,0.1,0.3,'once',1);
-
+            sideLightsAngle(3,0.1,0.3,'once',1);
+        },500)
+    
         
     }
 
 
 
-    if (videoTime == act2Time + 167 & lightCue33 == false) { 
+    if (videoTime == act2Time + 166 & lightCue33 == false) { 
         lightCue33 = true;
 
-        stageLightsFade(0,blue,blue,blue,'fade')
+        
+        setTimeout(function(){
+            stageLightsFade(0,blue,blue,blue,'fade')
 
-        stageLightsIntensity(0,5);
+            stageLightsIntensity(0,5);
 
-        setTimeout(function(){stageLightsIntensity(5,0)},900);
-        setTimeout(function(){floorColour(5,colourOff)},900)
+            stageLightStrobe(0.05,9);
+        },500)
+
+        setTimeout(function(){stageLightsIntensity(5,0)},1800);
+        setTimeout(function(){floorColour(5,colourOff)},1800)
 
         sideLightsOff(0);
 
@@ -783,14 +913,20 @@ function startLightingCues() {
 
 
 
-    if (videoTime == act2Time + 173 & lightCue12 == false) {
+    if (videoTime == act2Time + 172 & lightCue12 == false) {
         lightCue12 = true;
 
-        stageLightsPulse(1.36,7);
-        sideLightsIntensity(0,10,10);
-        stageLightsFade(0,red,red,red,'fade');
+        setTimeout(function(){
 
-        sideLightsColour(0,blue,blue,blue,blue);
+
+            stageLightsPulse(1.36,7);
+            sideLightsIntensity(0,10,10);
+            stageLightsFade(0,red,red,red,'fade');
+
+            sideLightsColour(0,blue,blue,blue,blue);
+
+        },500)
+
 
         setTimeout(function(){sideLightsStrobe(0.682,6,'togetherfast')},600);
 
@@ -817,10 +953,13 @@ function startLightingCues() {
     if (videoTime == act2Time + 205 & lightCue14 == false) {
         lightCue14 = true;
 
-        stageLightStrobe(3,7);
-        //sideLightsOn(0);
+        stageLightsIntensity(0,15);
+        stageLightsFade(0,blue,blue,blue,'fade');
 
-        spotsPanUp(1.5,200,700,'yoyo', 9)
+        stageLightStrobe(3,7);
+
+
+        spotsPanUp(1.5,200,700,'yoyo', 15)
 
 
         
@@ -830,7 +969,9 @@ function startLightingCues() {
 
         stageLightsPulse(0.5,59);
 
-        stageLightColour(3,7,pink,pink,pink,red,red,red,'fade');
+        sideLightsOff(0);
+
+        stageLightColour(3,7,pink,pink,pink,white,white,white,'fade');
 
 
     }
@@ -1009,7 +1150,9 @@ function startLightingCues() {
         lightCue36 = true;
 
         stageBlackout(0);
-        floorColour(0,colourOff)
+        floorColour(0,colourOff);
+
+        sideLightsAngle(0,0.1,0.1,'once',1);
 
 
 
@@ -1118,7 +1261,9 @@ function startLightingCues() {
 
         setTimeout(function(){
             spotsPanUp(20,250,700,'once',1);
-        },1200)
+        },1200);
+
+        sideLightsAngle(2,0.1,0.3,'once',1);
 
 
             
@@ -1307,7 +1452,7 @@ function startLightingCues() {
     if (videoTime == act3Time + 120 & lightCue48 == false) { //670
         lightCue48 = true;
 
-        setTimeout(function(){
+        setTimeout(function(){  
             stageLightsFade(0,red,red,red,'fade')
             stageLightsIntensity(0,20);
         },500)
@@ -1502,7 +1647,7 @@ function startLightingCues() {
 
         sideLightsStrobe(0.659,19,'stagger');
         sideLightColourChange(3,5,red,red,red,red,orange,orange,orange,orange,'fade');
-        stageLightColour(3,17,orange,orange,orange,yellow,yellow,yellow,'fade');
+        stageLightColour(3,17,orange,orange,orange,red,red,red,'fade');
 
 
 
@@ -1526,7 +1671,7 @@ function startLightingCues() {
 
             sideLightsStrobe(0.659,19,'stagger');
             sideLightColourChange(3,5,red,red,red,red,orange,orange,orange,orange,'fade');
-            stageLightColour(3,17,orange,orange,orange,yellow,yellow,yellow,'fade');
+            stageLightColour(3,17,orange,orange,orange,red,red,red,'fade');
             spotsPanUp(2,0,1000,'yoyo',17);
 
 
@@ -1559,7 +1704,7 @@ function startLightingCues() {
 
             sideLightsStrobe(0.659,19,'stagger');
             sideLightColourChange(3,5,red,red,red,red,orange,orange,orange,orange,'fade');
-            stageLightColour(3,17,orange,orange,orange,yellow,yellow,yellow,'fade');
+            stageLightColour(3,17,orange,orange,orange,red,red,red,'fade');
             spotsPanUp(2,0,1000,'yoyo',17);
             stageLightsPulse(0.659,79);
 
@@ -1576,11 +1721,34 @@ function startLightingCues() {
         lightCue57 = true;
         stageLightsPulse(0.5,49);
 
-        setInterval(function(){
+        setTimeout(function(){
 
             sideLightsStrobe(0.05,9,'stagger');
 
         },5000);
+
+        setTimeout(function(){
+
+            sideLightsStrobe(0.05,9,'stagger');
+
+        },10000);
+
+        setTimeout(function(){
+
+            sideLightsStrobe(0.05,9,'stagger');
+
+        },15000);
+
+        setTimeout(function(){
+
+            sideLightsStrobe(0.05,9,'stagger');
+
+        },20000);
+
+
+
+
+
 
 
         
