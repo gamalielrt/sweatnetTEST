@@ -138,6 +138,8 @@ console.log(introTime,act1Time,interval1Time,act2Time,interval2Time,act3Time,aft
 
 function updateStartLights () {
 
+
+
         //////////// Pre Countdown
 
 
@@ -157,7 +159,7 @@ function updateStartLights () {
         testLight7.color = purple;
         testLight8.color = purple;
 
-        stagesurfacemtl.emissive = colourOff
+        //stagesurfacemtl.emissive = colourOff
 
 
 
@@ -180,7 +182,7 @@ function updateStartLights () {
         //testLight7.color = blue;
         //testLight8.color = blue;
 
-        stagesurfacemtl.emissive = colourOff
+        //stagesurfacemtl.emissive = colourOff
 
 
     }
@@ -251,7 +253,7 @@ function updateStartLights () {
         testLight7.color = red;
         testLight8.color = red;
 
-        stagesurfacemtl.emissive = colourOff;
+        //stagesurfacemtl.emissive = colourOff;
 
 
     }
@@ -297,8 +299,7 @@ function updateStartLights () {
         //testLight7.color = blue;
         //testLight8.color = blue;
     
-        stagesurfacemtl.emissive = colourOff;
-    
+        //stagesurfacemtl.emissive = colourOff;
     
     }
     
@@ -341,7 +342,7 @@ function updateStartLights () {
         testLight7.intensity = 0;
         testLight8.intensity = 0;
 
-        stagesurfacemtl.emissive = colourOff
+        //stagesurfacemtl.emissive = colourOff
 
 
     }
@@ -521,7 +522,14 @@ function startLightingCues() {
             lightCue80 = true;
 
             stageLightsIntensity(15,15);
+
+            houseLightsIntensity(15,0);
             stageLightsFade(15,purple,purple,purple,'fade');
+
+            sideLightsOn(0);
+            sideLightsIntensity(0,5,5);
+
+
     
     
         }
@@ -1745,6 +1753,13 @@ function startLightingCues() {
 
         },20000);
 
+        setTimeout(function(){
+
+            sideLightsStrobe(0.05,9,'stagger');
+
+        },25000);
+
+
 
 
 
@@ -1758,7 +1773,7 @@ function startLightingCues() {
     if (videoTime == act3Time + 232 & lightCue58 == false) { //784
         lightCue58 = true;
 
-        sideLightsIntensity(20,7,0);
+        sideLightsIntensity(30,7,0);
 
         
                 
@@ -1767,15 +1782,20 @@ function startLightingCues() {
     if (videoTime == act3Time + 248 & lightCue59 == false) { //797
         lightCue59 = true;
 
-        stageLightsIntensity(20,0);
-        floorColour(20,0)                
+        stageBlackout(20);
+
+
     }
 
 
-    if (videoTime == act3Time + 457 & lightCue67 == false) { //797
+    if (videoTime == act3Time + 265 & lightCue67 == false) { //797
         lightCue67 = true;
 
-        houseLightsIntensity(10, 18);
+        //stageBlackout(20);
+
+        houseLightsIntensity(25, 10);
+
+        
 
     }
 
@@ -1983,6 +2003,11 @@ function stageLightsPulse(_speed, _length ) {
 function stageBlackout(_speed) {
     TweenMax.allTo([testLight8, testLight7, testLight6], _speed, {intensity: 0, ease: Expo.easeOut},);
     TweenMax.to(stagesurfacemtl.emissive, 0, {r: 0 , g:0, b:0, ease: Expo.easeOut},0);
+}
+
+function stageFadeOut(_speed) {
+    TweenMax.to(stagesurfacemtl.emissive, _speed, {r: 0 , g:0, b:0, ease: Expo.easeOut},0);
+
 }
 
 function sideLightsColour(_speed, _colour1,_colour2,_colour3,_colour4) {

@@ -1928,17 +1928,16 @@
                 //////////////////
 
                 
-
                 
                 
                 
-                video.currentTime = 25 ;  //PVA 246
+                
+                video.currentTime = act3Time  ;  //PVA 246
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
                 updateStartLights();
 
-                
                 
 
                 //////////////////
@@ -1974,7 +1973,7 @@
                 setInterval(restartVid,500);
 
                 setInterval(startCountdown,1000);
-
+                
                 */
                 
                 
@@ -2053,7 +2052,7 @@
                 console.log(Math.round(video.duration),'vidfinished =' ,vidfinished, restartDate.getMinutes(), restartDate.getSeconds() )
 
 
-                if (Math.round(video.currentTime) == 1123 & vidfinished == false) { /////////////////  VIDEO DURATION
+                if (Math.round(video.currentTime) == 935 & vidfinished == false) { /////////////////  VIDEO DURATION
                     video.pause();
                     vidfinished = true;
                     console.log('video end', 'vidfinished =', vidfinished,restartDate.getMinutes(),restartDate.getSeconds());
@@ -2127,7 +2126,7 @@
 
 
 
-                if (startTime <= 1123){  //////////////////  VID DURATION
+                if (startTime <= 935){  //////////////////  VID DURATION
 
                     video.play();
                     video.currentTime = currentMinutes1*60+currentDate.getSeconds();
@@ -3017,7 +3016,7 @@
                 color: 0x000000,
                 emissiveMap: vidscreentexture,
                 emissiveIntensity: 1,
-                emissive: 'rgb(26%,26%,255%)'//0x1a1aff,
+                emissive: 'rgb(0%,0%,0%)'//0x1a1aff,
 
 
             });
