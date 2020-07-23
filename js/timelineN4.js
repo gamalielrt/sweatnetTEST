@@ -100,6 +100,15 @@ var lightCue77 = false;
 var lightCue78 = false;
 var lightCue79 = false;
 var lightCue80 = false;
+var lightCue81 = false;
+var lightCue82 = false;
+var lightCue83 = false;
+var lightCue84 = false;
+var lightCue85 = false;
+var lightCue86 = false;
+
+
+
 
 
 
@@ -592,8 +601,14 @@ function startLightingCues() {
             
         }
 
-        if (videoTime == act1Time + 266 & lightCue79 == false) {
+        if (videoTime == act1Time + 250 & lightCue79 == false) {
             lightCue79 = true;
+
+            stageBlackout(0);
+            floorColour(0,colourOff);
+    
+
+
 
         }
 
@@ -602,28 +617,237 @@ function startLightingCues() {
 
     ///////////////////     PVA
 
-    if (videoTime == act2Time + 5 & lightCue75 == false) { //311
-        lightCue75 = true;
+    if (videoTime == act2Time + 2 & lightCue81 == false) { //311
+        lightCue81 = true;
+
+        stageBlackout(0);
+        floorColour(0,colourOff);
+
+
+        setTimeout(function(){
+
+            sideLightsOn(0);
+
+            sideLightsIntensity(22,1,15);
+
+            sideLightsColour(0,pink,pink,pink,pink);
+            sideLightsAngle(0,0.2,0.2,'once',1);
+
+        },300);
+
+        spotsPanUp(30,200,900,'once',1);
+
+    
+            
+    }
+    if (videoTime == act2Time + 24 & lightCue82 == false) { //311
+        lightCue82 = true;
+
+        //stageLightStrobe(0.5,99);
+
+        
+
+        //stageLightsFade(0,blue,blue,blue,'fade');
+
+        sideLightsPulse(0.5,199,0);
+
+        spotsPanUp(10,900,500,'yoyo',7);
+
+    
+            
+    }
+    if (videoTime == act2Time + 48 & lightCue83 == false) { //311
+        lightCue83 = true;
+
+        setTimeout(function(){
+            stageLightsIntensity(1,10);
+
+
+            stageLightsFade(0,blue,blue,blue,'fade');
+            stageLightColour(0.125,48,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+            
+            spotsPanUp(10,900,500,'yoyo',7);
+            sideLightsOn(0);
+
+            sideLightsIntensity(0,15,15);
+
+            sideLightsColour(0,pink,pink,pink,pink);
+            sideLightsAngle(0,0.2,0.2,'once',1);
+            sideLightsPulse(0.5,199,0);
+
+    
+
+
+        },900);
+
+
+        setTimeout(function(){
+            stageLightsIntensity(1,0);
+
+            floorColour(1,colourOff);
+
+        },6000);
+
+    
+            
+    }
+    if (videoTime == act2Time + 72 & lightCue84 == false) { //311
+        lightCue84 = true;
+
+        setTimeout(function(){
+            stageLightsIntensity(1,10);
+            floorColour(1,blue);
+
+            stageLightColour(0.125,48,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+
+
+        },600);
+
+
+        setTimeout(function(){
+            stageLightsIntensity(1,0);
+            floorColour(1,colourOff);
+
+
+        },7500);
+
     
             
     }
 
-    if (videoTime == act2Time + 30 & lightCue76 == false) { //334
+
+    if (videoTime == act2Time + 96 & lightCue85 == false) { //311
+        lightCue85 = true;
+
+        setTimeout(function(){
+            stageLightsIntensity(1,10);
+            floorColour(1,blue);
+
+            stageLightColour(0.125,48,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+
+
+        },600);
+
+
+        setTimeout(function(){
+            stageLightsIntensity(1,0);
+            floorColour(1,colourOff);
+
+
+        },7000);
+
+        setTimeout(function(){
+            stageLightsIntensity(1,10);
+            floorColour(1,blue);
+
+            stageLightColour(0.125,48,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+
+
+        },9000);
+
+
+        //setTimeout(function(){
+        //    stageLightsIntensity(1,0);
+        //
+        //},2000);
+
+
+
+
+    
+            
+    }
+
+
+    if (videoTime == act2Time + 113 & lightCue76 == false) { //334
         lightCue76 = true;
 
+        stageLightColour(1,3,blue,blue,blue,purple,purple,purple,'fade');
+
+        stageLightStrobe(1,15);
+
+        spotsPanUp(1,400,950,'once',1);
+
+        sideLightsOn(0);
+
+        sideLightsIntensity(0,15,15);
+
+        sideLightsColour(0,pink,pink,pink,pink);
+        sideLightsAngle(0,0.2,0.2,'once',1);
+        sideLightsPulse(0.5,99,0);
+
+    
+
 
 
         
     }
 
-    if (videoTime == act2Time + 47 & lightCue77 == false) { //352
+    if (videoTime == act2Time + 128 & lightCue77 == false) { //352
         lightCue77 = true;
 
+        stageBlackout(0);
+        floorColour(0,colourOff);
+
+        setTimeout(function(){
+            sideLightsStrobe(0.5,59,'togetherfast');
+            spotsPanUp(0.6,100,700,'yoyo',69);
+
+            sideLightsColour(0,white,white,white,white);
+        },200);
+
+
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+
+            stageLightColour(0.05,18,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+        },1200);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+        },4800);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+        },8400);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+        },12000);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,blue,blue,blue,colourOff,colourOff,colourOff,'fade');
+
+        },15600);
+
+
+
+
+
+
+
+
+
+
+
 
         
     }
 
-    if (videoTime == act2Time + 60 & lightCue78 == false) { //351
+    if (videoTime == act2Time + 145 & lightCue78 == false) { //351
         lightCue78 = true;
 
 
@@ -632,57 +856,560 @@ function startLightingCues() {
         
     }
 
-    if (videoTime == act2Time + 90 & lightCue73 == false) { //364
+    if (videoTime == act2Time + 153 & lightCue73 == false) { 
         lightCue73 = true;
 
+        stageLightsIntensity(0,15);
+        stageLightsFade(0,purple,purple,purple,'fade')
+        floorColour(0,purple)
 
 
+        setTimeout(function(){
+
+            stageLightsIntensity(0,0);
+            floorColour(0,colourOff)
+
+
+        },500);
+
+        
+
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },1000);
+
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },2000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },3000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },4000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },5000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },6000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },7000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },8000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },9000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },10000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },11000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },12000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },13000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },14000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },15000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },16000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },17000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },18000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },19000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },20000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },21000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },22000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },23000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },24000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },25000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },26000);
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+            floorColour(0,purple)
+
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0,0);
+                floorColour(0,colourOff)
+
+
+            },500);
+        },27000);
 
         
     }
 
-    if (videoTime == act2Time + 123 & lightCue24 == false) { //382
+    if (videoTime == act2Time + 160 & lightCue24 == false) { //382
         lightCue24 = true;
 
+        spotsPanUp(0.3,100,700,'yoyo',199);
+
+        sideLightsColour(5,blue,blue,blue,blue);
+
+
         
     }
 
-    if (videoTime == act2Time + 145 & lightCue25 == false) { //392
+    if (videoTime == act2Time + 168 & lightCue25 == false) { //392
         lightCue25 = true;
 
 
         
     }
 
-    if (videoTime == act2Time + 99 & lightCue26 == false) { //399
+    if (videoTime == act2Time + 180 & lightCue26 == false) { //399
         lightCue26 = true;
+
+
+        setTimeout(function(){
+
+            stageLightsIntensity(0,15);
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },1200);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },4800);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },8400);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },12000);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },15600);
+
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },19200);
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },2280);
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },26400);
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },30000);
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },33600);
+        setTimeout(function(){
+
+            stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
+
+        },37200);
 
 
         
     }
 
-    if (videoTime == act2Time + 112 & lightCue27 == false) { //416
+    if (videoTime == act2Time + 201 & lightCue27 == false) { //416
         lightCue27 = true;
 
         
     }
 
 
-    if (videoTime == act2Time + 122 & lightCue72 == false) { //416
+    if (videoTime == act2Time + 214 & lightCue72 == false) { //416
         lightCue72 = true;
+        spotsPanUp(30,100,900);
+        sideLightsColour(0,cyan,cyan,cyan,cyan);
 
     
             
     }
     
 
-    if (videoTime == act2Time + 129 & lightCue28 == false) { //434
+    if (videoTime == act2Time + 223 & lightCue28 == false) { //434
         lightCue28 = true;
+
+        sideLightsColour(0,purple,purple,purple,purple);
+
 
 
     }
 
-    if (videoTime == act2Time + 246 & lightCue29 == false) { //443
+    if (videoTime == act2Time + 233 & lightCue86 == false) { //311
+        lightCue86 = true;
+
+        sideLightsColour(0,cyan,cyan,cyan,cyan);
+
+    
+            
+    }
+
+
+    if (videoTime == act2Time + 247 & lightCue29 == false) { //443
         lightCue29 = true;
 
 
@@ -699,6 +1426,8 @@ function startLightingCues() {
 
         spotsPanUp(0.1,0,1500,'stagger',399);
 
+        sideLightsColour(0,white,white,white,white);
+
         sideLightsAngle(0.06,0.1,0.3,'yoyo',100)
 
         setTimeout(function(){sideLightsStrobe(0.5,399,'togetherfast')},400);
@@ -713,25 +1442,25 @@ function startLightingCues() {
         
     }
 
-    if (videoTime == act2Time + 173 & lightCue31 == false) { //477
+    if (videoTime == act2Time + 290 & lightCue31 == false) { //477
         lightCue31 = true;
 
         
     }
 
-    if (videoTime == act2Time + 175 & lightCue32 == false) { //479
+    if (videoTime == act2Time + 305 & lightCue32 == false) { //479
         lightCue32 = true;
         
     }
 
-    if (videoTime == act2Time + 194 & lightCue33 == false) { //498
+    if (videoTime == act2Time + 319 & lightCue33 == false) { //498
         lightCue33 = true;
 
     }
 
     /////////////////  END
 
-    if (videoTime == act2Time + 326 & lightCue35 == false) { //515
+    if (videoTime == act2Time + 225 & lightCue35 == false) { //515
         lightCue35 = true;
 
         stageBlackout(0);
@@ -744,18 +1473,46 @@ function startLightingCues() {
     ////////////////   LYNKS AFFRIKA   /////////////////////////
 
 
-    /////////////////  
+    /////////////////  HOW TO BE SUCCESSFUL
 
     if (videoTime == act3Time & lightCue36 == false) { //533
         lightCue36 = true;
+
+        stageBlackout(0);
+        floorColour(0,colourOff);
+
+        sideLightsAngle(0,0,0,'once',1);
+
+
+        setTimeout(function(){
+
+            sideLightsOn(0)
+            sideLightsIntensity(0,3,3);
+            sideLightsAngle(6,0,0.3,'once',1);
+            sideLightsColour(0,antiqueWhite,antiqueWhite,antiqueWhite,antiqueWhite);
+
+            spotsPanUp(0,550,550,'once',1);
+
+        },1600);
+
+        setTimeout(function(){
+
+            sideLightColourChange(0.462,99,purple,purple,purple,purple,blue,blue,blue,blue,'fade')
+
+        },5800);
+
+
+
+
+
 
 
         
     }
 
-    /////////////////  
+    /////////////////  INTRO
 
-    if (videoTime == act3Time + 1 & lightCue37 == false) { //546
+    if (videoTime == act3Time + 6 & lightCue37 == false) { //546
         lightCue37 = true;
 
     }
@@ -793,21 +1550,53 @@ function startLightingCues() {
     
     
     
-    /////////////////  HEAVY
+    /////////////////  SUCCESS END
 
-    if (videoTime == act3Time + 188 & lightCue60 == false) { //560
+    if (videoTime == act3Time + 168 & lightCue60 == false) { //560
         lightCue60 = true;
 
         stageBlackout(0);
         floorColour(0,colourOff);
 
+        setTimeout(function(){
+
+            sideLightsOn(0)
+            sideLightsIntensity(0,3,3);
+            sideLightsAngle(0,0.3,0.3,'once',1);
+            sideLightsColour(0,antiqueWhite,antiqueWhite,antiqueWhite,antiqueWhite);
+
+            spotsPanUp(0,550,550,'once',1);
+
+        },1000);
 
 
-    
+
+
+
             
     }
 
-    //////////////////  HOT STR8
+    if (videoTime == act3Time + 185 & lightCue39 == false) { //574
+        lightCue39 = true;
+
+        spotsPanUp(4,100,900,'once',1);
+
+        sideLightsColour(0,red,red,red,red);
+
+        sideLightsStrobe(0.1,27,'together');
+
+
+
+
+
+
+
+    }
+
+
+
+
+    //////////////////  HOT STR8 BEAT
 
     if (videoTime == act3Time + 190 & lightCue62 == false) { //567
         lightCue62 = true;
@@ -832,7 +1621,7 @@ function startLightingCues() {
             stageLightsIntensity(0,25);
             stageLightStrobe(0.6,29);
 
-            stageLightColour(0.21,99,purple,purple,purple,green,green,green,'stagger')
+            stageLightColour(0.21,199,purple,purple,purple,green,green,green,'stagger')
 
 
     
@@ -849,14 +1638,6 @@ function startLightingCues() {
     
     /////////////////  
 
-    if (videoTime == act3Time + 200 & lightCue39 == false) { //574
-        lightCue39 = true;
-
-
-
-
-        
-    }
     /////////////////  
 
     if (videoTime == act3Time + 112 & lightCue42 == false) { //587
@@ -907,20 +1688,39 @@ function startLightingCues() {
             
     }
     
-    /////////////////  VOX
+    /////////////////  STR8 END
 
-    if (videoTime == act3Time + 246 & lightCue48 == false) { //670
+    if (videoTime == act3Time + 416 & lightCue48 == false) { //670
         lightCue48 = true;
 
+        stageBlackout(0);
+        floorColour(0,colourOff);
+
+        setTimeout(function(){
+
+            sideLightsOn(0)
+            sideLightsIntensity(0,3,3);
+            sideLightsAngle(0,0.3,0.3,'once',1);
+            sideLightsColour(0,antiqueWhite,antiqueWhite,antiqueWhite,antiqueWhite);
+
+            spotsPanUp(0,550,550,'once',1);
+
+        },1000);
 
 
 
         
     }
-    /////////////////  V1 1/2
+    /////////////////  PANDEMIC
 
-    if (videoTime == act3Time + 264 & lightCue49 == false) { //680
+    if (videoTime == act3Time + 422 & lightCue49 == false) { //680
         lightCue49 = true;
+
+        sideLightsStrobe(0.15,29,'togetherfast');
+        sideLightsColour(0,red,red,red,red);
+
+        spotsPanUp(20,100,900,'yoyo',3)
+
 
 
         
@@ -977,16 +1777,14 @@ function startLightingCues() {
 
         stageLightStrobe(1.2,19);
 
-        sideLightsStrobe(0.6,25,'togetherfast');
+        sideLightsStrobe(0.15,25,'togetherfast');
 
-        setInterval(function () {
 
-            sideLightColourChange(0.6,1,yellow,yellow,yellow,yellow,blue,blue,blue,blue,'fade')
+            sideLightColourChange(1.2,5,orange,orange,orange,orange,yellow,yellow,yellow,yellow,'fade')
 
             //spotsPanUp(1.2,100,1500,'once',1);
 
 
-        },600)
 
 
 
@@ -1228,10 +2026,10 @@ function sideLightsStrobe(_speed, _length, _stagger) {
             TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 1,  ease: "none"});
     
     
-            TweenMax.to(stageSpot, _speed,  {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed/4 , ease:Linear.easeNone},);
-            TweenMax.to(stageSpot1, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed/4 , ease:Linear.easeNone},);
-            TweenMax.to(stageSpot2, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed/4 , ease:Linear.easeNone},);
-            TweenMax.to(stageSpot3, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed/4 , ease:Linear.easeNone},);
+            TweenMax.to(stageSpot, _speed,  {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: 'none' , ease:Linear.easeNone},);
+            TweenMax.to(stageSpot1, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: 'none' , ease:Linear.easeNone},);
+            TweenMax.to(stageSpot2, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: 'none' , ease:Linear.easeNone},);
+            TweenMax.to(stageSpot3, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: 'none' , ease:Linear.easeNone},);
     
             break;
     
@@ -1282,6 +2080,11 @@ function stageLightsPulse(_speed, _length ) {
 function stageBlackout(_speed) {
     TweenMax.allTo([testLight8, testLight7, testLight6], _speed, {intensity: 0, ease: Expo.easeOut},);
     TweenMax.to(stagesurfacemtl.emissive, 0, {r: 0 , g:0, b:0, ease: Expo.easeOut},0);
+}
+
+function stageFadeOut(_speed) {
+    TweenMax.to(stagesurfacemtl.emissive, _speed, {r: 0 , g:0, b:0, ease: Expo.easeOut},0);
+
 }
 
 function sideLightsColour(_speed, _colour1,_colour2,_colour3,_colour4) {
@@ -1382,261 +2185,3 @@ function sideLightsAngle (_speed, _startangle,_endangle, _repeat, _length) {
         default:
     }
 }
-
-
-
-
-
-
-
-
-
-
-/*
-function stageLightsFade(_speed, _colour1, _colour2, _colour3, _flash) {
-
-    switch (_flash) {
-        case 'fade':
-            TweenMax.to(testLight6.color, _speed, {r: _colour1.r , g:_colour1.g, b:_colour1.b, ease: Expo.easeOut},0);
-            TweenMax.to(testLight7.color, _speed, {r: _colour2.r , g:_colour2.g, b:_colour2.b, ease: Expo.easeOut},0);
-            TweenMax.to(testLight8.color, _speed, {r: _colour3.r , g:_colour3.g, b:_colour3.b, ease: Expo.easeOut},0);
-            TweenMax.to(stagesurfacemtl.emissive, _speed, {r: _colour1.r , g:_colour1.g, b:_colour1.b, ease: Expo.easeOut},0);
-        
-            break;
-        case 'flash':
-
-            TweenMax.to(testLight6.color, _speed, {r: _colour1.r , g:_colour1.g, b:_colour1.b, ease: Expo.easeOut},0);
-            TweenMax.to(testLight7.color, _speed, {r: _colour2.r , g:_colour2.g, b:_colour2.b, ease: Expo.easeOut},0);
-            TweenMax.to(testLight8.color, _speed, {r: _colour3.r , g:_colour3.g, b:_colour3.b, ease: Expo.easeOut},0);
-            TweenMax.to(stagesurfacemtl.emissive, _speed, {r: _colour1.r , g:_colour1.g, b:_colour1.b, ease: Expo.easeOut},0);
-
-
-            TweenMax.to(testLight6, 0.1, {intensity: 150, distance: 600, ease: Expo.easeOut},);
-            TweenMax.to(testLight7, 0.1, {intensity: 150, distance: 600, ease: Expo.easeOut},);
-            TweenMax.to(testLight8, 0.1, {intensity: 150, distance: 600, ease: Expo.easeOut},);
-            
-
-            TweenMax.to(testLight6, 2, {intensity: 18, distance: 450, delay: 0.5, ease: Expo.easeOut},0);
-            TweenMax.to(testLight7, 2, {intensity: 18, distance: 450, delay: 1, ease: Expo.easeOut},0);
-            TweenMax.to(testLight8, 2, {intensity: 18, distance: 450, delay: 1.5, ease: Expo.easeOut},0);
-
-            break;
-        default:
-    }
-
-}
-
-function stageLightColour(_speed, _length, _colour1, _colour2, _colour3, _colourto1, _colourto2, _colourto3, _fade  ) {
-
-    switch (_fade) {
-        case 'fade' :
-            TweenMax.to(testLight6.color, _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
-            TweenMax.to(testLight7.color, _speed, {startAt: {r: _colour2.r , g:_colour2.g, b:_colour2.b}, r: _colourto2.r , g:_colourto2.g, b:_colourto2.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
-            TweenMax.to(testLight8.color, _speed, {startAt: {r: _colour3.r , g:_colour3.g, b:_colour3.b}, r: _colourto3.r , g:_colourto3.g, b:_colourto3.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
-            TweenMax.to(stagesurfacemtl.emissive, _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
-
-
-            break;
-
-        case 'snap' :
-
-            break;
-
-        case 'stagger' : 
-            TweenMax.allTo([testLight8.color, testLight7.color, testLight6.color], _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
-            TweenMax.to(stagesurfacemtl.emissive, _speed, {startAt: {r: _colourto1.r , g:_colourto1.g, b:_colourto1.b}, r: _colour1.r , g:_colour1.g, b:_colour1.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
-
-        
-        default:
-    }
-
-}
-
-function sideLightColourChange(_speed, _length, _colour1, _colour2, _colour3, _colour4, _colourto1, _colourto2, _colourto3, _colourto4, _fade  ) {
-
-    switch (_fade) {
-        case 'fade' :
-            TweenMax.to(stageSpot.color, _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
-            TweenMax.to(stageSpot1.color, _speed, {startAt: {r: _colour2.r , g:_colour2.g, b:_colour2.b}, r: _colourto2.r , g:_colourto2.g, b:_colourto2.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
-            TweenMax.to(stageSpot2.color, _speed, {startAt: {r: _colour3.r , g:_colour3.g, b:_colour3.b}, r: _colourto3.r , g:_colourto3.g, b:_colourto3.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
-            TweenMax.to(stageSpot3.color, _speed, {startAt: {r: _colour4.r , g:_colour4.g, b:_colour4.b}, r: _colourto4.r , g:_colourto4.g, b:_colourto4.b, repeat: _length, yoyo: true, ease: "none", overwrite: true},0);
-
-
-
-            break;
-
-        case 'snap' :
-
-            break;
-
-        case 'stagger' : 
-            TweenMax.allTo([stageSpot.color, stageSpot1.color, stageSpot2.color, stageSpot3.color], _speed, {startAt: {r: _colour1.r , g:_colour1.g, b:_colour1.b}, r: _colourto1.r , g:_colourto1.g, b:_colourto1.b, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, ease: "none", overwrite: true},0);
-
-        
-        default:
-    }
-
-}
-
-
-function houseLightsIntensity(_speed, _intensity) {
-
-    TweenMax.to(testLight, _speed, {intensity : _intensity,  ease: Expo.easeOut},);
-    TweenMax.to(testLight1, _speed, {intensity : _intensity, ease: Expo.easeOut},);
-    TweenMax.to(testLight3, _speed, {intensity : _intensity, ease: Expo.easeOut},);
-    TweenMax.to(testLight4, _speed, {intensity : _intensity, ease: Expo.easeOut},);
-    TweenMax.to(testLight5, _speed, {intensity : _intensity, ease: Expo.easeOut},);
-    TweenMax.to(testLight2, _speed, {intensity : _intensity, ease: Expo.easeOut},);
-
-}
-
-function stageLightsIntensity(_speed, _intensity) {
-
-    TweenMax.to(testLight6, _speed, {intensity : _intensity,  ease: Expo.easeOut, overwrite: true},);
-    TweenMax.to(testLight7, _speed, {intensity : _intensity, ease: Expo.easeOut, overwrite: true},);
-    TweenMax.to(testLight8, _speed, {intensity : _intensity, ease: Expo.easeOut, overwrite: true},);
-
-}
-
-function sideLightsStrobe(_speed, _length) {
-
-    TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 1,  ease: "none"});
-
-
-    TweenMax.to(stageSpot, _speed,  {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 1, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot1, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 2, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot2, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 3, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot3, _speed, {startAt: {decay: 1},decay: 0, repeat: _length, repeatDelay: _speed, yoyo: true, delay: _speed * 4, ease:Linear.easeNone},);
-    
-    
-
-}
-
-function sideLightsOn(_speed) {
-
-    //TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 1,  ease: "none", overwrite: true});
-
-
-    TweenMax.to(stageSpot, _speed,  {startAt: {decay: 1},decay: 0, repeatDelay: _speed, yoyo: true, delay: _speed * 1, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot1, _speed, {startAt: {decay: 1},decay: 0, repeatDelay: _speed, yoyo: true, delay: _speed * 2, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot2, _speed, {startAt: {decay: 1},decay: 0, repeatDelay: _speed, yoyo: true, delay: _speed * 3, ease:Linear.easeNone},);
-    TweenMax.to(stageSpot3, _speed, {startAt: {decay: 1},decay: 0, repeatDelay: _speed, yoyo: true, delay: _speed * 4, ease:Linear.easeNone},);
-    
-    
-
-}
-
-
-
-function sideLightsIntensity(_speed, _fromintensity, _tointensity) {
-
-    //TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 0,  ease: "none", overwrite: true});
-
-
-    TweenMax.to(stageSpot, _speed,  {startAt: {intensity: _fromintensity}, intensity : _tointensity,  ease: "expo.in"},);
-    TweenMax.to(stageSpot1, _speed, {startAt: {intensity: _fromintensity},intensity : _tointensity, ease: "expo.in"},);
-    TweenMax.to(stageSpot2, _speed, {startAt: {intensity: _fromintensity},intensity : _tointensity, ease: "expo.in"},);
-    TweenMax.to(stageSpot3, _speed, {startAt: {intensity: _fromintensity},intensity : _tointensity, ease: "expo.in"},);
-
-
-}
-
-function stageLightsPulse(_speed, _length ) {
-    TweenMax.allTo([testLight8, testLight7, testLight6], _speed, {startAt: {intensity: 18}, repeat: _length, delay: 0.1, repeatDelay: 0, repeatRefresh: true, yoyo: true, stagger: _speed/2, intensity: 0, ease: Expo.easeOut, overwrite: true});
-
-}
-
-function stageBlackout(_speed) {
-    TweenMax.allTo([testLight8, testLight7, testLight6], _speed, {intensity: 0, ease: Expo.easeOut},);
-    TweenMax.to(stagesurfacemtl.emissive, 0, {r: 0 , g:0, b:0, ease: Expo.easeOut},0);
-}
-
-function sideLightsColour(_speed, _colour1,_colour2,_colour3,_colour4) {
-    TweenMax.to(stageSpot.color, _speed, {r: _colour1.r , g:_colour1.g, b:_colour1.b, ease: Expo.easeOut},0);
-    TweenMax.to(stageSpot1.color, _speed, {r: _colour2.r , g:_colour2.g, b:_colour2.b, ease: Expo.easeOut},0);
-    TweenMax.to(stageSpot2.color, _speed, {r: _colour3.r , g:_colour3.g, b:_colour3.b, ease: Expo.easeOut},0);
-    TweenMax.to(stageSpot3.color, _speed, {r: _colour4.r , g:_colour4.g, b:_colour4.b, ease: Expo.easeOut},0);
-
-}
-
-
-function stageLightStrobe(_speed, _length) {
-    TweenMax.allTo([testLight8, testLight7, testLight6], _speed, { intensity: 0, repeat: _length, yoyo: true,  ease: "none", overwrite: true});
-    TweenMax.to(stagesurfacemtl.emissive, _speed, {r: 0 , g:0, b:0, repeat: _length, yoyo: true, ease: "none", overwrite: true});
-}
-
-function stageLightStrobeStart(_speed, _length) {
-    TweenMax.allTo([testLight8, testLight7, testLight6], _speed, { startAt: {intensity: 18},intensity: 0, repeat: _length, yoyo: true,  ease: "none", overwrite: true});
-    TweenMax.to(stagesurfacemtl.emissive, _speed, {r: 0 , g:0, b:0, repeat: _length, yoyo: true, ease: "none", overwrite: true});
-}
-
-
-function houseLightsUp(_speed) {
-    TweenMax.allTo([testLight, testLight1, testLight2, testLight3, testLight4, testLight5], _speed, {intensity: 10, stagger: _speed, ease: Expo.easeOut},);
-
-
-}
-
-function floorColour (_speed, _colour) {
-    TweenMax.to(stagesurfacemtl.emissive, _speed, {r: _colour.r , g:_colour.g, b:_colour.b, ease: Expo.easeOut, overwrite: true});
-
-
-}
-
-function sideLightsPulse (_speed, _length, _intensity) {
-
-
-    TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 0,  ease: "none", overwrite: true});
-    TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], _speed, { intensity: _intensity, repeat: _length, yoyo: true,  ease: "none", overwrite: true});
-
-
-}
-function sideLightsOff () {
-
-
-    TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], 0, { decay: 1,  ease: "none", overwrite: true});
-
-
-}
-
-
-function spotsPanUp (_speed, _startheight,_endheight, _repeat, _length) {
-    //stageSpot.target.position.set
-
-    switch (_repeat) {
-        case 'once' :
-            TweenMax.allTo([stageSpot.target.position, stageSpot1.target.position, stageSpot2.target.position, stageSpot3.target.position], _speed, { startAt: {y: _startheight},y: _endheight, ease: "expo.in"});
-            break;
-
-        case 'yoyo' :
-            TweenMax.allTo([stageSpot.target.position, stageSpot1.target.position, stageSpot2.target.position, stageSpot3.target.position], _speed, { startAt: {y: _startheight},y: _endheight, repeat: _length, yoyo: true, ease: "none"});
-            break;
-        case 'stagger' :
-            TweenMax.allTo([stageSpot.target.position, stageSpot1.target.position, stageSpot2.target.position, stageSpot3.target.position], _speed, { startAt: {y: _startheight},y: _endheight, stagger: _speed, repeat: _length, yoyo: true, ease: "expo.in"});
-            break;
-    
-        default:
-    }
-
-}
-
-function sideLightsAngle (_speed, _startangle,_endangle, _repeat, _length) {
-    //stageSpot.target.position.set
-
-    switch (_repeat) {
-        case 'once' :
-            TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], _speed, { startAt: {angle: _startangle},angle: _endangle, ease: "expo.in"});
-            break;
-
-        case 'yoyo' :
-            TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], _speed, { startAt: {angle: _startangle},angle: _endangle, repeat: _length, yoyo: true, ease: "none"});
-            break;
-        case 'stagger' :
-            TweenMax.allTo([stageSpot, stageSpot1, stageSpot2, stageSpot3], _speed, { startAt: {angle: _startangle},angle: _endangle, stagger: _speed, repeat: _length, yoyo: true, ease: "expo.in"});
-            break;
-    
-        default:
-    }
-}
-
-*/

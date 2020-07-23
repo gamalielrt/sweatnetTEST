@@ -126,6 +126,8 @@
         <div id = "pinchdrag" ><img hidden id = "pinchimage" src = "assets/iconpinchdrag1.png"></div>
     </div>
 
+    
+
     <div id = "counterbox" hidden>
         <div id = "counter" ></div>
 
@@ -133,7 +135,7 @@
 
     </div>
 
-
+    
     
 
     <div id="chatroom" hidden>
@@ -1932,7 +1934,7 @@
                 
                 
                 
-                video.currentTime = act3Time  ;  //PVA 246
+                video.currentTime = 27;  //PVA 246
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
@@ -2043,6 +2045,8 @@
                 }
             }
 
+            /*
+
             var vidfinished = false;
 
             function restartVid () {
@@ -2152,6 +2156,103 @@
                 }                    
 
             }
+
+            */
+
+            var vidfinished = false;
+
+            function restartVid () {
+
+                var restartDate = new Date();
+
+                console.log(Math.round(video.duration),'vidfinished =' ,vidfinished, restartDate.getMinutes(), restartDate.getSeconds() )
+
+
+                if (Math.round(video.currentTime) == 1279 & vidfinished == false) { /////////////////  VIDEO DURATION
+                    video.pause();
+                    vidfinished = true;
+                    console.log('video end', 'vidfinished =', vidfinished,restartDate.getMinutes(),restartDate.getSeconds());
+
+                }
+
+
+                if (restartDate.getMinutes() == 0 & restartDate.getSeconds() == 0 & vidfinished == true) {
+                    video.currentTime = 0
+                    video.play();
+
+                    
+                    console.log('restart video1');
+                    vidfinished = false;
+
+
+
+
+                }
+                if (restartDate.getMinutes() == 30 & restartDate.getSeconds() == 0 & vidfinished == true) {
+                    video.currentTime = 0
+                    video.play();
+
+
+
+                    console.log('restart video2')
+                    vidfinished = false;
+
+
+
+                }
+
+            }
+
+            function getVidTime () {
+                var currentMinutes = currentDate.getMinutes()
+                console.log(currentDate.getMinutes());
+                var currentMinutes1;
+
+                if (currentDate.getMinutes() >= 30 && currentDate.getMinutes()<= 59) {
+                    currentMinutes1 = currentDate.getMinutes() - 30;
+                    console.log(currentMinutes1)   
+
+
+                } else {
+                    currentMinutes1 = currentDate.getMinutes();
+                }
+
+                startTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+                console.log("video starting from", startTime);
+
+                updateStartLights();
+
+
+
+                if (startTime <= 1279){  //////////////////  VID DURATION
+
+                    video.play();
+                    video.currentTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+                    video.addEventListener("loadeddata", function() {
+                        video.currentTime = currentMinutes1*60+currentDate.getSeconds();  
+                        video.play();
+                        updateStartLights();
+
+                    }, false);
+
+                } else { 
+
+                    vidfinished = true;
+
+                    video.pause();
+                    video.load();
+
+                    console.log('arrived pre performance', 'vidfinished = ', vidfinished);
+                    updateStartLights();
+
+                }                    
+
+            }
+
 
 
 
