@@ -106,6 +106,30 @@ var lightCue83 = false;
 var lightCue84 = false;
 var lightCue85 = false;
 var lightCue86 = false;
+var lightCue87 = false;
+var lightCue88 = false;
+var lightCue89 = false;
+var lightCue90 = false;
+var lightCue91 = false;
+var lightCue92 = false;
+var lightCue93 = false;
+var lightCue94 = false;
+var lightCue95 = false;
+var lightCue96 = false;
+var lightCue97 = false;
+var lightCue98 = false;
+var lightCue99 = false;
+var lightCue100 = false;
+var lightCue101 = false;
+var lightCue102 = false;
+var lightCue103 = false;
+var lightCue104 = false;
+var lightCue105 = false;
+var lightCue106 = false;
+var lightCue107 = false;
+
+
+
 
 
 
@@ -128,7 +152,7 @@ var act1Duration = 251;
 var interval1Duration = 5;
 var act2Duration = 326;
 var interval2Duration = 6;
-var act3Duration = 598;
+var act3Duration = 608;
 
 introTime = countdownDuration;
 act1Time = introTime + introDuration;
@@ -189,7 +213,7 @@ function updateStartLights () {
         //testLight7.color = blue;
         //testLight8.color = blue;
 
-        stagesurfacemtl.emissive = colourOff
+        //stagesurfacemtl.emissive = colourOff
 
 
     }
@@ -229,9 +253,9 @@ function updateStartLights () {
         testLight4.intensity = 1;
         testLight5.intensity = 1;
 
-        testLight6.intensity = 18;
-        testLight7.intensity = 18;
-        testLight8.intensity = 18;
+        testLight6.intensity = 0;
+        testLight7.intensity = 0;
+        testLight8.intensity = 0;
 
         testLight6.color = purple;
         testLight7.color = purple;
@@ -260,7 +284,7 @@ function updateStartLights () {
         //testLight7.color = blue;
         //testLight8.color = blue;
 
-        stagesurfacemtl.emissive = colourOff;
+        //stagesurfacemtl.emissive = colourOff;
 
 
     }
@@ -306,7 +330,7 @@ function updateStartLights () {
         //testLight7.color = blue;
         //testLight8.color = blue;
     
-        stagesurfacemtl.emissive = colourOff;
+        //stagesurfacemtl.emissive = colourOff;
     
     
     }
@@ -350,7 +374,7 @@ function updateStartLights () {
         testLight7.intensity = 0;
         testLight8.intensity = 0;
 
-        stagesurfacemtl.emissive = colourOff
+        //stagesurfacemtl.emissive = colourOff
 
 
     }
@@ -448,169 +472,541 @@ function startLightingCues() {
 
     ////////////////    SWEAT    /////////////////////////
 
-        /////////////////////  House Lights Down
+    /////////////////////  House Lights Down
 
-        if (videoTime == act1Time & lightCue70 == false) {
-            lightCue70 = true;
+    if (videoTime == act1Time & lightCue70 == false) {
+        lightCue70 = true;
 
-        }
-    
+        stageLightsIntensity(0, 0);
+        floorColour(0,lightOff);
+        houseLightsIntensity(0, 1);
 
-        if (videoTime == act1Time + 8 & lightCue80 == false) {
-            lightCue80 = true;
-    
-    
-        }
-        if (videoTime == act1Time + 23 & lightCue1 == false) {
-            lightCue1 = true;
-    
-            
-        }
-    
-        if (videoTime == act1Time + 41 & lightCue2 == false) {
-            lightCue2 = true;
-    
 
-            
-        }
-        if (videoTime == act1Time + 49 & lightCue3 == false) {
-            lightCue3 = true;
-    
-            
-        }
-        if (videoTime == act1Time + 66 & lightCue4 == false) {
-            lightCue4 = true;
-    
-            
-        }
-        if (videoTime == act1Time + 64 & lightCue5 == false) {
-            lightCue5 = true;
-    
-            
-        }
-    
-    
-        if (videoTime == act1Time + 70 & lightCue6 == false) {
-            lightCue6 = true;
-    
-            
-        }
-    
-    
-        if (videoTime == act1Time + 71 & lightCue7 == false) {
-            lightCue7 = true;
-    
-    
-            
-        }
-    
-        if (videoTime == act1Time + 87 & lightCue8 == false) {
-            lightCue8 = true;
-    
-        }
-    
-    
-        if (videoTime == act1Time + 91 & lightCue9 == false) {
-            lightCue9 = true;
-            
-        }
-    
-    
-        if (videoTime == act1Time + 100 & lightCue10 == false) {
-            lightCue10 = true;
-    
-            
-        }
-        if (videoTime == act1Time + 108 & lightCue11 == false) {
-            lightCue11 = true;
-    
-            
-        }
-        if (videoTime == act1Time + 115 & lightCue12 == false) {
-            lightCue12 = true;
-    
-            
-        }
-        if (videoTime == act1Time + 124 & lightCue13 == false) {
-            lightCue13 = true;
-    
-            
-        }
-    
-    
-        if (videoTime == act1Time + 129 & lightCue14 == false) {
-            lightCue14 = true;
-    
-            
-        }
-        if (videoTime == act1Time + 139 & lightCue15 == false) {
-            lightCue15 = true;
-    
-        }
-    
-    
-        if (videoTime == act1Time + 140 & lightCue16 == false) {
-            lightCue16 = true;
-    
-            
-        }
-    
-    
-        if (videoTime == act1Time + 146 & lightCue17 == false) {
-            lightCue17 = true;
-    
-    
-            
-        }
+        spotsPanUp(1,100,600,'stagger',45);
 
-        if (videoTime == act1Time + 170 & lightCue18 == false) {
-            lightCue18 = true;
+        sideLightsAngle(1,0,0.5,'yoyo',45)
+
+    }
+
+    /////////////////////  Beat
 
     
-        }
-    
-        if (videoTime == act1Time + 181 & lightCue19 == false) {
-            lightCue19 = true;
-        }
-    
-        if (videoTime == act1Time + 189 & lightCue20 == false) {
-            lightCue20 = true;
-    
-            
-        }
-    
-        if (videoTime == act1Time + 197 & lightCue21 == false) {
-            lightCue21 = true;
-    
-            
-        }
-    
-        if (videoTime == act1Time + 205 & lightCue22 == false) {
-            lightCue22 = true;
-    
-            
-        }
-    
-    
-    
-    
-    
-        if (videoTime == act1Time + 212 & lightCue23 == false) {
-            lightCue23 = true;
-    
-            
-        }
 
-        if (videoTime == act1Time + 250 & lightCue79 == false) {
-            lightCue79 = true;
+    if (videoTime == act1Time + 8 & lightCue80 == false) {
+        lightCue80 = true;
+        //sideLightsStrobe(0.3,32,'togetherfast');
 
-            stageBlackout(0);
-            floorColour(0,colourOff);
-    
+        sideLightsOn(0);
+        sideLightColourChange(0.2,70,cyan,cyan,cyan,cyan,purple,purple,purple,purple,'stagger');
+        sideLightsIntensity(0,15,15);
 
 
 
-        }
+
+    
+    
+    }
+
+    /////////////////////  V1
+
+    if (videoTime == act1Time + 17 & lightCue1 == false) {
+        lightCue1 = true;
+
+
+        setTimeout(function(){
+
+            sideLightsAngle(1,0.5,0.1,'once',1);
+
+
+
+
+            stageLightsPulse(0.594,45);
+
+            stageLightColour(0.2,100,cyan,cyan,cyan,purple,purple,purple,'fade');
+
+            sideLightColourChange(0.2,100,cyan,cyan,cyan,cyan,purple,purple,purple,purple,'stagger');
+
+        
+    
+    
+        },900);
+    
+    
+    
+            
+    }
+
+    /////////////////////  inst
+    
+    if (videoTime == act1Time + 32 & lightCue2 == false) {
+        lightCue2 = true;
+
+        stageLightsIntensity(0,18);
+    
+
+            
+    }
+
+    /////////////////////  v2
+
+    if (videoTime == act1Time + 36 & lightCue3 == false) {
+        lightCue3 = true;
+
+        stageLightStrobe(0.05,19);
+
+        setTimeout(function(){
+
+
+            stageLightColour(0.2,86,red,red,red,blue,blue,blue,'fade');
+
+            sideLightColourChange(0.2,86,red,red,red,red,blue,blue,blue,blue,'stagger');
+
+            spotsPanUp(1,100,600,'stagger',32);
+
+            sideLightsAngle(1,0,0.5,'yoyo',32);
+
+            stageLightsPulse(0.594,30);
+
+            sideLightsOn(0);
+            sideLightsIntensity(0,15,15);
+    
+
+            
+
+    
+
+        },1000);
+
+            
+    }
+
+    /////////////////////  pre
+
+    if (videoTime == act1Time + 56 & lightCue4 == false) {
+        lightCue4 = true;
+
+        sideLightsStrobe(0.15,58,'togetherfast');
+
+        floorColour(0,colourOff);
+
+        sideLightColourChange(0.2,80,red,red,red,red,blue,blue,blue,blue,'stagger');
+
+
+        spotsPanUp(1,100,1100,'yoyo',32);
+
+        setTimeout(function(){
+
+            //sideLightsStrobe(0.075,64,'togetherfast');
+
+        },12000);
+
+
+
+    
+            
+    }
+
+    /////////////////////  out
+
+    if (videoTime == act1Time + 72 & lightCue5 == false) {
+        lightCue5 = true;
+
+
+        setTimeout(function(){
+
+
+            stageLightsIntensity(0,25);
+            sideLightsOff()
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0.3,0);
+
+            },100);
+
+        },900);
+
+        setTimeout(function(){
+
+            stageLightsIntensity(0,25);
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0.3,0);
+
+            },100);
+
+        },1300);
+
+        setTimeout(function(){
+
+            stageLightsIntensity(0,25);
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0.3,0);
+
+            },100);
+
+        },1700);
+
+            
+    }
+
+    /////////////////////  C1
+    
+    
+    if (videoTime == act1Time + 76 & lightCue6 == false) {
+        lightCue6 = true;
+
+        stageLightsIntensity(0,15);
+        stageLightStrobe(0.3,75);
+
+        stageLightColour(0.2,110,cyan,cyan,cyan,purple,purple,purple,'fade');
+
+
+        spotsPanUp(1,100,600,'stagger',45);
+
+        sideLightsAngle(1,0,0.5,'yoyo',45)
+
+
+
+        sideLightsOn(0);
+        sideLightColourChange(0.2,110,cyan,cyan,cyan,cyan,purple,purple,purple,purple,'stagger');
+        sideLightsIntensity(0,15,15);
+
+    
+            
+    }
+
+    /////////////////////  v3
+    
+    
+    if (videoTime == act1Time + 99 & lightCue7 == false) {
+        lightCue7 = true;
+
+        sideLightsOn(0);
+
+        setTimeout(function(){
+
+            stageLightStrobe(0.05,18);
+
+
+        },500);
+
+        //sideLightsIntensity(0,15,15)
+
+        spotsPanUp(1,600,0,'once',1);
+
+        setTimeout(function(){
+
+            spotsPanUp(30,0,1100,'once',1);
+
+            sideLightsPulse(0.6,30,12);
+
+            sideLightsAngle(3,0.1,0.4,'yoyo',15);
+
+
+        },1200);
+            
+    }
+
+    /////////////////////  inst
+    
+    if (videoTime == act1Time + 114 & lightCue8 == false) {
+        lightCue8 = true;
+    
+    }
+
+    /////////////////////  pre
+    
+    
+    if (videoTime == act1Time + 119 & lightCue9 == false) {
+        lightCue9 = true;
+
+    
+        sideLightsStrobe(0.15,58,'togetherfast');
+    
+        floorColour(0,colourOff);
+    
+        sideLightColourChange(0.2,80,red,red,red,red,blue,blue,blue,blue,'stagger');
+    
+    
+        spotsPanUp(1,100,1100,'yoyo',32);
+    
+        setTimeout(function(){
+    
+            //sideLightsStrobe(0.075,64,'togetherfast');
+    
+        },12000);
+    
+            
+    }
+
+    /////////////////////  out
+    
+    
+    
+    if (videoTime == act1Time + 135 & lightCue10 == false) {
+        lightCue10 = true;
+
+        setTimeout(function(){
+
+
+            stageLightsIntensity(0,25);
+            sideLightsOff()
+
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0.3,0);
+
+            },100);
+
+        },900);
+
+        setTimeout(function(){
+
+            stageLightsIntensity(0,25);
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0.3,0);
+
+            },100);
+
+        },1300);
+
+        setTimeout(function(){
+
+            stageLightsIntensity(0,25);
+
+            setTimeout(function(){
+
+                stageLightsIntensity(0.3,0);
+
+            },100);
+
+        },1700);
+
+    
+            
+    }
+
+    /////////////////////  C2
+
+    if (videoTime == act1Time + 140 & lightCue11 == false) {
+        lightCue11 = true;
+
+        stageLightsIntensity(0,15);
+        stageLightStrobe(0.3,75);
+
+        stageLightColour(0.2,110,cyan,cyan,cyan,purple,purple,purple,'fade');
+
+
+        spotsPanUp(1,100,600,'stagger',25);
+
+        sideLightsAngle(1,0,0.5,'yoyo',25)
+
+
+
+        sideLightsOn(0);
+        sideLightColourChange(0.2,120,cyan,cyan,cyan,cyan,purple,purple,purple,purple,'stagger');
+        sideLightsIntensity(0,15,15);
+
+    
+            
+    }
+
+    /////////////////////  bridge
+
+
+    if (videoTime == act1Time + 164 & lightCue12 == false) {
+        lightCue12 = true;
+
+        stageLightsIntensity(1,0);
+        floorColour(1,colourOff);
+
+        sideLightsOn(0);
+        sideLightsIntensity(1,15,10)
+
+        spotsPanUp(1,1000,400,'once',1);
+
+        sideLightsAngle(1,0.4,0.2,'once',1);
+
+        sideLightsColour(0,white,white,white,white);
+
+
+
+
+    
+            
+    }
+
+    /////////////////////  bridge
+
+
+    if (videoTime == act1Time + 178 & lightCue13 == false) {
+        lightCue13 = true;
+
+        sideLightsColour(1,blue,blue,blue,blue);
+
+        spotsPanUp(1,400,0,'once',1);
+
+        setTimeout(function(){
+
+            spotsPanUp(30,0,1100,'once',1);
+
+            sideLightsPulse(0.6,30,12);
+
+            sideLightsAngle(3,0.1,0.4,'yoyo',15);
+
+            sideLightsStrobe(0.3,60,'stagger');
+
+
+        },1200);
+
+    
+            
+    }
+
+    /////////////////////  outro
+    
+    
+    if (videoTime == act1Time + 187 & lightCue14 == false) {
+        lightCue14 = true;
+
+        stageLightsIntensity(0,15);
+        stageLightStrobe(0.3,85);
+
+        stageLightColour(0.2,140,cyan,cyan,cyan,purple,purple,purple,'fade');
+
+        spotsPanUp(10,0,1100,'yoyo',20);
+
+
+
+
+    
+            
+    }
+
+    /////////////////////  outro
+
+    if (videoTime == act1Time + 207 & lightCue15 == false) {
+        lightCue15 = true;
+    
+    }
+
+    /////////////////////  outro1/4
+
+    
+    
+    if (videoTime == act1Time + 216 & lightCue16 == false) {
+        lightCue16 = true;
+
+        stageLightsIntensity(0,15);
+        stageLightStrobe(0.3,85);
+
+        stageLightColour(0.2,110,cyan,cyan,cyan,purple,purple,purple,'fade');
+
+        sideLightsStrobe(0.075,299,'togetherfast');
+
+        spotsPanUp(5,0,1100,'yoyo',30);
+
+        sideLightsAngle(3,0.1,0.4,'yoyo',15);
+
+
+
+
+
+
+    
+            
+    }
+
+    /////////////////////  outro1/2
+    
+    
+    if (videoTime == act1Time + 226 & lightCue17 == false) {
+        lightCue17 = true;
+    
+    
+            
+    }
+
+    /////////////////////  outro3/4
+
+    if (videoTime == act1Time + 235 & lightCue18 == false) {
+        lightCue18 = true;
+
+        stageLightsIntensity(0,15);
+        stageLightStrobe(0.3,85);
+
+        stageLightColour(0.2,110,cyan,cyan,cyan,purple,purple,purple,'fade');
+
+        sideLightsStrobe(0.075,299,'togetherfast');
+
+        spotsPanUp(5,0,1100,'yoyo',30);
+
+
+    
+    }
+
+    /////////////////////  end
+    
+    if (videoTime == act1Time + 181 & lightCue19 == false) {
+        lightCue19 = true;
+    }
+
+    /////////////////////  inst
+    
+    if (videoTime == act1Time + 189 & lightCue20 == false) {
+        lightCue20 = true;
+    
+            
+    }
+
+    /////////////////////  inst
+    
+    if (videoTime == act1Time + 197 & lightCue21 == false) {
+        lightCue21 = true;
+    
+            
+    }
+
+    /////////////////////  inst
+    
+    if (videoTime == act1Time + 205 & lightCue22 == false) {
+        lightCue22 = true;
+    
+            
+    }
+
+    /////////////////////  inst
+    
+    
+    
+    
+    
+    if (videoTime == act1Time + 212 & lightCue23 == false) {
+        lightCue23 = true;
+    
+            
+    }
+
+    /////////////////////  inst
+
+    if (videoTime == act1Time + 250 & lightCue79 == false) {
+        lightCue79 = true;
+
+        stageBlackout(0);
+        floorColour(0,colourOff);
+    
+
+
+
+    }
 
     
 
@@ -798,6 +1194,11 @@ function startLightingCues() {
             spotsPanUp(0.6,100,700,'yoyo',69);
 
             sideLightsColour(0,white,white,white,white);
+            sideLightsIntensity(0,15,15);
+            sideLightsAngle(0,0.2,0.2,'once',1);
+
+
+
         },200);
 
 
@@ -1290,6 +1691,11 @@ function startLightingCues() {
         spotsPanUp(0.3,100,700,'yoyo',199);
 
         sideLightsColour(5,blue,blue,blue,blue);
+        sideLightsStrobe(0.5,89,'togetherfast');
+        sideLightsIntensity(0,15,15);
+        sideLightsAngle(0,0.2,0.2,'once',1);
+
+
 
 
         
@@ -1347,7 +1753,7 @@ function startLightingCues() {
 
             stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
 
-        },2280);
+        },22800);
         setTimeout(function(){
 
             stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
@@ -1367,6 +1773,8 @@ function startLightingCues() {
 
             stageLightColour(0.05,18,purple,purple,purple,colourOff,colourOff,colourOff,'fade');
 
+            console.log("last")
+
         },37200);
 
 
@@ -1376,6 +1784,7 @@ function startLightingCues() {
     if (videoTime == act2Time + 201 & lightCue27 == false) { //416
         lightCue27 = true;
 
+
         
     }
 
@@ -1383,7 +1792,7 @@ function startLightingCues() {
     if (videoTime == act2Time + 214 & lightCue72 == false) { //416
         lightCue72 = true;
         spotsPanUp(30,100,900);
-        sideLightsColour(0,cyan,cyan,cyan,cyan);
+
 
     
             
@@ -1395,14 +1804,25 @@ function startLightingCues() {
 
         sideLightsColour(0,purple,purple,purple,purple);
 
+        stageLightsFade(0,cyan,cyan,cyan,'fade');
+        sideLightsColour(0,purple,purple,purple,purple);
+
+
+        stageLightStrobe(3,9);
+
+
 
 
     }
 
-    if (videoTime == act2Time + 233 & lightCue86 == false) { //311
+    if (videoTime == act2Time + 232 & lightCue86 == false) { //311
         lightCue86 = true;
 
         sideLightsColour(0,cyan,cyan,cyan,cyan);
+        stageLightsFade(0,purple,purple,purple,'fade');
+
+        floorColour(3,colourOff);
+
 
     
             
@@ -1424,43 +1844,55 @@ function startLightingCues() {
     if (videoTime == act2Time + 248 & lightCue30 == false) { //460
         lightCue30 = true;
 
-        spotsPanUp(0.1,0,1500,'stagger',399);
+        spotsPanUp(0.1,0,1500,'stagger',620);
+
+
 
         sideLightsColour(0,white,white,white,white);
 
-        sideLightsAngle(0.06,0.1,0.3,'yoyo',100)
+        sideLightsAngle(0.06,0.1,0.3,'yoyo',259)
 
-        setTimeout(function(){sideLightsStrobe(0.5,399,'togetherfast')},400);
+        setTimeout(function(){sideLightsStrobe(0.5,48,'togetherfast')},600);
 
         sideLightsIntensity(0,15,15);
 
 
+
         //stageLightsIntensity(0,25);
-        setTimeout(function(){stageLightsPulse(0.1,399)},400);
+        setTimeout(function(){stageLightsPulse(0.1,599)},400);
 
 
         
     }
 
-    if (videoTime == act2Time + 290 & lightCue31 == false) { //477
+    if (videoTime == act2Time + 280 & lightCue31 == false) { //477
         lightCue31 = true;
+
+        sideLightsAngle(20,0.1,0.5,'once',1)
 
         
     }
 
     if (videoTime == act2Time + 305 & lightCue32 == false) { //479
         lightCue32 = true;
+
+        sideLightsIntensity(20,15,0);
+
+        stageLightStrobe(1,7)
+
         
     }
 
     if (videoTime == act2Time + 319 & lightCue33 == false) { //498
         lightCue33 = true;
 
+
+
     }
 
     /////////////////  END
 
-    if (videoTime == act2Time + 225 & lightCue35 == false) { //515
+    if (videoTime == act2Time + 325 & lightCue35 == false) { //515
         lightCue35 = true;
 
         stageBlackout(0);
@@ -1510,17 +1942,29 @@ function startLightingCues() {
         
     }
 
-    /////////////////  INTRO
+    /////////////////  BEAT
 
-    if (videoTime == act3Time + 6 & lightCue37 == false) { //546
+    if (videoTime == act3Time + 20 & lightCue37 == false) { //546
         lightCue37 = true;
+
+        setTimeout(function(){
+
+            sideLightsPulse(0.462,29,18);
+
+
+        },500);
+
 
     }
 
-    /////////////////  
+    /////////////////  OUT
 
-    if (videoTime == act3Time + 36 & lightCue40 == false) { //587
+    if (videoTime == act3Time + 33 & lightCue40 == false) { //587
         lightCue40 = true;
+
+        //sideLightsOff();
+
+        floorColour(0,colourOff);
 
     
     
@@ -1528,21 +1972,247 @@ function startLightingCues() {
             
     }
 
-    /////////////////  
+    /////////////////  PRE
 
-    if (videoTime == act3Time + 77 & lightCue41 == false) { //587
+    if (videoTime == act3Time + 35 & lightCue41 == false) { //587
         lightCue41 = true;
+
+        spotsPanUp(0.5,500,1000,'once',1);
+
+        sideLightsOn(0);
+        sideLightsIntensity(0,15,15);
+        sideLightColourChange(0.462,99,purple,purple,purple,purple,blue,blue,blue,blue,'fade')
+
+
+
+        setTimeout(function(){
+
+            sideLightsAngle(0.462,0,0.3,'yoyo',26);
+
+        },700);
+
+
+
+        stageLightsIntensity(0,15);
+
+        stageLightColour(1.846,6,hotPink,hotPink,hotPink,colourOff,colourOff,colourOff,'fade');
 
 
 
     }
 
     
-    /////////////////  HEAVY
+    /////////////////  OUT
 
-    if (videoTime == act3Time + 79 & lightCue38 == false) { //553
+    if (videoTime == act3Time + 48 & lightCue38 == false) { //553
         lightCue38 = true;
+
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+        sideLightsOff();
     }
+
+    /////////////////  BEAT
+
+    if (videoTime == act3Time + 49 & lightCue96 == false) {
+        lightCue96 = true;
+
+        setTimeout(function(){
+
+            sideLightsOn(0);
+            sideLightsIntensity(0,15,15);
+
+            stageLightsFade(0,purple,purple,purple,'fade');
+            stageLightsIntensity(0,15);
+
+            stageLightStrobe(0.462,26);
+
+            spotsPanUp(0.462,0,500,'yoyo',27);
+
+            sideLightsStrobe(0.462,18,'together');
+
+        },400);
+
+
+
+
+    }    
+    /////////////////  V2
+
+    if (videoTime == act3Time + 63 & lightCue87 == false) {
+        lightCue87 = true;
+        spotsPanUp(0.462,300,1000,'once',1);
+        stageLightsFade(0,colourOff,colourOff,colourOff,'fade');
+
+
+        setTimeout(function(){
+            spotsPanUp(0.462,1000,100,'stagger',62);
+            sideLightsPulse(0.6,50,15);
+            sideLightsAngle(2,0.3,0.2,'once',0);
+
+        },1500);
+
+
+
+
+    }
+    /////////////////  UNI
+
+    if (videoTime == act3Time + 79 & lightCue88 == false) {
+        lightCue88 = true;
+
+        stageLightsFade(0,blue,blue,blue,'fade');
+        stageLightsPulse(0.462,26);
+
+
+
+    }
+    /////////////////  OUT
+
+    if (videoTime == act3Time + 92 & lightCue89 == false) {
+        lightCue89 = true;
+
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+        sideLightsOff();
+
+
+
+
+    }
+    /////////////////  PRE
+
+    if (videoTime == act3Time + 94 & lightCue90 == false) {
+        lightCue90 = true;
+
+        spotsPanUp(0.5,500,1000,'once',1);
+
+        sideLightsOn(0);
+        sideLightsIntensity(0,15,15);
+        sideLightColourChange(0.462,99,purple,purple,purple,purple,blue,blue,blue,blue,'fade')
+
+
+
+        setTimeout(function(){
+
+            sideLightsAngle(0.462,0,0.3,'yoyo',58);
+            spotsPanUp(0.5,1000,800,'yoyo',58);
+
+
+        },700);
+
+
+
+        stageLightsIntensity(0,15);
+
+        stageLightColour(1.846,12,hotPink,hotPink,hotPink,colourOff,colourOff,colourOff,'fade');
+
+
+
+
+    }
+    /////////////////  OUT
+
+    if (videoTime == act3Time + 121 & lightCue91 == false) {
+        lightCue91 = true;
+
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+        sideLightsOff();
+
+
+
+
+    }
+    ///////////////// BEAT 
+
+    if (videoTime == act3Time + 123 & lightCue92 == false) {
+        lightCue92 = true;
+
+        setTimeout(function(){
+
+            sideLightsOn(0);
+            sideLightsIntensity(0,15,15);
+
+            stageLightsFade(0,purple,purple,purple,'fade');
+            stageLightsIntensity(0,15);
+
+            stageLightStrobe(0.462,26);
+
+            spotsPanUp(0.462,0,500,'yoyo',27);
+
+            sideLightsStrobe(0.462,18,'together');
+
+        },400);
+
+
+
+
+    }
+    /////////////////  RIFF
+
+    if (videoTime == act3Time + 138 & lightCue93 == false) {
+        lightCue93 = true;
+
+        setTimeout(function(){
+
+            sideLightsOn(0);
+            sideLightsIntensity(0,15,15);
+
+            stageLightsFade(0,purple,purple,purple,'fade');
+            stageLightsIntensity(0,15);
+
+            stageLightStrobe(0.462,26);
+
+            spotsPanUp(0.231,0,1000,'yoyo',54);
+
+            sideLightsStrobe(0.231,40,'together');
+
+            sideLightsAngle(0.462,0,0.5,'stagger',36)
+
+        },400);
+
+
+
+
+    }
+    ///////////////// V3 
+
+    if (videoTime == act3Time + 153 & lightCue94 == false) {
+        lightCue94 = true;
+
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+
+        sideLightsPulse(0.462,29,18);
+        sideLightColourChange(0.462,99,purple,purple,purple,purple,blue,blue,blue,blue,'fade');
+
+        sideLightsOn(0)
+        sideLightsIntensity(0,3,3);
+        sideLightsAngle(6,0,0.3,'once',1);
+
+        spotsPanUp(0,550,550,'once',1);
+
+
+
+
+
+
+    }
+    ///////////////// OUT 
+
+    if (videoTime == act3Time + 167 & lightCue95 == false) {
+        lightCue95 = true;
+
+        sideLightsAngle(0.5,0.3,00,'once',1);
+
+        stageBlackout(0);
+        floorColour(0,colourOff);
+
+    }
+
+    
+
 
     
     
@@ -1562,7 +2232,7 @@ function startLightingCues() {
 
             sideLightsOn(0)
             sideLightsIntensity(0,3,3);
-            sideLightsAngle(0,0.3,0.3,'once',1);
+            sideLightsAngle(0,0,0.3,'once',1);
             sideLightsColour(0,antiqueWhite,antiqueWhite,antiqueWhite,antiqueWhite);
 
             spotsPanUp(0,550,550,'once',1);
@@ -1626,47 +2296,243 @@ function startLightingCues() {
 
     
 
-        },400)
+        },400);
 
-
-    
-
-    
-            
     }
 
     
-    /////////////////  
 
-    /////////////////  
+    /////////////////  V1 1/2
 
-    if (videoTime == act3Time + 112 & lightCue42 == false) { //587
+    if (videoTime == act3Time + 216 & lightCue42 == false) { 
         lightCue42 = true;
 
 
 
+
+
+
+
+
         
     }
-    /////////////////  
+    /////////////////  C1
 
-    if (videoTime == act3Time + 141 & lightCue43 == false) { //616
+    if (videoTime == act3Time + 228 & lightCue43 == false) { 
         lightCue43 = true;
 
-    }
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+
+        setTimeout(function () {
+
+            stageLightsIntensity(0,25);
+
+            stageLightStrobe(0.5,99);
+
+            sideLightsIntensity(0,0,15);
+
+            sideLightColourChange(0.3,99,yellow,red,blue,cyan,red,orange,hotPink,green,'stagger');
+
+
+
+            sideLightsStrobe(0.21,74,'togetherfast');
+            spotsPanUp(3,1500,100,'yoyo',9);
+
+
+            stageLightsIntensity(0,25);
+            stageLightStrobe(0.6,60);
+
+            stageLightColour(0.21,199,purple,purple,purple,green,green,green,'stagger')
 
     
-    /////////////////  
 
-    if (videoTime == act3Time + 171 & lightCue44 == false) { //629
+
+        },1000);
+
+
+    }
+    /////////////////  C1 1/2
+
+    if (videoTime == act3Time + 242 & lightCue97 == false) { 
+        lightCue97 = true;
+    
+    }
+
+    /////////////////  BREAKDOWN
+
+    if (videoTime == act3Time + 255 & lightCue98 == false) { 
+        lightCue98 = true;
+
+        stageLightsIntensity(0,0);
+        sideLightsAngle(0.5,0.5,0.25,'once',1);
+        stageLightColour(0.21,199,purple,purple,purple,green,green,green,'stagger');
+
+        sideLightsOn(0);
+
+    }
+    /////////////////  V2
+
+    if (videoTime == act3Time + 258 & lightCue99 == false) { 
+        lightCue99 = true;
+
+        spotsPanUp(0.411,1500,100,'yoyo',99);
+
+        stageLightColour(0.21,199,purple,purple,purple,green,green,green,'stagger');
+
+        stageLightsIntensity(0,25);
+
+        stageLightStrobe(0.5,99);
+
+        sideLightsIntensity(0,0,15);
+
+        sideLightColourChange(0.3,99,yellow,red,blue,cyan,red,orange,hotPink,green,'stagger');
+
+        
+
+
+    }
+    /////////////////  V2 1/2
+
+    if (videoTime == act3Time + 273 & lightCue100 == false) { 
+        lightCue100 = true;
+
+    }
+    /////////////////  BREAKDOWN
+
+    if (videoTime == act3Time + 285 & lightCue101 == false) { 
+        lightCue101 = true;
+
+        spotsPanUp(0.822,0,500,'yoyo',99);
+
+        stageLightsFade(0,red,red,red,'fade');
+
+        sideLightColourChange(0.3,99,yellow,red,blue,cyan,red,red,red,red,'once');
+
+
+
+    }
+    ///////////////// OUT 
+
+    if (videoTime == act3Time + 297 & lightCue102 == false) { 
+        lightCue102 = true;
+
+    }
+    /////////////////  C2
+
+    if (videoTime == act3Time + 297 & lightCue103 == false) { 
+        lightCue103 = true;
+
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+
+        setTimeout(function () {
+
+            stageLightsIntensity(0,25);
+
+            stageLightStrobe(0.5,99);
+
+            sideLightsIntensity(0,0,15);
+
+            sideLightColourChange(0.3,99,yellow,red,blue,cyan,red,orange,hotPink,green,'stagger');
+
+
+
+            sideLightsStrobe(0.21,74,'togetherfast');
+            spotsPanUp(0.21,1500,100,'yoyo',106);
+
+
+            stageLightsIntensity(0,25);
+            stageLightStrobe(0.6,60);
+
+            stageLightColour(0.21,199,purple,purple,purple,green,green,green,'stagger')
+
+    
+
+
+        },1000);
+
+
+    }
+    /////////////////  C2 1/2
+
+    if (videoTime == act3Time + 311 & lightCue104 == false) { 
+        lightCue104 = true;
+
+    }
+    /////////////////  BEAT
+
+    if (videoTime == act3Time + 324 & lightCue105 == false) { 
+        lightCue105 = true;
+
+        stageLightsIntensity(0,0);
+
+        floorColour(0,colourOff);
+
+
+        sideLightsIntensity(0,0,15);
+
+        sideLightColourChange(0.3,99,green,purple,blue,cyan,red,blue,hotPink,green,'stagger');
+
+
+
+        sideLightsStrobe(0.1,299,'togetherfast');
+        spotsPanUp(0.21,100,1500,'stagger',99);
+
+        sideLightsAngle(0.05,0,0.3,'stagger',299)
+
+
+
+
+
+    }
+    /////////////////  V3
+
+    if (videoTime == act3Time + 337 & lightCue106 == false) { 
+        lightCue106 = true;
+
+        stageLightsIntensity(0,25);
+        stageLightStrobe(0.6,29);
+
+        stageLightColour(0.21,199,purple,purple,purple,colourOff,colourOff,colourOff,'stagger');
+
+        sideLightsAngle(1,0.3,0,'stagger',299)
+
+
+
+
+
+    }
+    /////////////////  OUT
+
+    if (videoTime == act3Time + 348 & lightCue107 == false) { 
+        lightCue107 = true;
+
+    }
+    
+
+    
+    /////////////////  SOLO
+
+    if (videoTime == act3Time + 349 & lightCue44 == false) { 
         lightCue44 = true;
 
         
     }
-    /////////////////  
+    /////////////////  OUT BUILD
 
-    if (videoTime == act3Time + 205 & lightCue47 == false) { //657
+    if (videoTime == act3Time + 363 & lightCue47 == false) { 
         lightCue47 = true;
 
+        stageLightColour(0.21,199,green,green,green,colourOff,colourOff,colourOff,'stagger');
+
+        sideLightColourChange(0.3,99,green,purple,blue,cyan,red,blue,hotPink,green,'stagger');
+
+        sideLightsAngle(7,0,0.7,'once',1)
+
+
+
+
 
     }
 
@@ -1675,26 +2541,60 @@ function startLightingCues() {
     
     
     
-    /////////////////   SONG 2
+    /////////////////  C3 
 
-    if (videoTime == act3Time + 228 & lightCue45 == false) { //636
+    if (videoTime == act3Time + 376 & lightCue45 == false) { 
         lightCue45 = true;
+
+        stageLightsIntensity(0,0);
+        floorColour(0,colourOff);
+
+        setTimeout(function () {
+
+            stageLightsIntensity(0,25);
+
+            stageLightStrobe(0.5,99);
+
+            sideLightsIntensity(0,0,15);
+
+            sideLightColourChange(0.3,129,yellow,red,blue,cyan,red,orange,hotPink,green,'stagger');
+
+
+
+            sideLightsStrobe(0.21,90,'togetherfast');
+            spotsPanUp(0.21,1500,100,'yoyo',178);
+
+
+            stageLightsIntensity(0,25);
+            stageLightStrobe(0.6,85);
+
+            stageLightColour(0.21,199,purple,purple,purple,green,green,green,'stagger')
+
+    
+
+
+        },1000);
+
             
     }
-    /////////////////  INTRO
+    /////////////////  C3 1/2
     
-    if (videoTime == act3Time + 238 & lightCue46 == false) { //655
+    if (videoTime == act3Time + 403 & lightCue46 == false) { 
         lightCue46 = true;
             
     }
+
+
     
     /////////////////  STR8 END
 
-    if (videoTime == act3Time + 416 & lightCue48 == false) { //670
+    if (videoTime == act3Time + 416 & lightCue48 == false) { 
         lightCue48 = true;
 
         stageBlackout(0);
         floorColour(0,colourOff);
+
+        sideLightsColour(0,colourOff,colourOff,colourOff,colourOff);
 
         setTimeout(function(){
 
@@ -1716,6 +2616,15 @@ function startLightingCues() {
     if (videoTime == act3Time + 422 & lightCue49 == false) { //680
         lightCue49 = true;
 
+        stageBlackout(0);
+        floorColour(0,colourOff);
+
+        sideLightsOn(0)
+        sideLightsIntensity(0,3,3);
+        sideLightsAngle(0,0.3,0.3,'once',1);
+
+
+
         sideLightsStrobe(0.15,29,'togetherfast');
         sideLightsColour(0,red,red,red,red);
 
@@ -1726,23 +2635,66 @@ function startLightingCues() {
         
     }
 
-    /////////////////  DROP
+    /////////////////  V1
 
-    if (videoTime == act3Time + 280 & lightCue34 == false) { //503
+    if (videoTime == act3Time + 431 & lightCue34 == false) { //503
         lightCue34 = true;
+
+        stageLightsIntensity(0,5)
+
+        stageLightColour(1.2,29,darkGreen,darkGreen,darkGreen,green,green,green,'stagger');
+
+        stageLightsPulse(1.2,29)
 
 
     }
     
 
 
-    /////////////////  C1
+    /////////////////  V1 1/2
 
-    if (videoTime == act3Time + 281 & lightCue50 == false) { //686
+    if (videoTime == act3Time + 450 & lightCue50 == false) { //686
         lightCue50 = true;
 
+        sideLightsStrobe(0.6,29,'togetherfast');
+        spotsPanUp(2.4,100,600,'yoyo',19)
+        sideLightsColour(0,red,red,red,red);
+
+
+
+
+
+
     }
-    /////////////////  
+
+    ////////////////////  C1
+
+    if (videoTime == act3Time + 460 & lightCue53 == false) { //725
+        lightCue53 = true;
+
+        stageLightsPulse(0.6,29);
+        stageLightColour(0.6,29,darkGreen,darkGreen,darkGreen,red,red,red,'stagger');
+
+
+
+                
+    }
+    /////////////////  DROP + BEAT
+
+    if (videoTime == act3Time + 469 & lightCue54 == false) { //726
+        lightCue54 = true;
+            
+                    
+    }
+    /////////////////  DROP VOX
+
+    if (videoTime == act3Time + 480 & lightCue55 == false) { //732
+        lightCue55 = true;
+        
+                
+    }
+
+    /////////////////  HOOK
 
     if (videoTime == act3Time + 486 & lightCue51 == false) { //699
         lightCue51 = true;
@@ -1777,12 +2729,12 @@ function startLightingCues() {
 
         stageLightStrobe(1.2,19);
 
-        sideLightsStrobe(0.15,25,'togetherfast');
+        sideLightsStrobe(0.15,60,'togetherfast');
 
 
-            sideLightColourChange(1.2,5,orange,orange,orange,orange,yellow,yellow,yellow,yellow,'fade')
+        sideLightColourChange(1.2,5,orange,orange,orange,orange,yellow,yellow,yellow,yellow,'fade')
 
-            //spotsPanUp(1.2,100,1500,'once',1);
+        spotsPanUp(1.2,100,1500,'yoyo',20);
 
 
 
@@ -1798,77 +2750,189 @@ function startLightingCues() {
     if (videoTime == act3Time + 487 & lightCue53 == false) { //725
         lightCue53 = true;
 
+
+
+
+
+
                 
     }
-    /////////////////  C2
+    /////////////////  V2
 
-    if (videoTime == act3Time + 342 & lightCue54 == false) { //726
+    if (videoTime == act3Time + 508 & lightCue54 == false) { //726
         lightCue54 = true;
+
+        stageLightStrobe(1.2,29);
+
+        stageLightColour(0.6,29,purple,purple,purple,red,red,red,'stagger');
+
+        spotsPanUp(1.2,100,1500,'yoyo',30);
+
+        sideLightsAngle(1,0.5,0.1,'once',1);
+
             
                     
     }
-    /////////////////  V3
+    /////////////////  V2 1/2
 
-    if (videoTime == act3Time + 359 & lightCue55 == false) { //732
+    if (videoTime == act3Time + 527 & lightCue55 == false) { //732
         lightCue55 = true;
+
+        sideLightsAngle(1,0.1,0.25,'once',1);
+
+        sideLightColourChange(1.2,5,orange,orange,orange,orange,green,green,green,green,'fade')
+
+
         
                 
     }
 
-    ////////////////  V3 1/2
+    ////////////////  DROP + BEAT
 
-    if (videoTime == act3Time + 377 & lightCue63 == false) { //742
+    if (videoTime == act3Time + 537 & lightCue63 == false) { //742
         lightCue63 = true;
 
+        spotsPanUp(0.5,500,100,'once',1);
+
+        setTimeout(function () {
+
+
+            stageBlackout(0);
+            floorColour(0,colourOff);
+
+            sideLightsOn(0)
+            sideLightsIntensity(0,3,3);
+            sideLightsAngle(0,0.3,0.3,'once',1);
+
+
+
+            sideLightsStrobe(0.15,33,'togetherfast');
+            sideLightsColour(0,red,red,red,red);
+
+            spotsPanUp(20,100,900,'yoyo',3)
+
+        },600);
+
+
+
 
 
     }
 
-    ////////////////  BLACKOUT
+    ////////////////  BEAT
 
-    if (videoTime == act3Time + 393 & lightCue30 == false) { //460
+    if (videoTime == act3Time + 546 & lightCue30 == false) { //460
         lightCue30 = true;
 
+        spotsPanUp(0.5,500,100,'once',1);
+
+        setTimeout(function () {
+
+
+            stageBlackout(0);
+            floorColour(0,colourOff);
+
+            sideLightsOn(0)
+            sideLightsIntensity(0,3,3);
+            sideLightsAngle(0,0.3,0.3,'once',1);
+
+
+
+            sideLightsStrobe(0.075,58,'togetherfast');
+            sideLightsColour(0,red,red,red,red);
+
+            spotsPanUp(20,100,900,'yoyo',3)
+
+        },600);
+
+
 
         
     }
 
 
 
-    /////////////////  C3
+    /////////////////  DROP + RAP
 
-    if (videoTime == act3Time + 394 & lightCue56 == false) { //755
+    if (videoTime == act3Time + 558 & lightCue56 == false) { //755
         lightCue56 = true;
 
+        stageLightStrobe(1.2,29);
+
+        sideLightsOn(0);
+
+        stageLightsIntensity(0,4)
+
+        stageLightColour(0.6,12,green,green,green,red,red,red,'stagger');
+
+        spotsPanUp(1.2,100,1500,'yoyo',7);
+
+        sideLightsAngle(1,0.5,0.1,'once',1);
+
         
                 
     }
-    /////////////////  BRIDGE
+    /////////////////  END
 
-    if (videoTime == act3Time + 411 & lightCue57 == false) { //770
+    if (videoTime == act3Time + 569 & lightCue57 == false) { //770
         lightCue57 = true;
 
+        setTimeout(function () {
+
+            stageLightsIntensity(0,0);
+            sideLightsOff();
+
+            floorColour(0,colourOff);
+
+        },400);
+
+
         
                 
     }
-    /////////////////  END TRACK
+    /////////////////  OUT CHAT
 
-    if (videoTime == act3Time + 447 & lightCue58 == false) { //784
+    if (videoTime == act3Time + 571 & lightCue58 == false) { //784
         lightCue58 = true;
 
+        stageLightsIntensity(0,0);
+
+        floorColour(0,colourOff);
+
+
+        sideLightsOn(0)
+        sideLightsIntensity(0,3,3);
+        sideLightsAngle(0,0.2,0.2,'once',1);
+        sideLightsColour(0,antiqueWhite,antiqueWhite,antiqueWhite,antiqueWhite);
+
+        spotsPanUp(0,700,700,'once',1);
+
+
         
                 
     }
-    /////////////////  END NOISE
+    /////////////////  OUT
 
-    if (videoTime == act3Time + 453 & lightCue59 == false) { //797
+    if (videoTime == act3Time + 593 & lightCue59 == false) { //797
         lightCue59 = true;
+
+        spotsPanUp(2,700,300,'once',1);
+
+        setTimeout(function () {
+
+
+            sideLightsAngle(2,0.2,0,'once',1);
+
+
+        },2000);
+
+
                 
     }
 
     //////////////// HOUSE LIGHTS UP
 
-    if (videoTime == act3Time + 457 & lightCue67 == false) { //797
+    if (videoTime == act3Time + 607 & lightCue67 == false) { //797
         lightCue67 = true;
 
         houseLightsIntensity(10, 18);

@@ -1930,11 +1930,11 @@
                 //////////////////
 
                 
-                
                 /*
                 
                 
-                video.currentTime = 27;  //PVA 246
+                
+                video.currentTime = act1Time;  //PVA 246
                 video.play();
                 videoscreen.play();
                 setInterval(startCountdown,1000);
@@ -2168,7 +2168,7 @@
                 console.log(Math.round(video.duration),'vidfinished =' ,vidfinished, restartDate.getMinutes(), restartDate.getSeconds() )
 
 
-                if (Math.round(video.currentTime) == 1279 & vidfinished == false) { /////////////////  VIDEO DURATION
+                if (Math.round(video.currentTime) == 1289 & vidfinished == false) { /////////////////  VIDEO DURATION
                     video.pause();
                     vidfinished = true;
                     console.log('video end', 'vidfinished =', vidfinished,restartDate.getMinutes(),restartDate.getSeconds());
@@ -2226,7 +2226,7 @@
 
 
 
-                if (startTime <= 1279){  //////////////////  VID DURATION
+                if (startTime <= 1289){  //////////////////  VID DURATION
 
                     video.play();
                     video.currentTime = currentMinutes1*60+currentDate.getSeconds();
