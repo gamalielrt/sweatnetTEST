@@ -147,12 +147,12 @@ var lightCue107 = false;
 
 
 var countdownDuration = 60;
-var introDuration = 33; //15
-var act1Duration = 251;
-var interval1Duration = 5;
-var act2Duration = 326;
-var interval2Duration = 6;
-var act3Duration = 608;
+var introDuration = 35; //33
+var act1Duration = 247; //251
+var interval1Duration = 7; //5
+var act2Duration = 326; //326
+var interval2Duration = 6; //6
+var act3Duration = 608; //608
 
 introTime = countdownDuration;
 act1Time = introTime + introDuration;
@@ -905,8 +905,14 @@ function startLightingCues() {
     if (videoTime == act1Time + 216 & lightCue16 == false) {
         lightCue16 = true;
 
+        sideLightsOn(0);
+        sideLightsIntensity(0,10,10)
+        sideLightsColour(1,blue,blue,blue,blue);
+
         stageLightsIntensity(0,15);
         stageLightStrobe(0.3,85);
+
+
 
         stageLightColour(0.2,110,cyan,cyan,cyan,purple,purple,purple,'fade');
 
@@ -914,7 +920,7 @@ function startLightingCues() {
 
         spotsPanUp(5,0,1100,'yoyo',30);
 
-        sideLightsAngle(3,0.1,0.4,'yoyo',15);
+        sideLightsAngle(3,0.1,0.4,'yoyo',8);
 
 
 
@@ -940,14 +946,19 @@ function startLightingCues() {
     if (videoTime == act1Time + 235 & lightCue18 == false) {
         lightCue18 = true;
 
+        sideLightsOn(0);
+        sideLightsIntensity(0,10,10)
+        sideLightsColour(1,blue,blue,blue,blue);
+
+
         stageLightsIntensity(0,15);
         stageLightStrobe(0.3,85);
 
         stageLightColour(0.2,110,cyan,cyan,cyan,purple,purple,purple,'fade');
 
-        sideLightsStrobe(0.075,299,'togetherfast');
+        sideLightsStrobe(0.075,99,'togetherfast');
 
-        spotsPanUp(5,0,1100,'yoyo',30);
+        spotsPanUp(5,0,1100,'yoyo',10);
 
 
     
@@ -1001,6 +1012,8 @@ function startLightingCues() {
         lightCue79 = true;
 
         stageBlackout(0);
+
+        sideLightsIntensity(0,0,0);
         floorColour(0,colourOff);
     
 
@@ -1027,7 +1040,7 @@ function startLightingCues() {
             sideLightsIntensity(22,1,15);
 
             sideLightsColour(0,pink,pink,pink,pink);
-            sideLightsAngle(0,0.2,0.2,'once',1);
+            sideLightsAngle(0,0.25,0.25,'once',1);
 
         },300);
 
@@ -1869,7 +1882,7 @@ function startLightingCues() {
 
         sideLightsAngle(20,0.1,0.5,'once',1);
 
-        spotsPanUp(0.1,0,1500,'stagger',200);
+        spotsPanUp(0.1,0,1500,'stagger',250);
 
         
 
@@ -1881,7 +1894,10 @@ function startLightingCues() {
 
         sideLightsIntensity(20,15,0);
 
-        stageLightStrobe(1,7)
+        stageLightStrobe(1,7);
+
+        spotsPanUp(0.1,0,1500,'stagger',200);
+
 
         
     }
@@ -2448,7 +2464,7 @@ function startLightingCues() {
             stageLightsIntensity(0,25);
             stageLightStrobe(0.6,60);
 
-            stageLightColour(0.21,199,purple,purple,purple,green,green,green,'stagger')
+            stageLightColour(0.21,120,purple,purple,purple,green,green,green,'stagger')
 
     
 
