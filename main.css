@@ -347,6 +347,19 @@ canvas {
 
 }
 
+#selectartistbutton{
+    color:  #ffffff;
+    font-family : monospace;
+    opacity: 0.25;
+
+}
+
+#selectartistbutton:hover {
+    opacity: 0.5;
+
+}
+
+
 #pbox{
     color:  #FFA500;
     font-family : monospace;
@@ -500,6 +513,61 @@ canvas {
     opacity: 0.5;
 
 }
+
+#artistoverlay {
+    position: fixed;
+    /*display: none;*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #artistoverlaytable {
+    z-index: 4;
+
+    position: fixed;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+
+    text-align: center;
+
+  }
+
+  .artistbutton {
+    /*z-index: 4;*/
+    background-color: rgb(0, 0, 0); /* Green */
+    /*position: absolute;
+    left: 50%;
+    top: 60%;*/
+    border: none;
+    color:  #FFA500;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    font-family : monospace;
+    transition-duration: 0.0s;
+    
+}
+
+.artistbutton:hover {
+    background-color: #FFA500; 
+    color: rgb(0, 0, 0);
+
+}
+
+
 
 
 

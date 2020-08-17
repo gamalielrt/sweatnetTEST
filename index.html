@@ -91,8 +91,12 @@
     <script src="js/OBJLoader.js"></script>
     <script src="js/OrbitControls.js"></script>
 
+    <!-- ADDED THIS VR BUTTON SCRIPT-->
+    <script src="js/VRButton.js"></script>
+    <!-- - - - - - - - - - - - - - - - -- --->
 
-    <script src="js/timelineN2.js"></script>
+
+    <script id = "timelinesource" src="" defer async></script>
 
     
 
@@ -101,7 +105,7 @@
 
 
     <video id="video"  crossOrigin="anonymous" playsinline style="display:none">
-        <source src="assets/sweatnetN2draft6.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source id= "videosource" src="" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
     </video>
 
     <video id="videoscreen"  crossOrigin="anonymous"  playsinline style="display:none" loop>
@@ -132,6 +136,8 @@
         <div id = "counter" ></div>
 
         <div id = "explorebutton" onclick="clickExplore()">&#8595 Explore the club (Computer Only beta) &#8595</div>
+
+        <div id = "selectartistbutton">Select Hologram</div>
 
     </div>
 
@@ -178,6 +184,24 @@
         <tr><th><a id="merchtext"> Proceed to</a><a id="merchname"></a><a id="merchtext2"> merch store?</a><br></th></tr>
         <tr><td><a  id="merchok" href="" target="_blank" >Ok</a><a> </a></a><button onclick="hideMerchOverlay()" id="merchcancel">Cancel</button></td></tr>
     </table>
+
+    <div id="artistoverlay" hidden onclick="hideArtistOverlay()">
+    </div>
+    <table id="artistoverlaytable" hidden>
+        <tr><th><a id="artisttext"> Select Hologram</a><br></th></tr>
+        <tr><td><button id="haichbernabutton" class = "artistbutton">Haiche ber Na</button></td></tr>
+        <tr><td><button id="jessicawinterbutton" class = "artistbutton">Jessica Winter</button></td></tr>
+        <tr><td><button id="kelorabutton" class = "artistbutton">Kelora</button></td></tr>
+        <tr><td><button id="lunchmoneylifebutton" class = "artistbutton">Lunch Money Life</button></td></tr>
+        <tr><td><button id="lynksafrikkabutton" class = "artistbutton">Lynks Afrikka</button></td></tr>
+        <tr><td><button id="nuharubyrabutton" class = "artistbutton">Nuha Ruby Ra</button></td></tr>
+        <tr><td><button id="pvabutton" class = "artistbutton">PVA</button></td></tr>
+        <tr><td><button id="sweatbutton" class = "artistbutton">Sweat</button></td></tr>
+        <tr><td><button id="waterbabybutton" class = "artistbutton">Waterbaby</button></td></tr>
+
+
+    </table>
+
 
 
 
@@ -1789,6 +1813,43 @@
 
 
         }
+
+        ///////////////////  SELECT ARTIST
+
+        var selectArtistButton = document.getElementById( 'selectartistbutton' );
+        var artistWindowUp = false;
+
+        selectArtistButton.addEventListener( 'click', clickSelectArtist, false );
+
+        function clickSelectArtist () {
+
+            if (artistWindowUp == false) {
+                callArtistOverlay();
+
+            } else if (artistWindowUp == false) {
+                hideArtistOverlay();
+
+            }
+        }
+
+        function callArtistOverlay() {
+
+            document.getElementById("artistoverlay").style.display = "block";
+            document.getElementById("artistoverlaytable").style.display = "block";
+
+
+        }
+
+        function hideArtistOverlay() {
+
+            document.getElementById("artistoverlay").style.display = "none";
+            document.getElementById("artistoverlaytable").style.display = "none";
+
+
+        }
+
+
+
         
 
 
@@ -1801,11 +1862,16 @@
 
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
+
+
+            renderer.xr.enabled = true;             ////////////////// ADDED FOR VR
             
             renderer.setPixelRatio( window.devicePixelRatio* 0.5 );
 			renderer.setSize( window.innerWidth, window.innerHeight );
             
             document.body.appendChild(renderer.domElement);
+
+            document.body.appendChild( VRButton.createButton( renderer ) );           //////////////// ADDED FOR VR
 
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 0.1, 3000 );
@@ -1929,18 +1995,292 @@
 
                 //////////////////
 
+                document.getElementById("artistoverlay").style.display = "block";
+                document.getElementById("artistoverlaytable").style.display = "block";
+
+
+
+                document.getElementById( 'haichbernabutton' ).addEventListener( 'click', playHaichberna, false );
+                document.getElementById( 'jessicawinterbutton' ).addEventListener( 'click', playJessicawinter, false );
+                document.getElementById( 'kelorabutton' ).addEventListener( 'click', playKelora, false );
+                document.getElementById( 'lunchmoneylifebutton' ).addEventListener( 'click', playLunchmoneylife, false );
+                document.getElementById( 'lynksafrikkabutton' ).addEventListener( 'click', playLynksafrikka, false );
+                document.getElementById( 'nuharubyrabutton' ).addEventListener( 'click', playNuharubyra, false );
+                document.getElementById( 'pvabutton' ).addEventListener( 'click', playPva, false );
+                document.getElementById( 'sweatbutton' ).addEventListener( 'click', playSweat, false );
+                document.getElementById( 'waterbabybutton' ).addEventListener( 'click', playWaterbaby, false );
+
+
+                function playHaichberna () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN1final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN1.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN1.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (550, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+
+
+                }
+
+                function playJessicawinter () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN1final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN1.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN1.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (330, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+                }
+                function playKelora () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN2final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN2.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN2.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (367, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+                }
+                function playLunchmoneylife () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN3final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN3.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN3.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (656, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+                }
+                function playLynksafrikka () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN4final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN4.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN4.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (678, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+                }
+                function playNuharubyra () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN2final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN2.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN2.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (585, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+                }
+                function playPva () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN4final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN4.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN4.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (346, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+                }
+                function playSweat () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN4final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN4.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN4.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (95, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+                }
+                function playWaterbaby () {
+
+                    document.getElementById('videosource').src = 'assets/sweatnetN3final.mp4';
+                    document.getElementById("video").load();
+
+                    document.getElementById('timelinesource').src = 'js/timelineN3.js';
+
+                    let script = document.createElement('script');
+                    script.type = 'text/javascript';
+                    script.src = 'js/timelineN3.js';    
+                    document.getElementsByTagName('head')[0].appendChild(script);
+
+
+
+                    script.onload = function() {
+
+                        playHologram (284, 1);
+
+                    }
+
+                    document.getElementById("selectartistbutton").style.display = "none";
+
+
+                }
+
+
+
+
+
+
+
+
+                function playHologram (_second, _night) {
+
+                    //document.getElementById('videosource').src = 'assets/sweatnetN'+ _night + 'final.mp4';
+                    //document.getElementById('timelinesource').src = 'js/timelineN'+ _night + '.js';
+
+
+
+                    video.currentTime = _second  ;  
+                    video.play();
+                    videoscreen.play();
+                    setInterval(startCountdown,1000);
+                    updateStartLights();
+                    setInterval(startLightingCues,500);
+
+                    //video.play();
+                    //video.currentTime = currentMinutes1*60+currentDate.getSeconds();
+
+
+                    video.addEventListener("loadeddata", function() {
+                        video.currentTime = _second;  
+                        video.play();
+                        updateStartLights();
+
+                    }, false);
+
+        
                 
-                
-                
-                
-                
-                video.currentTime = act3Time -5  ;  
-                video.play();
-                videoscreen.play();
-                setInterval(startCountdown,1000);
-                updateStartLights();
+        
+                }
+
+                ///////////////////
 
                 
+                /*
+                
+                    video.currentTime = 0  ;  
+                    video.play();
+                    videoscreen.play();
+                    setInterval(startCountdown,1000);
+                    updateStartLights();
+
+                */
+
 
                 //////////////////
 
@@ -1981,7 +2321,7 @@
                 
                 ///////////////
 
-                setInterval(startLightingCues,500);
+                //setInterval(startLightingCues,500);
                 
                 setTimeout(startFade,5000);
 
@@ -3303,10 +3643,21 @@
             requestAnimationFrame(animate);
 
             controls.update();
-            
-            renderer.render(scene, camera);
 
-            //console.log(camera.position.x,camera.position.z);
+            ///////////////////  ADDED FOR VR
+
+            renderer.setAnimationLoop( function () {
+
+                renderer.render( scene, camera );
+
+            } );
+
+            /////////////////////   REMOVED FOR VR
+            
+            //renderer.render(scene, camera);
+
+            //////////////////////
+
 
 
         }

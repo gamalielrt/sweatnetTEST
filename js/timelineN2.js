@@ -153,11 +153,11 @@ function updateStartLights () {
         testLight7.intensity = 0;
         testLight8.intensity = 0;
 
-        testLight6.color = purple;
-        testLight7.color = purple;
-        testLight8.color = purple;
+        //testLight6.color = purple;
+        //testLight7.color = purple;
+        //testLight8.color = purple;
 
-        stagesurfacemtl.emissive = colourOff
+        //stagesurfacemtl.emissive = colourOff
 
 
 
@@ -180,7 +180,7 @@ function updateStartLights () {
         //testLight7.color = blue;
         //testLight8.color = blue;
 
-        stagesurfacemtl.emissive = colourOff
+        //stagesurfacemtl.emissive = colourOff
 
 
     }
@@ -199,9 +199,9 @@ function updateStartLights () {
         testLight7.intensity = 7;
         testLight8.intensity = 7;
 
-        testLight6.color = blue;
-        testLight7.color = blue;
-        testLight8.color = blue;
+        //testLight6.color = blue;
+        //testLight7.color = blue;
+        //testLight8.color = blue;
 
         //stagesurfacemtl.emissive = blue;
 
@@ -224,9 +224,9 @@ function updateStartLights () {
         testLight7.intensity = 18;
         testLight8.intensity = 18;
 
-        testLight6.color = purple;
-        testLight7.color = purple;
-        testLight8.color = purple;
+        //testLight6.color = purple;
+        //testLight7.color = purple;
+        //testLight8.color = purple;
 
         //stagesurfacemtl.emissive = purple;
 
@@ -251,7 +251,7 @@ function updateStartLights () {
         //testLight7.color = blue;
         //testLight8.color = blue;
 
-        stagesurfacemtl.emissive = colourOff;
+        //stagesurfacemtl.emissive = colourOff;
 
 
     }
@@ -297,7 +297,7 @@ function updateStartLights () {
         //testLight7.color = blue;
         //testLight8.color = blue;
     
-        stagesurfacemtl.emissive = colourOff;
+        //stagesurfacemtl.emissive = colourOff;
     
     
     }
@@ -318,10 +318,10 @@ function updateStartLights () {
         testLight7.intensity = 18;
         testLight8.intensity = 18;
 
-        testLight6.color = scarlett;
-        testLight7.color = scarlett;
-        testLight8.color = scarlett;
-        stagesurfacemtl.emissive = scarlett;
+        //testLight6.color = scarlett;
+        //testLight7.color = scarlett;
+        //testLight8.color = scarlett;
+        //stagesurfacemtl.emissive = scarlett;
 
 
 
@@ -337,11 +337,11 @@ function updateStartLights () {
         testLight4.intensity = 10;
         testLight5.intensity = 10;
 
-        testLight6.intensity = 0;
-        testLight7.intensity = 0;
-        testLight8.intensity = 0;
+        //testLight6.intensity = 0;
+        //testLight7.intensity = 0;
+        //testLight8.intensity = 0;
 
-        stagesurfacemtl.emissive = colourOff
+        //stagesurfacemtl.emissive = colourOff
 
 
     }
